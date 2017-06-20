@@ -1,0 +1,221 @@
+@prefix schema: <https://schema.org/> .
+@prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix ofd:   <https://w3id.org/openfooddata/onto/core#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix ft:    <https://w3id.org/openfooddata/vocab/foodtype#> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#List>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+
+<http://www.w3.org/2000/01/rdf-schema#label>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
+
+<http://www.w3.org/2000/01/rdf-schema#Class>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#Resource>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>
+        a       <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#comment>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<http://www.w3.org/2000/01/rdf-schema#range>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+<http://www.w3.org/2000/01/rdf-schema#domain>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#Literal>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#first>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
+
+<http://www.w3.org/2000/01/rdf-schema#subClassOf>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<https://w3id.org/openfooddata/actors/hoevewinkel-bij-delmotjes>
+        a                      foaf:Agent ;
+        foaf:account           <http://www.facebook.com/Hoevewinkel-bij-Delmotjes> ;
+        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_delmotjes_uithangbord_lr.jpg?itok=wo3cucDV" ;
+        foaf:homepage          "http://www.hoevewinkelbijdelmotjes.be" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/hoevewinkel-bij-delmotjes" , "http://www.rechtvanbijdeboer.be/node/1717" ;
+        foaf:name              "Hoevewinkel bij Delmotjes" ;
+        schema:contactPoint    [ a                 schema:ContactPoint ;
+                                 foaf:homepage     "http://www.hoevewinkelbijdelmotjes.be" ;
+                                 schema:email      "info@hoevewinkelbijdelmotjes.be" ;
+                                 schema:telephone  "0478/351452" ;
+                                 schema:url        "http://www.hoevewinkelbijdelmotjes.be"
+                               ] ;
+        schema:description     "Wij zijn Steven en Karin. Allebei landbouwerskinderen. Steven ouders teelden groenten en hadden melkkoeien, Karins ouders hadden een gemengd landbouwbedrijf met varkens en melkkoeien. We kregen dus van jongsaf aan te zien wat de seizoenen met zich meebracht. In 1995 trouwden we en gingen voluit voor het telen van vollegrondgroenten : schorseneren, wortels, prei. Met de tijd specialiseerden we ons in prei. Ons gezinnetje breidde uit met een dochter Hanne en een zoon Robbe. Na meer dan twintig jaar intensief prei telen, hadden we nood aan een nieuwe uitdaging. Mede door zwaar ongeval dochter, slechtere marktprijzen groenten, zwaar werk aan prei, nood aan sociaal contact namen we de beslissing te starten met een hoevewinkeltje. Waar we vooral het aspect Westvlaamse hoeveproducten, groenten en fruit zoveel mogelijk rechtstreeks van bij de teler, én streekproducten (100% Westvlaams) aan bod willen laten komen. Kom gerust eens langs en laat je verrassen door dit mooie aanbod !" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Meulebeke" ;
+                                                          schema:postalCode       "8760" ;
+                                                          schema:streetAddress    "Oude Pittemstraat 58"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium"
+                               ] ;
+        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_delmotjes_uithangbord_lr.jpg?itok=wo3cucDV" ;
+        schema:name            "Hoevewinkel bij Delmotjes" ;
+        schema:url             "http://www.hoevewinkelbijdelmotjes.be" ;
+        ofd:actorType          "at:producer" ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/hoevewinkel-bij-delmotjes-0" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/wwwhoevewinkelbijdelmotjesbebestellen" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:offersFoodType     "ft:fruits" , "ft:eggs" , "ft:milk_products" , "ft:vegetables" , "ft:potatoes" .
+
+<http://www.facebook.com/Hoevewinkel-bij-Delmotjes>
+        a                            foaf:OnlineAccount ;
+        <dct:identifier>             "" ;
+        skos:prefLabel               "Facebook" ;
+        foaf:accountName             "http:" ;
+        foaf:accountServiceHomepage  "https://www.facebook.com" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> , <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> , <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/2000/01/rdf-schema#Datatype>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt> , <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/2000/01/rdf-schema#Container>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+
+<http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> , <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+<http://www.w3.org/2000/01/rdf-schema#seeAlso>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+ofd:ActorRelationship
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:GeoCoordinates
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

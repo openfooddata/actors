@@ -1,0 +1,295 @@
+@prefix schema: <https://schema.org/> .
+@prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix ofd:   <https://w3id.org/openfooddata/onto/core#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix ft:    <https://w3id.org/openfooddata/vocab/foodtype#> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#List>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+
+<http://www.w3.org/2000/01/rdf-schema#label>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
+
+<http://www.w3.org/2000/01/rdf-schema#Class>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#Resource>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>
+        a       <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#comment>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<http://www.w3.org/2000/01/rdf-schema#range>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#nil>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+<http://www.w3.org/2000/01/rdf-schema#domain>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/2000/01/rdf-schema#Literal>
+        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#first>
+        a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
+
+<http://www.w3.org/2000/01/rdf-schema#subClassOf>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<https://w3id.org/openfooddata/actors/catharinadal>
+        a                      foaf:Agent ;
+        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/kaasschotel1.jpg?itok=2WxJj9bo" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/familiefoto.jpg?itok=CBHVp8pB" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hardekaas.jpg?itok=-dJ4O_ql" ;
+        foaf:homepage          "http://www.catharinadal.be" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1189" , "http://www.rechtvanbijdeboer.be/catharinadal" ;
+        foaf:name              "Catharinadal" ;
+        schema:contactPoint    [ a                 schema:ContactPoint ;
+                                 foaf:homepage     "http://www.catharinadal.be" ;
+                                 schema:email      "catharinadal@telenet.be" ;
+                                 schema:telephone  "011/641309" ;
+                                 schema:url        "http://www.catharinadal.be"
+                               ] ;
+        schema:description     "In het Noord-Limburgse Achel baten wij, Peter en Bert Boonen en onze echtgenotes Riet en Carine, kaasboerderij Catharinadal uit. Met de melk van onze eigen koeien maken we zo'n 150 kazen en een 70-tal andere zuivelproducten, bereide gerechten en desserten op basis van melk.Naast onze eigen koeienmelk wordt ook nog schapenmelk van de Stalse Schans in Koersel verwerkt en geitenmelk van het Goerenhof uit Lummen." ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Hamont-Achel" ;
+                                                          schema:postalCode       "3930" ;
+                                                          schema:streetAddress    "Catharinadal 5"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium"
+                               ] ;
+        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/kaasschotel1.jpg?itok=2WxJj9bo" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/familiefoto.jpg?itok=CBHVp8pB" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hardekaas.jpg?itok=-dJ4O_ql" ;
+        schema:name            "Catharinadal" ;
+        schema:url             "http://www.catharinadal.be" ;
+        ofd:actorType          "at:producer" ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kiewit-kempenhof" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-sint-lambrechts-herk" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/catharinadal-0" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-hoeselt" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-riemst" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-lutselus" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-bocholt" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-halle-booienhoven" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-dilsen-stokkem" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-overpelt" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-peer" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-zutendaal" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-houthalen" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-genk" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-niel-bij" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-sint-truiden" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-bilzen" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-alken" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-neeroeteren" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-gingelom" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-heers" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-zepperen" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-hechtel" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:offersFoodType     "ft:milk_products" , "ft:icecream" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag> , <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> , <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/2000/01/rdf-schema#Datatype>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt> , <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/2000/01/rdf-schema#Container>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#Container> .
+
+<http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+<http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> , <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+<http://www.w3.org/2000/01/rdf-schema#seeAlso>
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+ofd:ActorRelationship
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:GeoCoordinates
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
