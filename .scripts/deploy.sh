@@ -15,7 +15,7 @@ function doGenerate {
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "Skipping deploy; just doing vocab check."
+    echo "Skipping deploy; just doing check."
     doCheck
     exit 0
 fi
@@ -25,6 +25,8 @@ fi
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
+#git reflog -1 | sed 's/^.*: //'
+MSG=`git log -1 --oneline`
 
 # Clone the existing gh-pages for this repo into .out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
@@ -34,11 +36,14 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
+echo "Clean out existing contents..."
 rm -fr .out/* || exit 0
 
 # Run generate script
-#doGenerate
-cp -fr static/* .out/
+echo "Generate content ..."
+doGenerate
+echo "Copy static content ..."
+cp -r static/* .out/
 # config the cloned repo
 cd .out
 git config user.name "Travis CI"
@@ -52,8 +57,8 @@ fi
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
-git add .
-git commit -m "Deploy to GitHub Pages: ${SHA}"
+git add . --all
+git commit -m "Deploy to GitHub Pages: ${MSG}"
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
