@@ -7,19 +7,19 @@
     "streetAddress" : "Pypegaelestraat 15"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-ieper",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "email" : "luc.heugebaert@gmail.com",
     "telephone" : [ "0472/530.88", "057/422255" ]
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
@@ -163,13 +163,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1127", "http://www.rechtvanbijdeboer.be/heugebaert-masson" ],
     "foaf:name" : "Heugebaert-Masson",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b2",
     "description" : "Open: Tijdens de maanden mei - juni - juli - augustus : elke dag vanaf 13.00 uur (niet op zondag) Buiten seizoen: na telefonische afspraak",
-    "geo" : "_:b1",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Heugebaert-Masson",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b4" ],
+    "downstreamRel" : [ "_:b1", "_:b4" ],
     "offersFoodType" : "ft:fruits"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -201,13 +201,6 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -220,13 +213,15 @@
     "email" : {
       "@id" : "https://schema.org/email"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
@@ -234,6 +229,14 @@
     },
     "name" : {
       "@id" : "https://schema.org/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -249,9 +252,6 @@
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

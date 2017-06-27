@@ -2,17 +2,16 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "51.223621",
     "longitude" : "4.286159"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.puurnatuurmelsele.be",
-    "email" : "puurnatuurmelsele@hotmail.com",
-    "telephone" : "03/775 60 16",
-    "url" : "http://www.puurnatuurmelsele.be"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Melsele",
+    "postalCode" : "9120",
+    "streetAddress" : "Kalishoekstraat 93"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -20,10 +19,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Melsele",
-    "postalCode" : "9120",
-    "streetAddress" : "Kalishoekstraat 93"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.puurnatuurmelsele.be",
+    "email" : "puurnatuurmelsele@hotmail.com",
+    "telephone" : "03/775 60 16",
+    "url" : "http://www.puurnatuurmelsele.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,7 +163,7 @@
     "homepage" : "http://www.puurnatuurmelsele.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1172", "http://www.rechtvanbijdeboer.be/puur-natuur-1", "http://www.rechtvanbijdeboer.be/puur-natuur", "http://www.rechtvanbijdeboer.be/node/2569" ],
     "name" : "Puur Natuur",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "",
     "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/puur_natuur_binnenkant_winkel_toog_lr.jpg?itok=7pOTJfEv",
@@ -193,21 +193,44 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -223,10 +246,6 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
@@ -246,25 +265,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

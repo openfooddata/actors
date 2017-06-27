@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.277330",
+    "longitude" : "4.411438"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Ekeren",
     "postalCode" : "2180",
     "streetAddress" : "Akker"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.277330",
-    "longitude" : "4.411438"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -147,10 +147,10 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2166", "http://www.rechtvanbijdeboer.be/ekeren" ],
     "name" : "Ekeren",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "schema:name" : "Ekeren",
     "actorType" : [ "at:foodTeams", "at:pointOfSale" ],
-    "offersFoodType" : [ "ft:fruits", "ft:beef", "ft:spices", "ft:alcoholic_beverages", "ft:bakery_products", "ft:fruit_juices", "ft:potatoes", "ft:milk_products", "ft:vegetables", "ft:eggs", "ft:poultry_meat", "ft:icecream", "ft:pork", "ft:lamb_meat" ]
+    "offersFoodType" : [ "ft:beef", "ft:spices", "ft:alcoholic_beverages", "ft:bakery_products", "ft:fruit_juices", "ft:potatoes", "ft:milk_products", "ft:vegetables", "ft:eggs", "ft:poultry_meat", "ft:icecream", "ft:pork", "ft:lamb_meat", "ft:fruits" ]
   } ],
   "@context" : {
     "domain" : {
@@ -169,24 +169,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -209,6 +200,15 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

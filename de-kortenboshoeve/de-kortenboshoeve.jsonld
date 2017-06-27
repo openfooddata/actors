@@ -1,11 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.dekortenboshoeve.be",
-    "email" : "info@dekortenboshoeve.be",
-    "telephone" : [ "0479/430764", "09/3694293" ],
-    "url" : "http://www.dekortenboshoeve.be"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.982286",
+    "longitude" : "3.891683"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -14,11 +14,11 @@
     "streetAddress" : "Oordegemsesteenweg 311"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.982286",
-    "longitude" : "3.891683"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.dekortenboshoeve.be",
+    "email" : "info@dekortenboshoeve.be",
+    "telephone" : [ "0479/430764", "09/3694293" ],
+    "url" : "http://www.dekortenboshoeve.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -94,7 +94,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,9 +158,9 @@
     "homepage" : "http://www.dekortenboshoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1561", "http://www.rechtvanbijdeboer.be/node/3050", "http://www.rechtvanbijdeboer.be/de-kortenboshoeve-0", "http://www.rechtvanbijdeboer.be/de-kortenboshoeve" ],
     "name" : "De Kortenboshoeve",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "De Kortenboshoeve",
     "url" : "http://www.dekortenboshoeve.be",
@@ -184,29 +184,28 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -230,22 +229,23 @@
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

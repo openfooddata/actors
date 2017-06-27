@@ -14,24 +14,24 @@
     "streetAddress" : "Beukenstraat 96"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "martinevanmalderen@hotmail.com",
-    "telephone" : "052/330876"
-  }, {
-    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-strombeek-bever",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortenberg",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b5",
+    "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-mechelen",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "schema:ContactPoint",
+    "email" : "martinevanmalderen@hotmail.com",
+    "telephone" : "052/330876"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -174,13 +174,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/012-hooilaarthoeve.jpg?itok=PK9kdOh2",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hooilaarthoeve-0", "http://www.rechtvanbijdeboer.be/hooilaarthoeve", "http://www.rechtvanbijdeboer.be/node/1088", "http://www.rechtvanbijdeboer.be/node/2359" ],
     "foaf:name" : "Hooilaarthoeve",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b5",
     "description" : "De Hooilaarthoeve is een gespecialiseerd melkveebedrijf gelegen in het middelpunt van Vlaanderen. Alle producten worden bereid met dagverse melk van onze eigen koeien en dit zonder toevoeging van smaak- of kleurstoffen. Dit zorgt voor de authentieke smaak van deze ambachtelijke producten.",
     "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/012-hooilaarthoeve.jpg?itok=PK9kdOh2",
     "name" : "Hooilaarthoeve",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
-    "downstreamRel" : [ "_:b3", "_:b4", "_:b5" ],
+    "downstreamRel" : [ "_:b3", "_:b2", "_:b4" ],
     "offersFoodType" : [ "ft:milk_products", "ft:eggs", "ft:icecream" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -223,11 +223,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -237,12 +237,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -262,26 +256,22 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -292,6 +282,16 @@
     },
     "name" : {
       "@id" : "https://schema.org/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

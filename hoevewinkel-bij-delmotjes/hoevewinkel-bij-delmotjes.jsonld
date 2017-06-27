@@ -1,10 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Meulebeke",
-    "postalCode" : "8760",
-    "streetAddress" : "Oude Pittemstraat 58"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-bij-delmotjes-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
@@ -15,18 +14,19 @@
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-bij-delmotjes-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/wwwhoevewinkelbijdelmotjesbebestellen",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b4",
     "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Meulebeke",
+    "postalCode" : "8760",
+    "streetAddress" : "Oude Pittemstraat 58"
   }, {
     "@id" : "http://www.facebook.com/Hoevewinkel-bij-Delmotjes",
     "@type" : "foaf:OnlineAccount",
@@ -60,7 +60,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -179,12 +179,12 @@
     "name" : "Hoevewinkel bij Delmotjes",
     "contactPoint" : "_:b1",
     "description" : "Wij zijn Steven en Karin. Allebei landbouwerskinderen. Steven ouders teelden groenten en hadden melkkoeien, Karins ouders hadden een gemengd landbouwbedrijf met varkens en melkkoeien. We kregen dus van jongsaf aan te zien wat de seizoenen met zich meebracht. In 1995 trouwden we en gingen voluit voor het telen van vollegrondgroenten : schorseneren, wortels, prei. Met de tijd specialiseerden we ons in prei. Ons gezinnetje breidde uit met een dochter Hanne en een zoon Robbe. Na meer dan twintig jaar intensief prei telen, hadden we nood aan een nieuwe uitdaging. Mede door zwaar ongeval dochter, slechtere marktprijzen groenten, zwaar werk aan prei, nood aan sociaal contact namen we de beslissing te starten met een hoevewinkeltje. Waar we vooral het aspect Westvlaamse hoeveproducten, groenten en fruit zoveel mogelijk rechtstreeks van bij de teler, én streekproducten (100% Westvlaams) aan bod willen laten komen. Kom gerust eens langs en laat je verrassen door dit mooie aanbod !",
-    "geo" : "_:b4",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_delmotjes_uithangbord_lr.jpg?itok=wo3cucDV",
     "schema:name" : "Hoevewinkel bij Delmotjes",
     "url" : "http://www.hoevewinkelbijdelmotjes.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b3", "_:b2" ],
+    "downstreamRel" : [ "_:b2", "_:b0" ],
     "offersFoodType" : [ "ft:fruits", "ft:eggs", "ft:milk_products", "ft:vegetables", "ft:potatoes" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,27 +207,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -237,38 +216,51 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "accountServiceHomepage" : {
@@ -283,12 +275,20 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

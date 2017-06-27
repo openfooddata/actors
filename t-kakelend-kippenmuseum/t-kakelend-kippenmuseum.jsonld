@@ -1,10 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.kakelendkippenmuseum.be/",
-    "email" : "info@kakelendkippenmuseum.be",
-    "url" : "http://www.kakelendkippenmuseum.be/"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -12,15 +11,16 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.kakelendkippenmuseum.be/",
+    "email" : "info@kakelendkippenmuseum.be",
+    "url" : "http://www.kakelendkippenmuseum.be/"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Keiem",
     "postalCode" : "8600",
     "streetAddress" : "Wittepoortstraat 25"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -96,7 +96,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,9 +160,9 @@
     "homepage" : "http://www.kakelendkippenmuseum.be/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-kakelend-kippenmuseum", "http://www.rechtvanbijdeboer.be/node/1195" ],
     "foaf:name" : "'t Kakelend Kippenmuseum",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "Wij, Hendrik en Regine David-Laverge, verwelkomen u graag op onze alternatieve kinder-boerderij. In 't Kakelend Kippenmuseum kweken wij talloze neerhofdieren. Op de eerste plaats zijn dat grote - en soms heel kleine - hoendersoorten in alle vormen en kleuren. Sommige rassen zijn nagenoeg \"uitgestorven\" en worden bij ons in stand gehouden. Naast kippen houden we fazanten, duiven, kwartels, patrijzen, ... Er zijn ook konijnen, cavia's, geiten, schapen, varkens, pony's, ezels en nog zoveel meer... Kortom een hele beestenboel, samengebracht in een educatief wandelpark. Vooral kinderen vinden het plezant om onze dieren en hun kroost te bezoeken. Daarna kunnen ze lekker stoeien in onze speeltuin en speelschuur in echte boerderijsfeer. Verder beschikt 't Kakelend Kippenmuseum over een cafetaria met self-service waar u ijs van verse hoevemelk en ambachtelijke pannenkoeken kan proeven. Op het terras met uitzicht op het erf is het tevens ook heerlijk vertoeven.",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "'t Kakelend Kippenmuseum",
     "url" : "http://www.kakelendkippenmuseum.be/",
@@ -190,37 +190,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -233,8 +202,8 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "actorType" : {
@@ -243,15 +212,46 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "description" : {
-      "@id" : "https://schema.org/description"
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

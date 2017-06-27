@@ -6,11 +6,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.kleingistelgoed.be",
-    "email" : "info@kleingistelgoed.be",
-    "telephone" : "0474/68 32 94",
-    "url" : "http://www.kleingistelgoed.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-izegem",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
@@ -20,9 +18,11 @@
     "longitude" : "3.213219"
   }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-izegem",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.kleingistelgoed.be",
+    "email" : "info@kleingistelgoed.be",
+    "telephone" : "0474/68 32 94",
+    "url" : "http://www.kleingistelgoed.be"
   }, {
     "@id" : "_:b4",
     "@type" : "schema:PostalAddress",
@@ -179,14 +179,14 @@
     "homepage" : "http://www.kleingistelgoed.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3279", "http://www.rechtvanbijdeboer.be/varkenshoeve-klein-gistelgoed-0", "http://www.rechtvanbijdeboer.be/node/1735", "http://www.rechtvanbijdeboer.be/varkenshoeve-klein-gistelgoed" ],
     "foaf:name" : "Varkenshoeve Klein Gistelgoed",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "Het KLEIN GISTELGOED is een gespecialiseerd varkensbedrijf uit Izegem, met jaren lange ervaring. Kwaliteit wordt er steeds hoog in het vaandel gedragen. Het bedrijf wordt sinds de jaren 20 van de vorige eeuw uitgebaat door de familie Decaigny. In 1978 startte Luc Decaigny de specialisatie in de varkenshouderij. Sinds 2004 baten Christophe Decaigny en Griet Brille het bedrijf uit. Ze hebben twee kinderen, Arne en Lotte. De vele jaren ervaring staan garant voor een gezond en lekker stukje varkensvlees. De met zorg uitgekozen genetica en de zelfgemaakte voeding, op basis van eigen gekweekte granen, leggen de basis. De dagelijkse zorg, vakkennis en een moderne infrastructuur doen de rest.",
     "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Varkenshoeve Klein Gistelgoed",
     "url" : "http://www.kleingistelgoed.be",
     "actorType" : [ "at:collectionPoint", "at:producer", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b0", "_:b3" ],
+    "downstreamRel" : [ "_:b0", "_:b1" ],
     "offersFoodType" : "ft:pork"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -208,6 +208,12 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -249,32 +255,29 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -289,14 +292,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

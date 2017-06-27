@@ -1,10 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Bever",
-    "postalCode" : "1547",
-    "streetAddress" : "Kerkhovestraat 64"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.beversekaas.be",
+    "email" : "patrick.de.ville@belgacom.net",
+    "telephone" : [ "0475/436487", "054/588684" ],
+    "url" : "http://www.beversekaas.be"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -12,15 +13,14 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.beversekaas.be",
-    "email" : "patrick.de.ville@belgacom.net",
-    "telephone" : [ "0475/436487", "054/588684" ],
-    "url" : "http://www.beversekaas.be"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Bever",
+    "postalCode" : "1547",
+    "streetAddress" : "Kerkhovestraat 64"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -93,11 +93,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,7 +161,7 @@
     "homepage" : "http://www.beversekaas.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/beverse-kaasmakerij", "http://www.rechtvanbijdeboer.be/node/1098" ],
     "foaf:name" : "Beverse Kaasmakerij",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "De Beverse Kaasmakerij is gelegen in Vlaams–Brabant meer specifiek in het Pajottenland, in het middelpunt van de driehoek Lessen, Geraardsbergen, Edingen. Sinds 1994, na het beëindigen van zijn studies , baat Patrick De Ville er een landbouwbedrijf uit en bouwde in 1996 een nieuwe moderne stal voor melkvee en jongvee. Het overgrote deel zijn van het type Holstein, een ras met hoge melkproductie maar geringe vleeskwaliteiten. De dieren zijn gevestigd in een vrije loopstal ,waar zij naar believen ruwvoeder kunnen opnemen en vrij rondwandelen. Zij worden er gevoed op de meest natuurlijke wijze: gras (vers gras in de zomer, voorgedroogd gras in de winter), maïs en voederbieten. De dieren worden gemolken door 2 melkrobots (VMS-systeem: Vrijwill",
     "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/beverse_kaasmakerij_kazen.jpg?itok=4mG7neXj",
@@ -191,6 +191,24 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -200,17 +218,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -220,13 +233,6 @@
     },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -238,18 +244,12 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
