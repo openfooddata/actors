@@ -6,11 +6,11 @@ TARGET_BRANCH="gh-pages"
 
 function doCheck {
     mkdir .out
-    java -jar .scripts/lod-converter.jar ofd-core.ttl TTL ofd-core https://openfooddata.github.io/onto/ofd-core.ttl
+    java -jar ./build/libs/ofd-actors-converter.jar ./data/
 }
 
 function doGenerate {
-    java -jar .scripts/lod-converter.jar ofd-core.ttl TTL ofd-core https://openfooddata.github.io/onto/ofd-core.ttl
+    java -jar ./build/libs/ofd-actors-converter.jar ./data/
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
@@ -34,13 +34,11 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
-rm -fr .out/ofd-core.* || exit 0
-rm -fr .out/index.html || exit 0
-rm -fr .out/vowl-ofd-core.json || exit 0
+rm -fr .out/* || exit 0
 
 # Run generate script
 doGenerate
-cp .out/ofd-core.html .out/index.html
+cp -fr static/* .out/
 # config the cloned repo
 cd .out
 git config user.name "Travis CI"
