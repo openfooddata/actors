@@ -37,7 +37,7 @@ cd ..
 rm -fr .out/* || exit 0
 
 # Run generate script
-doGenerate
+#doGenerate
 cp -fr static/* .out/
 # config the cloned repo
 cd .out
