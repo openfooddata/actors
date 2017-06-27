@@ -6,11 +6,11 @@ TARGET_BRANCH="gh-pages"
 
 function doCheck {
     mkdir .out
-    java -jar ./build/libs/ofd-actors-converter.jar ./data/
+    java -jar .scripts/ofd-actors-converter.jar ./data/
 }
 
 function doGenerate {
-    java -jar ./build/libs/ofd-actors-converter.jar ./data/
+    java -jar .scripts/ofd-actors-converter.jar ./data/
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
