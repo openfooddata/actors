@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/de-kasteelhoeve>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1176" , "http://www.rechtvanbijdeboer.be/de-kasteelhoeve" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1176" , "http://www.rechtvanbijdeboer.be/de-kasteelhoeve-0" , "http://www.rechtvanbijdeboer.be/de-kasteelhoeve" , "http://www.rechtvanbijdeboer.be/node/2573" ;
         foaf:name              "De Kasteelhoeve" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "dekasteelhoeve@telenet.be" ;
@@ -135,19 +136,17 @@
         schema:description     "" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "Sint-Jacobs-Kapelle" ;
+                                                          schema:addressLocality  "Sint-Jacobskapelle (Diksmuide)" ;
                                                           schema:postalCode       "8600" ;
                                                           schema:streetAddress    "Oude Zeedijk 14"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.009094" ;
+                                 schema:longitude       "2.812817"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "De Kasteelhoeve" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-kasteelhoeve-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:pointOfSale" , "at:farmShop" , "at:producer" ;
         ofd:offersFoodType     "ft:milk_products" , "ft:icecream" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -189,9 +188,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

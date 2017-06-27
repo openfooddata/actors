@@ -1,15 +1,14 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:ContactPoint",
+    "email" : "rik.roelens@belgacom.net",
+    "telephone" : [ "0471/204655", "051/302733" ]
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Lendelede",
-    "postalCode" : "8860",
-    "streetAddress" : "Sterrekensstraat 4"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelhoeve-ter-vluggebusch",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -17,14 +16,15 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelhoeve-ter-vluggebusch",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b4",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:ContactPoint",
-    "email" : "rik.roelens@belgacom.net",
-    "telephone" : [ "0471/204655", "051/302733" ]
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Lendelede",
+    "postalCode" : "8860",
+    "streetAddress" : "Sterrekensstraat 4"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -51,7 +51,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -96,7 +96,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,13 +167,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012001.jpg?itok=d1qm6Brm", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012028.jpg?itok=2BrVhq9-" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1254", "http://www.rechtvanbijdeboer.be/zuivelboerderij-ter-vluggebusch" ],
     "foaf:name" : "Zuivelboerderij Ter Vluggebusch",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b0",
     "description" : "In 1990 hebben wij het bedrijf van Rik's ouders overgenomen. Toen was het enkel verkoop van karnemelk en boter , ondertussen is het assortiment uitgebreid met magere yoghourt, desserten, hoeveijs..Wij verkopen ook diverse soorten hoevekazen van een collega.",
-    "geo" : "_:b0",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012001.jpg?itok=d1qm6Brm", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012028.jpg?itok=2BrVhq9-" ],
     "name" : "Zuivelboerderij Ter Vluggebusch",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b3", "_:b2" ],
+    "downstreamRel" : [ "_:b1", "_:b2" ],
     "offersFoodType" : [ "ft:potatoes", "ft:eggs", "ft:milk_products", "ft:icecream" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -203,12 +203,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -226,16 +225,7 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -243,18 +233,18 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "description" : {
@@ -266,22 +256,33 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

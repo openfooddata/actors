@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,25 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/baillien>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Donkelstraat 101 3700 Tongeren" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/16105634_1389955867721585_6965783432440328089_n_0.jpg" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3235" , "http://www.rechtvanbijdeboer.be/baillien-0" , "https://www.rechtvanbijdeboer.be/node/1704" , "https://www.rechtvanbijdeboer.be/baillien" ;
+        foaf:name              "Baillien" ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Lauw (Tongeren)" ;
+                                                          schema:postalCode       "3700" ;
+                                                          schema:streetAddress    "Donkelstraat 101"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.745403" ;
+                                 schema:longitude       "5.420108"
+                               ] ;
+        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/16105634_1389955867721585_6965783432440328089_n_0.jpg" ;
+        schema:name            "Baillien" ;
+        ofd:actorType          "at:pointOfSale" , "at:producer" , "at:vendingMachine" ;
+        ofd:offersFoodType     "ft:fruits" , "ft:potatoes" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -144,7 +158,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -170,6 +184,8 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

@@ -6,11 +6,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.volckaerts.net",
-    "email" : "info@volckaerts.net",
-    "telephone" : "0477412631",
-    "url" : "http://www.volckaerts.net"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b4",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -18,9 +16,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b4",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.volckaerts.net",
+    "email" : "info@volckaerts.net",
+    "telephone" : "0477412631",
+    "url" : "http://www.volckaerts.net"
   }, {
     "@id" : "_:b4",
     "@type" : "schema:PostalAddress",
@@ -105,11 +105,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,9 +177,9 @@
     "homepage" : "http://www.volckaerts.net",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1854", "http://www.rechtvanbijdeboer.be/volckaerts" ],
     "name" : "Volckaerts",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "Het tuinieren zit bij ons in het bloed. Al drie generaties lang zorgt ons familiebedrijf voor een ruim aanbod aan kwalitatieve tuinbouwproducten. Wat vroeger begon met prei en selder, is in de loop der jaren uitgebouwd tot een ruime waaier aan vergeten wintergroenten en hebben we ons gespecialiseerd in de verkoop en opkweek van een uitgebreid assortiment kruiden- en aardbeiplanten.",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wp_20150609_20_29_24_pro.jpg?itok=E3pRWGQU",
     "schema:name" : "Volckaerts",
     "url" : "http://www.volckaerts.net",
@@ -210,11 +210,19 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "name" : {
@@ -226,16 +234,8 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -256,6 +256,19 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -264,13 +277,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -282,16 +288,11 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

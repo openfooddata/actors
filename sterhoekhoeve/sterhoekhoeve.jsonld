@@ -1,10 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Anzegem",
-    "postalCode" : "8570",
-    "streetAddress" : "Landergemstraat 32"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.830640",
+    "longitude" : "3.451169"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -12,11 +13,10 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.830640",
-    "longitude" : "3.451169"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Anzegem",
+    "postalCode" : "8570",
+    "streetAddress" : "Landergemstraat 32"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -92,7 +92,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -149,12 +149,10 @@
   }, {
     "@id" : "https://w3id.org/openfooddata/actors/sterhoekhoeve",
     "@type" : "foaf:Agent",
-    "depiction" : "/sites/all/themes/rechtvanbijdeboer/images/beeld_kar.jpg",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2618", "http://www.rechtvanbijdeboer.be/sterhoekhoeve" ],
     "foaf:name" : "Sterhoekhoeve",
     "description" : "",
-    "geo" : "_:b2",
-    "image" : "/sites/all/themes/rechtvanbijdeboer/images/beeld_kar.jpg",
+    "geo" : "_:b0",
     "name" : "Sterhoekhoeve",
     "actorType" : [ "at:farmShop", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:vegetables", "ft:poultry_meat", "ft:icecream", "ft:potatoes", "ft:eggs", "ft:milk_products" ],
@@ -180,20 +178,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -204,9 +194,6 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
@@ -214,9 +201,14 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -239,6 +231,7 @@
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

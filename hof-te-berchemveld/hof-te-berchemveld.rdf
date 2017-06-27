@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -24,6 +25,9 @@
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
@@ -66,8 +70,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -157,10 +161,29 @@
   </rdf:List>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/hof-te-berchemveld">
     <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:name>Hof te Berchemveld</foaf:name>
+    <ofd:offersFoodType>ft:beef</ofd:offersFoodType>
+    <schema:name>Hof te Berchemveld</schema:name>
+    <ofd:actorType>at:farmShop</ofd:actorType>
+    <ofd:offersFoodType>ft:pork</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3450</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/hof-te-berchemveld</foaf:isPrimaryTopicOf>
+    <schema:description></schema:description>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/hof-te-berchemveld-0</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1883</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>4.207512</schema:longitude>
+        <schema:latitude>50.784553</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Brantsebaan 375a 1600 Sint Laureins Berchem</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Brantsebaan 375a</schema:streetAddress>
+            <schema:postalCode>1600</schema:postalCode>
+            <schema:addressLocality>Sint Laureins Berchem</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
   </foaf:Agent>

@@ -1,30 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Vlissegem",
-    "postalCode" : "8421",
-    "streetAddress" : "Brugse baan 14"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "email" : "info@depoortervincent.be",
     "telephone" : "0473/823308"
   }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-breuckhofstede-1",
-    "relatedContext" : "at:pointOfSale"
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.232485",
+    "longitude" : "3.060231"
   }, {
-    "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-breuckhofstede-0",
-    "relatedContext" : "at:pointOfSale"
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Vlissegem",
+    "postalCode" : "8421",
+    "streetAddress" : "Brugse baan 14"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -51,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,19 +153,15 @@
     "@id" : "https://w3id.org/openfooddata/actors/de-breuckhofstede",
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-breuckhofstede", "http://www.rechtvanbijdeboer.be/node/1502" ],
-    "foaf:name" : "De Breuckhofstede",
-    "contactPoint" : "_:b2",
-    "description" : "",
-    "geo" : "_:b0",
-    "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2991", "http://www.rechtvanbijdeboer.be/node/2990", "http://www.rechtvanbijdeboer.be/de-breuckhofstede", "http://www.rechtvanbijdeboer.be/de-breuckhofstede-1", "http://www.rechtvanbijdeboer.be/de-breuckhofstede-0", "http://www.rechtvanbijdeboer.be/node/1502" ],
     "name" : "De Breuckhofstede",
-    "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b3", "_:b4" ],
+    "contactPoint" : "_:b0",
+    "description" : "",
+    "geo" : "_:b1",
+    "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
+    "schema:name" : "De Breuckhofstede",
+    "actorType" : [ "at:vendingMachine", "at:pointOfSale", "at:farmShop", "at:producer" ],
     "offersFoodType" : "ft:potatoes"
-  }, {
-    "@id" : "ofd:ActorRelationship",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   } ],
   "@context" : {
     "domain" : {
@@ -192,21 +180,21 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
     },
-    "name" : {
-      "@id" : "https://schema.org/name"
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -221,28 +209,11 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -253,8 +224,22 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

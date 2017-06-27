@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,7 +128,7 @@
         a                      foaf:Agent ;
         foaf:account           <https://www.facebook.com/DeHoutemseVleeshoeve?fref=ts> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/de-houtemse-vleeshoeve" , "http://www.rechtvanbijdeboer.be/node/1297" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/de-houtemse-vleeshoeve" , "http://www.rechtvanbijdeboer.be/de-houtemse-vleeshoeve-0" , "http://www.rechtvanbijdeboer.be/node/2733" , "http://www.rechtvanbijdeboer.be/node/1297" ;
         foaf:name              "De Houtemse Vleeshoeve" ;
         schema:contactPoint    [ a             schema:ContactPoint ;
                                  schema:email  "decroos.geert@gmail.com"
@@ -139,20 +140,18 @@
                                                           schema:postalCode       "8630" ;
                                                           schema:streetAddress    "Houtemstraat 22"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.006932" ;
+                                 schema:longitude       "2.617018"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "De Houtemse Vleeshoeve" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-houtemse-vleeshoeve-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:farmShop" , "at:producer" , "at:pointOfSale" ;
         ofd:offersFoodType     "ft:pork" , "ft:lamb_meat" , "ft:eggs" , "ft:beef" , "ft:fruit_juices" .
 
 <https://www.facebook.com/DeHoutemseVleeshoeve?fref=ts>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "https:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -196,9 +195,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

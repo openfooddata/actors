@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -26,6 +27,9 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
@@ -47,6 +51,9 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/ContactPoint">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
@@ -156,12 +163,40 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:List>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/hoevewinkel-t-kapelleke">
-    <ofd:actorType>at:producer</ofd:actorType>
+    <schema:description></schema:description>
+    <ofd:actorType>at:farmShop</ofd:actorType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>3.028921</schema:longitude>
+        <schema:latitude>50.833248</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Oude Hondstraat 21 8980 Beselare</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Oude Hondstraat 21</schema:streetAddress>
+            <schema:postalCode>8980</schema:postalCode>
+            <schema:addressLocality>Beselare</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <schema:contactPoint>
+      <schema:ContactPoint>
+        <schema:telephone>0497/06 11 13</schema:telephone>
+        <schema:email>geert.cappelle@hotmail.com</schema:email>
+      </schema:ContactPoint>
+    </schema:contactPoint>
+    <schema:name>Hoevewinkel 't Kapelleke</schema:name>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/3630</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:icecream</ofd:offersFoodType>
+    <ofd:offersFoodType>ft:fruits</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/hoevewinkel-t-kapelleke-0</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:eggs</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/hoevewinkel-t-kapelleke</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:potatoes</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3653</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <ofd:offersFoodType>ft:milk_products</ofd:offersFoodType>
+    <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:name>Hoevewinkel 't Kapelleke</foaf:name>
   </foaf:Agent>
 </rdf:RDF>

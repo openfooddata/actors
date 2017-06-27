@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -24,6 +25,9 @@
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
@@ -159,9 +163,27 @@
     <ofd:actorType>at:producer</ofd:actorType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>4.242418</schema:longitude>
+        <schema:latitude>50.720178</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Driepikkel 1 1500 Halle</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Driepikkel 1</schema:streetAddress>
+            <schema:postalCode>1500</schema:postalCode>
+            <schema:addressLocality>Halle</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:actorType>at:farmShop</ofd:actorType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1767</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/hannon-peter-0</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:potatoes</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3308</foaf:isPrimaryTopicOf>
+    <schema:description></schema:description>
+    <schema:name>Hannon Peter</schema:name>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/hannon-peter</foaf:isPrimaryTopicOf>
+    <foaf:name>Hannon Peter</foaf:name>
   </foaf:Agent>
 </rdf:RDF>

@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -150,15 +151,11 @@
         schema:url             "http://www.silsomhof.be" ;
         ofd:actorType          "at:producer" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-kortenberg" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/silsomhof" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/ann-everaert" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-vub-elsene" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -170,14 +167,18 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-vub-elsene" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/ann-everaert" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
-        ofd:offersFoodType     "ft:lamb_meat" , "ft:milk_products" , "ft:pork" , "ft:beef" .
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-kortenberg" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:offersFoodType     "ft:beef" , "ft:lamb_meat" , "ft:milk_products" , "ft:pork" .
 
 <https://www.facebook.com/pages/t-Silsomhof-kijk-doe-speelboerderij/230148597023952?ref=hl>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "230148597023952?ref=hl" ;
+        dct:identifier               "230148597023952?ref=hl" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "t-Silsomhof-kijk-doe-speelboerderij" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -222,16 +223,16 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
-schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+schema:GeoCoordinates
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 ofd:ActorRelationship
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
 foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
-schema:GeoCoordinates
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
-schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

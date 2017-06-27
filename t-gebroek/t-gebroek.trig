@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -128,7 +129,7 @@
         foaf:account           <https://www.facebook.com/gebroek?fref=ts> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         foaf:homepage          "http://www.tgebroek.be/" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/t-gebroek" , "http://www.rechtvanbijdeboer.be/node/1193" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/2595" , "http://www.rechtvanbijdeboer.be/t-gebroek-0" , "http://www.rechtvanbijdeboer.be/t-gebroek" , "http://www.rechtvanbijdeboer.be/node/1193" ;
         foaf:name              "'t Gebroek" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.tgebroek.be/" ;
@@ -143,21 +144,19 @@
                                                           schema:postalCode       "3690" ;
                                                           schema:streetAddress    "Zuurbroekstraat 11"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.921041" ;
+                                 schema:longitude       "5.575616"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "'t Gebroek" ;
         schema:url             "http://www.tgebroek.be/" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/t-gebroek-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:farmShop" , "at:pointOfSale" , "at:producer" ;
         ofd:offersFoodType     "ft:vegetables" , "ft:bakery_products" , "ft:fruits" , "ft:milk_products" .
 
 <https://www.facebook.com/gebroek?fref=ts>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "https:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -201,9 +200,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

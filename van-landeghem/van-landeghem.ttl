@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,23 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/van-landeghem>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Blindstraat 126 9140 Temse" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3064" , "http://www.rechtvanbijdeboer.be/van-landeghem-0" , "https://www.rechtvanbijdeboer.be/van-landeghem" , "https://www.rechtvanbijdeboer.be/node/1574" ;
+        foaf:name              "Van Landeghem" ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Temse" ;
+                                                          schema:postalCode       "9140" ;
+                                                          schema:streetAddress    "Blindstraat 126"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.143436" ;
+                                 schema:longitude       "4.234654"
+                               ] ;
+        schema:name            "Van Landeghem" ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:farmShop" ;
+        ofd:offersFoodType     "ft:potatoes" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -144,7 +156,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -170,6 +182,8 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

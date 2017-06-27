@@ -2,8 +2,16 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "Mechelsesteenweg 71 1970 Wezembeek-Oppem",
-    "addressCountry" : "Belgium"
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.845454",
+    "longitude" : "4.500431"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Wezembeek-Oppem",
+    "postalCode" : "1970",
+    "streetAddress" : "Mechelsesteenweg 71"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -79,7 +87,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -131,10 +139,18 @@
     "@id" : "schema:GeoCoordinates",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
+    "@id" : "schema:PostalAddress",
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+  }, {
     "@id" : "https://w3id.org/openfooddata/actors/la-finca",
     "@type" : "foaf:Agent",
+    "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/la-finca", "https://www.rechtvanbijdeboer.be/node/1651", "http://www.rechtvanbijdeboer.be/node/3159", "http://www.rechtvanbijdeboer.be/la-finca-0" ],
+    "name" : "La Finca",
+    "description" : "",
     "geo" : "_:b0",
-    "actorType" : "at:producer"
+    "schema:name" : "La Finca",
+    "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
+    "offersFoodType" : [ "ft:spices", "ft:fruits", "ft:vegetables" ]
   } ],
   "@context" : {
     "domain" : {
@@ -153,6 +169,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
@@ -160,14 +188,31 @@
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
-      "@id" : "https://schema.org/address"
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

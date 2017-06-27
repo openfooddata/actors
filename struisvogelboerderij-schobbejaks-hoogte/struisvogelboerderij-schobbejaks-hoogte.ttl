@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -129,7 +130,7 @@
 
 <http://www.facebook.com/struisvogelboerderij>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "http:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -139,7 +140,7 @@
         foaf:account           <http://www.facebook.com/struisvogelboerderij> , <https://nl.pinterest.com/struisvogels/> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding050.jpg?itok=qRwUhr3a" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1045191_443184712455546_1316553811_n.jpg?itok=1t7R5_3i" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/imgp1040.jpg?itok=pjgs2CA1" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding024.jpg?itok=O1LywCIW" ;
         foaf:homepage          "http://www.schobbejakshoogte.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte" , "http://www.rechtvanbijdeboer.be/node/1252" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/2674" , "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte" , "http://www.rechtvanbijdeboer.be/node/1252" , "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte-0" ;
         foaf:name              "Struisvogelboerderij Schobbejaks Hoogte" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.schobbejakshoogte.be" ;
@@ -150,20 +151,18 @@
         schema:description     "Op struisvogelboerderij Schobbejaks Hoogte lopen enkele honderden struisvogels rond. Iedere zaterdag is onze hoevewinkel open van 10 tot 18 u en u kunt ons bedrijf ook op afspraak komen bezoeken. Vragen? Kom gerust eens langs, of geef een seintje via info@schobbejakshoogte.be of 0473/98 27 19" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "Tielt" ;
+                                                          schema:addressLocality  "Aarsele (Tielt)" ;
                                                           schema:postalCode       "8700" ;
                                                           schema:streetAddress    "Deinsesteenweg 182"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.992801" ;
+                                 schema:longitude       "3.407822"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/imgp1040.jpg?itok=pjgs2CA1" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding050.jpg?itok=qRwUhr3a" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1045191_443184712455546_1316553811_n.jpg?itok=1t7R5_3i" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding024.jpg?itok=O1LywCIW" ;
         schema:name            "Struisvogelboerderij Schobbejaks Hoogte" ;
         schema:url             "http://www.schobbejakshoogte.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/struisvogelboerderij-schobbejaks-hoogte-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:farmShop" , "at:pointOfSale" , "at:producer" ;
         ofd:offersFoodType     "ft:eggs" , "ft:bakery_products" , "ft:poultry_meat" , "ft:alcoholic_beverages" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -205,9 +204,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

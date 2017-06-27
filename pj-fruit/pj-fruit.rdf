@@ -1,11 +1,11 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
     xmlns:ofd="https://w3id.org/openfooddata/onto/core#"
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:j.0="dct:"
     xmlns:frapo="http://purl.org/cerif/frapo/"
     xmlns:at="https://w3id.org/openfooddata/vocab/actortype#"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -20,9 +20,6 @@
   </rdfs:Datatype>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="https://w3id.org/openfooddata/onto/core#ActorRelationship">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
@@ -76,8 +73,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -172,19 +169,14 @@
     <schema:name>PJ Fruit</schema:name>
     <schema:url>http://www.pjfruit.be</schema:url>
     <ofd:offersFoodType>ft:vegetables</ofd:offersFoodType>
-    <ofd:downstreamRel>
-      <ofd:ActorRelationship>
-        <ofd:relatedContext>at:pointOfSale</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/pj-fruit-0</ofd:relatedActor>
-      </ofd:ActorRelationship>
-    </ofd:downstreamRel>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
     <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/pj-fruit</foaf:isPrimaryTopicOf>
     <foaf:account>
       <foaf:OnlineAccount rdf:about="http://www.facebook.com/pjfruit">
         <foaf:accountServiceHomepage>https://www.facebook.com</foaf:accountServiceHomepage>
         <foaf:accountName>http:</foaf:accountName>
         <skos:prefLabel>Facebook</skos:prefLabel>
-        <j.0:identifier></j.0:identifier>
+        <dct:identifier></dct:identifier>
       </foaf:OnlineAccount>
     </foaf:account>
     <foaf:name>PJ Fruit</foaf:name>
@@ -192,9 +184,22 @@
     <schema:description>Onze hoevewinkel is elke zaterdag van 9.00 uur tot 12.30 uur geopend. Lukt het niet om tijdens deze uren langs te komen? Contacteer ons dan eventjes om een afspraak op een ander tijdstip vast te leggen. Ons fruitbedrijf werd opgestart in 1982 door de broers Paul en Josse Schreurs. Sinds enkele jaren werken ook de zonen Pieter Jan en Daan mee in de firma. De toekomst van ons fruitteeltbedrijf is dus verzekerd! PJ Fruit bestaat momenteel uit 75 % appelteelt. Bij ons vind je onder meer Jonagold, Jonagored, Elstar, Belgica, Golden Delicious, Boskoop, Granny Smith en Delbar Estival. De overige 25% van onze teelt zijn peren. Conférènce, Doyenné du Comice en Triomphe de Vienne. Sinds dit jaar kunnen we ook onze eigen kersen en rode bessen aanbieden. In 2000 ontwikkelden we een eigen appelras, de Early Jonagold. De sterkte van deze mutant is dat hij gemiddeld 1 maand vroeger rijp is dan de gewone Jonagold appel. Door de optimale opvolging van de teelten, bewaring en sortering zorgen we ervoor dat we u steeds een kwalitatief product kunnen aanbieden.</schema:description>
     <foaf:homepage>http://www.pjfruit.be</foaf:homepage>
     <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/1740</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/pj-fruit-0</foaf:isPrimaryTopicOf>
+    <schema:contactPoint>
+      <schema:ContactPoint>
+        <schema:url>http://www.pjfruit.be</schema:url>
+        <schema:telephone>0497/64.30.12</schema:telephone>
+        <schema:email>pjfruit@gmail.com</schema:email>
+        <foaf:homepage>http://www.pjfruit.be</foaf:homepage>
+      </schema:ContactPoint>
+    </schema:contactPoint>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3285</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:poultry_meat</ofd:offersFoodType>
     <ofd:offersFoodType>ft:fruits</ofd:offersFoodType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>5.253160</schema:longitude>
+        <schema:latitude>50.918300</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
         <schema:address>
           <schema:PostalAddress>
@@ -206,18 +211,11 @@
       </schema:GeoCoordinates>
     </schema:geo>
     <ofd:offersFoodType>ft:fruit_juices</ofd:offersFoodType>
-    <schema:contactPoint>
-      <schema:ContactPoint>
-        <schema:url>http://www.pjfruit.be</schema:url>
-        <schema:telephone>0497/64.30.12</schema:telephone>
-        <schema:email>pjfruit@gmail.com</schema:email>
-        <foaf:homepage>http://www.pjfruit.be</foaf:homepage>
-      </schema:ContactPoint>
-    </schema:contactPoint>
     <ofd:offersFoodType>ft:potatoes</ofd:offersFoodType>
     <ofd:offersFoodType>ft:alcoholic_beverages</ofd:offersFoodType>
     <schema:image>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/papainspecteerdhetblad.jpg?itok=kTdvzeHa</schema:image>
     <ofd:actorType>at:producer</ofd:actorType>
     <ofd:offersFoodType>ft:eggs</ofd:offersFoodType>
+    <ofd:actorType>at:farmShop</ofd:actorType>
   </foaf:Agent>
 </rdf:RDF>

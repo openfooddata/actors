@@ -1,14 +1,18 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/foie-gras-canard-vanackere",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.foiegras-vanackere.com/",
+    "email" : "filip.callemeyn@gmail.com",
+    "telephone" : "050813156",
+    "url" : "http://www.foiegras-vanackere.com/"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
-    "addressCountry" : "Belgium"
+    "addressCountry" : "Belgium",
+    "latitude" : "51.148995",
+    "longitude" : "3.057350"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -18,15 +22,8 @@
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/bekegemse-foie-gras-0",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/foie-gras-canard-vanackere",
     "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.foiegras-vanackere.com/",
-    "email" : "filip.callemeyn@gmail.com",
-    "telephone" : "050813156",
-    "url" : "http://www.foiegras-vanackere.com/"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -164,16 +161,16 @@
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "homepage" : "http://www.foiegras-vanackere.com/",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1199", "http://www.rechtvanbijdeboer.be/bekegemse-foie-gras" ],
-    "foaf:name" : "Bekegemse Foie Gras",
-    "contactPoint" : "_:b4",
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1199", "http://www.rechtvanbijdeboer.be/bekegemse-foie-gras", "http://www.rechtvanbijdeboer.be/node/2602", "http://www.rechtvanbijdeboer.be/bekegemse-foie-gras-0" ],
+    "name" : "Bekegemse foie gras",
+    "contactPoint" : "_:b0",
     "description" : "",
     "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
-    "name" : "Bekegemse Foie Gras",
+    "schema:name" : "Bekegemse foie gras",
     "url" : "http://www.foiegras-vanackere.com/",
-    "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b3" ],
+    "actorType" : [ "at:farmShop", "at:producer", "at:pointOfSale" ],
+    "downstreamRel" : "_:b3",
     "offersFoodType" : "ft:fruit_juices"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -196,11 +193,23 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -209,14 +218,29 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "name" : {
-      "@id" : "https://schema.org/name"
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -224,29 +248,8 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -257,14 +260,15 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

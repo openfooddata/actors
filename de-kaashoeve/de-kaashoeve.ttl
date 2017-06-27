@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -128,7 +129,7 @@
         foaf:account           <https://www.facebook.com/pages/De-Kaashoeve/108235135889813?fref=ts> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_kaashoeve_ijstoog_lr.jpg?itok=LYLdUeSJ" ;
         foaf:homepage          "http://www.kaashoeve.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1090" , "http://www.rechtvanbijdeboer.be/de-kaashoeve" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1090" , "http://www.rechtvanbijdeboer.be/de-kaashoeve-0" , "http://www.rechtvanbijdeboer.be/de-kaashoeve" , "http://www.rechtvanbijdeboer.be/node/2361" ;
         foaf:name              "De Kaashoeve" ;
         schema:contactPoint    [ a              schema:ContactPoint ;
                                  foaf:homepage  "http://www.kaashoeve.be" ;
@@ -142,21 +143,19 @@
                                                           schema:postalCode       "9660" ;
                                                           schema:streetAddress    "Stechelmandries 3"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.780445" ;
+                                 schema:longitude       "3.789403"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_kaashoeve_ijstoog_lr.jpg?itok=LYLdUeSJ" ;
         schema:name            "De Kaashoeve" ;
         schema:url             "http://www.kaashoeve.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-kaashoeve-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:farmShop" , "at:pointOfSale" , "at:producer" ;
         ofd:offersFoodType     "ft:potatoes" , "ft:icecream" , "ft:milk_products" .
 
 <https://www.facebook.com/pages/De-Kaashoeve/108235135889813?fref=ts>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "108235135889813?fref=ts" ;
+        dct:identifier               "108235135889813?fref=ts" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "De-Kaashoeve" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -189,7 +188,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -200,9 +199,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

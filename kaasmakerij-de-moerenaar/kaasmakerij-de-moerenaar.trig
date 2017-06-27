@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,7 +128,7 @@
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_zuivel_koeien_lr.jpg?itok=wrGz2CN_" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_kaasplank_lr.jpg?itok=tZAZlj6N" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_zuivel_winkel_kaas_lr.jpg?itok=VSc-59e7" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_kaas_maken_rijpen_lr.jpg?itok=4ssjt_Tt" ;
         foaf:homepage          "http://www.demoerenaar.be/" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/kaasmakerij-de-moerenaar" , "http://www.rechtvanbijdeboer.be/node/1171" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/2568" , "http://www.rechtvanbijdeboer.be/kaasmakerij-de-moerenaar-0" , "http://www.rechtvanbijdeboer.be/kaasmakerij-de-moerenaar" , "http://www.rechtvanbijdeboer.be/node/1171" ;
         foaf:name              "Kaasmakerij De Moerenaar" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.demoerenaar.be/" ;
@@ -138,22 +139,20 @@
         schema:description     "Kaasboerderij De Moerenaar is een artisanale kaasboerderij in de vlakke polderstreek tegen de Vlaamse Westhoek gelegen. 15 jaar geleden begonnen we met het maken van kaas. Al doende leerden we de kneepjes van het vak. Eerst van emmer tot emmer, maar ondertussen verwerken we meer dan 3000 liter melk tot overheerlijke hoevekaas. Al onze zuivelproducten maken we dagelijks vers en artisanaal. U kunt bij ons kiezen uit een uitgebreid gamma kazen met elk een specifieke smaak, zoals de Cobergher, de Cobergher Light, de Cabour, kruidenkaas, Pikantje en De Jonge Moerenaar. Daarnaast bieden we allerlei zelfgemaakte desserts aan, zoals rijstpap, yoghurt, … . Eveneens hechten we veel belang aan de versheid van onze producten. Daarom melken we onze koeien zelf en gebruiken de rauwe melk voor de bereiding. Onze dieren krijgen enkel natuurlijke voeding, aangevuld met mineralen. Extra aandacht gaat naar het beste stremsel, het persen, het zoutproces en een stockageperiode van minstens zes weken op speciale houten planken. Kaas maken is voor ons een passie, een levenswerk. Eigenlijk bestempelen we het nog liever als ambachtelijk. Breng ons gerust een bezoekje. We geven u dan een rondleiding op onze kaasboerderij. U kunt natuurlijk ook van onze producten komen proeven." ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "De Moeren" ;
+                                                          schema:addressLocality  "Veurne" ;
                                                           schema:postalCode       "8630" ;
                                                           schema:streetAddress    "Middenweg 7"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.031669" ;
+                                 schema:longitude       "2.584334"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_zuivel_winkel_kaas_lr.jpg?itok=VSc-59e7" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_kaas_maken_rijpen_lr.jpg?itok=4ssjt_Tt" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_kaasplank_lr.jpg?itok=tZAZlj6N" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_zuivel_koeien_lr.jpg?itok=wrGz2CN_" ;
         schema:name            "Kaasmakerij De Moerenaar" ;
         schema:url             "http://www.demoerenaar.be/" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:farmShop" , "at:producer" , "at:pointOfSale" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-de-panne" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/kaasmakerij-de-moerenaar-0" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:offersFoodType     "ft:icecream" , "ft:milk_products" .
@@ -186,7 +185,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;

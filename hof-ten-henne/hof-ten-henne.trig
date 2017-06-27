@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -128,7 +129,7 @@
         foaf:account           <https://www.facebook.com/pages/Hof-Ten-Henne/238313339621131?fref=ts> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hof_ten_henne_buitenkant.jpg?itok=gh7XNKY2" ;
         foaf:homepage          "http://www.hoftenhenne.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/hof-ten-henne" , "http://www.rechtvanbijdeboer.be/node/1102" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/hof-ten-henne-0" , "http://www.rechtvanbijdeboer.be/hof-ten-henne" , "http://www.rechtvanbijdeboer.be/node/2381" , "http://www.rechtvanbijdeboer.be/node/1102" ;
         foaf:name              "Hof Ten Henne" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.hoftenhenne.be" ;
@@ -139,25 +140,23 @@
         schema:description     "Hof Ten Henne is een gemengd bedrijf in Iddergem met melkvee, vleesvee, akkerbouw, hoevewinkel en kinderboerderij. Wij ontvangen ook scholen en verenigingen. U vindt ons ook op facebook (via een link op onze website)" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "Iddergem" ;
+                                                          schema:addressLocality  "Iddergem (Denderleeuw)" ;
                                                           schema:postalCode       "9472" ;
                                                           schema:streetAddress    "Hoogstraat 106"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.875813" ;
+                                 schema:longitude       "4.046663"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hof_ten_henne_buitenkant.jpg?itok=gh7XNKY2" ;
         schema:name            "Hof Ten Henne" ;
         schema:url             "http://www.hoftenhenne.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/hof-ten-henne-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:pointOfSale" , "at:producer" , "at:farmShop" ;
         ofd:offersFoodType     "ft:bakery_products" , "ft:beef" , "ft:fruits" , "ft:poultry_meat" , "ft:eggs" , "ft:potatoes" , "ft:pork" , "ft:milk_products" , "ft:icecream" .
 
 <https://www.facebook.com/pages/Hof-Ten-Henne/238313339621131?fref=ts>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "238313339621131?fref=ts" ;
+        dct:identifier               "238313339621131?fref=ts" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "Hof-Ten-Henne" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -190,7 +189,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -201,9 +200,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

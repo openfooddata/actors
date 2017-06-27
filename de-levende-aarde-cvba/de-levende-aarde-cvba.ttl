@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/de-levende-aarde-cvba>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_levende_aarde_cvba_marktwagen_geitenkaasjes_producent.jpg?itok=9MfT4sLQ" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_levende_aarde_cvba_geitenkaasjes.jpg?itok=LMhPoryB" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1488" , "http://www.rechtvanbijdeboer.be/de-levende-aarde-cvba" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1488" , "http://www.rechtvanbijdeboer.be/node/2976" , "http://www.rechtvanbijdeboer.be/de-levende-aarde-cvba-0" , "http://www.rechtvanbijdeboer.be/de-levende-aarde-cvba" ;
         foaf:name              "De Levende Aarde C.V.B.A." ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "remyschiffeleers@hotmail.com" ;
@@ -139,11 +140,37 @@
                                                           schema:postalCode       "3570" ;
                                                           schema:streetAddress    "Aardbruggenstraat 85"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.877420" ;
+                                 schema:longitude       "5.293335"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_levende_aarde_cvba_geitenkaasjes.jpg?itok=LMhPoryB" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_levende_aarde_cvba_marktwagen_geitenkaasjes_producent.jpg?itok=9MfT4sLQ" ;
         schema:name            "De Levende Aarde C.V.B.A." ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:pointOfSale" , "at:farmShop" , "at:producer" ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wilsele-putkapel" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-blauwput" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-tielt-vl-br" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-hasselt-0" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-heverlee-terbank" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-zoutleeuw-tinteltuin" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-scherpenheuvel" ;
                                  ofd:relatedContext  "at:pointOfSale"
@@ -153,91 +180,7 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-vlierbeek" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kortrijk-dutsel" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-heverlee" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-hasselt-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-blauwput" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-veltem" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-herent-doren" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-tienen" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-bierbeek" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-korbeek-lo" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-kessel-lo" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-gemeentestraat" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-heverlee-terbank" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wilsele-putkapel" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-wereldwinkel" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-tielt-vl-br" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-martelarenlaan" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-boven-lo" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/leuven" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-tildonk" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-boutersem" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-aarschot" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-diest" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -245,27 +188,7 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-heverlee-park" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-tongeren" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wijgmaal-bis" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-rotselaar-molen" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-herent-centrum" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-levende-aarde-cvba-0" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kortenberg" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -273,7 +196,11 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wilsele-hoogveld" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-aarschot" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-heverlee-park" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -285,43 +212,11 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-gelrode" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-wereldwinkel" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kortenberg" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-laakdal" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-hasselt" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/leuven-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-zaventem" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wilsele-dorp-ii" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-beosierlaan" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-diest" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wakkerzeel" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kortrijk-dutsel" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -329,15 +224,119 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-gelrode" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-houwaart" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-zoutleeuw-tinteltuin" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-heverlee" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-bierbeek" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-herent-doren" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-vlierbeek" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/leuven" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-laakdal" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wakkerzeel" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wijgmaal-bis" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-kessel-lo" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-boutersem" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-tongeren" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-rotselaar-molen" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-gemeentestraat" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/leuven-0" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-boven-lo" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-veltem" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wilsele-dorp-ii" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-martelarenlaan" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-hasselt" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-zaventem" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-tildonk" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-oud-heverlee" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-wilsele-hoogveld" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-kessel-lo-beosierlaan" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-herent-centrum" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-tienen" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/voedselteam-korbeek-lo" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:offersFoodType     "ft:milk_products" , "ft:lamb_meat" .
@@ -385,11 +384,11 @@
 ofd:ActorRelationship
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

@@ -20,18 +20,6 @@
      ]
   }
    ,
-  "https://w3id.org/openfooddata/onto/core#ActorRelationship" : { 
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "http://www.w3.org/2000/01/rdf-schema#Resource"
-    }
-    , { 
-      "type" : "uri" ,
-      "value" : "http://www.w3.org/2000/01/rdf-schema#Class"
-    }
-     ]
-  }
-   ,
   "https://schema.org/PostalAddress" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -77,20 +65,25 @@
      ]
   }
    ,
-  "_:705c1f49ddfbd31f0dedc522d8ffe8e0" : { 
-    "https://schema.org/address" : [ { 
-      "type" : "bnode" ,
-      "value" : "_:878acfe2296a4279004eaa81797e0872"
-    }
-     ] ,
+  "_:06270d393b7e1eb9fae01fbc26910067" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
-      "value" : "https://schema.org/GeoCoordinates"
+      "value" : "https://schema.org/PostalAddress"
     }
      ] ,
-    "https://schema.org/addressCountry" : [ { 
+    "https://schema.org/streetAddress" : [ { 
       "type" : "literal" ,
-      "value" : "Belgium"
+      "value" : "Groenestraat 50"
+    }
+     ] ,
+    "https://schema.org/postalCode" : [ { 
+      "type" : "literal" ,
+      "value" : "8610"
+    }
+     ] ,
+    "https://schema.org/addressLocality" : [ { 
+      "type" : "literal" ,
+      "value" : "Handzame (Kortemark)"
     }
      ]
   }
@@ -136,30 +129,30 @@
      ]
   }
    ,
-  "_:625100c6df6eae5a3c526716ab6063c3" : { 
-    "https://schema.org/url" : [ { 
-      "type" : "literal" ,
-      "value" : "http://www.handsaeme-foiegras.net/"
+  "_:015e9ad044ae173cc0e6dd6bf53b417d" : { 
+    "https://schema.org/address" : [ { 
+      "type" : "bnode" ,
+      "value" : "_:06270d393b7e1eb9fae01fbc26910067"
     }
      ] ,
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
-      "value" : "https://schema.org/ContactPoint"
+      "value" : "https://schema.org/GeoCoordinates"
     }
      ] ,
-    "https://schema.org/email" : [ { 
+    "https://schema.org/addressCountry" : [ { 
       "type" : "literal" ,
-      "value" : "deprezjan@skynet.be"
+      "value" : "Belgium"
     }
      ] ,
-    "http://xmlns.com/foaf/0.1/homepage" : [ { 
+    "https://schema.org/latitude" : [ { 
       "type" : "literal" ,
-      "value" : "http://www.handsaeme-foiegras.net/"
+      "value" : "51.007543"
     }
      ] ,
-    "https://schema.org/telephone" : [ { 
+    "https://schema.org/longitude" : [ { 
       "type" : "literal" ,
-      "value" : "051/570372"
+      "value" : "3.007426"
     }
      ]
   }
@@ -344,29 +337,6 @@
      ]
   }
    ,
-  "_:878acfe2296a4279004eaa81797e0872" : { 
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://schema.org/PostalAddress"
-    }
-     ] ,
-    "https://schema.org/streetAddress" : [ { 
-      "type" : "literal" ,
-      "value" : "Groenestraat 50"
-    }
-     ] ,
-    "https://schema.org/postalCode" : [ { 
-      "type" : "literal" ,
-      "value" : "8610"
-    }
-     ] ,
-    "https://schema.org/addressLocality" : [ { 
-      "type" : "literal" ,
-      "value" : "Handzame"
-    }
-     ]
-  }
-   ,
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -385,24 +355,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
-    }
-     ]
-  }
-   ,
-  "_:8fcc2cf3617dc631750e48d22a3b25c0" : { 
-    "https://w3id.org/openfooddata/onto/core#relatedActor" : [ { 
-      "type" : "literal" ,
-      "value" : "https://w3id.org/openfooddata/actors/handsaeme-foie-gras-0"
-    }
-     ] ,
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://w3id.org/openfooddata/onto/core#ActorRelationship"
-    }
-     ] ,
-    "https://w3id.org/openfooddata/onto/core#relatedContext" : [ { 
-      "type" : "literal" ,
-      "value" : "at:pointOfSale"
     }
      ]
   }
@@ -565,10 +517,26 @@
      ] ,
     "https://w3id.org/openfooddata/onto/core#actorType" : [ { 
       "type" : "literal" ,
+      "value" : "at:pointOfSale"
+    }
+    , { 
+      "type" : "literal" ,
       "value" : "at:producer"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "at:farmShop"
     }
      ] ,
     "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/node/2533"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/handsaeme-foie-gras-0"
+    }
+    , { 
       "type" : "literal" ,
       "value" : "http://www.rechtvanbijdeboer.be/node/1143"
     }
@@ -584,12 +552,7 @@
      ] ,
     "https://schema.org/contactPoint" : [ { 
       "type" : "bnode" ,
-      "value" : "_:625100c6df6eae5a3c526716ab6063c3"
-    }
-     ] ,
-    "https://w3id.org/openfooddata/onto/core#downstreamRel" : [ { 
-      "type" : "bnode" ,
-      "value" : "_:8fcc2cf3617dc631750e48d22a3b25c0"
+      "value" : "_:97362871cc12fcbfb78a36d395d5761c"
     }
      ] ,
     "http://xmlns.com/foaf/0.1/homepage" : [ { 
@@ -643,7 +606,7 @@
      ] ,
     "https://schema.org/geo" : [ { 
       "type" : "bnode" ,
-      "value" : "_:705c1f49ddfbd31f0dedc522d8ffe8e0"
+      "value" : "_:015e9ad044ae173cc0e6dd6bf53b417d"
     }
      ] ,
     "https://schema.org/name" : [ { 
@@ -676,6 +639,34 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+    }
+     ]
+  }
+   ,
+  "_:97362871cc12fcbfb78a36d395d5761c" : { 
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "https://schema.org/ContactPoint"
+    }
+     ] ,
+    "https://schema.org/email" : [ { 
+      "type" : "literal" ,
+      "value" : "deprezjan@skynet.be"
+    }
+     ] ,
+    "http://xmlns.com/foaf/0.1/homepage" : [ { 
+      "type" : "literal" ,
+      "value" : "http://www.handsaeme-foiegras.net/"
+    }
+     ] ,
+    "https://schema.org/telephone" : [ { 
+      "type" : "literal" ,
+      "value" : "051/570372"
+    }
+     ] ,
+    "https://schema.org/url" : [ { 
+      "type" : "literal" ,
+      "value" : "http://www.handsaeme-foiegras.net/"
     }
      ]
   }

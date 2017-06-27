@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,23 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/zuivelboerderij-de-natuurhoeve>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Hoge Voetweg 17 8560 Gullegem" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:isPrimaryTopicOf  "https://www.rechtvanbijdeboer.be/node/1528" , "http://www.rechtvanbijdeboer.be/zuivelboerderij-de-natuurhoeve-0" , "http://www.rechtvanbijdeboer.be/node/3017" , "https://www.rechtvanbijdeboer.be/zuivelboerderij-de-natuurhoeve" ;
+        foaf:name              "Zuivelboerderij De Natuurhoeve" ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Gullegem" ;
+                                                          schema:postalCode       "8560" ;
+                                                          schema:streetAddress    "Hoge Voetweg 17"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.847721" ;
+                                 schema:longitude       "3.210592"
+                               ] ;
+        schema:name            "Zuivelboerderij De Natuurhoeve" ;
+        ofd:actorType          "at:producer" , "at:farmShop" , "at:pointOfSale" ;
+        ofd:offersFoodType     "ft:milk_products" , "ft:icecream" , "ft:eggs" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -170,6 +182,8 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

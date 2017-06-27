@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -125,7 +126,7 @@
 
 <https://www.facebook.com/boerderijdewittelelie>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "https:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -134,7 +135,7 @@
         a                      foaf:Agent ;
         foaf:account           <https://www.facebook.com/boerderijdewittelelie> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/koe.jpg?itok=Bv_QD_6B" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pia2.jpg?itok=YfYMHthE" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/10805846_814260991964598_3711691333705069181_n.jpg?itok=-rK8E0Mb" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1426" , "http://www.rechtvanbijdeboer.be/de-witte-lelie" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1426" , "http://www.rechtvanbijdeboer.be/de-witte-lelie-0" , "http://www.rechtvanbijdeboer.be/de-witte-lelie" , "http://www.rechtvanbijdeboer.be/node/2908" ;
         foaf:name              "De Witte Lelie" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "marc-en-ingrid@hotmail.com" ;
@@ -147,28 +148,26 @@
                                                           schema:postalCode       "2222" ;
                                                           schema:streetAddress    "Itegemseweg 98"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.100126" ;
+                                 schema:longitude       "4.774289"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/koe.jpg?itok=Bv_QD_6B" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pia2.jpg?itok=YfYMHthE" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/10805846_814260991964598_3711691333705069181_n.jpg?itok=-rK8E0Mb" ;
         schema:name            "De Witte Lelie" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:farmShop" , "at:pointOfSale" , "at:producer" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-wommelgem" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-cultuurcentrum-berchem" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-witte-lelie-0" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-wommelgem" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-permeke-antwerpen" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-cultuurcentrum-berchem" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:offersFoodType     "ft:eggs" , "ft:milk_products" , "ft:icecream" .
+        ofd:offersFoodType     "ft:icecream" , "ft:eggs" , "ft:milk_products" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -183,7 +182,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -198,7 +197,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;

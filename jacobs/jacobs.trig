@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -66,7 +67,7 @@
                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>
-        a       <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+        a       <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/2000/01/rdf-schema#comment>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -124,12 +125,23 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/jacobs>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Liniestraat 48 3545 Halen" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/2973" , "http://www.rechtvanbijdeboer.be/jacobs-0" , "https://www.rechtvanbijdeboer.be/node/1485" , "https://www.rechtvanbijdeboer.be/jacobs" ;
+        foaf:name              "Jacobs" ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Halen" ;
+                                                          schema:postalCode       "3545" ;
+                                                          schema:streetAddress    "Liniestraat 48"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.937191" ;
+                                 schema:longitude       "5.100361"
+                               ] ;
+        schema:name            "Jacobs" ;
+        ofd:actorType          "at:farmShop" , "at:pointOfSale" , "at:producer" ;
+        ofd:offersFoodType     "ft:potatoes" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -144,7 +156,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -171,7 +183,9 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
-schema:GeoCoordinates
-        a       <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+schema:GeoCoordinates
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

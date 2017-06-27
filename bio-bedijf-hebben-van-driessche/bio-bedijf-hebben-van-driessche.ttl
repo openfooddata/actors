@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,23 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/bio-bedijf-hebben-van-driessche>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Singel 8 8970 Poperinge" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:isPrimaryTopicOf  "https://www.rechtvanbijdeboer.be/bio-bedijf-hebben-van-driessche" , "https://www.rechtvanbijdeboer.be/node/1394" , "http://www.rechtvanbijdeboer.be/node/2867" , "http://www.rechtvanbijdeboer.be/bio-bedijf-hebben-van-driessche-0" ;
+        foaf:name              "Bio-bedijf Hebben-Van Driessche" ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Poperinge" ;
+                                                          schema:postalCode       "8970" ;
+                                                          schema:streetAddress    "Singel 8"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.837977" ;
+                                 schema:longitude       "2.735553"
+                               ] ;
+        schema:name            "Bio-bedijf Hebben-Van Driessche" ;
+        ofd:actorType          "at:producer" , "at:farmShop" , "at:pointOfSale" ;
+        ofd:offersFoodType     "ft:vegetables" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -170,6 +182,8 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

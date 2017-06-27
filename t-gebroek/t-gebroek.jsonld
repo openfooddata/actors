@@ -1,15 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Zutendaal",
     "postalCode" : "3690",
     "streetAddress" : "Zuurbroekstraat 11"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.921041",
+    "longitude" : "5.575616"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -17,11 +19,6 @@
     "email" : "frans.beckers@zutendaal.be",
     "telephone" : "089/611762",
     "url" : "http://www.tgebroek.be/"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-gebroek-0",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,20 +160,16 @@
     "account" : "https://www.facebook.com/gebroek?fref=ts",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "homepage" : "http://www.tgebroek.be/",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-gebroek", "http://www.rechtvanbijdeboer.be/node/1193" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2595", "http://www.rechtvanbijdeboer.be/t-gebroek-0", "http://www.rechtvanbijdeboer.be/t-gebroek", "http://www.rechtvanbijdeboer.be/node/1193" ],
     "name" : "'t Gebroek",
     "contactPoint" : "_:b2",
     "description" : "De boerderij 't Gebroek tracht zoveel mogelijk vers, seizoensgebonden en streekeigen te werken. Speciale aandacht gaat uit naar oude variëteiten en bijna vergeten soorten die wegens te weinig productief in onbruik zijn geraakt. Ze bezitten nochtans bepaalde eigenschappen die de moeite waard zijn om te behouden, zoals hun bijzondere smaak of ziekteresistentie. Zegt de aardappelnaam \"Ratte\" of de appel \"Keuleman\" of groenten als pastinaak of postelein je iets? Een ander \"ouderwets graangewas\" is boekweit. Het wordt ook beuktarwe genoemd, omdat de korrels lijken op beukennootjes. Boekweit wordt ook wel het graan van de armen genoemd. Boekweit is een heel oud gewas dat met een rooswitte kleur prachtig bloeit en enorm veel insecten lokt, waaronder de bijen die er de speciaal smakende boekweithoning van voortbrengen. De meeste mensen kennen boekweit van het meel en de boekweitpannenkoeken.",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "'t Gebroek",
     "url" : "http://www.tgebroek.be/",
-    "actorType" : "at:producer",
-    "downstreamRel" : "_:b3",
+    "actorType" : [ "at:farmShop", "at:pointOfSale", "at:producer" ],
     "offersFoodType" : [ "ft:vegetables", "ft:bakery_products", "ft:fruits", "ft:milk_products" ]
-  }, {
-    "@id" : "ofd:ActorRelationship",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "https://www.facebook.com/gebroek?fref=ts",
     "@type" : "foaf:OnlineAccount",
@@ -202,6 +195,21 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -212,24 +220,18 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "name" : {
@@ -242,21 +244,23 @@
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -268,25 +272,11 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

@@ -2,8 +2,16 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "Scheewege 20 8340 Damme",
-    "addressCountry" : "Belgium"
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.235894",
+    "longitude" : "3.359279"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Damme",
+    "postalCode" : "8340",
+    "streetAddress" : "Scheewege 20"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -79,7 +87,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -131,10 +139,18 @@
     "@id" : "schema:GeoCoordinates",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
+    "@id" : "schema:PostalAddress",
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+  }, {
     "@id" : "https://w3id.org/openfooddata/actors/fraises-de-guillaume",
     "@type" : "foaf:Agent",
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2856", "http://www.rechtvanbijdeboer.be/fraises-de-guillaume-0", "https://www.rechtvanbijdeboer.be/fraises-de-guillaume", "https://www.rechtvanbijdeboer.be/node/1382" ],
+    "name" : "Fraises de Guillaume",
+    "description" : "",
     "geo" : "_:b0",
-    "actorType" : "at:producer"
+    "schema:name" : "Fraises de Guillaume",
+    "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
+    "offersFoodType" : [ "ft:potatoes", "ft:fruits", "ft:vegetables" ]
   } ],
   "@context" : {
     "domain" : {
@@ -153,21 +169,50 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
-      "@id" : "https://schema.org/address"
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

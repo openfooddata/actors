@@ -1,27 +1,27 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/limousin-puur-0",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Schore",
+    "postalCode" : "8433",
+    "streetAddress" : "Schorestraat 61 B"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.limousinpuur.com",
     "email" : "info@limousinpuur.com",
     "telephone" : "051/555541",
     "url" : "http://www.limousinpuur.com"
   }, {
-    "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Schore",
-    "postalCode" : "8433",
-    "streetAddress" : "Schorestraat 61 B"
-  }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/limousin-puur-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,14 +165,14 @@
     "homepage" : "http://www.limousinpuur.com",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/limousin-puur", "http://www.rechtvanbijdeboer.be/node/1169" ],
     "foaf:name" : "Limousin Puur",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "Limousin Puur is een jong bedrijf dat zich sinds 1996 gespecialiseerd heeft in het kweken van een eigen veestapel, met name limousin-runderen. Met het vlees van het limousinras keert de consument tevreden terug naar de pure natuur. Het ras vindt zijn oorsprong in de streek van Limoges in Frankrijk. De limousinrunderen en schapen worden op het bedrijf zelf gekweekt met zelfgeteelde plant-aardige gewassen. Door voortdurende research en enkel te kweken met de beste runderen kunnen wij u een vlees van topkwaliteit garanderen. Het varkensvlees wordt zorgvuldig gekozen uit door ons geselecteerde landbouwbedrijven.",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Limousin Puur",
     "url" : "http://www.limousinpuur.com",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:pork", "ft:lamb_meat", "ft:fruit_juices", "ft:beef" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -202,11 +202,21 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -220,15 +230,6 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -239,30 +240,20 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -270,23 +261,33 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "account" : {
-      "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

@@ -2,8 +2,16 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "Bosstraat 18 3545 Halen",
-    "addressCountry" : "Belgium"
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.926070",
+    "longitude" : "5.119736"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Halen",
+    "postalCode" : "3545",
+    "streetAddress" : "Bosstraat 18"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -131,10 +139,18 @@
     "@id" : "schema:GeoCoordinates",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
+    "@id" : "schema:PostalAddress",
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+  }, {
     "@id" : "https://w3id.org/openfooddata/actors/de-belgaard",
     "@type" : "foaf:Agent",
+    "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/node/1321", "http://www.rechtvanbijdeboer.be/node/2763", "http://www.rechtvanbijdeboer.be/de-belgaard-0", "https://www.rechtvanbijdeboer.be/de-belgaard" ],
+    "name" : "De Belgaard",
+    "description" : "",
     "geo" : "_:b0",
-    "actorType" : "at:producer"
+    "schema:name" : "De Belgaard",
+    "actorType" : [ "at:farmShop", "at:pointOfSale", "at:producer" ],
+    "offersFoodType" : [ "ft:fruits", "ft:poultry_meat" ]
   } ],
   "@context" : {
     "domain" : {
@@ -153,21 +169,50 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
-      "@id" : "https://schema.org/address"
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

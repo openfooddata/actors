@@ -2,8 +2,16 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "Hondstraat 97 8700 Tielt",
-    "addressCountry" : "Belgium"
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.001240",
+    "longitude" : "3.307739"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Tielt",
+    "postalCode" : "8700",
+    "streetAddress" : "Hondstraat 97"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -30,7 +38,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -131,10 +139,18 @@
     "@id" : "schema:GeoCoordinates",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
+    "@id" : "schema:PostalAddress",
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+  }, {
     "@id" : "https://w3id.org/openfooddata/actors/van-koe-op-tafel",
     "@type" : "foaf:Agent",
+    "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/node/1538", "http://www.rechtvanbijdeboer.be/van-koe-op-tafel-0", "https://www.rechtvanbijdeboer.be/van-koe-op-tafel", "http://www.rechtvanbijdeboer.be/node/3027" ],
+    "foaf:name" : "Van koe op tafel",
+    "description" : "",
     "geo" : "_:b0",
-    "actorType" : "at:producer"
+    "name" : "Van koe op tafel",
+    "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
+    "offersFoodType" : [ "ft:milk_products", "ft:potatoes", "ft:icecream" ]
   } ],
   "@context" : {
     "domain" : {
@@ -156,18 +172,47 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
-      "@id" : "https://schema.org/address"
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

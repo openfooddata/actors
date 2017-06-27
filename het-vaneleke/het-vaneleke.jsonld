@@ -6,17 +6,22 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.403855",
+    "longitude" : "4.853294"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Merksplas",
     "postalCode" : "2330",
     "streetAddress" : "Witte Keiweg 1"
   }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.403855",
-    "longitude" : "4.853294"
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/het-vaneleke-ijssalon-en-schapenboerderij",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -92,7 +97,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -150,15 +155,15 @@
     "@id" : "https://w3id.org/openfooddata/actors/het-vaneleke",
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/knuffellammetjes%20%28Large%29.jpg?itok=9kb0hk_R",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/het-vaneleke", "http://www.rechtvanbijdeboer.be/node/3479" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/het-vaneleke", "http://www.rechtvanbijdeboer.be/node/3480", "http://www.rechtvanbijdeboer.be/node/3479", "http://www.rechtvanbijdeboer.be/het-vaneleke-0" ],
     "foaf:name" : "Het Vaneleke",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/knuffellammetjes%20%28Large%29.jpg?itok=9kb0hk_R",
     "name" : "Het Vaneleke",
-    "actorType" : [ "at:pointOfSale", "at:farmShop" ],
+    "actorType" : [ "at:collectionPoint", "at:pointOfSale", "at:producer" ],
     "offersFoodType" : [ "ft:icecream", "ft:milk_products", "ft:lamb_meat", "ft:fruit_juices" ],
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : [ "_:b0", "_:b3" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -186,15 +191,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -206,6 +202,10 @@
     },
     "address" : {
       "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "offersFoodType" : {
@@ -223,22 +223,28 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

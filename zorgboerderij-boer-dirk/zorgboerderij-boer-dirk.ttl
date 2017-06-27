@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,34 +128,28 @@
         a                      foaf:Agent ;
         foaf:account           <http://www.facebook.com/ZorgboerderijBoerDirk> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/nieuwe%20aardappelen.png?itok=NNAYpxFa" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/15400916_1346033185420666_63665127933140017_n.jpg?itok=xD_hDx1V" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/17295_940792232611432_8246600415968225218_n.jpg?itok=skuauEpt" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1749" , "http://www.rechtvanbijdeboer.be/zorgboerderij-boer-dirk" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1749" , "http://www.rechtvanbijdeboer.be/node/3296" , "http://www.rechtvanbijdeboer.be/zorgboerderij-boer-dirk" , "http://www.rechtvanbijdeboer.be/zorgboerderij-boer-dirk-1" ;
         foaf:name              "Zorgboerderij Boer Dirk" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "boerdirk@boerdirk.be" ;
                                  schema:telephone  "0496 319265" , "0496/319265"
                                ] ;
-        schema:description     "Wij kweken groente en pluimvee (ook eieren) op een zo milieuvriendelijke en natuurlijk mogelijke manier, bijgestaan door hulpboeren. De boerderijwinkel is open op volgende dagen: woensdag: 14.00 - 17.30 zaterdag: 9.00 - 15.00 Rij gerust de lange oprit op, parkeerplaats voorzien op de boerderij. Naast de winkel kan je je ook inschrijven voor de groentelijst die op zondag/maandag verstuurd wordt. Bestellingen kunnen doorgegeven en afgehaald worden in de winkel tijdens de openingsuren of op de afhaalpunten na afspraak." ;
+        schema:description     "of na afspraak" , "Wij kweken groente en pluimvee (ook eieren) op een zo milieuvriendelijke en natuurlijk mogelijke manier, bijgestaan door hulpboeren. De boerderijwinkel is open op volgende dagen: woensdag: 14.00 - 17.30 zaterdag: 9.00 - 15.00 Rij gerust de lange oprit op, parkeerplaats voorzien op de boerderij. Naast de winkel kan je je ook inschrijven voor de groentelijst die op zondag/maandag verstuurd wordt. Bestellingen kunnen doorgegeven en afgehaald worden in de winkel tijdens de openingsuren of op de afhaalpunten na afspraak." ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "Moorsel (Aalst)" ;
+                                                          schema:addressLocality  "Moorsel" ;
                                                           schema:postalCode       "9310" ;
                                                           schema:streetAddress    "Kattenbroekstraat 9A"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.953923" ;
+                                 schema:longitude       "4.090159"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/17295_940792232611432_8246600415968225218_n.jpg?itok=skuauEpt" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/15400916_1346033185420666_63665127933140017_n.jpg?itok=xD_hDx1V" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/nieuwe%20aardappelen.png?itok=NNAYpxFa" ;
         schema:name            "Zorgboerderij Boer Dirk" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:collectionPoint" , "at:pointOfSale" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/zorgboerderij-boer-dirk-2" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/zorgboerderij-boer-dirk-1" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/bakkerij-brood-en-zo" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/zorgboerderij-boer-dirk-3" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -162,14 +157,18 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/zorgboerderij-boer-dirk-3" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/bakkerij-brood-en-zo" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/zorgboerderij-boer-dirk-2" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:offersFoodType     "ft:fruit_juices" , "ft:vegetables" , "ft:eggs" , "ft:poultry_meat" , "ft:spices" , "ft:fruits" , "ft:potatoes" .
 
 <http://www.facebook.com/ZorgboerderijBoerDirk>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "http:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -187,7 +186,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -202,7 +201,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -214,16 +213,16 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
-foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
 ofd:ActorRelationship
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
-schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

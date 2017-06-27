@@ -1,9 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:ContactPoint",
+    "email" : "ganzenhof@groepubuntu.org",
+    "telephone" : "056 75 64 11"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Avelgem",
+    "postalCode" : "8580",
+    "streetAddress" : "Bosstraat 2"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "Bosstraat 2 8580 Avelgem",
-    "addressCountry" : "Belgium"
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.783840",
+    "longitude" : "3.447516"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -128,13 +141,25 @@
     "@id" : "foaf:Agent",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
+    "@id" : "schema:ContactPoint",
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+  }, {
     "@id" : "schema:GeoCoordinates",
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+  }, {
+    "@id" : "schema:PostalAddress",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "https://w3id.org/openfooddata/actors/het-ganzenhof",
     "@type" : "foaf:Agent",
-    "geo" : "_:b0",
-    "actorType" : "at:producer"
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3264", "http://www.rechtvanbijdeboer.be/het-ganzenhof-0", "https://www.rechtvanbijdeboer.be/het-ganzenhof", "https://www.rechtvanbijdeboer.be/node/1724" ],
+    "name" : "Het Ganzenhof",
+    "contactPoint" : "_:b0",
+    "description" : "",
+    "geo" : "_:b2",
+    "schema:name" : "Het Ganzenhof",
+    "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
+    "offersFoodType" : [ "ft:eggs", "ft:vegetables", "ft:potatoes", "ft:bakery_products", "ft:fruits", "ft:poultry_meat", "ft:alcoholic_beverages" ]
   } ],
   "@context" : {
     "domain" : {
@@ -153,21 +178,60 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
-      "@id" : "https://schema.org/address"
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

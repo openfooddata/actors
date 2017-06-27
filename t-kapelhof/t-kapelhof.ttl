@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,7 +128,7 @@
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoevewinkel.jpg?itok=jrQQtbmE" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/480382_396506120424939_185995465_n.jpg?itok=Ls_bw8uz" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oe_enkel.jpg?itok=EsKBDRIa" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/kapelhof.jpg?itok=dcCnXNYg" ;
         foaf:homepage          "http://www.tkapelhof.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/t-kapelhof" , "http://www.rechtvanbijdeboer.be/node/1079" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/t-kapelhof" , "http://www.rechtvanbijdeboer.be/node/1079" , "http://www.rechtvanbijdeboer.be/node/2348" , "http://www.rechtvanbijdeboer.be/t-kapelhof-0" ;
         foaf:name              "'t Kapelhof" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.tkapelhof.be" ;
@@ -142,16 +143,14 @@
                                                           schema:postalCode       "8950" ;
                                                           schema:streetAddress    "Zuidlindestraat 9"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.724784" ;
+                                 schema:longitude       "2.849117"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oe_enkel.jpg?itok=EsKBDRIa" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoevewinkel.jpg?itok=jrQQtbmE" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/kapelhof.jpg?itok=dcCnXNYg" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/480382_396506120424939_185995465_n.jpg?itok=Ls_bw8uz" ;
         schema:name            "'t Kapelhof" ;
         schema:url             "http://www.tkapelhof.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/t-kapelhof-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:producer" , "at:farmShop" , "at:pointOfSale" ;
         ofd:offersFoodType     "ft:vegetables" , "ft:fruits" , "ft:potatoes" , "ft:eggs" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -193,9 +192,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

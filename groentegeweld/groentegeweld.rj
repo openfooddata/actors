@@ -20,20 +20,14 @@
      ]
   }
    ,
-  "_:7a7fba5bbc6d9fb5aafb4b258e49057c" : { 
-    "https://schema.org/address" : [ { 
-      "type" : "literal" ,
-      "value" : "Weeldestraat 168 2381 Weelde"
-    }
-     ] ,
+  "https://schema.org/PostalAddress" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
-      "value" : "https://schema.org/GeoCoordinates"
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Resource"
     }
-     ] ,
-    "https://schema.org/addressCountry" : [ { 
-      "type" : "literal" ,
-      "value" : "Belgium"
+    , { 
+      "type" : "uri" ,
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Class"
     }
      ]
   }
@@ -152,6 +146,29 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+    }
+     ]
+  }
+   ,
+  "_:73f62d548e27b3fae2a6ae731f1ff900" : { 
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "https://schema.org/PostalAddress"
+    }
+     ] ,
+    "https://schema.org/streetAddress" : [ { 
+      "type" : "literal" ,
+      "value" : "Weeldestraat 168"
+    }
+     ] ,
+    "https://schema.org/postalCode" : [ { 
+      "type" : "literal" ,
+      "value" : "2381"
+    }
+     ] ,
+    "https://schema.org/addressLocality" : [ { 
+      "type" : "literal" ,
+      "value" : "Weelde"
     }
      ]
   }
@@ -336,6 +353,34 @@
      ]
   }
    ,
+  "_:dd794a51e9ccb8b6728a143a750ead1f" : { 
+    "https://schema.org/address" : [ { 
+      "type" : "bnode" ,
+      "value" : "_:73f62d548e27b3fae2a6ae731f1ff900"
+    }
+     ] ,
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "https://schema.org/GeoCoordinates"
+    }
+     ] ,
+    "https://schema.org/addressCountry" : [ { 
+      "type" : "literal" ,
+      "value" : "Belgium"
+    }
+     ] ,
+    "https://schema.org/latitude" : [ { 
+      "type" : "literal" ,
+      "value" : "51.416611"
+    }
+     ] ,
+    "https://schema.org/longitude" : [ { 
+      "type" : "literal" ,
+      "value" : "5.014850"
+    }
+     ]
+  }
+   ,
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#List" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -379,19 +424,76 @@
   }
    ,
   "https://w3id.org/openfooddata/actors/groentegeweld" : { 
-    "https://w3id.org/openfooddata/onto/core#actorType" : [ { 
-      "type" : "literal" ,
-      "value" : "at:producer"
-    }
-     ] ,
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
       "value" : "http://xmlns.com/foaf/0.1/Agent"
     }
      ] ,
+    "https://w3id.org/openfooddata/onto/core#actorType" : [ { 
+      "type" : "literal" ,
+      "value" : "at:pointOfSale"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "at:producer"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "at:csaFarm"
+    }
+     ] ,
+    "https://w3id.org/openfooddata/onto/core#offersFoodType" : [ { 
+      "type" : "literal" ,
+      "value" : "ft:potatoes"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "ft:vegetables"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "ft:spices"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "ft:fruits"
+    }
+     ] ,
+    "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/groentegeweld-0"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "https://www.rechtvanbijdeboer.be/node/1902"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/node/3587"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "https://www.rechtvanbijdeboer.be/groentegeweld"
+    }
+     ] ,
+    "http://xmlns.com/foaf/0.1/name" : [ { 
+      "type" : "literal" ,
+      "value" : "Groentegeweld"
+    }
+     ] ,
     "https://schema.org/geo" : [ { 
       "type" : "bnode" ,
-      "value" : "_:7a7fba5bbc6d9fb5aafb4b258e49057c"
+      "value" : "_:dd794a51e9ccb8b6728a143a750ead1f"
+    }
+     ] ,
+    "https://schema.org/name" : [ { 
+      "type" : "literal" ,
+      "value" : "Groentegeweld"
+    }
+     ] ,
+    "https://schema.org/description" : [ { 
+      "type" : "literal" ,
+      "value" : ""
     }
      ]
   }

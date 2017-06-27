@@ -1,9 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/raf-patat-0",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "email" : "vangeelraf@telenet.be",
+    "telephone" : "0477/719202"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -19,12 +19,9 @@
     "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "schema:ContactPoint",
-    "email" : "vangeelraf@telenet.be",
-    "telephone" : "0477/719202"
+    "addressCountry" : "Belgium",
+    "latitude" : "51.150601",
+    "longitude" : "5.003435"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -96,11 +93,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,15 +158,15 @@
     "@id" : "https://w3id.org/openfooddata/actors/raf-patat",
     "@type" : "foaf:Agent",
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20150920_121857.jpg?itok=Pjdd9tRP", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0075.jpg?itok=55UyzNct" ],
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1248", "http://www.rechtvanbijdeboer.be/raf-patat" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1248", "http://www.rechtvanbijdeboer.be/raf-patat-0", "http://www.rechtvanbijdeboer.be/node/2671", "http://www.rechtvanbijdeboer.be/raf-patat" ],
     "name" : "Raf Patat",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b0",
     "description" : "Wij baten een gesloten varkensbedrijf uit met 150 zeugen. Daarnaast vermarkten wij 3 ha aardappelen op de hoeve en via een aardappelautomaat. Op de hoeve wordt ook stijldansen aangeleerd in een mooie landelijke setting.",
     "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0075.jpg?itok=55UyzNct", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20150920_121857.jpg?itok=Pjdd9tRP" ],
     "schema:name" : "Raf Patat",
-    "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b1" ],
+    "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
+    "downstreamRel" : "_:b1",
     "offersFoodType" : "ft:potatoes"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -192,6 +189,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -207,6 +210,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -220,41 +229,36 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

@@ -2,24 +2,21 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.837518",
+    "longitude" : "4.905067"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "Stijn-thijs@hotmail.com",
+    "telephone" : [ "0496/703283", "016/760566" ]
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Vissenaken",
     "postalCode" : "3300",
     "streetAddress" : "Sint-Pietersstraat 169"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/familiale-hoevebeenhouwerij-thijs-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "email" : "Stijn-thijs@hotmail.com",
-    "telephone" : [ "0496/703283", "016/760566" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -46,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -156,19 +153,15 @@
     "@id" : "https://w3id.org/openfooddata/actors/familiale-hoevebeenhouwerij-thijs",
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1470", "http://www.rechtvanbijdeboer.be/familiale-hoevebeenhouwerij-thijs" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2959", "http://www.rechtvanbijdeboer.be/node/1470", "http://www.rechtvanbijdeboer.be/familiale-hoevebeenhouwerij-thijs", "http://www.rechtvanbijdeboer.be/familiale-hoevebeenhouwerij-thijs-0" ],
     "foaf:name" : "Familiale Hoevebeenhouwerij Thijs",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b1",
     "description" : "",
     "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Familiale Hoevebeenhouwerij Thijs",
-    "actorType" : "at:producer",
-    "downstreamRel" : "_:b2",
+    "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
     "offersFoodType" : [ "ft:lamb_meat", "ft:pork" ]
-  }, {
-    "@id" : "ofd:ActorRelationship",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   } ],
   "@context" : {
     "domain" : {
@@ -187,21 +180,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -216,22 +203,30 @@
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -242,14 +237,9 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

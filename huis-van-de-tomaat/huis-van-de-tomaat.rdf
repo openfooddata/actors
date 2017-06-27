@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -26,6 +27,9 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
@@ -45,8 +49,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
@@ -66,8 +70,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -159,9 +163,27 @@
     <ofd:actorType>at:producer</ofd:actorType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>4.546110</schema:longitude>
+        <schema:latitude>51.099442</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Zijpstraat 130 2570 Duffel</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Zijpstraat 130</schema:streetAddress>
+            <schema:postalCode>2570</schema:postalCode>
+            <schema:addressLocality>Duffel</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/huis-van-de-tomaat-0</foaf:isPrimaryTopicOf>
+    <foaf:name>Huis van de tomaat</foaf:name>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3176</foaf:isPrimaryTopicOf>
+    <schema:name>Huis van de tomaat</schema:name>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/huis-van-de-tomaat</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:vegetables</ofd:offersFoodType>
+    <ofd:actorType>at:vendingMachine</ofd:actorType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1662</foaf:isPrimaryTopicOf>
+    <schema:description></schema:description>
   </foaf:Agent>
 </rdf:RDF>

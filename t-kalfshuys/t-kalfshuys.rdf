@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -24,6 +25,9 @@
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
@@ -66,8 +70,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -156,12 +160,30 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:List>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/t-kalfshuys">
-    <ofd:actorType>at:producer</ofd:actorType>
+    <schema:name>'t Kalfshuys</schema:name>
+    <ofd:actorType>at:collectionPoint</ofd:actorType>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3357</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:beef</ofd:offersFoodType>
+    <foaf:name>'t Kalfshuys</foaf:name>
+    <schema:description></schema:description>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>5.194574</schema:longitude>
+        <schema:latitude>50.895521</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Terbermenweg 200 3540 Herk-de-Stad</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Terbermenweg 200</schema:streetAddress>
+            <schema:postalCode>3540</schema:postalCode>
+            <schema:addressLocality>Herk-de-Stad</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/t-kalfshuys</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/t-kalfshuys-0</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1799</foaf:isPrimaryTopicOf>
   </foaf:Agent>
 </rdf:RDF>

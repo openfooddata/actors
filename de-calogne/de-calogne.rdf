@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -19,9 +20,6 @@
   </rdfs:Datatype>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-  </rdfs:Class>
-  <rdfs:Class rdf:about="https://w3id.org/openfooddata/onto/core#ActorRelationship">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
@@ -90,6 +88,9 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/OnlineAccount">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdf:Property rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate">
@@ -162,18 +163,29 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:Property>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/de-calogne">
-    <ofd:downstreamRel>
-      <ofd:ActorRelationship>
-        <ofd:relatedContext>at:pointOfSale</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/de-calogne-0</ofd:relatedActor>
-      </ofd:ActorRelationship>
-    </ofd:downstreamRel>
+    <foaf:account>
+      <foaf:OnlineAccount rdf:about="https://www.facebook.com/De-Calogne">
+        <foaf:accountServiceHomepage>https://www.facebook.com</foaf:accountServiceHomepage>
+        <foaf:accountName>https:</foaf:accountName>
+        <skos:prefLabel>Facebook</skos:prefLabel>
+        <dct:identifier></dct:identifier>
+      </foaf:OnlineAccount>
+    </foaf:account>
     <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/1628</foaf:isPrimaryTopicOf>
     <foaf:depiction>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv</foaf:depiction>
     <ofd:offersFoodType>ft:milk_products</ofd:offersFoodType>
     <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/de-calogne</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/de-calogne-0</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:depiction>http://www.rechtvanbijdeboer.be/sites/default/files/Calogne_ijs_producenten2.jpg</foaf:depiction>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <ofd:actorType>at:farmShop</ofd:actorType>
+    <ofd:offersFoodType>ft:icecream</ofd:offersFoodType>
+    <schema:description></schema:description>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>3.978739</schema:longitude>
+        <schema:latitude>50.758776</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
         <schema:address>
           <schema:PostalAddress>
@@ -184,12 +196,7 @@
         </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
-    <ofd:actorType>at:producer</ofd:actorType>
-    <ofd:offersFoodType>ft:icecream</ofd:offersFoodType>
-    <schema:description></schema:description>
-    <schema:name>De Calogne</schema:name>
-    <foaf:name>De Calogne</foaf:name>
-    <schema:image>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv</schema:image>
+    <schema:image>http://www.rechtvanbijdeboer.be/sites/default/files/Calogne_ijs_producenten2.jpg</schema:image>
     <schema:contactPoint>
       <schema:ContactPoint>
         <schema:telephone>0477/614 379</schema:telephone>
@@ -197,6 +204,10 @@
         <schema:email>depelseneer@skynet.be</schema:email>
       </schema:ContactPoint>
     </schema:contactPoint>
+    <schema:name>De Calogne</schema:name>
+    <schema:image>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv</schema:image>
+    <foaf:name>De Calogne</foaf:name>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3120</foaf:isPrimaryTopicOf>
   </foaf:Agent>
   <rdf:List rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>

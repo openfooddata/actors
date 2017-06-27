@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/laathof>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/laathof" , "http://www.rechtvanbijdeboer.be/node/1200" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/laathof" , "http://www.rechtvanbijdeboer.be/node/1200" , "http://www.rechtvanbijdeboer.be/node/2603" , "http://www.rechtvanbijdeboer.be/laathof-0" ;
         foaf:name              "Laathof" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "patrick.cornette1@telenet.be" ;
@@ -139,15 +140,13 @@
                                                           schema:postalCode       "1820" ;
                                                           schema:streetAddress    "Huinhovenstraat 18"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.938014" ;
+                                 schema:longitude       "4.485005"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "Laathof" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/laathof-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:farmShop" , "at:producer" , "at:pointOfSale" ;
         ofd:offersFoodType     "ft:potatoes" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -189,9 +188,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

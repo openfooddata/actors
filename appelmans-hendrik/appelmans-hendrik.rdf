@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -24,6 +25,9 @@
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
@@ -66,8 +70,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -153,13 +157,32 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:Property>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/appelmans-hendrik">
-    <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:name>Appelmans Hendrik</foaf:name>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/appelmans-hendrik</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:fruits</ofd:offersFoodType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>4.175650</schema:longitude>
+        <schema:latitude>50.845056</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Schapenstraat 56 1703 Schepdaal</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Schapenstraat 56</schema:streetAddress>
+            <schema:postalCode>1703</schema:postalCode>
+            <schema:addressLocality>Schepdaal</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:actorType>at:farmShop</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/2960</foaf:isPrimaryTopicOf>
+    <schema:name>Appelmans Hendrik</schema:name>
+    <schema:description></schema:description>
+    <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/appelmans-hendrik-0</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <ofd:offersFoodType>ft:poultry_meat</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1471</foaf:isPrimaryTopicOf>
   </foaf:Agent>
   <rdf:List rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>

@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -144,14 +145,6 @@
         ofd:actorType          "at:pointOfSale" , "at:foodTeams" ;
         ofd:offersFoodType     "ft:fruits" , "ft:alcoholic_beverages" , "ft:spices" , "ft:vegetables" , "ft:eggs" , "ft:beef" , "ft:lamb_meat" , "ft:icecream" , "ft:fruit_juices" , "ft:poultry_meat" , "ft:potatoes" , "ft:milk_products" , "ft:pork" , "ft:bakery_products" ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-levensbron" ;
-                                 ofd:relatedContext  "at:producer"
-                               ] ;
-        ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/gallinero" ;
-                                 ofd:relatedContext  "at:producer"
-                               ] ;
-        ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-levende-aarde-cvba" ;
                                  ofd:relatedContext  "at:producer"
                                ] ;
@@ -164,11 +157,15 @@
                                  ofd:relatedContext  "at:producer"
                                ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/vzw-de-winning-maatwerk" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/gallinero" ;
                                  ofd:relatedContext  "at:producer"
                                ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/t-fruitratje" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-fruittuin" ;
+                                 ofd:relatedContext  "at:producer"
+                               ] ;
+        ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/vzw-de-winning-maatwerk" ;
                                  ofd:relatedContext  "at:producer"
                                ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
@@ -176,7 +173,11 @@
                                  ofd:relatedContext  "at:producer"
                                ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/druiven-vanderkelen" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/t-fruitratje" ;
+                                 ofd:relatedContext  "at:producer"
+                               ] ;
+        ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-levensbron" ;
                                  ofd:relatedContext  "at:producer"
                                ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
@@ -184,7 +185,7 @@
                                  ofd:relatedContext  "at:producer"
                                ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-fruittuin" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/druiven-vanderkelen" ;
                                  ofd:relatedContext  "at:producer"
                                ] .
 
@@ -201,7 +202,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -228,12 +229,12 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
-ofd:ActorRelationship
+schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-schema:GeoCoordinates
+ofd:ActorRelationship
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

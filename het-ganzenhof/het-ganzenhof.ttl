@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,27 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/het-ganzenhof>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Bosstraat 2 8580 Avelgem" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3264" , "http://www.rechtvanbijdeboer.be/het-ganzenhof-0" , "https://www.rechtvanbijdeboer.be/het-ganzenhof" , "https://www.rechtvanbijdeboer.be/node/1724" ;
+        foaf:name              "Het Ganzenhof" ;
+        schema:contactPoint    [ a                 schema:ContactPoint ;
+                                 schema:email      "ganzenhof@groepubuntu.org" ;
+                                 schema:telephone  "056 75 64 11"
+                               ] ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Avelgem" ;
+                                                          schema:postalCode       "8580" ;
+                                                          schema:streetAddress    "Bosstraat 2"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.783840" ;
+                                 schema:longitude       "3.447516"
+                               ] ;
+        schema:name            "Het Ganzenhof" ;
+        ofd:actorType          "at:pointOfSale" , "at:farmShop" , "at:producer" ;
+        ofd:offersFoodType     "ft:eggs" , "ft:vegetables" , "ft:potatoes" , "ft:bakery_products" , "ft:fruits" , "ft:poultry_meat" , "ft:alcoholic_beverages" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -171,7 +187,11 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

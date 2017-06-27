@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/ch%C3%A2tes-winning>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010262.jpg?itok=2QvSUB8R" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/uithangbord.jpg?itok=VG8rfO1K" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010261.jpg?itok=P8jYkQOG" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/automaat2.jpg?itok=5qBeaMB1" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1091" , "http://www.rechtvanbijdeboer.be/ch%C3%A2tes-winning" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1091" , "http://www.rechtvanbijdeboer.be/node/2362" , "http://www.rechtvanbijdeboer.be/ch%C3%A2tes-winning-0" , "http://www.rechtvanbijdeboer.be/ch%C3%A2tes-winning" ;
         foaf:name              "Châtes Winning" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "philippe.duchateau1@telenet.be" ;
@@ -139,16 +140,14 @@
                                                           schema:postalCode       "3770" ;
                                                           schema:streetAddress    "Putstraat 6"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.808681" ;
+                                 schema:longitude       "5.602230"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/uithangbord.jpg?itok=VG8rfO1K" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/automaat2.jpg?itok=5qBeaMB1" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010261.jpg?itok=P8jYkQOG" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010262.jpg?itok=2QvSUB8R" ;
         schema:name            "Châtes Winning" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/ch%C3%A2tes-winning-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:offersFoodType     "ft:potatoes" , "ft:poultry_meat" , "ft:fruits" .
+        ofd:actorType          "at:vendingMachine" , "at:producer" , "at:pointOfSale" ;
+        ofd:offersFoodType     "ft:potatoes" , "ft:fruits" , "ft:poultry_meat" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -163,7 +162,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -189,9 +188,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

@@ -6,16 +6,16 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-lier",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.ophetveld.be",
     "email" : "griet.vanolmen@skynet.be",
     "telephone" : "0477/902111",
     "url" : "http://www.ophetveld.be"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-lier",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
@@ -60,7 +60,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -105,11 +105,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,14 +177,14 @@
     "homepage" : "http://www.ophetveld.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/op-het-veld", "http://www.rechtvanbijdeboer.be/node/1276" ],
     "name" : "Op Het Veld",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "Hallo, wij zijn Johan en Griet Vermeiren - Van Olmen. Sinds 1997 telen wij samen aardbeien op ons veld in de Steynehofweg in Bevel. Voor ons deden de ouders van Johan dit al vele jaren. Velen in de streek kenden wel 'die zoete aardbeien' van de Vermeiren. De laatste jaren is er echter veel veranderd. Ons bedrijfje is geëvolueerd naar een volwaardig tuinbouwbedrijf met een grootte van ongeveer 8,5 ha. Naast de klassieke openluchtteelt van aardbeien worden ook vervroegde en verlate teelten in de volle grond uitgevoerd, waardoor de oogstperiode zich uitstrekt van begin mei tot eind september. Tijdens deze maanden worden onze dagvers geplukte aardbeien rechtstreeks 'op het veld' verkocht. In 2000 werden ook braambessen opgeplant. Deze lekkernij wordt geplukt en verkocht van begin juli tot eind september. Sinds 2010 werd een ruim gamma aan houtig kleinfruit opgeplant: rode bessen, witte bessen, zwarte bessen, blauwbessen, stekelbessen, kiwibessen en frambozen. We kijken, samen met onze kindjes Mieke, Jef, Jan en Saar, elk jaar opnieuw uit naar de oogst van al dit lekkers!",
     "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ipod172.jpg?itok=aOiNwqFK",
     "schema:name" : "Op Het Veld",
     "url" : "http://www.ophetveld.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b2" ],
+    "downstreamRel" : [ "_:b1", "_:b0" ],
     "offersFoodType" : "ft:fruits"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,12 +207,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -223,7 +217,13 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -240,8 +240,8 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "account" : {
@@ -251,11 +251,19 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -266,21 +274,6 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -290,8 +283,16 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

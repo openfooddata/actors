@@ -1,9 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Sint-Kruis",
+    "postalCode" : "8310",
+    "streetAddress" : "Gemeneweideweg Noord 76"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "Gemeneweideweg Noord 76 8310 Sint-Kruis",
-    "addressCountry" : "Belgium"
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.223723",
+    "longitude" : "3.254531"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -131,10 +139,18 @@
     "@id" : "schema:GeoCoordinates",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
+    "@id" : "schema:PostalAddress",
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+  }, {
     "@id" : "https://w3id.org/openfooddata/actors/geiko-nv",
     "@type" : "foaf:Agent",
-    "geo" : "_:b0",
-    "actorType" : "at:producer"
+    "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/node/1510", "http://www.rechtvanbijdeboer.be/node/2999", "http://www.rechtvanbijdeboer.be/geiko-nv-0", "https://www.rechtvanbijdeboer.be/geiko-nv" ],
+    "name" : "Geiko NV",
+    "description" : "",
+    "geo" : "_:b1",
+    "schema:name" : "Geiko NV",
+    "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
+    "offersFoodType" : "ft:eggs"
   } ],
   "@context" : {
     "domain" : {
@@ -153,21 +169,50 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
-      "@id" : "https://schema.org/address"
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

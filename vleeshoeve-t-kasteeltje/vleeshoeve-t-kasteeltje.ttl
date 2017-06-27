@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/vleeshoeve-t-kasteeltje>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02572.jpg?itok=zmH80R5i" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/lenaerts002.jpg?itok=SV8o3FgQ" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/vleeshoeve-t-kasteeltje" , "http://www.rechtvanbijdeboer.be/node/1145" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/vleeshoeve-t-kasteeltje" , "http://www.rechtvanbijdeboer.be/node/2535" , "http://www.rechtvanbijdeboer.be/node/1145" , "http://www.rechtvanbijdeboer.be/vleeshoeve-t-kasteeltje-0" ;
         foaf:name              "Vleeshoeve 't Kasteeltje" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "lenaerts.raf@skynet.be" ;
@@ -139,15 +140,13 @@
                                                           schema:postalCode       "9120" ;
                                                           schema:streetAddress    "Gemeenteplein 7"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.252531" ;
+                                 schema:longitude       "4.278840"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02572.jpg?itok=zmH80R5i" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/lenaerts002.jpg?itok=SV8o3FgQ" ;
         schema:name            "Vleeshoeve 't Kasteeltje" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/vleeshoeve-t-kasteeltje-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:pointOfSale" , "at:producer" , "at:farmShop" ;
         ofd:offersFoodType     "ft:beef" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -189,9 +188,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

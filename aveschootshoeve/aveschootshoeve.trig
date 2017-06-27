@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/aveschootshoeve>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/05082012223.jpg?itok=CHjZcO9Y" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/aveschootshoeve" , "http://www.rechtvanbijdeboer.be/node/2887" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/aveschootshoeve" , "http://www.rechtvanbijdeboer.be/node/2888" , "http://www.rechtvanbijdeboer.be/aveschootshoeve-0" , "http://www.rechtvanbijdeboer.be/node/2887" ;
         foaf:name              "Aveschootshoeve" ;
         schema:description     "" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
@@ -141,8 +142,12 @@
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/05082012223.jpg?itok=CHjZcO9Y" ;
         schema:name            "Aveschootshoeve" ;
-        ofd:actorType          "at:pointOfSale" ;
+        ofd:actorType          "at:vendingMachine" , "at:pointOfSale" , "at:producer" ;
         ofd:offersFoodType     "ft:vegetables" , "ft:fruits" , "ft:poultry_meat" , "ft:spices" ;
+        ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/aveschoothoeve" ;
+                                 ofd:relatedContext  "at:producer"
+                               ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/aveschoothoeve" ;
                                  ofd:relatedContext  "at:producer"
@@ -176,7 +181,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;

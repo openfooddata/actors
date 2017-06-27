@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -125,7 +126,7 @@
 
 <https://www.facebook.com/hooilaarthoeve?fref=ts>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "https:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -134,7 +135,7 @@
         a                      foaf:Agent ;
         foaf:account           <https://www.facebook.com/hooilaarthoeve?fref=ts> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/012-hooilaarthoeve.jpg?itok=PK9kdOh2" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/hooilaarthoeve" , "http://www.rechtvanbijdeboer.be/node/1088" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/hooilaarthoeve-0" , "http://www.rechtvanbijdeboer.be/hooilaarthoeve" , "http://www.rechtvanbijdeboer.be/node/1088" , "http://www.rechtvanbijdeboer.be/node/2359" ;
         foaf:name              "Hooilaarthoeve" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "martinevanmalderen@hotmail.com" ;
@@ -147,13 +148,15 @@
                                                           schema:postalCode       "9255" ;
                                                           schema:streetAddress    "Beukenstraat 96"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.018069" ;
+                                 schema:longitude       "4.176704"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/012-hooilaarthoeve.jpg?itok=PK9kdOh2" ;
         schema:name            "Hooilaarthoeve" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:pointOfSale" , "at:producer" , "at:farmShop" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-mechelen" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-strombeek-bever" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -161,11 +164,7 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-strombeek-bever" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/hooilaarthoeve-0" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-mechelen" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:offersFoodType     "ft:milk_products" , "ft:eggs" , "ft:icecream" .
@@ -183,7 +182,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -198,7 +197,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;

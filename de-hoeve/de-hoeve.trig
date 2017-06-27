@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,7 +128,7 @@
         a                      foaf:Agent ;
         foaf:account           <https://www.facebook.com/pages/Krijm-van-De-Hoeve/87594112734?fref=ts> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1133" , "http://www.rechtvanbijdeboer.be/de-hoeve" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/2521" , "http://www.rechtvanbijdeboer.be/node/1133" , "http://www.rechtvanbijdeboer.be/de-hoeve-0" , "http://www.rechtvanbijdeboer.be/de-hoeve" ;
         foaf:name              "De Hoeve" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "deschuttermarc@gmail.com" ;
@@ -136,17 +137,19 @@
         schema:description     "" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "Pulle" ;
+                                                          schema:addressLocality  "Pulle (Zandhoven)" ;
                                                           schema:postalCode       "2243" ;
                                                           schema:streetAddress    "Cauwenberglei 80"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.200515" ;
+                                 schema:longitude       "4.685615"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "De Hoeve" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:producer" , "at:farmShop" , "at:pointOfSale" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-wommelgem" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-merksem" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -154,18 +157,14 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-hoeve-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-merksem" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-wommelgem" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:offersFoodType     "ft:icecream" .
 
 <https://www.facebook.com/pages/Krijm-van-De-Hoeve/87594112734?fref=ts>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "87594112734?fref=ts" ;
+        dct:identifier               "87594112734?fref=ts" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "Krijm-van-De-Hoeve" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -183,7 +182,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -198,7 +197,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;

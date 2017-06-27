@@ -3,11 +3,13 @@
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "addressCountry" : "Belgium",
+    "latitude" : "50.998381",
+    "longitude" : "2.983709"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
-    "addressLocality" : "Zarren",
+    "addressLocality" : "Kortemark",
     "postalCode" : "8610",
     "streetAddress" : "Vrijbosstraat 7"
   }, {
@@ -17,11 +19,6 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/fruithoeve-devos-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b4",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.fruithoeve-devos.be",
     "email" : "steven.devos6@telenet.be",
@@ -53,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -102,7 +99,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -168,16 +165,16 @@
     "account" : "https://www.facebook.com/fruithoeve.devos?fref=ts",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fruithoeve_devos_appels_aan_boom_lr.jpg?itok=OuWfijCJ",
     "homepage" : "http://www.fruithoeve-devos.be",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1825", "http://www.rechtvanbijdeboer.be/fruithoeve-devos" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3392", "http://www.rechtvanbijdeboer.be/node/1825", "http://www.rechtvanbijdeboer.be/fruithoeve-devos", "http://www.rechtvanbijdeboer.be/fruithoeve-devos-0" ],
     "name" : "Fruithoeve Devos",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b3",
     "description" : "Onze boomgaard heeft een oppervlakte van ongeveer 5 hectare. De eerste hoogstam fruitbomen werden aangeplant in 1935. Al vrij snel werden eveneens laagstammige bomen en nieuwe rassen bijgeplant. Ondertussen is ons bedrijf uitgegroeid tot een vooruitstrevende en moderne fruithoeve in de streek. Ons fruit wordt gekweekt op “geïntegreerde” wijze. Hierbij helpen natuurlijke vijanden van plaag­insecten bij de bestrijding van mogelijke ziekten en gewasschade. Nuttige insecten zoals lieve­heers­beestjes hebben bijvoorbeeld bladluizen op hun menu staan.",
     "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fruithoeve_devos_appels_aan_boom_lr.jpg?itok=OuWfijCJ",
     "schema:name" : "Fruithoeve Devos",
     "url" : "http://www.fruithoeve-devos.be",
-    "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b3" ],
+    "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
+    "downstreamRel" : "_:b2",
     "offersFoodType" : [ "ft:fruits", "ft:vegetables", "ft:potatoes", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,6 +204,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -220,25 +223,12 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -256,11 +246,19 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -268,9 +266,11 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -282,16 +282,20 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

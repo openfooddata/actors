@@ -20,14 +20,25 @@
      ]
   }
    ,
-  "https://w3id.org/openfooddata/onto/core#ActorRelationship" : { 
+  "_:1ae768e3ee272243cf6f3e8f0a0b8e3a" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
-      "value" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+      "value" : "https://schema.org/PostalAddress"
     }
-    , { 
-      "type" : "uri" ,
-      "value" : "http://www.w3.org/2000/01/rdf-schema#Class"
+     ] ,
+    "https://schema.org/streetAddress" : [ { 
+      "type" : "literal" ,
+      "value" : "Bosstraat 23"
+    }
+     ] ,
+    "https://schema.org/postalCode" : [ { 
+      "type" : "literal" ,
+      "value" : "2590"
+    }
+     ] ,
+    "https://schema.org/addressLocality" : [ { 
+      "type" : "literal" ,
+      "value" : "Berlaar"
     }
      ]
   }
@@ -106,24 +117,6 @@
      ]
   }
    ,
-  "_:fc5ae627a2c154c6d12d5cbb7a1bca55" : { 
-    "https://w3id.org/openfooddata/onto/core#relatedActor" : [ { 
-      "type" : "literal" ,
-      "value" : "https://w3id.org/openfooddata/actors/de-boshoeve-1"
-    }
-     ] ,
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://w3id.org/openfooddata/onto/core#ActorRelationship"
-    }
-     ] ,
-    "https://w3id.org/openfooddata/onto/core#relatedContext" : [ { 
-      "type" : "literal" ,
-      "value" : "at:pointOfSale"
-    }
-     ]
-  }
-   ,
   "https://schema.org/ContactPoint" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -132,6 +125,24 @@
     , { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/2000/01/rdf-schema#Class"
+    }
+     ]
+  }
+   ,
+  "_:928f9b92868548c64ebb713fb4a3ded9" : { 
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "https://schema.org/ContactPoint"
+    }
+     ] ,
+    "https://schema.org/email" : [ { 
+      "type" : "literal" ,
+      "value" : "smits.marien@telenet.be"
+    }
+     ] ,
+    "https://schema.org/telephone" : [ { 
+      "type" : "literal" ,
+      "value" : "0478/209736"
     }
      ]
   }
@@ -149,6 +160,34 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    }
+     ]
+  }
+   ,
+  "_:d915f9dcf0f31fa0fa656f27472f1b41" : { 
+    "https://schema.org/address" : [ { 
+      "type" : "bnode" ,
+      "value" : "_:1ae768e3ee272243cf6f3e8f0a0b8e3a"
+    }
+     ] ,
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "https://schema.org/GeoCoordinates"
+    }
+     ] ,
+    "https://schema.org/addressCountry" : [ { 
+      "type" : "literal" ,
+      "value" : "Belgium"
+    }
+     ] ,
+    "https://schema.org/latitude" : [ { 
+      "type" : "literal" ,
+      "value" : "51.103611"
+    }
+     ] ,
+    "https://schema.org/longitude" : [ { 
+      "type" : "literal" ,
+      "value" : "4.672479"
     }
      ]
   }
@@ -231,24 +270,6 @@
     , { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/2000/01/rdf-schema#Container"
-    }
-     ]
-  }
-   ,
-  "_:cfd087f2dc9302a547b56b220ca347d1" : { 
-    "https://w3id.org/openfooddata/onto/core#relatedActor" : [ { 
-      "type" : "literal" ,
-      "value" : "https://w3id.org/openfooddata/actors/de-boshoeve-0"
-    }
-     ] ,
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://w3id.org/openfooddata/onto/core#ActorRelationship"
-    }
-     ] ,
-    "https://w3id.org/openfooddata/onto/core#relatedContext" : [ { 
-      "type" : "literal" ,
-      "value" : "at:pointOfSale"
     }
      ]
   }
@@ -414,7 +435,19 @@
   "https://w3id.org/openfooddata/actors/de-boshoeve" : { 
     "https://w3id.org/openfooddata/onto/core#actorType" : [ { 
       "type" : "literal" ,
+      "value" : "at:pointOfSale"
+    }
+    , { 
+      "type" : "literal" ,
       "value" : "at:producer"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "at:vendingMachine"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "at:farmShop"
     }
      ] ,
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
@@ -424,7 +457,23 @@
      ] ,
     "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ { 
       "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/de-boshoeve-1"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/de-boshoeve-0"
+    }
+    , { 
+      "type" : "literal" ,
       "value" : "http://www.rechtvanbijdeboer.be/node/1699"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/node/3223"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/node/3224"
     }
     , { 
       "type" : "literal" ,
@@ -457,21 +506,12 @@
      ] ,
     "https://schema.org/geo" : [ { 
       "type" : "bnode" ,
-      "value" : "_:093a4f10ab99464a1dad0296ef2fd195"
+      "value" : "_:d915f9dcf0f31fa0fa656f27472f1b41"
     }
      ] ,
     "https://schema.org/contactPoint" : [ { 
       "type" : "bnode" ,
-      "value" : "_:c6a721876ee058ae7f34e20800eca919"
-    }
-     ] ,
-    "https://w3id.org/openfooddata/onto/core#downstreamRel" : [ { 
-      "type" : "bnode" ,
-      "value" : "_:cfd087f2dc9302a547b56b220ca347d1"
-    }
-    , { 
-      "type" : "bnode" ,
-      "value" : "_:fc5ae627a2c154c6d12d5cbb7a1bca55"
+      "value" : "_:928f9b92868548c64ebb713fb4a3ded9"
     }
      ] ,
     "https://schema.org/name" : [ { 
@@ -581,24 +621,6 @@
      ]
   }
    ,
-  "_:093a4f10ab99464a1dad0296ef2fd195" : { 
-    "https://schema.org/address" : [ { 
-      "type" : "bnode" ,
-      "value" : "_:9e3810b36e23ac072a3f320435ea2e43"
-    }
-     ] ,
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://schema.org/GeoCoordinates"
-    }
-     ] ,
-    "https://schema.org/addressCountry" : [ { 
-      "type" : "literal" ,
-      "value" : "Belgium"
-    }
-     ]
-  }
-   ,
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -701,47 +723,6 @@
     , { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/2000/01/rdf-schema#Class"
-    }
-     ]
-  }
-   ,
-  "_:9e3810b36e23ac072a3f320435ea2e43" : { 
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://schema.org/PostalAddress"
-    }
-     ] ,
-    "https://schema.org/streetAddress" : [ { 
-      "type" : "literal" ,
-      "value" : "Bosstraat 23"
-    }
-     ] ,
-    "https://schema.org/postalCode" : [ { 
-      "type" : "literal" ,
-      "value" : "2590"
-    }
-     ] ,
-    "https://schema.org/addressLocality" : [ { 
-      "type" : "literal" ,
-      "value" : "Berlaar"
-    }
-     ]
-  }
-   ,
-  "_:c6a721876ee058ae7f34e20800eca919" : { 
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://schema.org/ContactPoint"
-    }
-     ] ,
-    "https://schema.org/email" : [ { 
-      "type" : "literal" ,
-      "value" : "smits.marien@telenet.be"
-    }
-     ] ,
-    "https://schema.org/telephone" : [ { 
-      "type" : "literal" ,
-      "value" : "0478/209736"
     }
      ]
   }

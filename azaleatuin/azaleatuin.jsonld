@@ -3,7 +3,9 @@
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "addressCountry" : "Belgium",
+    "latitude" : "50.948212",
+    "longitude" : "3.539278"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -12,11 +14,6 @@
     "streetAddress" : "Lulstraat 3"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/azaleatuin-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.azaleatuin.be",
     "email" : "info@azaleatuin.be",
@@ -93,7 +90,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,19 +160,15 @@
     "account" : "https://www.facebook.com/pages/Azaleatuin/192484477449630?fref=ts",
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bedrijfkl2013.jpg?itok=EUDwnAWO", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_1355%20%281%29.JPG?itok=vZBu8VvP", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_3230.jpg?itok=E3od8Rav", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/tuin_a_200506.jpg?itok=6lEdSjbd" ],
     "homepage" : "http://www.azaleatuin.be",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1611", "http://www.rechtvanbijdeboer.be/azaleatuin" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/azaleatuin-0", "http://www.rechtvanbijdeboer.be/node/1611", "http://www.rechtvanbijdeboer.be/azaleatuin", "http://www.rechtvanbijdeboer.be/node/3099" ],
     "name" : "Azaleatuin",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b2",
     "description" : "De Azaleatuin biedt haar klanten een uniek assortiment van bijzondere azalea’s en rododendrons aan. Kwaliteitszorg staat centraal in onze bedrijfsvoering. We produceren sterke, mooie en exclusieve planten, we leveren advies en maatwerk voor onze klanten, we werken met kennis en vakmanschap en respect voor mens en milieu.",
     "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_1355%20%281%29.JPG?itok=vZBu8VvP", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bedrijfkl2013.jpg?itok=EUDwnAWO", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/tuin_a_200506.jpg?itok=6lEdSjbd", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_3230.jpg?itok=E3od8Rav" ],
     "schema:name" : "Azaleatuin",
     "url" : "http://www.azaleatuin.be",
-    "actorType" : "at:producer",
-    "downstreamRel" : "_:b2"
-  }, {
-    "@id" : "ofd:ActorRelationship",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ]
   }, {
     "@id" : "https://www.facebook.com/pages/Azaleatuin/192484477449630?fref=ts",
     "@type" : "foaf:OnlineAccount",
@@ -201,6 +194,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -208,18 +207,15 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -230,8 +226,9 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -243,22 +240,8 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -279,10 +262,17 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

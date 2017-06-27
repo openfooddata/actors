@@ -1,9 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-10",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.864811",
+    "longitude" : "3.140168"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -13,15 +15,10 @@
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/wit-blauw-vleesbedrijf-0",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-10",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b4",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.witblauwvleesbedrijf.be",
     "email" : "witblauwvleesbedrijf@skynet.be",
@@ -60,7 +57,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -175,16 +172,16 @@
     "account" : "http://www.facebook.com/pages/Het-Wit-Blauw-Vleesbedrijf",
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/witblauw_vleesbedrijf_vlees_toog_lr.jpg?itok=6PznUWDQ", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoeve_0.jpg?itok=Qx3RTaQa" ],
     "homepage" : "http://www.witblauwvleesbedrijf.be",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1744", "http://www.rechtvanbijdeboer.be/wit-blauw-vleesbedrijf" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3289", "http://www.rechtvanbijdeboer.be/wit-blauw-vleesbedrijf-0", "http://www.rechtvanbijdeboer.be/node/1744", "http://www.rechtvanbijdeboer.be/wit-blauw-vleesbedrijf" ],
     "name" : "Wit-Blauw Vleesbedrijf",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b3",
     "description" : "Over Het Wit-Blauw Vleesbedrijf Het landbouwbedrijf werd in 1991 overgenomen van de ouders van Piet. Het bedrijf was toen een gemengd akkerbouw – melkvee en vleesvee bedrijf. In 2005 werd beslist het melkvee te verkopen en werd gestart met de hoevewinkel voor vleesverkoop, dit om zo weinig mogelijk tussenschakels te hebben en de mensen zo vers mogelijk kwaliteitsvlees aan te bieden.",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoeve_0.jpg?itok=Qx3RTaQa", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/witblauw_vleesbedrijf_vlees_toog_lr.jpg?itok=6PznUWDQ" ],
     "schema:name" : "Wit-Blauw Vleesbedrijf",
     "url" : "http://www.witblauwvleesbedrijf.be",
-    "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b2" ],
+    "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
+    "downstreamRel" : "_:b2",
     "offersFoodType" : [ "ft:potatoes", "ft:beef" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -205,6 +202,19 @@
     },
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "relatedContext" : {
@@ -232,7 +242,7 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "identifier" : {
-      "@id" : "dct:identifier"
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -243,45 +253,38 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "telephone" : {
@@ -292,6 +295,7 @@
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

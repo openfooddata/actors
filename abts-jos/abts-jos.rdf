@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -26,6 +27,9 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
@@ -45,8 +49,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
@@ -153,13 +157,32 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:Property>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/abts-jos">
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/abts-jos</foaf:isPrimaryTopicOf>
+    <foaf:name>Abts Jos</foaf:name>
     <ofd:actorType>at:producer</ofd:actorType>
+    <ofd:actorType>at:farmShop</ofd:actorType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1478</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/2967</foaf:isPrimaryTopicOf>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>4.748623</schema:longitude>
+        <schema:latitude>50.826412</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Oude Geldenaaksebaan 31 3360 Bierbeek</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Oude Geldenaaksebaan 31</schema:streetAddress>
+            <schema:postalCode>3360</schema:postalCode>
+            <schema:addressLocality>Bierbeek</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:offersFoodType>ft:vegetables</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/abts-jos-0</foaf:isPrimaryTopicOf>
+    <schema:name>Abts Jos</schema:name>
+    <ofd:offersFoodType>ft:potatoes</ofd:offersFoodType>
+    <schema:description></schema:description>
   </foaf:Agent>
   <rdf:List rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>

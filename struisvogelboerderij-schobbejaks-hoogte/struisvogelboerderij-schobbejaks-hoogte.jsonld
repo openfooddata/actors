@@ -2,21 +2,18 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:PostalAddress",
-    "addressLocality" : "Tielt",
+    "addressLocality" : "Aarsele (Tielt)",
     "postalCode" : "8700",
     "streetAddress" : "Deinsesteenweg 182"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/struisvogelboerderij-schobbejaks-hoogte-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b0",
-    "addressCountry" : "Belgium"
+    "addressCountry" : "Belgium",
+    "latitude" : "50.992801",
+    "longitude" : "3.407822"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.schobbejakshoogte.be",
     "email" : "info@schobbejakshoogte.be",
@@ -174,20 +171,16 @@
     "account" : [ "http://www.facebook.com/struisvogelboerderij", "https://nl.pinterest.com/struisvogels/" ],
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding050.jpg?itok=qRwUhr3a", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1045191_443184712455546_1316553811_n.jpg?itok=1t7R5_3i", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/imgp1040.jpg?itok=pjgs2CA1", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding024.jpg?itok=O1LywCIW" ],
     "homepage" : "http://www.schobbejakshoogte.be",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte", "http://www.rechtvanbijdeboer.be/node/1252" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2674", "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte", "http://www.rechtvanbijdeboer.be/node/1252", "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte-0" ],
     "foaf:name" : "Struisvogelboerderij Schobbejaks Hoogte",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b2",
     "description" : "Op struisvogelboerderij Schobbejaks Hoogte lopen enkele honderden struisvogels rond. Iedere zaterdag is onze hoevewinkel open van 10 tot 18 u en u kunt ons bedrijf ook op afspraak komen bezoeken. Vragen? Kom gerust eens langs, of geef een seintje via info@schobbejakshoogte.be of 0473/98 27 19",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/imgp1040.jpg?itok=pjgs2CA1", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding050.jpg?itok=qRwUhr3a", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1045191_443184712455546_1316553811_n.jpg?itok=1t7R5_3i", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding024.jpg?itok=O1LywCIW" ],
     "name" : "Struisvogelboerderij Schobbejaks Hoogte",
     "url" : "http://www.schobbejakshoogte.be",
-    "actorType" : "at:producer",
-    "downstreamRel" : "_:b1",
+    "actorType" : [ "at:farmShop", "at:pointOfSale", "at:producer" ],
     "offersFoodType" : [ "ft:eggs", "ft:bakery_products", "ft:poultry_meat", "ft:alcoholic_beverages" ]
-  }, {
-    "@id" : "ofd:ActorRelationship",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   } ],
   "@context" : {
     "domain" : {
@@ -206,6 +199,9 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -215,14 +211,11 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -230,6 +223,15 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -243,15 +245,6 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "identifier" : {
-      "@id" : "dct:identifier"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -264,12 +257,11 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "name" : {
@@ -278,9 +270,6 @@
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
@@ -291,6 +280,7 @@
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/de-boshoeve>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1699" , "http://www.rechtvanbijdeboer.be/de-boshoeve" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1699" , "http://www.rechtvanbijdeboer.be/de-boshoeve-0" , "http://www.rechtvanbijdeboer.be/node/3224" , "http://www.rechtvanbijdeboer.be/node/3223" , "http://www.rechtvanbijdeboer.be/de-boshoeve-1" , "http://www.rechtvanbijdeboer.be/de-boshoeve" ;
         foaf:name              "De Boshoeve" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "smits.marien@telenet.be" ;
@@ -139,19 +140,13 @@
                                                           schema:postalCode       "2590" ;
                                                           schema:streetAddress    "Bosstraat 23"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.103611" ;
+                                 schema:longitude       "4.672479"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "De Boshoeve" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-boshoeve-1" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/de-boshoeve-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:farmShop" , "at:vendingMachine" , "at:producer" , "at:pointOfSale" ;
         ofd:offersFoodType     "ft:icecream" , "ft:milk_products" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -193,9 +188,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

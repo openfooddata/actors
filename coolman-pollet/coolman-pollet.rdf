@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -24,6 +25,9 @@
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
@@ -66,8 +70,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -153,13 +157,31 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:Property>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/coolman-pollet">
-    <ofd:actorType>at:producer</ofd:actorType>
+    <ofd:offersFoodType>ft:potatoes</ofd:offersFoodType>
+    <schema:name>Coolman-Pollet</schema:name>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/coolman-pollet</foaf:isPrimaryTopicOf>
+    <foaf:name>Coolman-Pollet</foaf:name>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/coolman-pollet-0</foaf:isPrimaryTopicOf>
+    <schema:description></schema:description>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>3.268182</schema:longitude>
+        <schema:latitude>51.113032</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Proosdijstraat 123 8020 Hertsberge</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Proosdijstraat 123</schema:streetAddress>
+            <schema:postalCode>8020</schema:postalCode>
+            <schema:addressLocality>Hertsberge</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:actorType>at:farmShop</ofd:actorType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1678</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3199</foaf:isPrimaryTopicOf>
   </foaf:Agent>
   <rdf:List rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>

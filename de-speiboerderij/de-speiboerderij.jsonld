@@ -2,7 +2,7 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:PostalAddress",
-    "addressLocality" : "Sint-Lievens-Esse",
+    "addressLocality" : "Herzele",
     "postalCode" : "9550",
     "streetAddress" : "Speistraat 13"
   }, {
@@ -16,12 +16,9 @@
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b0",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-speiboerderij-0",
-    "relatedContext" : "at:pointOfSale"
+    "addressCountry" : "Belgium",
+    "latitude" : "50.863086",
+    "longitude" : "3.887745"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -97,7 +94,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -159,7 +156,7 @@
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/koe3.JPG?itok=clQ4OIDR",
     "homepage" : "http://www.despeiboerderij.be",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-speiboerderij", "http://www.rechtvanbijdeboer.be/node/1191" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2593", "http://www.rechtvanbijdeboer.be/de-speiboerderij", "http://www.rechtvanbijdeboer.be/de-speiboerderij-0", "http://www.rechtvanbijdeboer.be/node/1191" ],
     "name" : "De Speiboerderij",
     "contactPoint" : "_:b1",
     "description" : "",
@@ -167,12 +164,8 @@
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/koe3.JPG?itok=clQ4OIDR",
     "schema:name" : "De Speiboerderij",
     "url" : "http://www.despeiboerderij.be",
-    "actorType" : "at:producer",
-    "downstreamRel" : "_:b3",
+    "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
     "offersFoodType" : [ "ft:milk_products", "ft:icecream", "ft:bakery_products" ]
-  }, {
-    "@id" : "ofd:ActorRelationship",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   } ],
   "@context" : {
     "domain" : {
@@ -200,17 +193,46 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -219,47 +241,15 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

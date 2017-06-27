@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,7 +128,7 @@
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/herrebeekhof_-marktkraam_lr.jpg?itok=BcACx0qC" ;
         foaf:homepage          "http://www.herrebeekhof.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/herrebeekhof" , "http://www.rechtvanbijdeboer.be/node/1084" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/herrebeekhof-0" , "http://www.rechtvanbijdeboer.be/herrebeekhof" , "http://www.rechtvanbijdeboer.be/node/1084" , "http://www.rechtvanbijdeboer.be/node/2354" ;
         foaf:name              "Herrebeekhof" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.herrebeekhof.be" ;
@@ -138,18 +139,20 @@
         schema:description     "Het vlees dat je in het Herrebeekhof vindt, is het resultaat van de eigen, 100 procent natuurlijke kweek. Hun dieren kunnen, doordat ze geen antibiotica of groeibevorderaars krijgen voorgeschoteld, in vergelijking met hun soortgenoten uit de agro-industrie, veel langer van de pure boslucht genieten. Daarenboven controleert de bedrijfsdierenarts middels bloed-en meststalen minstens elke twee maanden de gezondheidstoestand van de dieren. Het resultaat: pure gezondheid. Ook op uw bord! Bezoek ook hun website www.herrebeekhof.be waar je online kan bestellen! In de nieuwe degustatieruimte kan je elke zondag komen proeven van heerlijke boterhammen met eigen gemaakte charcuterie of een hoeve-ijsje. In de zomermaanden (juni tot september) kan je al dit lekkers ook nuttigen op het terras!" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "Heikruis" ;
+                                                          schema:addressLocality  "Heikruis (Pepingen)" ;
                                                           schema:postalCode       "1670" ;
                                                           schema:streetAddress    "Nanovestraat 6"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.715988" ;
+                                 schema:longitude       "4.098414"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/herrebeekhof_-marktkraam_lr.jpg?itok=BcACx0qC" ;
         schema:name            "Herrebeekhof" ;
         schema:url             "http://www.herrebeekhof.be" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:pointOfSale" , "at:farmShop" , "at:producer" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/boerenmarkt-kester" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/boerenmarkt-gooik" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -157,15 +160,11 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/herrebeekhof-0" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/boerenmarkt-kester" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/boerenmarkt-gaasbeek" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/boerenmarkt-gooik" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:offersFoodType     "ft:beef" , "ft:pork" .
@@ -183,7 +182,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -198,7 +197,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;

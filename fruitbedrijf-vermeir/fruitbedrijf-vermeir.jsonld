@@ -1,27 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/fruitbedrijf-vermeir-0",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.fruitbedrijfvermeir.be/",
+    "email" : "janvermeir@skynet.be",
+    "telephone" : "052/355475",
+    "url" : "http://www.fruitbedrijfvermeir.be/"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
-    "addressCountry" : "Belgium"
+    "addressCountry" : "Belgium",
+    "latitude" : "50.967551",
+    "longitude" : "4.157213"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Opwijk",
     "postalCode" : "1745",
     "streetAddress" : "Hofweg 8"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.fruitbedrijfvermeir.be/",
-    "email" : "janvermeir@skynet.be",
-    "telephone" : "052/355475",
-    "url" : "http://www.fruitbedrijfvermeir.be/"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -97,7 +94,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -159,20 +156,16 @@
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "homepage" : "http://www.fruitbedrijfvermeir.be/",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1436", "http://www.rechtvanbijdeboer.be/fruitbedrijf-vermeir" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1436", "http://www.rechtvanbijdeboer.be/node/2925", "http://www.rechtvanbijdeboer.be/fruitbedrijf-vermeir-0", "http://www.rechtvanbijdeboer.be/fruitbedrijf-vermeir" ],
     "name" : "Fruitbedrijf Vermeir",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "Het fruitbedrijf Vermeir is gelegen in de Brusselse regio te midden van de driehoek Dendermonde, Aalst, Asse. Het familiebedrijf bestaat uit vader Jan Vermeir en moeder Loes Verdoodt samen met hun zoon Joris. Het fruitteeltbedrijf Vermeir bedraagt momenteel 32 hectaren, bestaande uit 10 ha. appelbomen en 22ha. perenbomen.",
     "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "Fruitbedrijf Vermeir",
     "url" : "http://www.fruitbedrijfvermeir.be/",
-    "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "actorType" : [ "at:farmShop", "at:producer", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:poultry_meat", "ft:fruits" ]
-  }, {
-    "@id" : "ofd:ActorRelationship",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   } ],
   "@context" : {
     "domain" : {
@@ -191,17 +184,58 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
       "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "streetAddress" : {
@@ -213,53 +247,9 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

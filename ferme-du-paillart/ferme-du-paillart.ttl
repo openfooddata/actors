@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,7 +127,7 @@
 <https://w3id.org/openfooddata/actors/ferme-du-paillart>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_buitenkant_winkel_lr.jpg?itok=7-CksFct" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_assortiment_lr.jpg?itok=Gnas9lYa" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_koe_lr.jpg?itok=XplSdP58" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_kaas_rijpen_lr.jpg?itok=-x8s2wFc" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_binnenkant_winkel_lr.jpg?itok=pz9xc-Kt" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1743" , "http://www.rechtvanbijdeboer.be/ferme-du-paillart" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1743" , "http://www.rechtvanbijdeboer.be/ferme-du-paillart" , "http://www.rechtvanbijdeboer.be/ferme-du-paillart-0" , "http://www.rechtvanbijdeboer.be/node/3288" ;
         foaf:name              "Ferme du Paillart" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "ferme.du.paillart@gmail.com" ;
@@ -139,15 +140,13 @@
                                                           schema:postalCode       "9600" ;
                                                           schema:streetAddress    "Paillartcamp 9B"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.750629" ;
+                                 schema:longitude       "3.544733"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_binnenkant_winkel_lr.jpg?itok=pz9xc-Kt" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_assortiment_lr.jpg?itok=Gnas9lYa" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_buitenkant_winkel_lr.jpg?itok=7-CksFct" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_ijs_koe_lr.jpg?itok=XplSdP58" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ferme_du_paillart_zuivel_kaas_rijpen_lr.jpg?itok=-x8s2wFc" ;
         schema:name            "Ferme du Paillart" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/ferme-du-paillart-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:farmShop" , "at:pointOfSale" , "at:producer" ;
         ofd:offersFoodType     "ft:milk_products" , "ft:potatoes" , "ft:vegetables" , "ft:icecream" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -189,9 +188,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

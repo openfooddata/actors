@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,7 +128,7 @@
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ons_dagelijks_groen_producent_hr.jpg?itok=Klrx64d-" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preikaasmetgedroogdpreigroen.jpg?itok=Xu-EgFc7" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/rondleidingagragroepinwinkelinfo.jpg?itok=xuimL1FH" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preipralinemetgedroogdpreigroen.jpg?itok=HQxQg957" ;
         foaf:homepage          "http://www.odgroen.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/ons-dagelijks-groen" , "http://www.rechtvanbijdeboer.be/node/1712" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/ons-dagelijks-groen" , "http://www.rechtvanbijdeboer.be/ons-dagelijks-groen-0" , "http://www.rechtvanbijdeboer.be/node/3248" , "http://www.rechtvanbijdeboer.be/node/1712" ;
         foaf:name              "Ons Dagelijks Groen" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.odgroen.be" ;
@@ -142,17 +143,15 @@
                                                           schema:postalCode       "9310" ;
                                                           schema:streetAddress    "Kammenkouterstraat 80"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.950228" ;
+                                 schema:longitude       "4.124020"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ons_dagelijks_groen_producent_hr.jpg?itok=Klrx64d-" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preikaasmetgedroogdpreigroen.jpg?itok=Xu-EgFc7" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preipralinemetgedroogdpreigroen.jpg?itok=HQxQg957" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/rondleidingagragroepinwinkelinfo.jpg?itok=xuimL1FH" ;
         schema:name            "Ons Dagelijks Groen" ;
         schema:url             "http://www.odgroen.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/ons-dagelijks-groen-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:offersFoodType     "ft:bakery_products" , "ft:vegetables" , "ft:spices" , "ft:potatoes" , "ft:poultry_meat" , "ft:milk_products" , "ft:alcoholic_beverages" , "ft:fruits" .
+        ofd:actorType          "at:pointOfSale" , "at:producer" , "at:farmShop" ;
+        ofd:offersFoodType     "ft:bakery_products" , "ft:spices" , "ft:vegetables" , "ft:potatoes" , "ft:poultry_meat" , "ft:milk_products" , "ft:alcoholic_beverages" , "ft:fruits" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -167,7 +166,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -193,9 +192,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

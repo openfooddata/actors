@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -26,6 +27,9 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
@@ -45,8 +49,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
@@ -66,8 +70,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -156,12 +160,29 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:List>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/de-grenshoeve">
-    <ofd:actorType>at:producer</ofd:actorType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/de-grenshoeve</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:csaFarm</ofd:actorType>
+    <ofd:offersFoodType>ft:vegetables</ofd:offersFoodType>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1812</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:potatoes</ofd:offersFoodType>
+    <ofd:offersFoodType>ft:spices</ofd:offersFoodType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>3.315943</schema:longitude>
+        <schema:latitude>50.770039</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Beerbosstraat 1 8510 Bellegem</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Beerbosstraat 1</schema:streetAddress>
+            <schema:postalCode>8510</schema:postalCode>
+            <schema:addressLocality>Bellegem</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:offersFoodType>ft:fruits</ofd:offersFoodType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/3500</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/de-grenshoeve-1</foaf:isPrimaryTopicOf>
   </foaf:Agent>
 </rdf:RDF>

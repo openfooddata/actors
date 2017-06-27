@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,25 +127,35 @@
 <https://w3id.org/openfooddata/actors/den-akker>
         a                      foaf:Agent ;
         foaf:account           <http://www.facebook.com/denakkerbrecht> ;
-        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/Asperges-19-A-698_0.jpg?itok=RSHDRHpZ" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/den-akker" , "http://www.rechtvanbijdeboer.be/node/1971" ;
+        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/16649354_1431559897143027_674500258945351289_n.jpg" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/Asperges-19-A-698_0.jpg?itok=RSHDRHpZ" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3608" , "http://www.rechtvanbijdeboer.be/den-akker" , "http://www.rechtvanbijdeboer.be/den-akker-1" , "http://www.rechtvanbijdeboer.be/node/1971" ;
         foaf:name              "Den Akker" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "natalie@den-akker.be" ;
                                  schema:telephone  "0486063671"
                                ] ;
-        schema:description     "Heerlijk verse producten, recht van het land naar de klant! Eigen teelt asperges, aangevuld met heerlijk zoete aardbeitjes en ander lekker klein fruit. Lekker gezond! Wij bieden onze producten aan op de locale markten en in onze automaten. Op bestelling kan worden afgehaald. Sinds dit jaar hebben we ook een aspergeschilmachine, zo kunnen wij onze asperges vers en geschild aanbieden!" ;
+        schema:description     "Heerlijk verse producten, recht van het land naar de klant! Eigen teelt asperges, aangevuld met heerlijk zoete aardbeitjes en ander lekker klein fruit. Lekker gezond! Wij bieden onze producten aan op de locale markten en in onze automaten. Op bestelling kan worden afgehaald. Sinds dit jaar hebben we ook een aspergeschilmachine, zo kunnen wij onze asperges vers en geschild aanbieden!" , "" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "brecht" ;
+                                                          schema:addressLocality  "Brecht" ;
                                                           schema:postalCode       "2960" ;
                                                           schema:streetAddress    "Zoegweg 20"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.338550" ;
+                                 schema:longitude       "4.604933"
                                ] ;
-        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/Asperges-19-A-698_0.jpg?itok=RSHDRHpZ" ;
+        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/Asperges-19-A-698_0.jpg?itok=RSHDRHpZ" , "http://www.rechtvanbijdeboer.be/sites/default/files/16649354_1431559897143027_674500258945351289_n.jpg" ;
         schema:name            "Den Akker" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:vendingMachine" , "at:pointOfSale" ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/leuven-0" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/den-akker-0" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/den-akker-2" ;
                                  ofd:relatedContext  "at:pointOfSale"
@@ -153,23 +164,11 @@
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/markt-kapellen" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/den-akker-1" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/den-akker-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/leuven-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
         ofd:offersFoodType     "ft:fruits" , "ft:vegetables" .
 
 <http://www.facebook.com/denakkerbrecht>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "http:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -187,7 +186,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -202,7 +201,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -217,13 +216,13 @@
 ofd:ActorRelationship
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
-schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
-foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

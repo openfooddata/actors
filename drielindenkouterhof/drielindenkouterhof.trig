@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -125,7 +126,7 @@
 
 <http://Drielindenkouterhof>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "http:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -134,7 +135,7 @@
         a                      foaf:Agent ;
         foaf:account           <http://Drielindenkouterhof> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2015automaat.jpg?itok=sKlL9Ss2" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2011-10-1rooien.jpg?itok=XGxfPPsl" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/drielindekouterhof5.jpg?itok=4f0tdVJs" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC02412.JPG?itok=bzrmGs5l" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/drielindenkouterhof" , "http://www.rechtvanbijdeboer.be/node/1160" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/drielindenkouterhof-0" , "http://www.rechtvanbijdeboer.be/node/2554" , "http://www.rechtvanbijdeboer.be/drielindenkouterhof" , "http://www.rechtvanbijdeboer.be/node/1160" ;
         foaf:name              "Drielindenkouterhof" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "drielindenkouterhof@telenet.be" ;
@@ -147,25 +148,23 @@
                                                           schema:postalCode       "1785" ;
                                                           schema:streetAddress    "Drielindenbaan 106"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.950613" ;
+                                 schema:longitude       "4.219442"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2015automaat.jpg?itok=sKlL9Ss2" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/drielindekouterhof5.jpg?itok=4f0tdVJs" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC02412.JPG?itok=bzrmGs5l" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2011-10-1rooien.jpg?itok=XGxfPPsl" ;
         schema:name            "Drielindenkouterhof" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/drielindenkouterhof-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:farmShop" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/linkedfarm" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/drielindenkouterhof-1" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/boerenmarkt-merchtem" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/boerenmarkt-merchtem" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/drielindenkouterhof-1" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:offersFoodType     "ft:potatoes" , "ft:vegetables" .
@@ -183,7 +182,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;

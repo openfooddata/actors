@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -123,13 +124,40 @@
         <http://www.w3.org/2000/01/rdf-schema#range>
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
+<http://www.facebook.com/legumenhofke>
+        a                            foaf:OnlineAccount ;
+        dct:identifier               "" ;
+        skos:prefLabel               "Facebook" ;
+        foaf:accountName             "http:" ;
+        foaf:accountServiceHomepage  "https://www.facebook.com" .
+
 <https://w3id.org/openfooddata/actors/t-legumenhofke>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Mezenlaan 21 3001 Heverlee" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:account           <http://www.facebook.com/legumenhofke> ;
+        foaf:homepage          "http://www.legumenhofke.be" ;
+        foaf:isPrimaryTopicOf  "https://www.rechtvanbijdeboer.be/node/1734" , "https://www.rechtvanbijdeboer.be/t-legumenhofke" , "http://www.rechtvanbijdeboer.be/t-legumenhofke-0" , "http://www.rechtvanbijdeboer.be/node/3275" ;
+        foaf:name              "'t Legumenhofke" ;
+        schema:contactPoint    [ a                 schema:ContactPoint ;
+                                 foaf:homepage     "http://www.legumenhofke.be" ;
+                                 schema:email      "info@legumenhofke.be" ;
+                                 schema:telephone  "0486/05.74.34" ;
+                                 schema:url        "http://www.legumenhofke.be"
+                               ] ;
+        schema:description     "" , "Biologische groenten en kruiden van ons eigen veld in Neerijse (een gigantische moestuin op 1 hectare) - ook aardbeitjes en rabarber - lokaal - kraakvers .Je koopt een aandeel in de oogst en zo weet de boerin hoeveel er gezaaid en geplant moet worden .Je krijgt de oogst zoals de natuur het toelaat - bij overschot krijg je meer mee naar huis- mislukt er al eens iets dan heb je daar minder van . Je deelt het risico met de boerin en geniet van seizoensgroenten die op hun eigen tempo hebben mogen groeien, en dat proef je .Op het afhaalpunt stel je zelf je pakket samen uit de groenten die in kisten klaar staan (met infobord ivm de maximale hoeveelheden)." ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Heverlee" ;
+                                                          schema:postalCode       "3001" ;
+                                                          schema:streetAddress    "Mezenlaan 21"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.860148" ;
+                                 schema:longitude       "4.694417"
+                               ] ;
+        schema:name            "'t Legumenhofke" ;
+        schema:url             "http://www.legumenhofke.be" ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:csaFarm" ;
+        ofd:offersFoodType     "ft:vegetables" , "ft:spices" , "ft:fruits" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -144,7 +172,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -171,7 +199,13 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -125,7 +126,7 @@
 
 <http://www.facebook.com/kleingistelgoed>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "http:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -135,7 +136,7 @@
         foaf:account           <http://www.facebook.com/kleingistelgoed> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         foaf:homepage          "http://www.kleingistelgoed.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1735" , "http://www.rechtvanbijdeboer.be/varkenshoeve-klein-gistelgoed" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3279" , "http://www.rechtvanbijdeboer.be/varkenshoeve-klein-gistelgoed-0" , "http://www.rechtvanbijdeboer.be/node/1735" , "http://www.rechtvanbijdeboer.be/varkenshoeve-klein-gistelgoed" ;
         foaf:name              "Varkenshoeve Klein Gistelgoed" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.kleingistelgoed.be" ;
@@ -150,16 +151,14 @@
                                                           schema:postalCode       "8870" ;
                                                           schema:streetAddress    "Haaipanderstraat 87"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.918079" ;
+                                 schema:longitude       "3.213219"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "Varkenshoeve Klein Gistelgoed" ;
         schema:url             "http://www.kleingistelgoed.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/varkenshoeve-klein-gistelgoed-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:collectionPoint" , "at:producer" , "at:pointOfSale" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/wwwkleingistelgoedbe" ;
                                  ofd:relatedContext  "at:pointOfSale"

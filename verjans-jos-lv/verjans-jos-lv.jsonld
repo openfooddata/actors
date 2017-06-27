@@ -1,11 +1,10 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.verjansjoslv.be",
-    "email" : "verjans.joslv@telenet.be",
-    "telephone" : "0495252957",
-    "url" : "http://www.verjansjoslv.be"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Wellen",
+    "postalCode" : "3830",
+    "streetAddress" : "Hertenstraat 3A"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -14,14 +13,15 @@
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b0",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Wellen",
-    "postalCode" : "3830",
-    "streetAddress" : "Hertenstraat 3A"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.verjansjoslv.be",
+    "email" : "verjans.joslv@telenet.be",
+    "telephone" : "0495252957",
+    "url" : "http://www.verjansjoslv.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -93,7 +93,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,7 +161,7 @@
     "homepage" : "http://www.verjansjoslv.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1701", "http://www.rechtvanbijdeboer.be/verjans-jos-lv" ],
     "foaf:name" : "Verjans Jos LV",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b3",
     "description" : "Wij zijn een fruitbedrijf met hoofdzakelijk perenteelt (Confèrence en Doyenné) alsook kersen. Van deze producten maken wij zelfbereide confituren alsook perenjenever, kersenjenever, perenadvokaat en kersenlikeur.",
     "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscn3105.jpg?itok=3bGNG8MS", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscn3097.jpg?itok=HNdhDQMh", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscn3102.jpg?itok=PpumRmvu" ],
@@ -191,17 +191,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -216,14 +213,17 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -237,12 +237,8 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "description" : {
@@ -251,8 +247,12 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "actorType" : {
@@ -260,6 +260,7 @@
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

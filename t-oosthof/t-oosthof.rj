@@ -20,6 +20,18 @@
      ]
   }
    ,
+  "https://schema.org/PostalAddress" : { 
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+    }
+    , { 
+      "type" : "uri" ,
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Class"
+    }
+     ]
+  }
+   ,
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -202,6 +214,29 @@
      ]
   }
    ,
+  "_:d619bc380a43ebe7942e8bc60579adf3" : { 
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "https://schema.org/PostalAddress"
+    }
+     ] ,
+    "https://schema.org/streetAddress" : [ { 
+      "type" : "literal" ,
+      "value" : "Zeebruggelaan 167"
+    }
+     ] ,
+    "https://schema.org/postalCode" : [ { 
+      "type" : "literal" ,
+      "value" : "8370"
+    }
+     ] ,
+    "https://schema.org/addressLocality" : [ { 
+      "type" : "literal" ,
+      "value" : "Blankenberge"
+    }
+     ]
+  }
+   ,
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#first" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -339,24 +374,6 @@
      ]
   }
    ,
-  "_:f7ab9cbf2556d8764c5425889e4ed2ed" : { 
-    "https://schema.org/address" : [ { 
-      "type" : "literal" ,
-      "value" : "Zeebruggelaan 167 8370 Blankenberge"
-    }
-     ] ,
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "https://schema.org/GeoCoordinates"
-    }
-     ] ,
-    "https://schema.org/addressCountry" : [ { 
-      "type" : "literal" ,
-      "value" : "Belgium"
-    }
-     ]
-  }
-   ,
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
@@ -374,6 +391,34 @@
     , { 
       "type" : "uri" ,
       "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    }
+     ]
+  }
+   ,
+  "_:58951f7bd4c41e18fb9c5d8f04147839" : { 
+    "https://schema.org/address" : [ { 
+      "type" : "bnode" ,
+      "value" : "_:d619bc380a43ebe7942e8bc60579adf3"
+    }
+     ] ,
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "https://schema.org/GeoCoordinates"
+    }
+     ] ,
+    "https://schema.org/addressCountry" : [ { 
+      "type" : "literal" ,
+      "value" : "Belgium"
+    }
+     ] ,
+    "https://schema.org/latitude" : [ { 
+      "type" : "literal" ,
+      "value" : "51.316532"
+    }
+     ] ,
+    "https://schema.org/longitude" : [ { 
+      "type" : "literal" ,
+      "value" : "3.165901"
     }
      ]
   }
@@ -534,19 +579,64 @@
   }
    ,
   "https://w3id.org/openfooddata/actors/t-oosthof" : { 
-    "https://w3id.org/openfooddata/onto/core#actorType" : [ { 
-      "type" : "literal" ,
-      "value" : "at:producer"
-    }
-     ] ,
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
       "value" : "http://xmlns.com/foaf/0.1/Agent"
     }
      ] ,
+    "https://w3id.org/openfooddata/onto/core#actorType" : [ { 
+      "type" : "literal" ,
+      "value" : "at:pointOfSale"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "at:producer"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "at:vendingMachine"
+    }
+     ] ,
+    "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/node/3274"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "https://www.rechtvanbijdeboer.be/t-oosthof"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "https://www.rechtvanbijdeboer.be/node/1733"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "http://www.rechtvanbijdeboer.be/t-oosthof-0"
+    }
+     ] ,
+    "https://w3id.org/openfooddata/onto/core#offersFoodType" : [ { 
+      "type" : "literal" ,
+      "value" : "ft:potatoes"
+    }
+     ] ,
+    "http://xmlns.com/foaf/0.1/name" : [ { 
+      "type" : "literal" ,
+      "value" : "'t Oosthof"
+    }
+     ] ,
     "https://schema.org/geo" : [ { 
       "type" : "bnode" ,
-      "value" : "_:f7ab9cbf2556d8764c5425889e4ed2ed"
+      "value" : "_:58951f7bd4c41e18fb9c5d8f04147839"
+    }
+     ] ,
+    "https://schema.org/name" : [ { 
+      "type" : "literal" ,
+      "value" : "'t Oosthof"
+    }
+     ] ,
+    "https://schema.org/description" : [ { 
+      "type" : "literal" ,
+      "value" : ""
     }
      ]
   }

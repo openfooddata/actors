@@ -1,4 +1,5 @@
 <rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
     xmlns:ft="https://w3id.org/openfooddata/vocab/foodtype#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="https://schema.org/"
@@ -26,6 +27,9 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/PostalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
@@ -45,8 +49,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
@@ -66,8 +70,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -156,12 +160,32 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:List>
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/hoeveslagerij-stefan-thijsen">
-    <ofd:actorType>at:producer</ofd:actorType>
     <schema:geo>
       <schema:GeoCoordinates>
+        <schema:longitude>5.187539</schema:longitude>
+        <schema:latitude>50.729885</schema:latitude>
         <schema:addressCountry>Belgium</schema:addressCountry>
-        <schema:address>Klein Jeukstraat 78 3890 Jeuk</schema:address>
+        <schema:address>
+          <schema:PostalAddress>
+            <schema:streetAddress>Klein Jeukstraat 78</schema:streetAddress>
+            <schema:postalCode>3890</schema:postalCode>
+            <schema:addressLocality>Gingelom</schema:addressLocality>
+          </schema:PostalAddress>
+        </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:offersFoodType>ft:pork</ofd:offersFoodType>
+    <schema:name>Hoeveslagerij Stefan Thijsen</schema:name>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/hoeveslagerij-stefan-thijsen</foaf:isPrimaryTopicOf>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/2985</foaf:isPrimaryTopicOf>
+    <ofd:actorType>at:producer</ofd:actorType>
+    <ofd:actorType>at:farmShop</ofd:actorType>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/hoeveslagerij-stefan-thijsen-0</foaf:isPrimaryTopicOf>
+    <schema:description></schema:description>
+    <foaf:isPrimaryTopicOf>https://www.rechtvanbijdeboer.be/node/1497</foaf:isPrimaryTopicOf>
+    <ofd:offersFoodType>ft:beef</ofd:offersFoodType>
+    <ofd:offersFoodType>ft:fruit_juices</ofd:offersFoodType>
+    <foaf:name>Hoeveslagerij Stefan Thijsen</foaf:name>
   </foaf:Agent>
 </rdf:RDF>

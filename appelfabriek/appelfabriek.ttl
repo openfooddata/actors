@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -123,17 +124,9 @@
         <http://www.w3.org/2000/01/rdf-schema#range>
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-<http://www.facebook.com/legumenhofke>
-        a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
-        skos:prefLabel               "Facebook" ;
-        foaf:accountName             "http:" ;
-        foaf:accountServiceHomepage  "https://www.facebook.com" .
-
 <https://w3id.org/openfooddata/actors/appelfabriek>
         a                      foaf:Agent ;
         foaf:account           <http://www.facebook.com/legumenhofke> ;
-        foaf:depiction         "/sites/all/themes/rechtvanbijdeboer/images/beeld_kar.jpg" ;
         foaf:homepage          "http://www.legumenhofke.be" ;
         foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3276" , "http://www.rechtvanbijdeboer.be/appelfabriek" ;
         foaf:name              "Appelfabriek" ;
@@ -154,7 +147,6 @@
                                  schema:latitude        "50.800390" ;
                                  schema:longitude       "4.629367"
                                ] ;
-        schema:image           "/sites/all/themes/rechtvanbijdeboer/images/beeld_kar.jpg" ;
         schema:name            "Appelfabriek" ;
         schema:url             "http://www.legumenhofke.be" ;
         ofd:actorType          "at:collectionPoint" , "at:pointOfSale" ;
@@ -163,6 +155,13 @@
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/t-legumenhofke" ;
                                  ofd:relatedContext  "at:producer"
                                ] .
+
+<http://www.facebook.com/legumenhofke>
+        a                            foaf:OnlineAccount ;
+        dct:identifier               "" ;
+        skos:prefLabel               "Facebook" ;
+        foaf:accountName             "http:" ;
+        foaf:accountServiceHomepage  "https://www.facebook.com" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;

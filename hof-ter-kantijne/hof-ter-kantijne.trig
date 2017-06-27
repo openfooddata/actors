@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,29 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/hof-ter-kantijne>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Kantijne 6 9981 Sint-Margriete" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/reclame%20paneel_0.PNG" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3651" , "http://www.rechtvanbijdeboer.be/hof-ter-kantijne-0" , "https://www.rechtvanbijdeboer.be/node/3650" , "https://www.rechtvanbijdeboer.be/hof-ter-kantijne" ;
+        foaf:name              "Hof Ter Kantijne" ;
+        schema:contactPoint    [ a                 schema:ContactPoint ;
+                                 schema:email      "luc.willems12@telenet.be" ;
+                                 schema:telephone  "0492649120"
+                               ] ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Sint-Margriete" ;
+                                                          schema:postalCode       "9981" ;
+                                                          schema:streetAddress    "Kantijne 6"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.245550" ;
+                                 schema:longitude       "3.527470"
+                               ] ;
+        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/reclame%20paneel_0.PNG" ;
+        schema:name            "Hof Ter Kantijne" ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:vendingMachine" ;
+        ofd:offersFoodType     "ft:vegetables" , "ft:potatoes" , "ft:eggs" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -171,7 +189,11 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,41 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/roundhouse-hoevevlees>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Hoogeng 1 3990 Peer" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:account           <https://www.facebook.com/RoundhouseHoevevlees/> ;
+        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/Roundhouse_hoevevlees_stal_koe_0.jpg" ;
+        foaf:homepage          "http://www.roundhouse-hoevevlees.be" ;
+        foaf:isPrimaryTopicOf  "https://www.rechtvanbijdeboer.be/node/3656" , "http://www.rechtvanbijdeboer.be/roundhouse-hoevevlees-0" , "https://www.rechtvanbijdeboer.be/roundhouse-hoevevlees" , "http://www.rechtvanbijdeboer.be/node/3657" ;
+        foaf:name              "Roundhouse Hoevevlees" ;
+        schema:contactPoint    [ a                 schema:ContactPoint ;
+                                 foaf:homepage     "http://www.roundhouse-hoevevlees.be" ;
+                                 schema:email      "info@roundhouse-hoevevlees.be" ;
+                                 schema:telephone  "0476/997448" ;
+                                 schema:url        "http://www.roundhouse-hoevevlees.be"
+                               ] ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Peer" ;
+                                                          schema:postalCode       "3990" ;
+                                                          schema:streetAddress    "Hoogeng 1"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.102548" ;
+                                 schema:longitude       "5.435048"
+                               ] ;
+        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/Roundhouse_hoevevlees_stal_koe_0.jpg" ;
+        schema:name            "Roundhouse Hoevevlees" ;
+        schema:url             "http://www.roundhouse-hoevevlees.be" ;
+        ofd:actorType          "at:pointOfSale" , "at:producer" , "at:collectionPoint" ;
+        ofd:offersFoodType     "ft:beef" .
+
+<https://www.facebook.com/RoundhouseHoevevlees/>
+        a                            foaf:OnlineAccount ;
+        dct:identifier               "" ;
+        skos:prefLabel               "Facebook" ;
+        foaf:accountName             "https:" ;
+        foaf:accountServiceHomepage  "https://www.facebook.com" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -144,7 +174,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -171,7 +201,13 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

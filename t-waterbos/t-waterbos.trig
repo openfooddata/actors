@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -125,7 +126,7 @@
 
 <https://www.facebook.com/Hoeveslagerij?fref=t>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "https:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -135,7 +136,7 @@
         foaf:account           <https://www.facebook.com/Hoeveslagerij?fref=t> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/boerderij%20%27t%20Waterbos%20Pieter%20en%20Jessie%20Stessel-Bosmans%20Veltem-Beisem-foto%20Luk%20Collet-4286.jpg?itok=dg4MLFbF" ;
         foaf:homepage          "http://www.waterbos.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1163" , "http://www.rechtvanbijdeboer.be/t-waterbos" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1163" , "http://www.rechtvanbijdeboer.be/t-waterbos" , "http://www.rechtvanbijdeboer.be/t-waterbos-0" , "http://www.rechtvanbijdeboer.be/node/2559" ;
         foaf:name              "'t Waterbos" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.waterbos.be" ;
@@ -150,16 +151,14 @@
                                                           schema:postalCode       "3020" ;
                                                           schema:streetAddress    "Schoonstraat 9"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "50.935804" ;
+                                 schema:longitude       "4.614251"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/boerderij%20%27t%20Waterbos%20Pieter%20en%20Jessie%20Stessel-Bosmans%20Veltem-Beisem-foto%20Luk%20Collet-4286.jpg?itok=dg4MLFbF" ;
         schema:name            "'t Waterbos" ;
         schema:url             "http://www.waterbos.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/t-waterbos-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:pointOfSale" , "at:producer" , "at:farmShop" ;
         ofd:offersFoodType     "ft:poultry_meat" , "ft:potatoes" , "ft:vegetables" , "ft:spices" , "ft:fruits" , "ft:beef" , "ft:eggs" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -201,9 +200,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

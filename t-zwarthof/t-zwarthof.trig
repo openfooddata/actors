@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -128,7 +129,7 @@
         foaf:account           <https://www.facebook.com/groups/176711692453620/?fref=ts> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_4693_0.jpg?itok=bx-zSBT6" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/droge%20worst%20op%20plankje%203.jpg?itok=UduLc1PZ" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/P1400580.JPG?itok=uue-HsX0" ;
         foaf:homepage          "http://www.zwarthof.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/t-zwarthof" , "http://www.rechtvanbijdeboer.be/node/1256" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/t-zwarthof" , "http://www.rechtvanbijdeboer.be/t-zwarthof-0" , "http://www.rechtvanbijdeboer.be/node/1256" , "http://www.rechtvanbijdeboer.be/node/2678" ;
         foaf:name              "'t Zwarthof" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.zwarthof.be" ;
@@ -143,14 +144,16 @@
                                                           schema:postalCode       "2980" ;
                                                           schema:streetAddress    "Geleg 155"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.277014" ;
+                                 schema:longitude       "4.674929"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/P1400580.JPG?itok=uue-HsX0" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_4693_0.jpg?itok=bx-zSBT6" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/droge%20worst%20op%20plankje%203.jpg?itok=UduLc1PZ" ;
         schema:name            "'t Zwarthof" ;
         schema:url             "http://www.zwarthof.be" ;
-        ofd:actorType          "at:producer" ;
+        ofd:actorType          "at:producer" , "at:farmShop" , "at:pointOfSale" ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-wommelgem" ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-de-roma-borgerhout" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
@@ -158,22 +161,18 @@
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
         ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/t-zwarthof-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-de-roma-borgerhout" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-gitschotelhof-deurne" ;
                                  ofd:relatedContext  "at:pointOfSale"
                                ] ;
-        ofd:offersFoodType     "ft:beef" , "ft:pork" , "ft:lamb_meat" .
+        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/buurderij-wommelgem" ;
+                                 ofd:relatedContext  "at:pointOfSale"
+                               ] ;
+        ofd:offersFoodType     "ft:beef" , "ft:lamb_meat" , "ft:pork" .
 
 <https://www.facebook.com/groups/176711692453620/?fref=ts>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "https:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -206,7 +205,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -218,16 +217,16 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
+ofd:ActorRelationship
+        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
-
-schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

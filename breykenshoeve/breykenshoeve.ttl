@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -127,7 +128,7 @@
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         foaf:homepage          "http://www.breykenshoeve.be‎" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1209" , "http://www.rechtvanbijdeboer.be/breykenshoeve" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1209" , "http://www.rechtvanbijdeboer.be/node/2613" , "http://www.rechtvanbijdeboer.be/breykenshoeve-0" , "http://www.rechtvanbijdeboer.be/breykenshoeve" ;
         foaf:name              "Breykenshoeve" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.breykenshoeve.be‎" ;
@@ -142,16 +143,14 @@
                                                           schema:postalCode       "2400" ;
                                                           schema:streetAddress    "Sas VI 14"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.212125" ;
+                                 schema:longitude       "5.039966"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv" ;
         schema:name            "Breykenshoeve" ;
         schema:url             "http://www.breykenshoeve.be‎" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/breykenshoeve-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:farmShop" ;
         ofd:offersFoodType     "ft:icecream" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -193,9 +192,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

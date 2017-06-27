@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -125,8 +126,7 @@
 
 <https://w3id.org/openfooddata/actors/erwtjes-knollen-vzw>
         a                      foaf:Agent ;
-        foaf:depiction         "/sites/all/themes/rechtvanbijdeboer/images/beeld_kar.jpg" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/erwtjes-knollen-vzw" , "http://www.rechtvanbijdeboer.be/node/3321" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/erwtjes-knollen-vzw" , "http://www.rechtvanbijdeboer.be/node/3323" , "http://www.rechtvanbijdeboer.be/erwtjes-knollen-vzw-1" , "http://www.rechtvanbijdeboer.be/node/3321" , "http://www.rechtvanbijdeboer.be/node/3322" , "http://www.rechtvanbijdeboer.be/erwtjes-knollen-vzw-0" ;
         foaf:name              "Erwtjes & Knollen vzw" ;
         schema:description     "" ;
         schema:geo             [ a                      schema:GeoCoordinates ;
@@ -139,10 +139,17 @@
                                  schema:latitude        "50.799925" ;
                                  schema:longitude       "3.974711"
                                ] ;
-        schema:image           "/sites/all/themes/rechtvanbijdeboer/images/beeld_kar.jpg" ;
         schema:name            "Erwtjes & Knollen vzw" ;
-        ofd:actorType          "at:pointOfSale" , "at:csaFarm" ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:vegetableSubscription" ;
         ofd:offersFoodType     "ft:fruits" , "ft:spices" , "ft:potatoes" , "ft:vegetables" ;
+        ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/zelfplukboerderij-erwtjes-&-knollen-vzw" ;
+                                 ofd:relatedContext  "at:producer"
+                               ] ;
+        ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
+                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/zelfplukboerderij-erwtjes-&-knollen-vzw" ;
+                                 ofd:relatedContext  "at:producer"
+                               ] ;
         ofd:upstreamRel        [ a                   ofd:ActorRelationship ;
                                  ofd:relatedActor    "https://w3id.org/openfooddata/actors/zelfplukboerderij-erwtjes-&-knollen-vzw" ;
                                  ofd:relatedContext  "at:producer"
@@ -161,7 +168,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;

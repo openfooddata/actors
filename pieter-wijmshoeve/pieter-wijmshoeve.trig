@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -126,8 +127,8 @@
 <https://w3id.org/openfooddata/actors/pieter-wijmshoeve>
         a                      foaf:Agent ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC_0090_0.JPG?itok=_bmAzz0R" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1615" , "http://www.rechtvanbijdeboer.be/pieter-wijmshoeve" ;
-        foaf:name              "Pieter-Wijmshoeve" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3105" , "http://www.rechtvanbijdeboer.be/node/1615" , "http://www.rechtvanbijdeboer.be/pieter-wijmshoeve-0" , "http://www.rechtvanbijdeboer.be/pieter-wijmshoeve" ;
+        foaf:name              "Pieter-wijmshoeve" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  schema:email      "info@pieter-wijmshoeve.be" ;
                                  schema:telephone  "0471 11 26 64" , "03 755 23 04"
@@ -135,19 +136,17 @@
         schema:description     "Herman en Marleen hebben een rundveebedrijf en een hoevewinkel in Melsele. Waar Herman samen met zijn zoon Mattias de boerderij runt. Natuurlijk kunnen ze ook rekenen op de helpende handen van Marleen maar haar zie je vooral in de winkel. In het weekend kan je ook dochter Jolien daar eens zien passeren, zij steekt een handje toe waar nodig. Een echt familiebedrijf, waar de opvolging is gegarandeerd! Hun hoofdactiviteit blijft de boerderij maar ze nemen graag de hoevewinkel erbij. Waar ze vooral aardappelen verkopen die sinds enkele jaren optimaal worden bewaard in de gloednieuwe loods. In de zomer kan je ook op de Pieter-wijmshoeve terecht voor verse Melseelse aardbeien die Marleen en Herman elke dag vers gaan plukken." ;
         schema:geo             [ a                      schema:GeoCoordinates ;
                                  schema:address         [ a                       schema:PostalAddress ;
-                                                          schema:addressLocality  "Beveren" ;
+                                                          schema:addressLocality  "Melsele" ;
                                                           schema:postalCode       "9120" ;
                                                           schema:streetAddress    "Melselestraat 67a"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.194473" ;
+                                 schema:longitude       "4.269738"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC_0090_0.JPG?itok=_bmAzz0R" ;
-        schema:name            "Pieter-Wijmshoeve" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/pieter-wijmshoeve-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        schema:name            "Pieter-wijmshoeve" ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:farmShop" ;
         ofd:offersFoodType     "ft:eggs" , "ft:fruits" , "ft:vegetables" , "ft:potatoes" , "ft:fruit_juices" , "ft:milk_products" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -163,7 +162,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -178,7 +177,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -189,9 +188,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

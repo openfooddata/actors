@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -124,12 +125,41 @@
                 <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <https://w3id.org/openfooddata/actors/hoevewinkel-grasheide>
-        a              foaf:Agent ;
-        schema:geo     [ a                      schema:GeoCoordinates ;
-                         schema:address         "Zandweg 12 2580 Putte" ;
-                         schema:addressCountry  "Belgium"
-                       ] ;
-        ofd:actorType  "at:producer" .
+        a                      foaf:Agent ;
+        foaf:account           <https://m.facebook.com/Hoevewinkel-Grasheide-1902761383332667/?ref=bookmarks> ;
+        foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/C0C19B0E-A521-4B80-8CB6-C63590C82DB0.jpg" ;
+        foaf:homepage          "http://Www.hoevewinkelgrasheide.be" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/3673" , "http://www.rechtvanbijdeboer.be/hoevewinkel-grasheide-0" , "https://www.rechtvanbijdeboer.be/node/3672" , "https://www.rechtvanbijdeboer.be/hoevewinkel-grasheide" ;
+        foaf:name              "Hoevewinkel Grasheide" ;
+        schema:contactPoint    [ a                 schema:ContactPoint ;
+                                 foaf:homepage     "http://Www.hoevewinkelgrasheide.be" ;
+                                 schema:email      "Info@hoevewinkelgrasheide.be" ;
+                                 schema:telephone  "0468/10.06.06" ;
+                                 schema:url        "http://Www.hoevewinkelgrasheide.be"
+                               ] ;
+        schema:description     "" ;
+        schema:geo             [ a                      schema:GeoCoordinates ;
+                                 schema:address         [ a                       schema:PostalAddress ;
+                                                          schema:addressLocality  "Putte" ;
+                                                          schema:postalCode       "2580" ;
+                                                          schema:streetAddress    "Zandweg 12"
+                                                        ] ;
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.023451" ;
+                                 schema:longitude       "4.664907"
+                               ] ;
+        schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/C0C19B0E-A521-4B80-8CB6-C63590C82DB0.jpg" ;
+        schema:name            "Hoevewinkel Grasheide" ;
+        schema:url             "http://Www.hoevewinkelgrasheide.be" ;
+        ofd:actorType          "at:pointOfSale" , "at:farmShop" , "at:producer" ;
+        ofd:offersFoodType     "ft:spices" , "ft:potatoes" , "ft:vegetables" , "ft:fruits" .
+
+<https://m.facebook.com/Hoevewinkel-Grasheide-1902761383332667/?ref=bookmarks>
+        a                            foaf:OnlineAccount ;
+        dct:identifier               "" ;
+        skos:prefLabel               "Facebook" ;
+        foaf:accountName             "https:" ;
+        foaf:accountServiceHomepage  "https://www.facebook.com" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -144,7 +174,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -171,7 +201,13 @@
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
 
+schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
 schema:GeoCoordinates
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+schema:ContactPoint  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
+
+foaf:OnlineAccount  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 foaf:Agent  a   <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .

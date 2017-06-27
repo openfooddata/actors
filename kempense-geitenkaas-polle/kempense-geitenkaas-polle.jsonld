@@ -1,52 +1,49 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/oude-vaartplaats-antwerpen",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.polle.be",
     "email" : "info@polle.be",
     "telephone" : "014/55.61.50",
     "url" : "http://www.polle.be"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-herentals",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-herentals-bremdael",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-herentals-spiegelfabriek",
-    "relatedContext" : "at:pointOfSale"
-  }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/kempense-geitenkaas-polle-0",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b5",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.208396",
+    "longitude" : "4.923738"
   }, {
     "@id" : "_:b5",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b8",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b6",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-mortsel",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b7",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/oude-vaartplaats-antwerpen",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b8",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Lichtaart (Kasterlee)",
     "postalCode" : "2460",
     "streetAddress" : "Eerselingenstraat 36"
+  }, {
+    "@id" : "_:b6",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-herentals-spiegelfabriek",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-mortsel",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -188,16 +185,16 @@
     "account" : "https://www.facebook.com/pages/Kempense-Geitenkaas-Polle/509596665730176?fref=ts",
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_0023_0.JPG?itok=gY8mZWgm", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/naamloos-6684.jpg?itok=TTld9ZIi" ],
     "homepage" : "http://www.polle.be",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/kempense-geitenkaas-polle", "http://www.rechtvanbijdeboer.be/node/1095" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2366", "http://www.rechtvanbijdeboer.be/kempense-geitenkaas-polle", "http://www.rechtvanbijdeboer.be/node/1095", "http://www.rechtvanbijdeboer.be/kempense-geitenkaas-polle-0" ],
     "name" : "Kempense Geitenkaas Polle",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "",
-    "geo" : "_:b5",
+    "geo" : "_:b4",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_0023_0.JPG?itok=gY8mZWgm", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/naamloos-6684.jpg?itok=TTld9ZIi" ],
     "schema:name" : "Kempense Geitenkaas Polle",
     "url" : "http://www.polle.be",
-    "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b1", "_:b4", "_:b3", "_:b6", "_:b7", "_:b2" ],
+    "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
+    "downstreamRel" : [ "_:b2", "_:b3", "_:b0", "_:b6", "_:b7" ],
     "offersFoodType" : [ "ft:milk_products", "ft:icecream" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -227,17 +224,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "dct:identifier"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -251,11 +242,39 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -270,48 +289,33 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

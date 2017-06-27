@@ -12,11 +12,9 @@
     "streetAddress" : "Meelhovenlaan 6"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.meelhovenseheide.be",
-    "email" : "vandenheuvel-lv@skynet.be",
-    "telephone" : "03/321.70.01",
-    "url" : "http://www.meelhovenseheide.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/wwwmeelhovenseheidebe",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -24,9 +22,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/wwwmeelhovenseheidebe",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.meelhovenseheide.be",
+    "email" : "vandenheuvel-lv@skynet.be",
+    "telephone" : "03/321.70.01",
+    "url" : "http://www.meelhovenseheide.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -166,14 +166,14 @@
     "homepage" : "http://www.meelhovenseheide.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1632", "http://www.rechtvanbijdeboer.be/van-den-heuvel-lv" ],
     "name" : "Van Den Heuvel LV",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b4",
     "description" : "",
     "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "Van Den Heuvel LV",
     "url" : "http://www.meelhovenseheide.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b3", "_:b4" ],
+    "downstreamRel" : [ "_:b2", "_:b3" ],
     "offersFoodType" : "ft:beef"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -212,6 +212,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -224,15 +230,11 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "depiction" : {
@@ -241,30 +243,29 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
+    "dct" : "http://purl.org/dc/terms/",
     "frapo" : "http://purl.org/cerif/frapo/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",

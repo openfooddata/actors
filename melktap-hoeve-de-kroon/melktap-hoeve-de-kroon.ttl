@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -125,7 +126,7 @@
 
 <http://www.facebook.com/melktapdekroon>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "http:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -135,7 +136,7 @@
         foaf:account           <http://www.facebook.com/melktapdekroon> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/logo_1.jpg?itok=EDsu3mwI" ;
         foaf:homepage          "http://www.facebook.com/melktapdekroon" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/melktap-hoeve-de-kroon" , "http://www.rechtvanbijdeboer.be/node/1877" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/melktap-hoeve-de-kroon-0" , "http://www.rechtvanbijdeboer.be/node/3433" , "http://www.rechtvanbijdeboer.be/melktap-hoeve-de-kroon" , "http://www.rechtvanbijdeboer.be/node/1877" ;
         foaf:name              "Melktap Hoeve de Kroon" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.facebook.com/melktapdekroon" ;
@@ -150,16 +151,14 @@
                                                           schema:postalCode       "2270" ;
                                                           schema:streetAddress    "Blokt 20"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.149613" ;
+                                 schema:longitude       "4.742086"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/logo_1.jpg?itok=EDsu3mwI" ;
         schema:name            "Melktap Hoeve de Kroon" ;
         schema:url             "http://www.facebook.com/melktapdekroon" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/melktap-hoeve-de-kroon-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:producer" , "at:vendingMachine" , "at:pointOfSale" ;
         ofd:offersFoodType     "ft:eggs" , "ft:milk_products" .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
@@ -175,7 +174,7 @@
 <http://www.w3.org/2000/01/rdf-schema#Datatype>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Class> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#Datatype> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -201,9 +200,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 

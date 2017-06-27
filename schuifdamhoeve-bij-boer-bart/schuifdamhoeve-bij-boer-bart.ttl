@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix at:    <https://w3id.org/openfooddata/vocab/actortype#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix frapo: <http://purl.org/cerif/frapo/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -128,8 +129,8 @@
         foaf:account           <https://www.facebook.com/bijboerbart/> ;
         foaf:depiction         "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_boer_bart_hoeveijs_terras.jpg?itok=PNiw6SD-" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_boer_bart_hoeveijs_ijstoog_schepijs.jpg?itok=tDEnAfLb" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_boer_bart_hoeveijs_uithangbord.jpg?itok=SW4q7H9P" ;
         foaf:homepage          "http://www.bijboerbart.be" ;
-        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1867" , "http://www.rechtvanbijdeboer.be/schuifdamhoeve-bij-boer-bart" ;
-        foaf:name              "Schuifdamhoeve - Bij boer Bart" ;
+        foaf:isPrimaryTopicOf  "http://www.rechtvanbijdeboer.be/node/1867" , "http://www.rechtvanbijdeboer.be/schuifdamhoeve-bij-boer-bart" , "http://www.rechtvanbijdeboer.be/schuifdamhoeve-bij-boer-bart-0" , "http://www.rechtvanbijdeboer.be/node/3422" ;
+        foaf:name              "Schuifdamhoeve - Bij Boer Bart" ;
         schema:contactPoint    [ a                 schema:ContactPoint ;
                                  foaf:homepage     "http://www.bijboerbart.be" ;
                                  schema:email      "info@bijboerbart.be" ;
@@ -143,21 +144,19 @@
                                                           schema:postalCode       "8630" ;
                                                           schema:streetAddress    "Pervijzestraat 6"
                                                         ] ;
-                                 schema:addressCountry  "Belgium"
+                                 schema:addressCountry  "Belgium" ;
+                                 schema:latitude        "51.089200" ;
+                                 schema:longitude       "2.754607"
                                ] ;
         schema:image           "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_boer_bart_hoeveijs_terras.jpg?itok=PNiw6SD-" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_boer_bart_hoeveijs_ijstoog_schepijs.jpg?itok=tDEnAfLb" , "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bij_boer_bart_hoeveijs_uithangbord.jpg?itok=SW4q7H9P" ;
-        schema:name            "Schuifdamhoeve - Bij boer Bart" ;
+        schema:name            "Schuifdamhoeve - Bij Boer Bart" ;
         schema:url             "http://www.bijboerbart.be" ;
-        ofd:actorType          "at:producer" ;
-        ofd:downstreamRel      [ a                   ofd:ActorRelationship ;
-                                 ofd:relatedActor    "https://w3id.org/openfooddata/actors/schuifdamhoeve-bij-boer-bart-0" ;
-                                 ofd:relatedContext  "at:pointOfSale"
-                               ] ;
+        ofd:actorType          "at:producer" , "at:pointOfSale" , "at:farmShop" ;
         ofd:offersFoodType     "ft:icecream" , "ft:milk_products" .
 
 <https://www.facebook.com/bijboerbart/>
         a                            foaf:OnlineAccount ;
-        <dct:identifier>             "" ;
+        dct:identifier               "" ;
         skos:prefLabel               "Facebook" ;
         foaf:accountName             "https:" ;
         foaf:accountServiceHomepage  "https://www.facebook.com" .
@@ -190,7 +189,7 @@
 <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> ;
         <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2000/01/rdf-schema#Resource> .
+                <http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty> , <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 
 <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
@@ -201,9 +200,6 @@
         a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
         <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
                 <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-
-ofd:ActorRelationship
-        a       <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
 schema:PostalAddress  a  <http://www.w3.org/2000/01/rdf-schema#Resource> , <http://www.w3.org/2000/01/rdf-schema#Class> .
 
