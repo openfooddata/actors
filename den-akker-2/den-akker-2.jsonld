@@ -1,20 +1,20 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/den-akker",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "telephone" : "0486063671"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "51.344533",
     "longitude" : "4.662046"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/den-akker",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "telephone" : "0486063671"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -96,7 +96,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,14 +163,14 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/16711687_1431559993809684_7329548529689835026_n.jpg",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/den-akker-2", "http://www.rechtvanbijdeboer.be/node/3619" ],
     "name" : "Den Akker",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/16711687_1431559993809684_7329548529689835026_n.jpg",
     "schema:name" : "Den Akker",
     "actorType" : [ "at:vendingMachine", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:fruit_juices", "ft:vegetables" ],
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -198,12 +198,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -212,6 +206,10 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -237,9 +235,24 @@
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -261,19 +274,6 @@
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

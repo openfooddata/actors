@@ -6,17 +6,17 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.973031",
-    "longitude" : "3.810760"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Gijzenzele (Oosterzele)",
     "postalCode" : "9860",
     "streetAddress" : "Brielstraat 71"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.973031",
+    "longitude" : "3.810760"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -153,7 +153,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hoevewinkel-bella-boe", "http://www.rechtvanbijdeboer.be/node/2561" ],
     "name" : "Hoevewinkel Bella Boe",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotoshoot-135-.jpg?itok=ekQylGxK",
     "schema:name" : "Hoevewinkel Bella Boe",
     "actorType" : [ "at:farmShop", "at:pointOfSale" ],
@@ -186,19 +186,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -214,12 +201,12 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -230,12 +217,25 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

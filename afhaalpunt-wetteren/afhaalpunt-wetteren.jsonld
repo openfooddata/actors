@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-wassende-maan",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.003319",
     "longitude" : "3.900864"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Wetteren",
     "postalCode" : "9230",
     "streetAddress" : "Victor Van Sandelaan 164"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-wassende-maan",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3538", "http://www.rechtvanbijdeboer.be/afhaalpunt-wetteren" ],
     "foaf:name" : "Afhaalpunt Wetteren",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "name" : "Afhaalpunt Wetteren",
     "actorType" : [ "at:pointOfSale", "at:vegetableSubscription" ],
     "offersFoodType" : [ "ft:bakery_products", "ft:eggs", "ft:milk_products", "ft:alcoholic_beverages", "ft:beef", "ft:vegetables", "ft:fruits", "ft:potatoes", "ft:fruit_juices", "ft:spices" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,6 +178,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -191,14 +197,12 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -214,10 +218,6 @@
     },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "streetAddress" : {

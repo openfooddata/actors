@@ -8,22 +8,22 @@
     "url" : "http://www.fruithoeve-devos.be"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Kortemark",
-    "postalCode" : "8610",
-    "streetAddress" : "Vrijbosstraat 7"
-  }, {
-    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/plukweekend",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "50.998381",
     "longitude" : "2.983709"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Kortemark",
+    "postalCode" : "8610",
+    "streetAddress" : "Vrijbosstraat 7"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -169,12 +169,12 @@
     "name" : "Fruithoeve Devos",
     "contactPoint" : "_:b0",
     "description" : "Onze boomgaard heeft een oppervlakte van ongeveer 5 hectare. De eerste hoogstam fruitbomen werden aangeplant in 1935. Al vrij snel werden eveneens laagstammige bomen en nieuwe rassen bijgeplant. Ondertussen is ons bedrijf uitgegroeid tot een vooruitstrevende en moderne fruithoeve in de streek. Ons fruit wordt gekweekt op “geïntegreerde” wijze. Hierbij helpen natuurlijke vijanden van plaag­insecten bij de bestrijding van mogelijke ziekten en gewasschade. Nuttige insecten zoals lieve­heers­beestjes hebben bijvoorbeeld bladluizen op hun menu staan.",
-    "geo" : "_:b3",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fruithoeve_devos_appels_aan_boom_lr.jpg?itok=OuWfijCJ",
     "schema:name" : "Fruithoeve Devos",
     "url" : "http://www.fruithoeve-devos.be",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:fruits", "ft:vegetables", "ft:potatoes", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -216,51 +216,11 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "account" : {
-      "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -275,11 +235,42 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -292,6 +283,15 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

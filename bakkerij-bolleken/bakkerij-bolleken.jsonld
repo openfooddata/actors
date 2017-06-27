@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Destelbergen",
-    "postalCode" : "9070",
-    "streetAddress" : "Stationsstraat 1"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-wassende-maan",
     "relatedContext" : "at:producer"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.060809",
     "longitude" : "3.797688"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Destelbergen",
+    "postalCode" : "9070",
+    "streetAddress" : "Stationsstraat 1"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -92,7 +92,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/bakkerij-bolleken", "http://www.rechtvanbijdeboer.be/node/3534" ],
     "foaf:name" : "Bakkerij Bolleken",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "name" : "Bakkerij Bolleken",
     "actorType" : [ "at:pointOfSale", "at:vegetableSubscription" ],
     "offersFoodType" : [ "ft:beef", "ft:milk_products", "ft:spices", "ft:eggs", "ft:bakery_products", "ft:vegetables", "ft:potatoes", "ft:fruit_juices", "ft:fruits", "ft:alcoholic_beverages" ],
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,18 +178,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -197,8 +190,8 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -207,14 +200,21 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

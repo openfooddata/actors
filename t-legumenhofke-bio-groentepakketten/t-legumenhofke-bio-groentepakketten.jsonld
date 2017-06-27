@@ -1,10 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Oud-Heverlee",
-    "postalCode" : "3050",
-    "streetAddress" : "Olmenlaan"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.legumenhofke.be",
+    "email" : "info@legumenhofke.be",
+    "telephone" : "0486/05.74.34",
+    "url" : "http://www.legumenhofke.be"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -13,17 +14,16 @@
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "50.835495",
     "longitude" : "4.658758"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.legumenhofke.be",
-    "email" : "info@legumenhofke.be",
-    "telephone" : "0486/05.74.34",
-    "url" : "http://www.legumenhofke.be"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Oud-Heverlee",
+    "postalCode" : "3050",
+    "streetAddress" : "Olmenlaan"
   }, {
     "@id" : "http://www.facebook.com/legumenhofke",
     "@type" : "foaf:OnlineAccount",
@@ -57,7 +57,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,7 +173,7 @@
     "homepage" : "http://www.legumenhofke.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3631", "http://www.rechtvanbijdeboer.be/t-legumenhofke-bio-groentepakketten" ],
     "foaf:name" : "'t Legumenhofke bio groentepakketten",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "",
     "geo" : "_:b2",
     "name" : "'t Legumenhofke bio groentepakketten",
@@ -214,14 +214,17 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -242,17 +245,9 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
@@ -264,12 +259,12 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -278,12 +273,17 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

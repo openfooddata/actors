@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-meirhoeve",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.236359",
     "longitude" : "4.407301"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-meirhoeve",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -43,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,7 +88,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1997", "http://www.rechtvanbijdeboer.be/marta" ],
     "foaf:name" : "Marta",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "name" : "Marta",
     "actorType" : [ "at:pointOfSale", "at:farmersMarket" ],
     "offersFoodType" : "ft:milk_products",
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,16 +178,8 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -201,11 +193,13 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -219,6 +213,12 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"

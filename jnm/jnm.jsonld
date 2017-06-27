@@ -2,26 +2,26 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-zonnekouter",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-zwaluw",
     "relatedContext" : "at:producer"
   }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Gent",
+    "postalCode" : "9000",
+    "streetAddress" : "Kortrijksepoortstraat"
+  }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "51.043799",
     "longitude" : "3.721489"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Gent",
-    "postalCode" : "9000",
-    "streetAddress" : "Kortrijksepoortstraat"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-zonnekouter",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,7 +161,7 @@
     "schema:name" : "JNM",
     "actorType" : [ "at:producer", "at:foodTeams", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:milk_products", "ft:eggs", "ft:potatoes", "ft:beef", "ft:icecream", "ft:bakery_products", "ft:vegetables", "ft:pork", "ft:fruits" ],
-    "upstreamRel" : [ "_:b0", "_:b1" ]
+    "upstreamRel" : [ "_:b0", "_:b3" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -189,6 +189,15 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -211,28 +220,19 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

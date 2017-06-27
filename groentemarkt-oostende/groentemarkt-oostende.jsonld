@@ -1,11 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.215430",
-    "longitude" : "2.928656"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/ter-doorn",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -13,9 +11,11 @@
     "postalCode" : "8400"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/ter-doorn",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.215430",
+    "longitude" : "2.928656"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -151,11 +151,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2104", "http://www.rechtvanbijdeboer.be/groentemarkt-oostende" ],
     "foaf:name" : "Groentemarkt Oostende",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "name" : "Groentemarkt Oostende",
     "actorType" : [ "at:market", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:fruits", "ft:vegetables" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -177,6 +177,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -189,18 +201,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"

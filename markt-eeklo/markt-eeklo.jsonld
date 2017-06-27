@@ -2,26 +2,26 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/bio-baarlaars",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-ambrozijn",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-ambrozijn",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/bio-baarlaars",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.185272",
-    "longitude" : "3.563890"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Eeklo",
     "postalCode" : "9900",
     "streetAddress" : "-0"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.185272",
+    "longitude" : "3.563890"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -157,7 +157,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/markt-eeklo", "http://www.rechtvanbijdeboer.be/node/2143" ],
     "name" : "Markt Eeklo",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b3",
     "schema:name" : "Markt Eeklo",
     "actorType" : [ "at:market", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:vegetables", "ft:potatoes", "ft:fruits" ],
@@ -189,12 +189,21 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "description" : {
@@ -211,15 +220,6 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

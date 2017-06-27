@@ -8,20 +8,20 @@
     "url" : "http://www.reynfruit.be/"
   }, {
     "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/fv-reynaerts-fruit",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Tienen",
     "postalCode" : "3300",
     "streetAddress" : "Hamelendreef 81"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/fv-reynaerts-fruit",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -97,7 +97,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -168,7 +168,7 @@
     "name" : "FV Reynaerts Marc en Jan",
     "url" : "http://www.reynfruit.be/",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:fruits", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -203,14 +203,15 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -221,12 +222,8 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "description" : {
@@ -238,12 +235,12 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -252,11 +249,14 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

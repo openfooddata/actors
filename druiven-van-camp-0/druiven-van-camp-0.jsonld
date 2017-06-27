@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.758049",
-    "longitude" : "4.498771"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Hoeilaart",
     "postalCode" : "1560",
     "streetAddress" : "Joseph Kumpsstraat, 33"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.758049",
+    "longitude" : "4.498771"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -153,7 +153,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/druiven-van-camp-0", "http://www.rechtvanbijdeboer.be/node/3507" ],
     "foaf:name" : "Druiven Van Camp",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_3142%20%282%29_2.JPG?itok=a8nsazYD",
     "name" : "Druiven Van Camp",
     "actorType" : [ "at:collectionPoint", "at:pointOfSale" ],
@@ -180,18 +180,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -202,15 +198,15 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "description" : {
@@ -228,14 +224,18 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

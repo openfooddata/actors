@@ -2,19 +2,20 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b7",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "51.197235",
     "longitude" : "3.214030"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hof-ter-meulen",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Sint-Michiels (Brugge)",
+    "postalCode" : "8200",
+    "streetAddress" : "Psychiatrisch Ziekenhuis OLV, Koning Albert I-laan 8"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-lof-der-kruiden",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-t-lijsternest",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
@@ -24,12 +25,12 @@
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-t-lijsternest",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hof-ter-meulen",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-ijs-z",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-lof-der-kruiden",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b6",
@@ -38,10 +39,9 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b7",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Sint-Michiels (Brugge)",
-    "postalCode" : "8200",
-    "streetAddress" : "Psychiatrisch Ziekenhuis OLV, Koning Albert I-laan 8"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-ijs-z",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -68,7 +68,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -113,7 +113,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -183,7 +183,7 @@
     "name" : "Buurderij De Open Poort (Sint-Michiels)",
     "actorType" : [ "at:pointOfSale", "at:foodAssembly" ],
     "offersFoodType" : [ "ft:potatoes", "ft:fruit_juices", "ft:eggs", "ft:lamb_meat", "ft:alcoholic_beverages", "ft:fruits", "ft:poultry_meat", "ft:beef", "ft:spices", "ft:milk_products", "ft:icecream", "ft:pork", "ft:vegetables" ],
-    "upstreamRel" : [ "_:b1", "_:b2", "_:b3", "_:b4", "_:b5", "_:b6" ]
+    "upstreamRel" : [ "_:b2", "_:b3", "_:b4", "_:b5", "_:b6", "_:b7" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -204,41 +204,6 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -261,6 +226,41 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

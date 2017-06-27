@@ -6,17 +6,17 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.830640",
+    "longitude" : "3.451169"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Anzegem",
     "postalCode" : "8570",
     "streetAddress" : "Landergemstraat 32"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.830640",
-    "longitude" : "3.451169"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,7 +152,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2618", "http://www.rechtvanbijdeboer.be/sterhoekhoeve" ],
     "foaf:name" : "Sterhoekhoeve",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "name" : "Sterhoekhoeve",
     "actorType" : [ "at:farmShop", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:vegetables", "ft:poultry_meat", "ft:icecream", "ft:potatoes", "ft:eggs", "ft:milk_products" ],
@@ -184,17 +184,12 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -204,10 +199,6 @@
     },
     "name" : {
       "@id" : "https://schema.org/name"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -228,6 +219,15 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

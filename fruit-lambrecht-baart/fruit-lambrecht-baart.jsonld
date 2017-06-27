@@ -7,23 +7,23 @@
     "streetAddress" : "Leiegoeddreef 9"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.899932",
+    "longitude" : "3.402304"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.fruitlambrecht.be",
     "email" : "fruitlambrecht@hotmail.Com",
     "telephone" : "0479/73 94 67",
     "url" : "http://www.fruitlambrecht.be"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/lokaal",
     "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.899932",
-    "longitude" : "3.402304"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -99,7 +99,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,14 +167,14 @@
     "homepage" : "http://www.fruitlambrecht.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/fruit-lambrecht-baart", "http://www.rechtvanbijdeboer.be/node/2915", "http://www.rechtvanbijdeboer.be/node/1431", "http://www.rechtvanbijdeboer.be/fruit-lambrecht-baart-0" ],
     "name" : "Fruit Lambrecht-Baart",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "Aan de oevers van de oude Leiearm vind je onze hoeve terug. Ondertussen staat de vierde generatie aan het roer. De kennis en passie werden generatie op generatie doorgegeven. We telen dan ook met de grootste zorg en respect voor het milieu, speciaal voor jullie, heerlijke appelen, peren, aardappelen, pompoenen, prei, rabarber en zo veel meer... Meer info vindt u op www.fruitlambrecht.be of op www.facebook.com/Fruit.Lambrecht.Baart",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc09250.jpg?itok=1yuUaDuy",
     "schema:name" : "Fruit Lambrecht-Baart",
     "url" : "http://www.fruitlambrecht.be",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:fruit_juices", "ft:poultry_meat", "ft:potatoes", "ft:fruits", "ft:eggs", "ft:vegetables" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -213,23 +213,21 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -240,12 +238,15 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
@@ -254,8 +255,8 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "depiction" : {
@@ -267,6 +268,12 @@
     },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -280,18 +287,11 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

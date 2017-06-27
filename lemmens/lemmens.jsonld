@@ -1,9 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/lemmens-gerd",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "email" : "gerdlemmens@gmail.com",
+    "telephone" : "014811237"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
@@ -11,9 +11,9 @@
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "gerdlemmens@gmail.com",
-    "telephone" : "014811237"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/lemmens-gerd",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -95,7 +95,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,13 +158,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/lemmens", "http://www.rechtvanbijdeboer.be/node/1790" ],
     "foaf:name" : "Lemmens",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "",
     "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Lemmens",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : "ft:potatoes"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -199,26 +199,39 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
+    "name" : {
+      "@id" : "https://schema.org/name"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -229,24 +242,11 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

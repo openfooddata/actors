@@ -1,10 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Halen",
-    "postalCode" : "3545",
-    "streetAddress" : "Heesstraat 40"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.hoeveslagerijterhees.be",
+    "email" : "info@hoeveslagerijterhees.be",
+    "telephone" : [ "0479/705551", "013/333289" ],
+    "url" : "http://www.hoeveslagerijterhees.be"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -12,23 +13,22 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-diest",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.hoeveslagerijterhees.be",
-    "email" : "info@hoeveslagerijterhees.be",
-    "telephone" : [ "0479/705551", "013/333289" ],
-    "url" : "http://www.hoeveslagerijterhees.be"
-  }, {
-    "@id" : "_:b4",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "50.997772",
     "longitude" : "5.116196"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Halen",
+    "postalCode" : "3545",
+    "streetAddress" : "Heesstraat 40"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-diest",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -55,7 +55,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -172,14 +172,14 @@
     "homepage" : "http://www.hoeveslagerijterhees.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1188", "http://www.rechtvanbijdeboer.be/hoeveslagerij-ter-hees", "http://www.rechtvanbijdeboer.be/node/2589", "http://www.rechtvanbijdeboer.be/hoeveslagerij-ter-hees-0" ],
     "name" : "Hoeveslagerij Ter Hees",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "Hoeveslagerij Ter Hees is een gesloten vleesveebedrijf. Wij werken met dieren van het Belgisch witblauw ras. De verkoop van het vlees gebeurt op bestelling. Voor meer info kan u terecht op onze website www.hoeveslagerijterhees.be .",
-    "geo" : "_:b4",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_0019.JPG?itok=ydQ_FTrI", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_kalf1.JPG?itok=fUgLgUgA", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC02850.JPG?itok=mBzGxl7w" ],
     "schema:name" : "Hoeveslagerij Ter Hees",
     "url" : "http://www.hoeveslagerijterhees.be",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b1", "_:b2" ],
+    "downstreamRel" : [ "_:b4", "_:b1" ],
     "offersFoodType" : [ "ft:beef", "ft:potatoes" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -221,21 +221,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -248,42 +233,11 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "account" : {
-      "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -297,6 +251,52 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

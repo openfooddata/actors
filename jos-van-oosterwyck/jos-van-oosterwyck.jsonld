@@ -2,13 +2,14 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b1",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/2363",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Heist-Op-Den-Berg",
+    "postalCode" : "2220",
+    "streetAddress" : "Broekstraat 88"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -16,10 +17,9 @@
     "telephone" : [ "0475/384695", "015/248762" ]
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Heist-Op-Den-Berg",
-    "postalCode" : "2220",
-    "streetAddress" : "Broekstraat 88"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/2363",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -46,7 +46,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -91,11 +91,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -164,7 +164,7 @@
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscf0071.jpg?itok=ZDyU-mH6", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscf0064.jpg?itok=rFmfnHpm" ],
     "name" : "Jos Van Oosterwyck",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:fruits", "ft:potatoes", "ft:vegetables" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -187,11 +187,22 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -199,12 +210,12 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -213,12 +224,14 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -234,19 +247,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

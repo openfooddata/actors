@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.886624",
-    "longitude" : "4.696640"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Leuven",
     "postalCode" : "3000",
     "streetAddress" : "Ridderstraat"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.886624",
+    "longitude" : "4.696640"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -87,7 +87,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -147,7 +147,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2184", "http://www.rechtvanbijdeboer.be/leuven-t-lampeke" ],
     "name" : "Leuven 't Lampeke",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "schema:name" : "Leuven 't Lampeke",
     "actorType" : [ "at:pointOfSale", "at:foodTeams" ],
     "offersFoodType" : [ "ft:poultry_meat", "ft:beef", "ft:alcoholic_beverages", "ft:milk_products", "ft:bakery_products", "ft:spices", "ft:fruit_juices", "ft:potatoes", "ft:eggs", "ft:lamb_meat", "ft:icecream", "ft:vegetables", "ft:pork", "ft:fruits" ]
@@ -169,18 +169,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -194,21 +190,25 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "patrick.cornette1@telenet.be",
-    "telephone" : "02/7518601"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.938014",
-    "longitude" : "4.485005"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Perk",
     "postalCode" : "1820",
     "streetAddress" : "Huinhovenstraat 18"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "patrick.cornette1@telenet.be",
+    "telephone" : "02/7518601"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.938014",
+    "longitude" : "4.485005"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -155,9 +155,9 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/laathof", "http://www.rechtvanbijdeboer.be/node/1200", "http://www.rechtvanbijdeboer.be/node/2603", "http://www.rechtvanbijdeboer.be/laathof-0" ],
     "name" : "Laathof",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "Laathof",
     "actorType" : [ "at:farmShop", "at:producer", "at:pointOfSale" ],
@@ -180,11 +180,24 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -210,19 +223,6 @@
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

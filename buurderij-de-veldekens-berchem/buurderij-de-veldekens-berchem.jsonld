@@ -1,11 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.188190",
-    "longitude" : "4.435405"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/marslander",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -14,9 +12,11 @@
     "streetAddress" : "Ontmoetingsruimte Verrezen Heer, Berchemstadionstraat 8"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/marslander",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.188190",
+    "longitude" : "4.435405"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,10 +152,10 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/buurderij-de-veldekens-berchem", "http://www.rechtvanbijdeboer.be/node/2040" ],
     "name" : "Buurderij De Veldekens (Berchem)",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "schema:name" : "Buurderij De Veldekens (Berchem)",
     "actorType" : [ "at:pointOfSale", "at:foodAssembly" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -177,19 +177,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -205,8 +192,16 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -217,12 +212,17 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

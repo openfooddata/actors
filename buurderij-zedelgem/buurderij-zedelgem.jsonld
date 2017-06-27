@@ -2,26 +2,26 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-lof-der-kruiden",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-ijs-z",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-lof-der-kruiden",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
+    "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "51.143756",
     "longitude" : "3.140696"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Zedelgem",
     "postalCode" : "8210",
     "streetAddress" : "Loppemsestraat 14A"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-ijs-z",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
@@ -58,7 +58,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -103,7 +103,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -168,12 +168,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2011", "http://www.rechtvanbijdeboer.be/buurderij-zedelgem" ],
     "name" : "Buurderij Zedelgem",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/herb_box.gif?itok=ZAl8UItf",
     "schema:name" : "Buurderij Zedelgem",
     "actorType" : [ "at:foodAssembly", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:poultry_meat", "ft:milk_products", "ft:fruits", "ft:beef", "ft:lamb_meat", "ft:spices", "ft:icecream", "ft:vegetables", "ft:potatoes" ],
-    "upstreamRel" : [ "_:b0", "_:b4", "_:b3", "_:b5" ]
+    "upstreamRel" : [ "_:b4", "_:b1", "_:b0", "_:b5" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -214,6 +214,10 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -223,12 +227,12 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -238,10 +242,6 @@
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"

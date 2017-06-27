@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/noten-de-ridder",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.891617",
     "longitude" : "4.230376"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/noten-de-ridder",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3206", "http://www.rechtvanbijdeboer.be/noten-de-ridder-0" ],
     "name" : "Noten De Ridder",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "schema:name" : "Noten De Ridder",
     "actorType" : [ "at:collectionPoint", "at:pointOfSale" ],
     "offersFoodType" : "ft:fruits",
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -181,6 +181,10 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
@@ -196,10 +200,6 @@
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

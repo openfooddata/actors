@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Ledegem",
-    "postalCode" : "8880"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "50.854957",
     "longitude" : "3.127457"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Ledegem",
+    "postalCode" : "8880"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -87,11 +87,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -151,7 +151,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2279", "http://www.rechtvanbijdeboer.be/voedselteam-ledegem" ],
     "name" : "Voedselteam Ledegem",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "schema:name" : "Voedselteam Ledegem",
     "actorType" : [ "at:pointOfSale", "at:foodTeams" ],
     "offersFoodType" : "ft:lamb_meat",
@@ -177,12 +177,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -196,15 +190,23 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -212,18 +214,16 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

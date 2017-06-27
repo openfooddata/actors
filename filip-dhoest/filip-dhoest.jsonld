@@ -1,16 +1,15 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Jabbeke",
+    "postalCode" : "8490",
+    "streetAddress" : "Hogeweg 7 B"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://dhoestfarm.be",
-    "email" : "filip.dhoest@gmail.com",
-    "telephone" : [ "0476/587579", "050/395698" ],
-    "url" : "http://dhoestfarm.be"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -18,10 +17,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Jabbeke",
-    "postalCode" : "8490",
-    "streetAddress" : "Hogeweg 7 B"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://dhoestfarm.be",
+    "email" : "filip.dhoest@gmail.com",
+    "telephone" : [ "0476/587579", "050/395698" ],
+    "url" : "http://dhoestfarm.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,9 +161,9 @@
     "homepage" : "http://dhoestfarm.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/filip-dhoest", "http://www.rechtvanbijdeboer.be/node/1244" ],
     "name" : "Filip Dhoest",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "Alle gewassen worden in vollegrond geteeld.",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc00604.jpg?itok=R8JrpSis", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc00599.jpg?itok=35pspOZc", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/vooraanzicht.jpg?itok=e7sEQrzE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc00487_640x480.jpg?itok=fX9SttUZ" ],
     "schema:name" : "Filip Dhoest",
     "url" : "http://dhoestfarm.be",
@@ -191,6 +191,22 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -199,10 +215,6 @@
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -224,17 +236,15 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -242,21 +252,11 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

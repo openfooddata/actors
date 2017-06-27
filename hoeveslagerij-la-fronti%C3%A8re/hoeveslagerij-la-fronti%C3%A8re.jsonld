@@ -1,9 +1,10 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveslagerij-la-fronti%C3%A8re-0",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Ghoy",
+    "postalCode" : "7863",
+    "streetAddress" : "Kloosterstraat 11"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
@@ -12,14 +13,13 @@
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b0",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Ghoy",
-    "postalCode" : "7863",
-    "streetAddress" : "Kloosterstraat 11"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveslagerij-la-fronti%C3%A8re-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -91,11 +91,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -164,7 +164,7 @@
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Hoeveslagerij \"A la frontière\"",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:fruit_juices", "ft:beef", "ft:pork" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -187,11 +187,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
@@ -206,17 +209,14 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "depiction" : {
@@ -228,8 +228,8 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "description" : {
@@ -241,12 +241,12 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

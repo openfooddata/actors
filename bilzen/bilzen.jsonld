@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-wanthof",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.871897",
     "longitude" : "5.516716"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-wanthof",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -87,11 +87,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -151,11 +151,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/bilzen", "http://www.rechtvanbijdeboer.be/node/2097" ],
     "foaf:name" : "Bilzen",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "name" : "Bilzen",
     "actorType" : [ "at:pointOfSale", "at:market" ],
     "offersFoodType" : [ "ft:milk_products", "ft:fruits", "ft:eggs" ],
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -183,6 +183,10 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
@@ -196,9 +200,11 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -218,12 +224,6 @@
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

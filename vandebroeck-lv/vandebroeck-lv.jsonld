@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.947707",
+    "longitude" : "5.031894"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Assent",
     "postalCode" : "3460",
     "streetAddress" : "Koningsbos, 17"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/vandebroeck",
     "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.947707",
-    "longitude" : "5.031894"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3599", "http://www.rechtvanbijdeboer.be/vandebroeck-lv" ],
     "foaf:name" : "Vandebroeck LV",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "name" : "Vandebroeck LV",
     "actorType" : [ "at:collectionPoint", "at:pointOfSale" ],
     "offersFoodType" : "ft:potatoes",
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b2"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,6 +178,19 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -193,17 +206,8 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "name" : {
@@ -211,10 +215,6 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",

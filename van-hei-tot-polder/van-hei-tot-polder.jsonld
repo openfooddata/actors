@@ -11,18 +11,18 @@
     "telephone" : "0477/982703"
   }, {
     "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-merksem",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b6",
     "addressCountry" : "Belgium"
   }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-permeke-antwerpen",
-    "relatedContext" : "at:pointOfSale"
-  }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-merksem",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-permeke-antwerpen",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
@@ -61,7 +61,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -175,11 +175,11 @@
     "foaf:name" : "van Hei tot Polder",
     "contactPoint" : "_:b1",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/jhalfaaugustus2011021.jpg?itok=JpTTTj1E",
     "name" : "van Hei tot Polder",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b3", "_:b4", "_:b5" ],
+    "downstreamRel" : [ "_:b2", "_:b4", "_:b0", "_:b5" ],
     "offersFoodType" : "ft:lamb_meat"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -202,26 +202,24 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "name" : {
       "@id" : "https://schema.org/name"
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -232,27 +230,16 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -262,6 +249,19 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

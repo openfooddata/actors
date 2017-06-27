@@ -1,17 +1,15 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.847233",
-    "longitude" : "4.908375"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Vissenaken (Tienen)",
     "postalCode" : "3300",
     "streetAddress" : "Aarschotsesteenweg 737"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-de-zon-1",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -19,19 +17,21 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.847233",
+    "longitude" : "4.908375"
+  }, {
+    "@id" : "_:b4",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hoevevlees.be",
     "email" : "info@hoevevlees.be",
     "url" : "http://www.hoevevlees.be"
   }, {
-    "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/martenshoeve",
-    "relatedContext" : "at:pointOfSale"
-  }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-de-zon-1",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/martenshoeve",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -104,7 +104,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -176,14 +176,14 @@
     "homepage" : "http://www.hoevevlees.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hhv-0", "http://www.rechtvanbijdeboer.be/node/2518", "http://www.rechtvanbijdeboer.be/node/1132", "http://www.rechtvanbijdeboer.be/hhv" ],
     "foaf:name" : "HHV",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b4",
     "description" : "We zijn een unieke combinatie van 3 milieu-bewuste boeren die er fier op zijn hun eigen, met grote zorg geproduceerd en verwerkt vleesproduct rechtstreeks aan de man te kunnen brengen. Ook het verpakken, het per klant \"uitwinkelen\" , de admistratie, kortom het hele productieproces tot bij de bewuste klant is in eigen handen. Een kortere keten is haast ondenkbaar. Bestellingen gebeuren online via onze uitgebreide webshop ofwel kunnen ze op de betreffende boerderijen mondeling of schriftelijk doorgegeven worden aan de boer.",
-    "geo" : "_:b0",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p4131116.jpg?itok=4MSAU1Yu",
     "name" : "HHV",
     "url" : "http://www.hoevevlees.be",
     "actorType" : [ "at:cooperative", "at:producer", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b4", "_:b2", "_:b5" ],
+    "downstreamRel" : [ "_:b5", "_:b2", "_:b1" ],
     "offersFoodType" : [ "ft:beef", "ft:lamb_meat", "ft:fruit_juices", "ft:pork" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -213,18 +213,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -241,17 +240,16 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -263,8 +261,18 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -272,32 +280,24 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

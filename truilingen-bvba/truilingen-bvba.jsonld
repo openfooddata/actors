@@ -1,25 +1,25 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/pipo-appelsappen",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "info@truilingen.be",
-    "telephone" : "011674134"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Kerkom-Bij-Sint-Truiden",
     "postalCode" : "3800",
     "streetAddress" : "Naamsesteenweg 439 C"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/pipo-appelsappen",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:ContactPoint",
+    "email" : "info@truilingen.be",
+    "telephone" : "011674134"
   }, {
     "@id" : "http://www.facebook.com/pipoappelsappen",
     "@type" : "foaf:OnlineAccount",
@@ -169,13 +169,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/streekproducten-pipo.jpg?itok=UEvfDWew", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pic_pipoappelsappen4_jpg.jpg?itok=NnRCBD6U", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_6624.jpg?itok=5e7ZV1hj", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/532131_10151266001614206_2146719987_n.jpg?itok=pUokpVuE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_6637_ok.jpg?itok=EykCwiYj" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/truilingen-bvba", "http://www.rechtvanbijdeboer.be/node/1300" ],
     "name" : "Truilingen BVBA",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b3",
     "description" : "",
     "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pic_pipoappelsappen4_jpg.jpg?itok=NnRCBD6U", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_6637_ok.jpg?itok=EykCwiYj", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/532131_10151266001614206_2146719987_n.jpg?itok=pUokpVuE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/streekproducten-pipo.jpg?itok=UEvfDWew", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_6624.jpg?itok=5e7ZV1hj" ],
     "schema:name" : "Truilingen BVBA",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : [ "ft:poultry_meat", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -198,6 +198,22 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -210,10 +226,6 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
@@ -221,8 +233,8 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "description" : {
@@ -233,6 +245,10 @@
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "relatedContext" : {
@@ -253,27 +269,11 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

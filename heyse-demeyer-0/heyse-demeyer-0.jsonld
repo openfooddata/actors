@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.020792",
+    "longitude" : "3.516541"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Meigem (Deinze)",
     "postalCode" : "9800",
     "streetAddress" : "Spoelstraat 1"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.020792",
-    "longitude" : "3.516541"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,7 +152,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/heyse-demeyer-0", "http://www.rechtvanbijdeboer.be/node/3451" ],
     "name" : "Heyse - Demeyer",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "schema:name" : "Heyse - Demeyer",
     "actorType" : [ "at:vendingMachine", "at:pointOfSale" ],
     "offersFoodType" : "ft:fruits",
@@ -178,15 +178,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -206,9 +197,14 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -224,6 +220,10 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",

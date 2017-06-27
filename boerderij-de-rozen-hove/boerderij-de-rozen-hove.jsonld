@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Geetbets",
-    "postalCode" : "3450",
-    "streetAddress" : "Hulsbeekstraat 118"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/bio-bij-bernd,-www.biobijbernd.be",
     "relatedContext" : "at:producer"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.907567",
     "longitude" : "5.107295"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Geetbets",
+    "postalCode" : "3450",
+    "streetAddress" : "Hulsbeekstraat 118"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,7 +88,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3486", "http://www.rechtvanbijdeboer.be/boerderij-de-rozen-hove" ],
     "name" : "Boerderij De Rozen hove",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "schema:name" : "Boerderij De Rozen hove",
     "actorType" : [ "at:pointOfSale", "at:collectionPoint" ],
     "offersFoodType" : [ "ft:beef", "ft:vegetables", "ft:milk_products", "ft:potatoes" ],
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,17 +178,16 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -202,13 +201,11 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -223,11 +220,14 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

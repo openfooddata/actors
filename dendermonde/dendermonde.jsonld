@@ -1,21 +1,21 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.025487",
+    "longitude" : "4.101993"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Dendermonde",
     "postalCode" : "9200"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/fierlafijn",
     "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.025487",
-    "longitude" : "4.101993"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -87,7 +87,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -151,11 +151,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2136", "http://www.rechtvanbijdeboer.be/dendermonde" ],
     "name" : "Dendermonde",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "schema:name" : "Dendermonde",
     "actorType" : [ "at:pointOfSale", "at:market" ],
     "offersFoodType" : [ "ft:fruits", "ft:potatoes", "ft:vegetables" ],
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b2"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -177,18 +177,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -202,21 +190,33 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "description" : {

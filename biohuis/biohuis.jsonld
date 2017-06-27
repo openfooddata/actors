@@ -1,9 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-bio-hoeve",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.231407",
+    "longitude" : "5.308657"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -12,11 +14,9 @@
     "streetAddress" : "De Vryheyt 19"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.231407",
-    "longitude" : "5.308657"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-bio-hoeve",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/biohuis", "http://www.rechtvanbijdeboer.be/node/2788" ],
     "name" : "Biohuis",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "schema:name" : "Biohuis",
     "actorType" : [ "at:vegetableSubscription", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:vegetables", "ft:potatoes" ],
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : "_:b2"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,11 +178,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -192,6 +199,12 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -205,28 +218,15 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.017301",
-    "longitude" : "5.212462"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Lummen",
     "postalCode" : "3560",
     "streetAddress" : "Geneikenstraat 51"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.017301",
+    "longitude" : "5.212462"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -147,7 +147,7 @@
     "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/ijs-de-hoef", "http://www.rechtvanbijdeboer.be/ijs-de-hoef-0", "http://www.rechtvanbijdeboer.be/node/2975", "https://www.rechtvanbijdeboer.be/node/1487" ],
     "name" : "IJs De Hoef",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "schema:name" : "IJs De Hoef",
     "actorType" : [ "at:farmShop", "at:producer", "at:pointOfSale" ],
     "offersFoodType" : "ft:icecream"
@@ -169,18 +169,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -194,21 +190,25 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

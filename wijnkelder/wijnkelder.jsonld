@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Boezinge - Ieper",
-    "postalCode" : "8904",
-    "streetAddress" : "Diksmuidseweg 530"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/wijngoed-zilver-cruys",
     "relatedContext" : "at:producer"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.918783",
     "longitude" : "2.842278"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Boezinge - Ieper",
+    "postalCode" : "8904",
+    "streetAddress" : "Diksmuidseweg 530"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/wijnkelder", "http://www.rechtvanbijdeboer.be/node/2581" ],
     "foaf:name" : "Wijnkelder",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "name" : "Wijnkelder",
     "actorType" : [ "at:pointOfSale", "at:farmShop" ],
     "offersFoodType" : "ft:alcoholic_beverages",
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,14 +178,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -210,6 +207,15 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -222,12 +228,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

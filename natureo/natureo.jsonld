@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.601601",
-    "longitude" : "3.619423"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Leuze en Hainaut",
     "postalCode" : "7900",
     "streetAddress" : "Rue de la Dendre 2b"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-lochting-vzw",
     "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.601601",
+    "longitude" : "3.619423"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -153,12 +153,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/natureo", "http://www.rechtvanbijdeboer.be/node/2432" ],
     "foaf:name" : "Natureo",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/biobellogroentenenfruitmaxi.jpg?itok=n2EToMw3",
     "name" : "Natureo",
     "actorType" : [ "at:pointOfSale", "at:vegetableSubscription" ],
     "offersFoodType" : [ "ft:fruits", "ft:eggs", "ft:potatoes", "ft:vegetables" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -180,19 +180,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -201,6 +188,10 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -223,12 +214,21 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "relatedContext" : {

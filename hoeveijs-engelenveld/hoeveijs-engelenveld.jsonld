@@ -6,16 +6,16 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://engelenveld.be",
     "email" : "info@engelenveld.be",
     "telephone" : "089/567648",
     "url" : "http://engelenveld.be"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -93,11 +93,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,9 +161,9 @@
     "homepage" : "http://engelenveld.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hoeveijs-engelenveld", "http://www.rechtvanbijdeboer.be/node/1093" ],
     "name" : "Hoeveijs Engelenveld",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Op dit landbouwbedrijf zijn we in 1998 begonnen met de bereiding van ijs. Met eigen handen, met veel toewijding en op het ritme van de natuur worden koeien gemolken, varkens gevoerd en op het veld gewerkt. De basisgrondstof van het ijs wordt door de koeien geleverd en het hele productieproces gebeurt hier op de hoeve. Dagverse melk van de eigen hoeve is de basis voor een heerlijk assortiment ijs.",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoeve-ijs_engelenveld_buitenkant_inkom.jpg?itok=r2ZOWphY",
     "schema:name" : "Hoeveijs Engelenveld",
     "url" : "http://engelenveld.be",
@@ -197,28 +197,26 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -229,8 +227,16 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "actorType" : {
@@ -251,12 +257,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

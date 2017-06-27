@@ -1,29 +1,29 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Ledegem",
-    "postalCode" : "8880",
-    "streetAddress" : "Rollegemstraat 202"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-10",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.864811",
-    "longitude" : "3.140168"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.witblauwvleesbedrijf.be",
     "email" : "witblauwvleesbedrijf@skynet.be",
     "telephone" : "0477/510937",
     "url" : "http://www.witblauwvleesbedrijf.be"
   }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.864811",
+    "longitude" : "3.140168"
+  }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-10",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Ledegem",
+    "postalCode" : "8880",
+    "streetAddress" : "Rollegemstraat 202"
   }, {
     "@id" : "http://www.facebook.com/pages/Het-Wit-Blauw-Vleesbedrijf",
     "@type" : "foaf:OnlineAccount",
@@ -57,7 +57,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -106,7 +106,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -174,14 +174,14 @@
     "homepage" : "http://www.witblauwvleesbedrijf.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3289", "http://www.rechtvanbijdeboer.be/wit-blauw-vleesbedrijf-0", "http://www.rechtvanbijdeboer.be/node/1744", "http://www.rechtvanbijdeboer.be/wit-blauw-vleesbedrijf" ],
     "name" : "Wit-Blauw Vleesbedrijf",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Over Het Wit-Blauw Vleesbedrijf Het landbouwbedrijf werd in 1991 overgenomen van de ouders van Piet. Het bedrijf was toen een gemengd akkerbouw – melkvee en vleesvee bedrijf. In 2005 werd beslist het melkvee te verkopen en werd gestart met de hoevewinkel voor vleesverkoop, dit om zo weinig mogelijk tussenschakels te hebben en de mensen zo vers mogelijk kwaliteitsvlees aan te bieden.",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoeve_0.jpg?itok=Qx3RTaQa", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/witblauw_vleesbedrijf_vlees_toog_lr.jpg?itok=6PznUWDQ" ],
     "schema:name" : "Wit-Blauw Vleesbedrijf",
     "url" : "http://www.witblauwvleesbedrijf.be",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : [ "ft:potatoes", "ft:beef" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -204,14 +204,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -224,19 +221,6 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -253,10 +237,6 @@
     },
     "url" : {
       "@id" : "https://schema.org/url"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -281,17 +261,37 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

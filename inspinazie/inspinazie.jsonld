@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.882237",
+    "longitude" : "4.726196"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Kessel-Lo",
     "postalCode" : "3010",
     "streetAddress" : "Opvoedingstraat 19"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.legumenhofke.be",
-    "email" : "info@legumenhofke.be",
-    "telephone" : "0486/05.74.34",
-    "url" : "http://www.legumenhofke.be"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -19,11 +19,11 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.882237",
-    "longitude" : "4.726196"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.legumenhofke.be",
+    "email" : "info@legumenhofke.be",
+    "telephone" : "0486/05.74.34",
+    "url" : "http://www.legumenhofke.be"
   }, {
     "@id" : "http://www.facebook.com/legumenhofke",
     "@type" : "foaf:OnlineAccount",
@@ -102,11 +102,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,9 +173,9 @@
     "homepage" : "http://www.legumenhofke.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/inspinazie", "http://www.rechtvanbijdeboer.be/node/3277" ],
     "name" : "Inspinazie",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "bio groentepakketten van het eigen veld",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "schema:name" : "Inspinazie",
     "url" : "http://www.legumenhofke.be",
     "actorType" : [ "at:pointOfSale", "at:collectionPoint" ],
@@ -214,33 +214,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -254,36 +227,63 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

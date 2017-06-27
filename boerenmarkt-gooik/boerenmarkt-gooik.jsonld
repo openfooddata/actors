@@ -1,22 +1,21 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Gooik",
-    "postalCode" : "1755",
-    "streetAddress" : "Rond punt &quot;De drie hamers&quot;"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.795281",
-    "longitude" : "4.118049"
-  }, {
-    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/hoevebakkerij-de-haseleer",
     "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardbeienhoeve",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b4",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.795281",
+    "longitude" : "4.118049"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -24,9 +23,10 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardbeienhoeve",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Gooik",
+    "postalCode" : "1755",
+    "streetAddress" : "Rond punt &quot;De drie hamers&quot;"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -53,7 +53,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,12 +163,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/boerenmarkt-gooik", "http://www.rechtvanbijdeboer.be/node/1992" ],
     "name" : "Boerenmarkt Gooik",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/herrebeekhof_-marktkraam_lr.jpg?itok=BcACx0qC",
     "schema:name" : "Boerenmarkt Gooik",
     "actorType" : [ "at:farmersMarket", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:bakery_products", "ft:pork", "ft:fruits", "ft:vegetables", "ft:beef" ],
-    "upstreamRel" : [ "_:b2", "_:b3", "_:b4" ]
+    "upstreamRel" : [ "_:b1", "_:b3", "_:b0" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -190,14 +190,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -212,10 +213,6 @@
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
@@ -228,11 +225,14 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

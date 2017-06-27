@@ -100,11 +100,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -179,7 +179,7 @@
     "name" : "Natuurboerderij Het Bolhuis",
     "url" : "http://www.bolhuis.be/",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b1", "_:b2" ],
+    "downstreamRel" : [ "_:b2", "_:b1" ],
     "offersFoodType" : [ "ft:potatoes", "ft:lamb_meat", "ft:poultry_meat", "ft:fruit_juices", "ft:pork", "ft:alcoholic_beverages", "ft:fruits", "ft:eggs", "ft:beef", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -221,12 +221,14 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -248,6 +250,10 @@
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
@@ -257,24 +263,6 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -288,6 +276,18 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"

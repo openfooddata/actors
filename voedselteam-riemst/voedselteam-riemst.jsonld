@@ -2,22 +2,25 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/stichting-ommersteyn",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/herkenrodeboer",
     "relatedContext" : "at:producer"
   }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.792474",
+    "longitude" : "5.589819"
+  }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/catharinadal",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Riemst",
+    "postalCode" : "3770",
+    "streetAddress" : "Bodemstraat 11"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-wroeter-maatwerkbedrijf-vzw",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/catharinadal",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b4",
@@ -26,17 +29,14 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b6",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.792474",
-    "longitude" : "5.589819"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/stichting-ommersteyn",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b6",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Riemst",
-    "postalCode" : "3770",
-    "streetAddress" : "Bodemstraat 11"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-wroeter-maatwerkbedrijf-vzw",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -63,7 +63,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -108,11 +108,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,12 +173,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/voedselteam-riemst", "http://www.rechtvanbijdeboer.be/node/2257" ],
     "name" : "Voedselteam Riemst",
     "description" : "",
-    "geo" : "_:b5",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_0311.JPG?itok=qXCIzotY",
     "schema:name" : "Voedselteam Riemst",
     "actorType" : [ "at:pointOfSale", "at:foodTeams" ],
     "offersFoodType" : [ "ft:fruits", "ft:beef", "ft:poultry_meat", "ft:lamb_meat", "ft:pork", "ft:icecream", "ft:alcoholic_beverages", "ft:eggs", "ft:fruit_juices", "ft:bakery_products", "ft:potatoes", "ft:vegetables", "ft:milk_products" ],
-    "upstreamRel" : [ "_:b3", "_:b2", "_:b4", "_:b0", "_:b1" ]
+    "upstreamRel" : [ "_:b0", "_:b5", "_:b3", "_:b6", "_:b4" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -206,35 +206,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -256,6 +227,35 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

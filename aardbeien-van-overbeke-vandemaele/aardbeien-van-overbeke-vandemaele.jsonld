@@ -7,11 +7,9 @@
     "streetAddress" : "Bessemstraat 65"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.aardbeienvanoverbeke.be",
-    "email" : "philip.vanoverbeke@telenet.be",
-    "telephone" : "056/614388",
-    "url" : "http://www.aardbeienvanoverbeke.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardbeienautomaat-2424",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
@@ -21,9 +19,11 @@
     "longitude" : "3.454638"
   }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardbeienautomaat-2424",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.aardbeienvanoverbeke.be",
+    "email" : "philip.vanoverbeke@telenet.be",
+    "telephone" : "056/614388",
+    "url" : "http://www.aardbeienvanoverbeke.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,14 +167,14 @@
     "homepage" : "http://www.aardbeienvanoverbeke.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/aardbeien-van-overbeke-vandemaele-0", "http://www.rechtvanbijdeboer.be/node/2633", "http://www.rechtvanbijdeboer.be/node/1228", "http://www.rechtvanbijdeboer.be/aardbeien-van-overbeke-vandemaele" ],
     "name" : "Aardbeien Van Overbeke-Vandemaele",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "Ons bedrijf is opgestart op 10 oktober 1992 met de teelt van aardbeien en van witloof. In 2004 zijn we gestopt met het telen van witloof en werd er een nieuwe serre bijgeplaatst waardoor we reeds van begin april tot eind december aardbeien kunnen telen. Vanaf 2004 zijn we volledig overgeschakeld op substraatteelt (stellingen op hoogte) en werd de teelt in de grond volledig verlaten. Door deze aanpassing konden we hogere producties en betere kwaliteit bekomen. Voor meer informatie ga naar www.aardbeienvanoverbeke.be !",
     "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p10001762.jpg?itok=eZCCwbOx", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hpim1804.jpg?itok=9rumsMaX", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1000840.jpg?itok=0MpJhBlh", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/14.png?itok=dDgA6tjD" ],
     "schema:name" : "Aardbeien Van Overbeke-Vandemaele",
     "url" : "http://www.aardbeienvanoverbeke.be",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : "ft:fruits"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -213,17 +213,11 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -237,6 +231,18 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -254,10 +260,6 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
@@ -267,19 +269,17 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"

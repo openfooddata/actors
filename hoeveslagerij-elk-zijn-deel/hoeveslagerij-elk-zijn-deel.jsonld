@@ -1,19 +1,19 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/olmenhof-hoeveslagerij-elk-zijn-deel",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Smeerebbe-Vloerzegem",
     "postalCode" : "9506",
     "streetAddress" : "Smeerebbestraat 5"
   }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/olmenhof-hoeveslagerij-elk-zijn-deel",
+    "relatedContext" : "at:producer"
+  }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "50.816488",
     "longitude" : "3.927599"
@@ -156,7 +156,7 @@
     "name" : "Hoeveslagerij Elk zijn deel",
     "actorType" : [ "at:farmShop", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:beef", "ft:pork" ],
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -178,12 +178,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -193,8 +187,22 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -202,19 +210,11 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

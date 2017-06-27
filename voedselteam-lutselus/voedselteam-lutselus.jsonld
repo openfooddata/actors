@@ -6,16 +6,16 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/catharinadal",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b4",
     "addressCountry" : "Belgium",
     "latitude" : "50.920391",
     "longitude" : "5.465960"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/catharinadal",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -102,7 +102,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,12 +163,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/voedselteam-lutselus", "http://www.rechtvanbijdeboer.be/node/2247" ],
     "foaf:name" : "Voedselteam Lutselus",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/familiefoto.jpg?itok=CBHVp8pB",
     "name" : "Voedselteam Lutselus",
     "actorType" : [ "at:pointOfSale", "at:foodTeams" ],
-    "offersFoodType" : [ "ft:bakery_products", "ft:beef", "ft:pork", "ft:fruits", "ft:vegetables", "ft:milk_products", "ft:poultry_meat", "ft:icecream", "ft:lamb_meat" ],
-    "upstreamRel" : [ "_:b2", "_:b0", "_:b3" ]
+    "offersFoodType" : [ "ft:bakery_products", "ft:beef", "ft:pork", "ft:vegetables", "ft:fruits", "ft:milk_products", "ft:poultry_meat", "ft:icecream", "ft:lamb_meat" ],
+    "upstreamRel" : [ "_:b0", "_:b1", "_:b3" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -190,17 +190,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "offersFoodType" : {
@@ -215,8 +209,8 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "name" : {
@@ -224,6 +218,12 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

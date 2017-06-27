@@ -1,11 +1,10 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.930238",
-    "longitude" : "3.226050"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Izegem",
+    "postalCode" : "8870",
+    "streetAddress" : "Willem Elsschotstraat 19/1"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -13,10 +12,11 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Izegem",
-    "postalCode" : "8870",
-    "streetAddress" : "Willem Elsschotstraat 19/1"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.930238",
+    "longitude" : "3.226050"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -92,7 +92,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -150,10 +150,10 @@
     "@id" : "https://w3id.org/openfooddata/actors/t-venster",
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/biobellogroentenenfruitmaxi.jpg?itok=n2EToMw3",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-venster", "http://www.rechtvanbijdeboer.be/node/2471" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2471", "http://www.rechtvanbijdeboer.be/t-venster" ],
     "name" : "'t Venster",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/biobellogroentenenfruitmaxi.jpg?itok=n2EToMw3",
     "schema:name" : "'t Venster",
     "actorType" : [ "at:vegetableSubscription", "at:pointOfSale" ],
@@ -180,9 +180,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -196,27 +204,19 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
