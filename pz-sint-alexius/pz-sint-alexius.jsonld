@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/den-diepen-boomgaard",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "50.918300",
     "longitude" : "4.361893"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Grimbergen",
     "postalCode" : "1850",
     "streetAddress" : "Grimbergsesteenweg 40"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/den-diepen-boomgaard",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -153,12 +153,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3444", "http://www.rechtvanbijdeboer.be/pz-sint-alexius" ],
     "name" : "PZ Sint Alexius",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotosessiestreekprodukten%20%2846%29_1.jpg?itok=P8yY02ej",
     "schema:name" : "PZ Sint Alexius",
     "actorType" : [ "at:vegetableSubscription", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:fruits", "ft:alcoholic_beverages", "ft:bakery_products", "ft:spices", "ft:fruit_juices", "ft:vegetables", "ft:icecream", "ft:milk_products", "ft:eggs", "ft:potatoes" ],
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : "_:b2"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -180,11 +180,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -215,18 +222,11 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"

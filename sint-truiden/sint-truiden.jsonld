@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.801919",
+    "longitude" : "5.220266"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Sint-Truiden",
     "postalCode" : "3800",
     "streetAddress" : "-0"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-levende-aarde-cvba",
     "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.801919",
-    "longitude" : "5.220266"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -43,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -153,12 +153,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2098", "http://www.rechtvanbijdeboer.be/sint-truiden" ],
     "foaf:name" : "Sint-Truiden",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_levende_aarde_cvba_geitenkaasjes.jpg?itok=LMhPoryB",
     "name" : "Sint-Truiden",
     "actorType" : [ "at:market", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:lamb_meat", "ft:milk_products" ],
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b2"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -180,23 +180,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "actorType" : {
@@ -211,31 +205,37 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "name" : {
       "@id" : "https://schema.org/name"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

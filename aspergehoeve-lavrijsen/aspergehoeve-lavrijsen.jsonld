@@ -1,11 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.aspergehoevelavrijsen.be/",
-    "email" : "info@aspergehoevelavrijsen.be",
-    "telephone" : "013 55 16 84",
-    "url" : "http://www.aspergehoevelavrijsen.be/"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.943663",
+    "longitude" : "5.196638"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -14,11 +14,11 @@
     "streetAddress" : "Herkkantstraat 47"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.943663",
-    "longitude" : "5.196638"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.aspergehoevelavrijsen.be/",
+    "email" : "info@aspergehoevelavrijsen.be",
+    "telephone" : "013 55 16 84",
+    "url" : "http://www.aspergehoevelavrijsen.be/"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -90,11 +90,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,9 +158,9 @@
     "homepage" : "http://www.aspergehoevelavrijsen.be/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/aspergehoeve-lavrijsen-0", "http://www.rechtvanbijdeboer.be/node/1413", "http://www.rechtvanbijdeboer.be/aspergehoeve-lavrijsen", "http://www.rechtvanbijdeboer.be/node/2892" ],
     "foaf:name" : "Aspergehoeve Lavrijsen",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "Ruim 20 jaar werden er reeds asperges geteeld door mijn ouders. Met veel liefde zetten mijn vrouw en ik ons verder in voor de teelt. Meer nog , na de bedrijfsovername kwam er een uitbreiding en gingen we aan de slag met nieuwe productiemethodes zoals de teelt in serre en een vervroegde asperge-oogst door opwarming van het aspergebed. Een hele uitdaging die we met plezier aangaan om zo de asperges vroeger rechtstreeks te kunnen aanbieden aan onze klanten... Wanneer de asperges weer in rust gaan is het tijd om onze bramen en bessen te oogsten. Deze worden rechtstreeks van het veld verkocht aan de groothandel. We laten echter wel confituur , sap en likeur maken van een deel van bessenoogst die we vanaf 2016 kunnen aanbieden in onze seizoenswinkel.",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aspergehoeve_lavrijsen_buitenkant_winkel_lr.jpg?itok=q00cTImR",
     "name" : "Aspergehoeve Lavrijsen",
     "url" : "http://www.aspergehoevelavrijsen.be/",
@@ -184,27 +184,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -217,6 +196,18 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -246,6 +237,15 @@
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

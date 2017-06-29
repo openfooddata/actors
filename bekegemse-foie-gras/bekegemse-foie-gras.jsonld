@@ -1,17 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/foie-gras-canard-vanackere",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "51.148995",
     "longitude" : "3.057350"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Bekegem",
-    "postalCode" : "8480",
-    "streetAddress" : "Doornhoekstraat 59"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -21,9 +20,10 @@
     "url" : "http://www.foiegras-vanackere.com/"
   }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/foie-gras-canard-vanackere",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Bekegem",
+    "postalCode" : "8480",
+    "streetAddress" : "Doornhoekstraat 59"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,12 +165,12 @@
     "name" : "Bekegemse foie gras",
     "contactPoint" : "_:b2",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "Bekegemse foie gras",
     "url" : "http://www.foiegras-vanackere.com/",
     "actorType" : [ "at:farmShop", "at:producer", "at:pointOfSale" ],
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : "ft:fruit_juices"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -193,18 +193,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -221,19 +214,15 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "homepage" : {
@@ -242,20 +231,25 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -265,6 +259,12 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

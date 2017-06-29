@@ -1,10 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "wondelgem gent",
-    "postalCode" : "9032",
-    "streetAddress" : "molenstraat 123"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -12,16 +11,17 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.slagerijraemdonck.be",
     "email" : "info@slagerijraemdonck.be",
     "telephone" : "09/2538573",
     "url" : "http://www.slagerijraemdonck.be"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "wondelgem gent",
+    "postalCode" : "9032",
+    "streetAddress" : "molenstraat 123"
   }, {
     "@id" : "http://slagerijraemdonck",
     "@type" : "foaf:OnlineAccount",
@@ -55,7 +55,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -172,9 +172,9 @@
     "homepage" : "http://www.slagerijraemdonck.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1240", "http://www.rechtvanbijdeboer.be/slagerij-raemdonck" ],
     "foaf:name" : "Slagerij Raemdonck",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b2",
     "description" : "Al 45 jaar staat in de hoeve \"van den langendam\" kwaliteit hoog in het vaandel. Hier worden runderen gekweekt met respect voor de traditie, maar met de efficiëntie van een modern bedrijf. De hoogwaardige runderen van het witblauw ras groeien op in de groene weide en worden gevoederd enkel met natuurlijke grondstoffen. Deze werkwijze mondt uit in vlees van hoge kwaliteit en dat proef je. De runderen worden geslacht in Zele en worden in de slagerij te Wondelgem vakkundig versneden. Elke week is er een weekpromotie, en deze kan geraadpleegd worden op onze website. Vleescolli's voor de diepvries zijn te verkrijgen op bestelling. Voor meer informatie over onze diensten kan u uiteraard steeds telefonisch contact opnemen.",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/profiel.jpg?itok=TmnoXwXR", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0033.jpg?itok=lYisXwTC", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0054.jpg?itok=mu42llB0" ],
     "name" : "Slagerij Raemdonck",
     "url" : "http://www.slagerijraemdonck.be",
@@ -202,14 +202,9 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -225,10 +220,6 @@
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -284,6 +275,15 @@
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

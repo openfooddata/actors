@@ -1,31 +1,31 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.332855",
-    "longitude" : "4.936315"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Turnhout",
     "postalCode" : "2300",
     "streetAddress" : "Veldekensweg"
   }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/widar",
-    "relatedContext" : "at:producer"
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.332855",
+    "longitude" : "4.936315"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-wieltjeshoeve",
     "relatedContext" : "at:producer"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-drie-wilgen",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/widar",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -53,7 +53,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,7 +163,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2171", "http://www.rechtvanbijdeboer.be/voedselteam-turnhout-veldekens" ],
     "name" : "Voedselteam Turnhout Veldekens",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/181857_207111832743894_1026797904_n-300x200.jpg?itok=H2nW2Ewa",
     "schema:name" : "Voedselteam Turnhout Veldekens",
     "actorType" : [ "at:pointOfSale", "at:foodTeams" ],
@@ -190,35 +190,31 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -232,14 +228,18 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"

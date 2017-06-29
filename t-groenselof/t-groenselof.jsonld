@@ -1,16 +1,14 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.tgroenselof.be",
-    "email" : "info@tgroenselof.be",
-    "telephone" : "0478/423516",
-    "url" : "http://www.tgroenselof.be"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/t-groenselof-1",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b5",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -18,14 +16,16 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b5",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zele",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.tgroenselof.be",
+    "email" : "info@tgroenselof.be",
+    "telephone" : "0478/423516",
+    "url" : "http://www.tgroenselof.be"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:PostalAddress",
@@ -58,7 +58,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -171,14 +171,14 @@
     "homepage" : "http://www.tgroenselof.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-groenselof", "http://www.rechtvanbijdeboer.be/node/1853" ],
     "name" : "'t Groenselof",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b4",
     "description" : "Het tuinbouwbedrijf 't groenselof in Lokeren (Heiende), is al meer dan 50 jaar een vast begrip in de ruime regio; zeker wat betreft de teelt van 'asperges', 'grondwitloof' en aardappelen. Die kleine stap tussen producent en consument (korte keten) betekende al voor velen een wereld van verschil op het bord van elke dag, maar nu is er nog meer goed nieuws. De huidige bedrijfsleider (2de generatie), slaagde erin om de vroegere elementaire verkoopsruimte medio 2015 om te vormen tot een zeer fraaie hoevewinkel met een veel ruimer assortiment dan voorheen - een ruim gamma van 'seizoensgebonden' dagverse groenten (wortelen, boontjes, grondtomaten enz.) alsook een waaier aan fruit. Toch probeert men om zoveel als mogelijk de teelt van groenten in eigen handen te nemen. Bovendien is men er altijd bereikbaar; want na sluitingstijd van de hoevewinkel, kunnen particulier en restaurantuitbater ook met hun vraag terecht in de automaten, 7 dagen op 7 dag (24/24).",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_automaat.jpg?itok=eDy8D6of", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_asperges.jpg?itok=qRVjcR0n", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_witloof.jpg?itok=izJ_rhM8", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_sla.jpg?itok=_gRU3xyi" ],
     "schema:name" : "'t Groenselof",
     "url" : "http://www.tgroenselof.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b1", "_:b2", "_:b4" ],
+    "downstreamRel" : [ "_:b0", "_:b2", "_:b3" ],
     "offersFoodType" : [ "ft:spices", "ft:vegetables", "ft:fruits", "ft:poultry_meat", "ft:potatoes", "ft:eggs" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -204,18 +204,18 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "image" : {
@@ -223,10 +223,6 @@
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
@@ -240,18 +236,9 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -261,6 +248,19 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"

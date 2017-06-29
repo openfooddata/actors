@@ -1,25 +1,25 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Hofstade",
     "postalCode" : "9308",
     "streetAddress" : "Babbelaarstraat 171"
   }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
-  }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "linda.coppens@hotmail.com",
-    "telephone" : "053/41 58 05"
-  }, {
-    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-11",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:ContactPoint",
+    "email" : "linda.coppens@hotmail.com",
+    "telephone" : "053/41 58 05"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,13 +158,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-smet-walter", "http://www.rechtvanbijdeboer.be/node/1781" ],
     "name" : "De Smet Walter",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b3",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "De Smet Walter",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : "ft:potatoes"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -187,6 +187,13 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -196,18 +203,15 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -215,26 +219,22 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -242,11 +242,11 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

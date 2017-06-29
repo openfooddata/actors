@@ -1,27 +1,27 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Geel",
-    "postalCode" : "2440",
-    "streetAddress" : "Doornboomstraat 55"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aspergehoeve",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.aspergehoeve.be",
     "email" : "aspergehoeve@gmail.com",
     "telephone" : "014/582634",
     "url" : "http://www.aspergehoeve.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aspergehoeve",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Geel",
+    "postalCode" : "2440",
+    "streetAddress" : "Doornboomstraat 55"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -97,7 +97,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,14 +165,14 @@
     "homepage" : "http://www.aspergehoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1454", "http://www.rechtvanbijdeboer.be/aspergehoeve-geel" ],
     "name" : "Aspergehoeve Geel",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aspergehoevevoorben.jpg?itok=edCvopyz", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2014-04-2510.23.57.jpg?itok=I39hERdY" ],
     "schema:name" : "Aspergehoeve Geel",
     "url" : "http://www.aspergehoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : "ft:vegetables"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -202,24 +202,31 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -232,14 +239,6 @@
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "name" : {
@@ -258,9 +257,6 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -273,17 +269,21 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

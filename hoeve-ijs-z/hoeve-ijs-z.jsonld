@@ -1,39 +1,39 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zedelgem",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b5",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "51.145813",
     "longitude" : "3.152456"
   }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Zedelgem",
+    "postalCode" : "8210",
+    "streetAddress" : "Zaggebroekstraat 2"
+  }, {
     "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zedelgem",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-de-open-poort-sint-michiels",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-brugge",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b5",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hoeveijsz.be",
     "email" : "info@hoeveijsz.be",
     "telephone" : "0485/282314",
     "url" : "http://www.hoeveijsz.be"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-brugge",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-de-open-poort-sint-michiels",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b5",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Zedelgem",
-    "postalCode" : "8210",
-    "streetAddress" : "Zaggebroekstraat 2"
   }, {
     "@id" : "http://www.facebook.com/hoeveijsz",
     "@type" : "foaf:OnlineAccount",
@@ -184,14 +184,14 @@
     "homepage" : "http://www.hoeveijsz.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hoeve-ijs-z-1", "http://www.rechtvanbijdeboer.be/node/1629", "http://www.rechtvanbijdeboer.be/hoeve-ijs-z", "http://www.rechtvanbijdeboer.be/node/3121", "http://www.rechtvanbijdeboer.be/hoeve-ijs-z-0", "http://www.rechtvanbijdeboer.be/node/3122" ],
     "name" : "Hoeve-ijs Z",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b5",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/diaautom2.png?itok=7lki7ITv", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/10449962_1469163179995605_8558182526507174092_n.jpg?itok=_mtcIfby", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/jorisco3.jpg?itok=EJQF2Yr9", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wij.jpg?itok=7941uWWv", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto2.jpg?itok=tU8ZSwmh" ],
     "schema:name" : "Hoeve-ijs Z",
     "url" : "http://www.hoeveijsz.be",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:vendingMachine", "at:producer" ],
-    "downstreamRel" : [ "_:b3", "_:b4", "_:b0" ],
+    "downstreamRel" : [ "_:b2", "_:b3", "_:b4" ],
     "offersFoodType" : [ "ft:beef", "ft:lamb_meat", "ft:icecream" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -214,21 +214,28 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -242,16 +249,8 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -263,18 +262,19 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"

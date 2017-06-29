@@ -1,31 +1,32 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/natlandhoeve",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.870477",
+    "longitude" : "5.514395"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-wroeter-maatwerkbedrijf-vzw",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Bilzen",
+    "postalCode" : "3740",
+    "streetAddress" : "Korenstraat 24"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/herkenrodeboer",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/stichting-ommersteyn",
     "relatedContext" : "at:producer"
   }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-wroeter-maatwerkbedrijf-vzw",
+    "relatedContext" : "at:producer"
+  }, {
     "@id" : "_:b4",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b6",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.870477",
-    "longitude" : "5.514395"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/herkenrodeboer",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
@@ -33,10 +34,9 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b6",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Bilzen",
-    "postalCode" : "3740",
-    "streetAddress" : "Korenstraat 24"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/natlandhoeve",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,12 +173,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/voedselteam-bilzen", "http://www.rechtvanbijdeboer.be/node/2256" ],
     "name" : "Voedselteam Bilzen",
     "description" : "",
-    "geo" : "_:b4",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/familiefoto.jpg?itok=CBHVp8pB",
     "schema:name" : "Voedselteam Bilzen",
     "actorType" : [ "at:foodTeams", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:alcoholic_beverages", "ft:milk_products", "ft:poultry_meat", "ft:beef", "ft:potatoes", "ft:pork", "ft:fruits", "ft:bakery_products", "ft:eggs", "ft:lamb_meat", "ft:vegetables", "ft:fruit_juices", "ft:icecream" ],
-    "upstreamRel" : [ "_:b2", "_:b3", "_:b1", "_:b0", "_:b5" ]
+    "upstreamRel" : [ "_:b4", "_:b2", "_:b5", "_:b3", "_:b6" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -200,11 +200,33 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
@@ -222,40 +244,18 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

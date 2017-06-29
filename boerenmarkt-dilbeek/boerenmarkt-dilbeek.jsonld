@@ -1,26 +1,26 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.boerenmarktdilbeek.be",
+    "email" : "info@boerenmarktdilbeek.be",
+    "url" : "http://www.boerenmarktdilbeek.be"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Dilbeek",
     "postalCode" : "1700",
     "streetAddress" : "Kamerijklaan (parking CC Westrand) 1"
   }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-dilbeek-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b1",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.boerenmarktdilbeek.be",
-    "email" : "info@boerenmarktdilbeek.be",
-    "url" : "http://www.boerenmarktdilbeek.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-dilbeek-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,14 +160,14 @@
     "homepage" : "http://www.boerenmarktdilbeek.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1250", "http://www.rechtvanbijdeboer.be/boerenmarkt-dilbeek" ],
     "foaf:name" : "Boerenmarkt Dilbeek",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "Alle info op www.boerenmarktdilbeek.be Een dertigtal producenten staan op de markt, zowel gangbaar als biologisch",
     "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Boerenmarkt Dilbeek",
     "url" : "http://www.boerenmarktdilbeek.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:beef", "ft:vegetables", "ft:milk_products", "ft:lamb_meat", "ft:icecream", "ft:fruit_juices", "ft:bakery_products", "ft:spices", "ft:fruits", "ft:eggs", "ft:pork", "ft:potatoes", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -190,6 +190,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -199,12 +208,6 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -212,14 +215,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -230,8 +230,8 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "actorType" : {
@@ -240,18 +240,18 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "https://schema.org/name"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

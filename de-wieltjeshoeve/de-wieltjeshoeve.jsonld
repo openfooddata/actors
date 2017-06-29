@@ -1,9 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-veldekens",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -12,16 +12,14 @@
     "streetAddress" : "Steenweg op Merksplas 65 B"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.wieltjeshoeve.be",
-    "email" : "wieltjeshoeve@telenet.be",
-    "telephone" : "0476/633745",
-    "url" : "http://www.wieltjeshoeve.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-veldekens",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-warande",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
@@ -29,9 +27,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-warande",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.wieltjeshoeve.be",
+    "email" : "wieltjeshoeve@telenet.be",
+    "telephone" : "0476/633745",
+    "url" : "http://www.wieltjeshoeve.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -103,7 +103,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -175,14 +175,14 @@
     "homepage" : "http://www.wieltjeshoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1192", "http://www.rechtvanbijdeboer.be/de-wieltjeshoeve" ],
     "name" : "De Wieltjeshoeve",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b5",
     "description" : "In maart 2000 startte de Wieltjeshoeve met biologische tuinbouw. Hun doelstelling is zeer verse seizoensgebonden groenten van eigen akkers in de verswinkel aanbieden, aangevuld met oogst van collega-bio-telers. Daarnaast bieden ze verschillende groetenpakketten, verpakkingen met \"vergeten groenten\" en \"vergeten recepten\" aan waarmee ze de consument willen voorzien van een gezond evenwichtig en een zeer gevarieerde en voedingsrijke maaltijd. Winkelen wordt voor u makkelijker. U moet niet meer nadenken over welke groenten je deze week op tafel zal brengen",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_3580-300x200.jpg?itok=M8vHbi9v", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_5201-300x200.jpg?itok=VuPdQLSp", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/181857_207111832743894_1026797904_n-300x200.jpg?itok=H2nW2Ewa", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/knipsel.jpg?itok=bvCv4vRx" ],
     "schema:name" : "De Wieltjeshoeve",
     "url" : "http://www.wieltjeshoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b5", "_:b4", "_:b0" ],
+    "downstreamRel" : [ "_:b2", "_:b3", "_:b4" ],
     "offersFoodType" : [ "ft:fruits", "ft:vegetables" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -212,12 +212,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -230,6 +224,13 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -238,25 +239,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -270,12 +252,12 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "account" : {
-      "@id" : "http://xmlns.com/foaf/0.1/account",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
     "image" : {
@@ -284,6 +266,9 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
@@ -291,9 +276,24 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

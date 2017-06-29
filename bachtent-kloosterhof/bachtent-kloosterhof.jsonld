@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Bellem",
+    "postalCode" : "9881",
+    "streetAddress" : "Zwagershullestraat 26"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.bachtentkloosterhof.net/",
     "email" : "mouton.verdonck@skynet.be",
     "telephone" : "0472/729633",
     "url" : "http://www.bachtentkloosterhof.net/"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Bellem",
-    "postalCode" : "9881",
-    "streetAddress" : "Zwagershullestraat 26"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -93,11 +93,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,9 +165,9 @@
     "homepage" : "http://www.bachtentkloosterhof.net/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1081", "http://www.rechtvanbijdeboer.be/bachtent-kloosterhof" ],
     "name" : "Bachten't Kloosterhof",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "Reeds voor de 5° generatie wordt er op de boerderij aan landbouw gedaan. Sedert 1996 zijn Guy en Lieve er actief bezig met melkvee, groenten en fruit en de thuisverkoop ervan in de hoevewinkel. Sedert 2006 kwam de landbouweducatie erbij. In de ontvangstruimte bieden we iedere bezoeker een warm onthaal en proberen we alles in een gemoedelijke en familiale sfeer te leiden. We maken voor ieder een bezoek op maat !",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bachten-t_kloosterhof_uithangbord_lr.jpg?itok=3g2wCzzu", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bachten-t_kloosterhof_uithangbord_pierlepein_lr.jpg?itok=6we9y54c", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bachten-t_kloosterhof_binnenkant_winkel_lr.jpg?itok=BQX0TxO5" ],
     "schema:name" : "Bachten't Kloosterhof",
     "url" : "http://www.bachtentkloosterhof.net/",
@@ -201,6 +201,13 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -213,6 +220,12 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -221,13 +234,6 @@
     },
     "prefLabel" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -250,22 +256,18 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
@@ -275,11 +277,9 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

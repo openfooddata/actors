@@ -1,18 +1,18 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.895731",
-    "longitude" : "5.457710"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.aspergeshertenveld.be",
     "email" : "koen.de.busschop@telenet.be",
     "telephone" : "0478/342262",
     "url" : "http://www.aspergeshertenveld.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.895731",
+    "longitude" : "5.457710"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -45,7 +45,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,9 +158,9 @@
     "homepage" : "http://www.aspergeshertenveld.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3411", "http://www.rechtvanbijdeboer.be/node/1845", "http://www.rechtvanbijdeboer.be/asperges-hertenveld", "http://www.rechtvanbijdeboer.be/asperges-hertenveld-0" ],
     "foaf:name" : "Asperges Hertenveld",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscn1160.jpg?itok=_9-hgflA", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/092.jpg?itok=gS_DEPIy" ],
     "name" : "Asperges Hertenveld",
     "url" : "http://www.aspergeshertenveld.be",
@@ -190,6 +190,10 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -215,15 +219,14 @@
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -238,14 +241,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

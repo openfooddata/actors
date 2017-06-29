@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.898648",
+    "longitude" : "2.878628"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Boezinge",
     "postalCode" : "8904",
     "streetAddress" : "Langemarkseweg 23"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.898648",
-    "longitude" : "2.878628"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -90,11 +90,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -164,7 +164,7 @@
     "name" : "Hoeve 't Pilkemhof",
     "contactPoint" : "_:b2",
     "description" : [ "Wij baten een gemengd landbouwbedrijf uit dat bestaat uit vleesvarkens, akkerbouw, intensieve en grove groenteteelt met hoevewinkel. Daar proberen we zoveel mogelijk eigen geteelde producten rechtstreeks aan de man te brengen. Ons Assortiment breidt jaarlijks uit, telkens opnieuw passen we ons teeltplan aan zodat we ons aanbod ruimer wordt. Ook volgde ik vorig jaar de cursus bijenteelt!", "Staat de poort open, dan is de winkel open, kom zeker binnen!" ],
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/029_Rollez%20Ilse.jpg?itok=8puTtAhQ", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/055_Rollez%20Ilse.jpg?itok=OtF-nDvI", "http://www.rechtvanbijdeboer.be/sites/default/files/055_Rollez%20Ilse_0.jpg" ],
     "schema:name" : "Hoeve 't Pilkemhof",
     "url" : "http://www.pilkemhof.be",
@@ -195,14 +195,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -243,19 +247,6 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -267,6 +258,15 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"

@@ -1,27 +1,27 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Geel",
-    "postalCode" : "2440",
-    "streetAddress" : "Wolkenstraat 25"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/wolkenhoeve",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.wolkenhoeve.be",
     "email" : "info@wolkenhoeve.be",
     "telephone" : "014/850811",
     "url" : "http://www.wolkenhoeve.be"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b3",
     "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Geel",
+    "postalCode" : "2440",
+    "streetAddress" : "Wolkenstraat 25"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -93,11 +93,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,14 +161,14 @@
     "homepage" : "http://www.wolkenhoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1235", "http://www.rechtvanbijdeboer.be/varkensbedrijf-de-wolkenhoeve" ],
     "foaf:name" : "Varkensbedrijf De Wolkenhoeve",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Wij zijn Chris en Ria Peeters-Nouwen uit Geel en wonen op de 'Wolkenhoeve' met onze vier kinderen Jorre, Lore, Jinse en Limme. We hebben een gesloten varkensbedrijf met 200 zeugen, 600 biggen en 1400 vleesvarkens. 'Gesloten' omdat alle dieren bij ons gekweekt en gevoed worden tot ze slachtrijp zijn. Onze hoeve is gelegen in het landbouwgebied 'De Zegge', het vroegere overstromingsgebied van de Kleine Nete. Op ons bedrijf wordt er gewerkt met een 3-wekensysteem: slechts één hoofdactiviteit per week bij een grote groep zeugen: insemineren, werpen van de biggen en spenen van de biggen (biggen worden bij de zeugen weggehaald). In dit systeem komt erop neer dat de belangrijke stappen het hele kweekprogramma, van inseminatie tot het spenen, voor alle zeugen op hetzelfde ogenblik gebeuren.Omdat alle dieren ongeveer even oud zijn, verhuizen ze allemaal samen van de ene plaats naar de andere. Dit beperkt het aantal handelingen, en daardoor ook de stress bij de dieren. Dit zogenaamde “all-in-all-out”-systeem zorgt er ook voor dat de overdracht van ziektes wordt beperkt. Maar ook de kwaliteit van ons werk stijgt door het 3-weken-systeem omdat we geen 27 dingen door elkaar moeten doen maar ons altijd kunnen concentreren op een aantal taken die in de betrokken week van belang zijn. Door deze structuur kunnen we intensiever werken en komt er tijd vrij voor andere activiteiten.",
-    "geo" : "_:b3",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Varkensbedrijf De Wolkenhoeve",
     "url" : "http://www.wolkenhoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : "ft:pork"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -191,6 +191,51 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -205,51 +250,6 @@
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"

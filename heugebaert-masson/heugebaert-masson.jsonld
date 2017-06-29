@@ -1,15 +1,15 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-ieper",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Reninge",
     "postalCode" : "8647",
     "streetAddress" : "Pypegaelestraat 15"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-ieper",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -17,14 +17,14 @@
     "telephone" : [ "0472/530.88", "057/422255" ]
   }, {
     "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/heugebaert-masson-0",
     "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -51,7 +51,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,11 +165,11 @@
     "foaf:name" : "Heugebaert-Masson",
     "contactPoint" : "_:b2",
     "description" : "Open: Tijdens de maanden mei - juni - juli - augustus : elke dag vanaf 13.00 uur (niet op zondag) Buiten seizoen: na telefonische afspraak",
-    "geo" : "_:b4",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Heugebaert-Masson",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b3", "_:b1" ],
+    "downstreamRel" : [ "_:b0", "_:b4" ],
     "offersFoodType" : "ft:fruits"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -192,6 +192,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -200,12 +206,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
@@ -230,15 +230,15 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -246,12 +246,12 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

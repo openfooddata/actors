@@ -1,10 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Sint-Gillis-Waas",
-    "postalCode" : "9170",
-    "streetAddress" : "Turkeyenstraat 9"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.229218",
+    "longitude" : "4.148029"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -12,11 +13,10 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.229218",
-    "longitude" : "4.148029"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Sint-Gillis-Waas",
+    "postalCode" : "9170",
+    "streetAddress" : "Turkeyenstraat 9"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -153,7 +153,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/fruitteeltbedrijf-de-cauwer-erik-maria", "http://www.rechtvanbijdeboer.be/node/2675" ],
     "foaf:name" : "Fruitteeltbedrijf De Cauwer Erik & Maria",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1?itok=oZkJ-HjQ",
     "name" : "Fruitteeltbedrijf De Cauwer Erik & Maria",
     "actorType" : [ "at:pointOfSale", "at:farmShop" ],
@@ -179,6 +179,35 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -207,35 +236,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

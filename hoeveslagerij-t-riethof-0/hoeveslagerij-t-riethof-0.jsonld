@@ -7,16 +7,16 @@
     "streetAddress" : "Expressweg N377 nr2"
   }, {
     "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveslagerij-t-riethof",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "51.214040",
     "longitude" : "3.072158"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveslagerij-t-riethof",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,7 +88,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2571", "http://www.rechtvanbijdeboer.be/hoeveslagerij-t-riethof-0" ],
     "name" : "Hoeveslagerij 't Riethof",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "schema:name" : "Hoeveslagerij 't Riethof",
     "actorType" : [ "at:pointOfSale", "at:farmShop" ],
     "offersFoodType" : [ "ft:poultry_meat", "ft:pork", "ft:beef", "ft:lamb_meat" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -196,6 +196,10 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
@@ -205,10 +209,6 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

@@ -1,32 +1,32 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hof-ter-meulen-0",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Vlissegem",
+    "postalCode" : "8421",
+    "streetAddress" : "Ter Bieststraat 7 A"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hoftermeulen.com/",
     "email" : "info@hoftermeulen.com",
     "telephone" : "0496/12 24 64",
     "url" : "http://www.hoftermeulen.com/"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b4",
+    "address" : "_:b1",
     "addressCountry" : "Belgium"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-de-open-poort-sint-michiels",
     "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hof-ter-meulen-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Vlissegem",
-    "postalCode" : "8421",
-    "streetAddress" : "Ter Bieststraat 7 A"
   }, {
     "@id" : "http://www.facebook.com/Hof-ter-Meulen",
     "@type" : "foaf:OnlineAccount",
@@ -60,7 +60,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -105,7 +105,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,14 +177,14 @@
     "homepage" : "http://www.hoftermeulen.com/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hof-ter-meulen", "http://www.rechtvanbijdeboer.be/node/1517" ],
     "foaf:name" : "Hof Ter Meulen",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hof_ter_meulen_varkensvlees_ham_hesp_hr.jpg?itok=cpzmwPHT", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hof_ter_meulen_aardbeien.jpg?itok=QceV1zGo" ],
     "name" : "Hof Ter Meulen",
     "url" : "http://www.hoftermeulen.com/",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b3" ],
+    "downstreamRel" : [ "_:b0", "_:b4" ],
     "offersFoodType" : [ "ft:potatoes", "ft:fruit_juices", "ft:pork", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,6 +207,21 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -228,6 +243,10 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -238,16 +257,12 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -258,30 +273,15 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"

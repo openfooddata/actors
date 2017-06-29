@@ -1,13 +1,13 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "wullebeekhof@telenet.be"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/jan-verbruggen",
     "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "wullebeekhof@telenet.be"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
@@ -47,7 +47,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -96,7 +96,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,14 +163,14 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/Wullebeekhof_teelt_courgette.jpg",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3612", "http://www.rechtvanbijdeboer.be/wullebeekhof" ],
     "name" : "Wullebeekhof",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "",
     "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/Wullebeekhof_teelt_courgette.jpg",
     "schema:name" : "Wullebeekhof",
     "actorType" : [ "at:farmShop", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:potatoes", "ft:vegetables", "ft:fruits" ],
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -214,27 +214,27 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -244,9 +244,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -278,6 +275,9 @@
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

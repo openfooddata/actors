@@ -1,14 +1,13 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Ieper",
-    "postalCode" : "8900",
-    "streetAddress" : "Dikkebusseweg 338"
+    "@type" : "schema:ContactPoint",
+    "email" : "hoeveslagerij_goudeseune@hotmail.com",
+    "telephone" : "057/202256"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b3",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
@@ -17,9 +16,10 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "email" : "hoeveslagerij_goudeseune@hotmail.com",
-    "telephone" : "057/202256"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Ieper",
+    "postalCode" : "8900",
+    "streetAddress" : "Dikkebusseweg 338"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -46,7 +46,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,7 +158,7 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hoeveslagerij-goudeseune", "http://www.rechtvanbijdeboer.be/node/1242" ],
     "foaf:name" : "Hoeveslagerij Goudeseune",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "Wij baten reeds elf jaar een hoevewinkel uit met verkoop van onze eigen gekweekte aardappelen en rundvlees en verkopen ook producten van collega-boeren zoals appelsap, confituren, advocaat, hoeve-ijs en ijstaarten.... Tevens hebben we een vakantiewoning voor 14 personen, Hof ter harte (www.hofterharte.be) Steeds van harte welkom, Stefaan en Bernice",
     "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
@@ -187,22 +187,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
@@ -212,16 +196,16 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -229,12 +213,27 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
@@ -242,11 +241,12 @@
     "email" : {
       "@id" : "https://schema.org/email"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

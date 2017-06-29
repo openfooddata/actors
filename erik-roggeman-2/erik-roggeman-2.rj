@@ -1,5 +1,26 @@
 { 
-  "_:d2a884e1927f72602301965317c4e877" : { 
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : { 
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
+      "type" : "uri" ,
+      "value" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+    }
+    , { 
+      "type" : "uri" ,
+      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    }
+     ] ,
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ { 
+      "type" : "uri" ,
+      "value" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    }
+    , { 
+      "type" : "uri" ,
+      "value" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    }
+     ]
+  }
+   ,
+  "_:afefc959a8a931ee46df87546ca9fab1" : { 
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
       "value" : "https://schema.org/PostalAddress"
@@ -18,27 +39,6 @@
     "https://schema.org/addressLocality" : [ { 
       "type" : "literal" ,
       "value" : "Brussel"
-    }
-     ]
-  }
-   ,
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : { 
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
-      "type" : "uri" ,
-      "value" : "http://www.w3.org/2000/01/rdf-schema#Resource"
-    }
-    , { 
-      "type" : "uri" ,
-      "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    }
-     ] ,
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ { 
-      "type" : "uri" ,
-      "value" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
-    }
-    , { 
-      "type" : "uri" ,
-      "value" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
     }
      ]
   }
@@ -309,20 +309,30 @@
      ]
   }
    ,
-  "_:7125fde916295f4f1eb2969115fdd595" : { 
-    "https://w3id.org/openfooddata/onto/core#relatedActor" : [ { 
-      "type" : "literal" ,
-      "value" : "https://w3id.org/openfooddata/actors/erik-roggeman"
+  "_:fc411632408ee25997128f78db4a5c7c" : { 
+    "https://schema.org/address" : [ { 
+      "type" : "bnode" ,
+      "value" : "_:afefc959a8a931ee46df87546ca9fab1"
     }
      ] ,
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
-      "value" : "https://w3id.org/openfooddata/onto/core#ActorRelationship"
+      "value" : "https://schema.org/GeoCoordinates"
     }
      ] ,
-    "https://w3id.org/openfooddata/onto/core#relatedContext" : [ { 
+    "https://schema.org/addressCountry" : [ { 
       "type" : "literal" ,
-      "value" : "at:producer"
+      "value" : "Belgium"
+    }
+     ] ,
+    "https://schema.org/latitude" : [ { 
+      "type" : "literal" ,
+      "value" : "50.891193"
+    }
+     ] ,
+    "https://schema.org/longitude" : [ { 
+      "type" : "literal" ,
+      "value" : "4.417393"
     }
      ]
   }
@@ -349,30 +359,20 @@
      ]
   }
    ,
-  "_:ef300dadd445a126dac5e1a92fb0a3d9" : { 
-    "https://schema.org/address" : [ { 
-      "type" : "bnode" ,
-      "value" : "_:d2a884e1927f72602301965317c4e877"
+  "_:855ab33f54288a91fcc5c4cc6aa4c087" : { 
+    "https://w3id.org/openfooddata/onto/core#relatedActor" : [ { 
+      "type" : "literal" ,
+      "value" : "https://w3id.org/openfooddata/actors/erik-roggeman"
     }
      ] ,
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ { 
       "type" : "uri" ,
-      "value" : "https://schema.org/GeoCoordinates"
+      "value" : "https://w3id.org/openfooddata/onto/core#ActorRelationship"
     }
      ] ,
-    "https://schema.org/addressCountry" : [ { 
+    "https://w3id.org/openfooddata/onto/core#relatedContext" : [ { 
       "type" : "literal" ,
-      "value" : "Belgium"
-    }
-     ] ,
-    "https://schema.org/latitude" : [ { 
-      "type" : "literal" ,
-      "value" : "50.891193"
-    }
-     ] ,
-    "https://schema.org/longitude" : [ { 
-      "type" : "literal" ,
-      "value" : "4.417393"
+      "value" : "at:producer"
     }
      ]
   }
@@ -723,7 +723,7 @@
      ] ,
     "https://w3id.org/openfooddata/onto/core#upstreamRel" : [ { 
       "type" : "bnode" ,
-      "value" : "_:7125fde916295f4f1eb2969115fdd595"
+      "value" : "_:855ab33f54288a91fcc5c4cc6aa4c087"
     }
      ] ,
     "http://xmlns.com/foaf/0.1/name" : [ { 
@@ -733,7 +733,7 @@
      ] ,
     "https://schema.org/geo" : [ { 
       "type" : "bnode" ,
-      "value" : "_:ef300dadd445a126dac5e1a92fb0a3d9"
+      "value" : "_:fc411632408ee25997128f78db4a5c7c"
     }
      ] ,
     "https://schema.org/name" : [ { 

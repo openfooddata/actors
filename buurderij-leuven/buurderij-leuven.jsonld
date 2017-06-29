@@ -1,32 +1,32 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-silsomhof",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-fruitratje",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/vzw-de-winning-maatwerk",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b4",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.880931",
-    "longitude" : "4.703661"
-  }, {
-    "@id" : "_:b4",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Leuven",
     "postalCode" : "3000",
     "streetAddress" : "Bibliotheek Tweebronnen, Rijschoolstraat 4/101"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.880931",
+    "longitude" : "4.703661"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-fruitratje",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-silsomhof",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/vzw-de-winning-maatwerk",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -98,7 +98,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,12 +163,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2025", "http://www.rechtvanbijdeboer.be/buurderij-leuven" ],
     "foaf:name" : "Buurderij Leuven",
     "description" : "",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/Logo%20ballonnen.png?itok=H-cF2d_m",
     "name" : "Buurderij Leuven",
     "actorType" : [ "at:foodAssembly", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:spices", "ft:poultry_meat", "ft:pork", "ft:bakery_products", "ft:fruit_juices", "ft:alcoholic_beverages", "ft:milk_products", "ft:beef", "ft:icecream", "ft:eggs", "ft:vegetables", "ft:potatoes", "ft:fruits", "ft:lamb_meat" ],
-    "upstreamRel" : [ "_:b1", "_:b0", "_:b2" ]
+    "upstreamRel" : [ "_:b3", "_:b2", "_:b4" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -190,40 +190,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -238,14 +212,40 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -2,20 +2,18 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-fruittuin",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-levensbron",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/den-akker",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-fruittuin",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b6",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.880861",
-    "longitude" : "4.691942"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/den-akker",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -28,9 +26,11 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-levensbron",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b6",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.880861",
+    "longitude" : "4.691942"
   }, {
     "@id" : "_:b6",
     "@type" : "schema:PostalAddress",
@@ -108,7 +108,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,12 +173,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/leuven-0", "http://www.rechtvanbijdeboer.be/node/2081" ],
     "name" : "Leuven",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b5",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_levende_aarde_cvba_geitenkaasjes.jpg?itok=LMhPoryB",
     "schema:name" : "Leuven",
     "actorType" : [ "at:market", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:beef", "ft:fruits", "ft:vegetables", "ft:fruit_juices", "ft:lamb_meat", "ft:milk_products", "ft:pork", "ft:alcoholic_beverages", "ft:poultry_meat" ],
-    "upstreamRel" : [ "_:b3", "_:b1", "_:b4", "_:b5", "_:b0" ]
+    "upstreamRel" : [ "_:b1", "_:b2", "_:b3", "_:b0", "_:b4" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -206,10 +206,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
@@ -234,6 +230,10 @@
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

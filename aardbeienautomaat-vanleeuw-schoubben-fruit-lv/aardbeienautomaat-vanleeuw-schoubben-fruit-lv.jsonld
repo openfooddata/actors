@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.828172",
-    "longitude" : "5.276057"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Zepperen",
     "postalCode" : "3800",
     "streetAddress" : "Tereykenstraat 9"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.828172",
+    "longitude" : "5.276057"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -152,7 +152,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3328", "http://www.rechtvanbijdeboer.be/aardbeienautomaat-vanleeuw-schoubben-fruit-lv" ],
     "foaf:name" : "Aardbeienautomaat Vanleeuw-Schoubben Fruit LV",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "name" : "Aardbeienautomaat Vanleeuw-Schoubben Fruit LV",
     "actorType" : [ "at:pointOfSale", "at:vendingMachine" ],
     "offersFoodType" : "ft:fruits",
@@ -178,6 +178,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -191,12 +200,12 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -213,15 +222,6 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"

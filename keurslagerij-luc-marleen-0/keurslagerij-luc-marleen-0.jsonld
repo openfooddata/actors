@@ -1,21 +1,21 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/keurslagerij-luc-&-marleen",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "email" : "gil.van.ceulebroeck@hotmail.com",
-    "telephone" : "092209200"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "50.999808",
     "longitude" : "3.716215"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/keurslagerij-luc-&-marleen",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "email" : "gil.van.ceulebroeck@hotmail.com",
+    "telephone" : "092209200"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -93,7 +93,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,14 +160,14 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/keurslager_0.jpg",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3649", "http://www.rechtvanbijdeboer.be/keurslagerij-luc-marleen-0" ],
     "name" : "Keurslagerij Luc & Marleen",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "Slagerij & boerderijMijn naam is Gil 19jaar en run samen met mijn ouders een slagerij en een boerderij met een 120 koeien ongeveer.Onze koeien huppellen op het sappige gras in de randgemeente Zwijnaarde, op z'n Gents gezegd zo worden gesoigneerd van kop tot teen!Maar onze passie voor runderen gaat veel verder dan dat! Naast onze boerderij hebben wij een slagerij waar wij onze zelfgekweekte runderen versnijden en verkopen aan de klant (korte keten).Wij kunnen altijd dat ietsje meer vertellen over het rund dan de anderen.Het is hard werken om runderen te laten opgroeien,kweken en uiteindelijk naar de eindmeet te brengen daarom gaan wij ook uiterst zorgvuldig om met wat de koe ons biedt.Wij garanderen de hoogste kwaliteit en altijd vers vlees!",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/keurslager_0.jpg",
     "schema:name" : "Keurslagerij Luc & Marleen",
     "actorType" : [ "at:pointOfSale", "at:farmShop" ],
     "offersFoodType" : "ft:beef",
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -192,16 +192,16 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -209,12 +209,12 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -235,6 +235,15 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -246,15 +255,6 @@
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,29 +1,29 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Melsele",
+    "postalCode" : "9120",
+    "streetAddress" : "Kalishoekstraat 93"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.puurnatuurmelsele.be",
     "email" : "puurnatuurmelsele@hotmail.com",
     "telephone" : "03/775 60 16",
     "url" : "http://www.puurnatuurmelsele.be"
   }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-permeke-antwerpen",
-    "relatedContext" : "at:pointOfSale"
-  }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "51.223621",
     "longitude" : "4.286159"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Melsele",
-    "postalCode" : "9120",
-    "streetAddress" : "Kalishoekstraat 93"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-permeke-antwerpen",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -95,7 +95,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,15 +163,15 @@
     "homepage" : "http://www.puurnatuurmelsele.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1172", "http://www.rechtvanbijdeboer.be/puur-natuur-1", "http://www.rechtvanbijdeboer.be/puur-natuur", "http://www.rechtvanbijdeboer.be/node/2569" ],
     "name" : "Puur Natuur",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "",
     "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/puur_natuur_binnenkant_winkel_toog_lr.jpg?itok=7pOTJfEv",
     "schema:name" : "Puur Natuur",
     "url" : "http://www.puurnatuurmelsele.be",
     "actorType" : [ "at:pointOfSale", "at:farmShop" ],
-    "downstreamRel" : "_:b1",
-    "offersFoodType" : [ "ft:potatoes", "ft:fruit_juices", "ft:eggs", "ft:spices", "ft:poultry_meat", "ft:vegetables", "ft:alcoholic_beverages", "ft:milk_products", "ft:bakery_products", "ft:fruits" ]
+    "downstreamRel" : "_:b3",
+    "offersFoodType" : [ "ft:potatoes", "ft:fruit_juices", "ft:spices", "ft:eggs", "ft:poultry_meat", "ft:vegetables", "ft:alcoholic_beverages", "ft:milk_products", "ft:bakery_products", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -193,6 +193,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -211,6 +220,14 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -224,19 +241,11 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -256,15 +265,6 @@
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

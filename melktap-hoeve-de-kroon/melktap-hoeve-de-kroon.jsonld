@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Herenthout",
-    "postalCode" : "2270",
-    "streetAddress" : "Blokt 20"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.149613",
-    "longitude" : "4.742086"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.facebook.com/melktapdekroon",
     "email" : "jolien.verboven@yahoo.com",
     "telephone" : "0474828127",
     "url" : "http://www.facebook.com/melktapdekroon"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.149613",
+    "longitude" : "4.742086"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Herenthout",
+    "postalCode" : "2270",
+    "streetAddress" : "Blokt 20"
   }, {
     "@id" : "http://www.facebook.com/melktapdekroon",
     "@type" : "foaf:OnlineAccount",
@@ -169,7 +169,7 @@
     "homepage" : "http://www.facebook.com/melktapdekroon",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/melktap-hoeve-de-kroon-0", "http://www.rechtvanbijdeboer.be/node/3433", "http://www.rechtvanbijdeboer.be/melktap-hoeve-de-kroon", "http://www.rechtvanbijdeboer.be/node/1877" ],
     "name" : "Melktap Hoeve de Kroon",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "Wij zijn Jolien, Joris en Jef. Samen baten wij een melkveebedrijf uit met 90 melkkoeien. Onze veestapel bestaat verder nog uit jongvee. Het voer voor onze koeien komt grotendeels van eigen oogst: gras, mais, bieten, klaver, ... Joris en Jef zijn verantwoordelijk voor verzorging van de koeien en het bijhorende veldwerk. In 2016 namen wij de beslissing om een melktap op onze boerderij te installeren. Sinds eind juli 2016 is deze in werking. Iedereen kan hier verse (rauwe) melk komen tappen. Heb je vragen over onze tap? Dan kan je steeds bij Jolien terecht.",
     "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/logo_1.jpg?itok=EDsu3mwI",
@@ -195,14 +195,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -219,10 +222,6 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -235,12 +234,12 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -249,11 +248,9 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -268,11 +265,14 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -7,14 +7,14 @@
     "streetAddress" : "Naamsesteenweg 439 C"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/pipo-appelsappen",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
@@ -102,7 +102,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -171,11 +171,11 @@
     "name" : "Truilingen BVBA",
     "contactPoint" : "_:b3",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pic_pipoappelsappen4_jpg.jpg?itok=NnRCBD6U", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_6637_ok.jpg?itok=EykCwiYj", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/532131_10151266001614206_2146719987_n.jpg?itok=pUokpVuE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/streekproducten-pipo.jpg?itok=UEvfDWew", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_6624.jpg?itok=5e7ZV1hj" ],
     "schema:name" : "Truilingen BVBA",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:poultry_meat", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,12 +207,11 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -237,6 +236,10 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
@@ -247,15 +250,18 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -268,12 +274,6 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

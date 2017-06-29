@@ -13,9 +13,9 @@
     "url" : "http://milki.be"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b5",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/milki-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -23,9 +23,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/milki-0",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b5",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:PostalAddress",
@@ -103,7 +103,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,13 +177,13 @@
     "name" : "Milki",
     "contactPoint" : "_:b1",
     "description" : "We hebben een gemengd landbouwbedrijf in de kustpolder. Sinds 2002 zetten wij het familiebedrijf verder en vanaf 2010 maken we ook ambachtelijke roomijs met verse hoevemelk en zonder kleur-, smaak-, of bewaarstoffen. We hebben steeds 14 smaken ijs, 5 smaken sorbet en verschillende individuele ijsgebakjes. Alsook ijstaarten voor 4 en 6 personen. Daarnaast hebben we ook frisco's, ijscoupes en een aanbod van suikervrij ijs. Op bestelling maken we ook voor elke gelegenheid een geschikte ijstaart naar uw wens. Met onze melk maken we ook een assortiment van desserten, yoghurt, platte kaas en zuiveldranken. Wij willen u ook laten genieten van ons huisbereid snoep gemaakt met suiker van onze suikerbieten. Van oktober tot februari telen wij ook oesterzwammen en shiitake en bieden deze dagvers aan. Kom ons bedrijf ontdekken en proef onze verse producten!",
-    "geo" : "_:b2",
+    "geo" : "_:b4",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "Milki",
     "url" : "http://milki.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b3", "_:b4" ],
-    "offersFoodType" : [ "ft:icecream", "ft:eggs", "ft:potatoes", "ft:milk_products", "ft:poultry_meat", "ft:alcoholic_beverages" ]
+    "downstreamRel" : [ "_:b0", "_:b2", "_:b3" ],
+    "offersFoodType" : [ "ft:icecream", "ft:potatoes", "ft:eggs", "ft:milk_products", "ft:poultry_meat", "ft:alcoholic_beverages" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -228,19 +228,15 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "description" : {
@@ -251,6 +247,10 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -273,13 +273,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
@@ -294,6 +287,13 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

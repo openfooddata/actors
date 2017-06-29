@@ -1,25 +1,25 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/fruitteeltbedrijf-de-cauwer-erik-maria",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "erikdecauwer@hotmail.com",
+    "telephone" : [ "0498/545380", "03/7705400" ]
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Sint-Gillis-Waas",
     "postalCode" : "9170",
     "streetAddress" : "Turkeyenstraat 9"
   }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/fruitteeltbedrijf-de-cauwer-erik-maria",
-    "relatedContext" : "at:pointOfSale"
-  }, {
     "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "email" : "erikdecauwer@hotmail.com",
-    "telephone" : [ "0498/545380", "03/7705400" ]
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -46,7 +46,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,13 +158,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ballonvlucht206.jpg?itok=bQRJY6TF", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1?itok=oZkJ-HjQ" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/erik-de-cauwer", "http://www.rechtvanbijdeboer.be/node/1253" ],
     "name" : "Erik De Cauwer",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b1",
     "description" : "Wij zijn een klein gemengd fruitteeltbedrijf, met verschillende soorten appels en peren.",
-    "geo" : "_:b0",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ballonvlucht206.jpg?itok=bQRJY6TF", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1?itok=oZkJ-HjQ" ],
     "schema:name" : "Erik De Cauwer",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : [ "ft:fruits", "ft:eggs", "ft:poultry_meat", "ft:vegetables", "ft:potatoes" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -187,12 +187,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -202,10 +207,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -222,8 +223,16 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -232,21 +241,12 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

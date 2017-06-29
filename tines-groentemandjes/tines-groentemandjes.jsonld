@@ -6,31 +6,33 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/kleibeek",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.192436",
     "longitude" : "4.099971"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Sint-Pauwels",
     "postalCode" : "9170",
     "streetAddress" : "Potterstraat 30"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/la-popote",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/tines-groentemandjes-0",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.kleibeek.be",
+    "email" : "tine.vanackere@online.be",
+    "telephone" : "0495/12 44 33",
+    "url" : "http://www.kleibeek.be"
   }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/tines-groentemandjes-0",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/kleibeek",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b6",
@@ -39,11 +41,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b7",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.kleibeek.be",
-    "email" : "tine.vanackere@online.be",
-    "telephone" : "0495/12 44 33",
-    "url" : "http://www.kleibeek.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/la-popote",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.facebook.com/tines.groentenmandjes",
     "@type" : "foaf:OnlineAccount",
@@ -126,7 +126,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -194,14 +194,14 @@
     "homepage" : "http://www.kleibeek.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1806", "http://www.rechtvanbijdeboer.be/tines-groentemandjes", "http://www.rechtvanbijdeboer.be/tines-groentemandjes-1", "http://www.rechtvanbijdeboer.be/node/3375" ],
     "name" : "Tine's Groentemandjes",
-    "contactPoint" : "_:b7",
+    "contactPoint" : "_:b4",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/tine-s_groentemandjes_pakket_groenten_lr.jpg?itok=44D5Ogap",
     "schema:name" : "Tine's Groentemandjes",
     "url" : "http://www.kleibeek.be",
     "actorType" : [ "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b5", "_:b6", "_:b1", "_:b4", "_:b0" ],
+    "downstreamRel" : [ "_:b3", "_:b5", "_:b6", "_:b0", "_:b7" ],
     "offersFoodType" : "ft:vegetables"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -243,18 +243,28 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -262,22 +272,18 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "image" : {
@@ -306,12 +312,6 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -6,17 +6,17 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.933777",
-    "longitude" : "4.327435"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Meise",
     "postalCode" : "1860",
     "streetAddress" : "Brusselsesteenweg 42"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.933777",
+    "longitude" : "4.327435"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -43,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,7 +88,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -153,11 +153,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/oxfam-meise", "http://www.rechtvanbijdeboer.be/node/3576" ],
     "name" : "Oxfam Meise",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotosessiestreekprodukten%20%2846%29_1.jpg?itok=P8yY02ej",
     "schema:name" : "Oxfam Meise",
     "actorType" : [ "at:pointOfSale", "at:vegetableSubscription" ],
-    "offersFoodType" : [ "ft:bakery_products", "ft:vegetables", "ft:milk_products", "ft:fruit_juices", "ft:potatoes", "ft:spices", "ft:eggs", "ft:alcoholic_beverages", "ft:fruits", "ft:icecream" ],
+    "offersFoodType" : [ "ft:vegetables", "ft:bakery_products", "ft:milk_products", "ft:fruit_juices", "ft:potatoes", "ft:spices", "ft:eggs", "ft:alcoholic_beverages", "ft:fruits", "ft:icecream" ],
     "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -186,6 +186,15 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -199,15 +208,15 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -215,27 +224,18 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
