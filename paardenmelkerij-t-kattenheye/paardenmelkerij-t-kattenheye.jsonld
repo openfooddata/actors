@@ -1,15 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.paardenmelkerij.info/",
+    "email" : "tony.raman@telenet.be",
+    "telephone" : "0498/167805",
+    "url" : "http://www.paardenmelkerij.info/"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Laarne",
-    "postalCode" : "9270",
-    "streetAddress" : "Lagen Heirweg 9"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -17,11 +18,10 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.paardenmelkerij.info/",
-    "email" : "tony.raman@telenet.be",
-    "telephone" : "0498/167805",
-    "url" : "http://www.paardenmelkerij.info/"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Laarne",
+    "postalCode" : "9270",
+    "streetAddress" : "Lagen Heirweg 9"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -97,7 +97,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,9 +161,9 @@
     "homepage" : "http://www.paardenmelkerij.info/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/paardenmelkerij-t-kattenheye", "http://www.rechtvanbijdeboer.be/node/1110" ],
     "name" : "Paardenmelkerij 't Kattenheye",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "In 1997 begonnen we als echte pioniers een droom waar te maken, nl. het melken van onze haflingermerries. Sindsdien hebben de ervaringen van mensen die de paardenmelk gebruiken ons veel inzichten over de werking ervan gegeven. Met deze kennis kunnen wij de juiste voorlichting geven. Onze monumentale, rustig gelegen hoeve is ondertussen omgebouwd tot een paradijs voor onze haflingers. In open loopstallen wordt de natuurlijke levensomgeving zo goed mogelijk benaderd. 's Zomers grazen de merries en veulens in de 30 ha weiden rondom de hoeve.Onze melkmerries leven samen met hun veulen in een grote kudde. Gedurende de nacht grazen ze samen in de wei en overdag kunnen ze vrij in en uit de stal lopen en eten. Hun welzijn, gezondheid en goede voeding staan voorop. Sociaal contact met andere paarden is van groot belang voor de merries en de opvoeding van het veulen. Als ze zes weken zijn worden ze geleidelijk aan geleerd overdag van moeders uier gescheiden te zijn. Terwijl de merries gemolken worden, verblijven de veulens in een eigen kudde, waar ze een hoogwaardige, gezonde voeding ter beschikking hebben. 's Nachts verblijven ze steeds bij hun moeder.",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/paardenmelkerij_t_kattenheye_paarden.jpg?itok=C2AuI9ob",
     "schema:name" : "Paardenmelkerij 't Kattenheye",
     "url" : "http://www.paardenmelkerij.info/",
@@ -191,28 +191,26 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "actorType" : {
@@ -224,18 +222,32 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -245,18 +257,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

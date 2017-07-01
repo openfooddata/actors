@@ -2,13 +2,13 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-vinkenhof-antwerpen-zuid",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-permeke-antwerpen",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-merksem",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "email" : "bartvanhoydonck@hotmail.com",
+    "telephone" : "0477/982703"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
@@ -23,17 +23,17 @@
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/van-hei-tot-polder-0",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-merksem",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
-    "@type" : "schema:ContactPoint",
-    "email" : "bartvanhoydonck@hotmail.com",
-    "telephone" : "0477/982703"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/van-hei-tot-polder-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b6",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-permeke-antwerpen",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-vinkenhof-antwerpen-zuid",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -173,13 +173,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/jhalfaaugustus2011021.jpg?itok=JpTTTj1E",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/van-hei-tot-polder", "http://www.rechtvanbijdeboer.be/node/1621" ],
     "foaf:name" : "van Hei tot Polder",
-    "contactPoint" : "_:b5",
+    "contactPoint" : "_:b1",
     "description" : "",
     "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/jhalfaaugustus2011021.jpg?itok=JpTTTj1E",
     "name" : "van Hei tot Polder",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b4", "_:b1", "_:b6", "_:b0" ],
+    "downstreamRel" : [ "_:b4", "_:b5", "_:b0", "_:b6" ],
     "offersFoodType" : "ft:lamb_meat"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -208,6 +208,12 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -218,15 +224,15 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -240,12 +246,12 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "streetAddress" : {
@@ -256,12 +262,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

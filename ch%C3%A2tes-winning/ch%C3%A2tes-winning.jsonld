@@ -7,16 +7,16 @@
     "streetAddress" : "Putstraat 6"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "email" : "philippe.duchateau1@telenet.be",
-    "telephone" : "012/452841"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "50.808681",
     "longitude" : "5.602230"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "email" : "philippe.duchateau1@telenet.be",
+    "telephone" : "012/452841"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -43,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -92,7 +92,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -155,9 +155,9 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010262.jpg?itok=2QvSUB8R", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/uithangbord.jpg?itok=VG8rfO1K", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010261.jpg?itok=P8jYkQOG", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/automaat2.jpg?itok=5qBeaMB1" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1091", "http://www.rechtvanbijdeboer.be/node/2362", "http://www.rechtvanbijdeboer.be/ch%C3%A2tes-winning-0", "http://www.rechtvanbijdeboer.be/ch%C3%A2tes-winning" ],
     "name" : "Châtes Winning",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/uithangbord.jpg?itok=VG8rfO1K", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/automaat2.jpg?itok=5qBeaMB1", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010261.jpg?itok=P8jYkQOG", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1010262.jpg?itok=2QvSUB8R" ],
     "schema:name" : "Châtes Winning",
     "actorType" : [ "at:vendingMachine", "at:producer", "at:pointOfSale" ],
@@ -189,8 +189,17 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -208,27 +217,18 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "telephone" : {

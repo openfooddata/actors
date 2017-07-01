@@ -1,29 +1,29 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.892977",
+    "longitude" : "4.926320"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Meensel-Kiezegem (Tielt-Winge)",
     "postalCode" : "3391",
     "streetAddress" : "Heibosstraat 17"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.fruitvanhellemont.be",
     "email" : "info@fruitvanhellemont.be",
     "telephone" : "016/633235",
     "url" : "http://www.fruitvanhellemont.be"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-diest",
     "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.892977",
-    "longitude" : "4.926320"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,14 +167,14 @@
     "homepage" : "http://www.fruitvanhellemont.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/fruit-vanhellemont-0", "http://www.rechtvanbijdeboer.be/fruit-vanhellemont", "http://www.rechtvanbijdeboer.be/node/1121", "http://www.rechtvanbijdeboer.be/node/2403", "http://www.rechtvanbijdeboer.be/node/2404", "http://www.rechtvanbijdeboer.be/fruit-vanhellemont-1" ],
     "name" : "Fruit Vanhellemont",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : [ "", "Fruit Vanhellemont is gelegen te Meensel-Kiezegem, hartje Hageland. Het bedrijf is opgericht door André Vanhellemont en Jeannine Nijs. Ondertussen zijn 2 van de 3 zonen, Mario en Gert, in de zaak gestapt. Met een arsenaal van 47 ha. aan bomen, hebben wij een grote verscheidenheid van appels en peren. Buiten het fruit, hebben wij ook nog tal van andere hoeve- en streekproducten op basis van onze eigen geteelde appels en peren. Daarnaast bieden wij ook nog andere hoeve- en streekproducten aan van collega's en streekproducenten." ],
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding041.jpg?itok=1wt3lKg8",
     "schema:name" : "Fruit Vanhellemont",
     "url" : "http://www.fruitvanhellemont.be",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop", "at:vendingMachine" ],
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:alcoholic_beverages", "ft:fruits", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -204,33 +204,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -256,6 +229,31 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
@@ -271,10 +269,6 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -289,9 +283,15 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
