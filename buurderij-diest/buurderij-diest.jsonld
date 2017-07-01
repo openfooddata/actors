@@ -2,12 +2,12 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-ploeg",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/den-boogerd-vof",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/gezond-van-bij-ons",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/natuurboerderij-het-bolhuis",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
@@ -17,36 +17,36 @@
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveslagerij-ter-hees",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/gezond-van-bij-ons",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/natuurboerderij-het-bolhuis",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-ploeg",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b6",
+    "address" : "_:b8",
     "addressCountry" : "Belgium",
     "latitude" : "50.985543",
     "longitude" : "5.055077"
   }, {
     "@id" : "_:b6",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveslagerij-ter-hees",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/herkenrodeboer",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b8",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Diest",
     "postalCode" : "3290",
     "streetAddress" : "Veemarkt 13"
-  }, {
-    "@id" : "_:b7",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/den-boogerd-vof",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b8",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/herkenrodeboer",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -118,7 +118,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -188,7 +188,7 @@
     "schema:name" : "Buurderij Diest",
     "actorType" : [ "at:foodAssembly", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:bakery_products", "ft:alcoholic_beverages", "ft:potatoes", "ft:spices", "ft:beef", "ft:vegetables", "ft:lamb_meat", "ft:poultry_meat", "ft:fruits", "ft:pork", "ft:milk_products", "ft:fruit_juices", "ft:eggs", "ft:icecream" ],
-    "upstreamRel" : [ "_:b7", "_:b2", "_:b4", "_:b3", "_:b8", "_:b1", "_:b0" ]
+    "upstreamRel" : [ "_:b4", "_:b0", "_:b1", "_:b2", "_:b3", "_:b6", "_:b7" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -216,31 +216,22 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -254,8 +245,17 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "streetAddress" : {

@@ -1,18 +1,18 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.valleihoeve.be",
-    "email" : "valleihoeve@edpnet.be",
-    "telephone" : [ "0472/741404", "09/3836343" ],
-    "url" : "http://www.valleihoeve.be"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.888259",
     "longitude" : "3.585345"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.valleihoeve.be",
+    "email" : "valleihoeve@edpnet.be",
+    "telephone" : [ "0472/741404", "09/3836343" ],
+    "url" : "http://www.valleihoeve.be"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -90,7 +90,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -162,9 +162,9 @@
     "homepage" : "http://www.valleihoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-valleihoeve", "http://www.rechtvanbijdeboer.be/de-valleihoeve-0", "http://www.rechtvanbijdeboer.be/node/1117", "http://www.rechtvanbijdeboer.be/node/2397" ],
     "name" : "De Valleihoeve",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "De hoeve is gelegen aan de voet van de Vlaamse Ardennen, midden in een oase van groen. De hoeve dateert van het jaar 1732 en wordt uitgebaat door de familie Devaere-Van Caester. Sedert 2002 werd van start gegaan met de verwerking van de melk tot hoeve-roomijs, samen met het telen van aardbeien bleek dit algauw de geslaagde combinatie. U kunt eveneens op de hoeve terecht voor de aankoop van hoeveproducten of u kan genieten van een heerlijk terrasje midden in het valleigebied. Eveneens kan je op de speelweide met familie of vrienden reserveren voor een spelletje boerengolf.",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_valleihoeve_verkoopster.jpg?itok=CQW3Ds8R",
     "schema:name" : "De Valleihoeve",
     "url" : "http://www.valleihoeve.be",
@@ -220,15 +220,15 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "url" : {
@@ -255,6 +255,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -267,12 +273,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

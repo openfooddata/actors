@@ -8,15 +8,15 @@
     "url" : "http://www.oogstgoed.be"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Gentbrugge",
     "postalCode" : "9050",
     "streetAddress" : "ingang via de Jan Van Aelbroeckdreef z/n"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -167,7 +167,7 @@
     "name" : "Oogstgoed CSA-boerderij",
     "contactPoint" : "_:b0",
     "description" : "Van Rony Nekkebroeck kan je niet zeggen dat hij snel de moed laat zakken. In 2013 kwam een trein op zijn zelfoogstveld in Wetteren terecht en gooide die letterlijk gif in het eten. Maar Rony rechtte zijn rug, zocht en vond een veld en een extra boer, en schrijft met hernieuwde energie een nieuw hoofdstuk aan zijn Oogstgoed. Dit keer zonder spoorwegen in de buurt. Benny Van de Velde is gepassioneerd door landbouw en voeding, daar kan zijn omgeving over meespreken. Door boer te worden wordt die passie eindelijk omgezet in de praktijk. Na twee jaar stage lopen in de biologische landbouw kriebelen zijn vingers heel hard om er samen met Rony zelf in te vliegen. Rony en Benny vonden in juni een geschikt veld voor hun zelfoogstboerderij: achter Kasteel Coninxdonck in Gentbrugge, aan de rand van de prachtige Gentbrugse Meersen. Een toplocatie! Oogstgoed 2.0 gaat van start in de lente van 2015.",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/veld2.jpg?itok=42RZR3zU", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/rony-benny.jpg?itok=DbQBVkw5" ],
     "schema:name" : "Oogstgoed CSA-boerderij",
     "url" : "http://www.oogstgoed.be",
@@ -214,12 +214,14 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -233,14 +235,18 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -248,16 +254,12 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -268,22 +270,20 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

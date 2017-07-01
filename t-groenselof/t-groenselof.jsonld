@@ -1,21 +1,19 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zele",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b5",
     "addressCountry" : "Belgium"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/t-groenselof-1",
     "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.tgroenselof.be",
-    "email" : "info@tgroenselof.be",
-    "telephone" : "0478/423516",
-    "url" : "http://www.tgroenselof.be"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -23,9 +21,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zele",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.tgroenselof.be",
+    "email" : "info@tgroenselof.be",
+    "telephone" : "0478/423516",
+    "url" : "http://www.tgroenselof.be"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:PostalAddress",
@@ -171,14 +171,14 @@
     "homepage" : "http://www.tgroenselof.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-groenselof", "http://www.rechtvanbijdeboer.be/node/1853" ],
     "name" : "'t Groenselof",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b4",
     "description" : "Het tuinbouwbedrijf 't groenselof in Lokeren (Heiende), is al meer dan 50 jaar een vast begrip in de ruime regio; zeker wat betreft de teelt van 'asperges', 'grondwitloof' en aardappelen. Die kleine stap tussen producent en consument (korte keten) betekende al voor velen een wereld van verschil op het bord van elke dag, maar nu is er nog meer goed nieuws. De huidige bedrijfsleider (2de generatie), slaagde erin om de vroegere elementaire verkoopsruimte medio 2015 om te vormen tot een zeer fraaie hoevewinkel met een veel ruimer assortiment dan voorheen - een ruim gamma van 'seizoensgebonden' dagverse groenten (wortelen, boontjes, grondtomaten enz.) alsook een waaier aan fruit. Toch probeert men om zoveel als mogelijk de teelt van groenten in eigen handen te nemen. Bovendien is men er altijd bereikbaar; want na sluitingstijd van de hoevewinkel, kunnen particulier en restaurantuitbater ook met hun vraag terecht in de automaten, 7 dagen op 7 dag (24/24).",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_automaat.jpg?itok=eDy8D6of", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_asperges.jpg?itok=qRVjcR0n", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_witloof.jpg?itok=izJ_rhM8", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t_groenselof_sla.jpg?itok=_gRU3xyi" ],
     "schema:name" : "'t Groenselof",
     "url" : "http://www.tgroenselof.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b1", "_:b3", "_:b4" ],
+    "downstreamRel" : [ "_:b0", "_:b2", "_:b3" ],
     "offersFoodType" : [ "ft:spices", "ft:vegetables", "ft:fruits", "ft:poultry_meat", "ft:potatoes", "ft:eggs" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -204,25 +204,21 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "name" : {
@@ -240,14 +236,9 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -260,6 +251,15 @@
     },
     "email" : {
       "@id" : "https://schema.org/email"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"

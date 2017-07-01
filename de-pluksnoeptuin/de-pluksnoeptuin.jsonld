@@ -2,7 +2,7 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-pluk-snoeptuin",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-pluk-en-snoeptuin-0",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
@@ -11,21 +11,21 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-pluk-snoeptuin",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.deplukensnoeptuin.be",
     "email" : "info@deplukensnoeptuin.be",
     "telephone" : "0476/37.01.02",
     "url" : "http://www.deplukensnoeptuin.be"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b4",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b5",
     "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-pluk-en-snoeptuin-0",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:PostalAddress",
@@ -107,7 +107,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -181,14 +181,14 @@
     "homepage" : "http://www.deplukensnoeptuin.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-pluksnoeptuin", "http://www.rechtvanbijdeboer.be/node/1763" ],
     "name" : "De Pluk&Snoeptuin",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b3",
     "description" : "",
-    "geo" : "_:b3",
+    "geo" : "_:b4",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/Half%20Logo%20De%20pluk%20%26%20Snoeptuin.jpg?itok=Xiu8YiJO",
     "schema:name" : "De Pluk&Snoeptuin",
     "url" : "http://www.deplukensnoeptuin.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b1", "_:b0", "_:b4" ],
+    "downstreamRel" : [ "_:b1", "_:b2", "_:b0" ],
     "offersFoodType" : [ "ft:eggs", "ft:spices", "ft:vegetables", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -232,6 +232,10 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
@@ -247,16 +251,12 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "account" : {
-      "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
     "description" : {
@@ -265,24 +265,15 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
@@ -296,6 +287,15 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

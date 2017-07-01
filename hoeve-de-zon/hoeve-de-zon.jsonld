@@ -1,34 +1,34 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hhv",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.847233",
-    "longitude" : "4.908375"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Vissenaken (Tienen)",
     "postalCode" : "3300",
     "streetAddress" : "Aarschotsesteenweg 737"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-de-zon",
-    "relatedContext" : "at:pointOfSale"
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hhv",
+    "relatedContext" : "at:producer"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hoeve-indezon.be",
     "email" : "hoeve.indezon@scarlet.be",
     "telephone" : [ "0494/549509", "016/811710" ],
     "url" : "http://www.hoeve-indezon.be"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.847233",
+    "longitude" : "4.908375"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-de-zon",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.facebook.com/HoevewinkelInDeZon",
     "@type" : "foaf:OnlineAccount",
@@ -111,7 +111,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -179,16 +179,16 @@
     "homepage" : "http://www.hoeve-indezon.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3595", "http://www.rechtvanbijdeboer.be/hoeve-de-zon", "http://www.rechtvanbijdeboer.be/hoeve-de-zon-0", "http://www.rechtvanbijdeboer.be/node/1263", "http://www.rechtvanbijdeboer.be/node/2687", "http://www.rechtvanbijdeboer.be/hoeve-de-zon-1" ],
     "name" : "Hoeve In de Zon",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b2",
     "description" : [ "Hoeve\"In de zon\" is een boerderij die werkt met dubbeldoelkoeien. Vroeger werden deze dieren gehouden om het werk op het land te verrichten en om de boer en zijn gezin van melk en vlees te voorzien. Door de jaren heen zijn de boeren zich meer en meer gaan specialiseren en verdween dit traditionele ras bijna van de kaart. Maar 5 jaar geleden besliste Europa om dit ras te erkennen als “met uitsterven bedreigd”. Vandaag de dag kweken nog een twintigtal boeren dit ras. Een belangrijk verschil met het witblauwe vleesras is dat deze koeien normaal kunnen kalven en er slechts uitzonderlijk een keizersnede nodig is. Meer informatie over het ras, vindt u op www.sle.be. Hoeve \"In de zon\" is een gemengd bedrijf \"melkvee en akkerbouw.", "" ],
-    "geo" : "_:b1",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p4131116.jpg?itok=4MSAU1Yu", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/indezoncdreportage001.jpg?itok=531jAxcW" ],
     "schema:name" : "Hoeve In de Zon",
     "url" : "http://www.hoeve-indezon.be",
     "actorType" : [ "at:vendingMachine", "at:collectionPoint", "at:pointOfSale", "at:producer" ],
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b4",
     "offersFoodType" : [ "ft:icecream", "ft:fruit_juices", "ft:lamb_meat", "ft:milk_products", "ft:poultry_meat", "ft:alcoholic_beverages", "ft:beef", "ft:pork", "ft:bakery_products" ],
-    "upstreamRel" : "_:b0"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -210,11 +210,32 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -228,27 +249,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -265,8 +265,8 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "actorType" : {
@@ -274,10 +274,6 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -291,16 +287,20 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",
