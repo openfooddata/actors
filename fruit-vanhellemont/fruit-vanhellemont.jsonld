@@ -1,11 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.892977",
-    "longitude" : "4.926320"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.fruitvanhellemont.be",
+    "email" : "info@fruitvanhellemont.be",
+    "telephone" : "016/633235",
+    "url" : "http://www.fruitvanhellemont.be"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -19,11 +19,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.fruitvanhellemont.be",
-    "email" : "info@fruitvanhellemont.be",
-    "telephone" : "016/633235",
-    "url" : "http://www.fruitvanhellemont.be"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.892977",
+    "longitude" : "4.926320"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,9 +167,9 @@
     "homepage" : "http://www.fruitvanhellemont.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/fruit-vanhellemont-0", "http://www.rechtvanbijdeboer.be/fruit-vanhellemont", "http://www.rechtvanbijdeboer.be/node/1121", "http://www.rechtvanbijdeboer.be/node/2403", "http://www.rechtvanbijdeboer.be/node/2404", "http://www.rechtvanbijdeboer.be/fruit-vanhellemont-1" ],
     "name" : "Fruit Vanhellemont",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : [ "", "Fruit Vanhellemont is gelegen te Meensel-Kiezegem, hartje Hageland. Het bedrijf is opgericht door André Vanhellemont en Jeannine Nijs. Ondertussen zijn 2 van de 3 zonen, Mario en Gert, in de zaak gestapt. Met een arsenaal van 47 ha. aan bomen, hebben wij een grote verscheidenheid van appels en peren. Buiten het fruit, hebben wij ook nog tal van andere hoeve- en streekproducten op basis van onze eigen geteelde appels en peren. Daarnaast bieden wij ook nog andere hoeve- en streekproducten aan van collega's en streekproducenten." ],
-    "geo" : "_:b0",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding041.jpg?itok=1wt3lKg8",
     "schema:name" : "Fruit Vanhellemont",
     "url" : "http://www.fruitvanhellemont.be",
@@ -204,24 +204,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -253,18 +246,22 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -277,21 +274,24 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

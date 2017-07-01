@@ -8,16 +8,16 @@
     "url" : "http://www.hagegoud.be"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/wwwhagegoudbe",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "50.877006",
     "longitude" : "5.091193"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/wwwhagegoudbe",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -95,11 +95,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -169,12 +169,12 @@
     "name" : "Wijndomein Hagegoud",
     "contactPoint" : "_:b0",
     "description" : "Wat 9 jaar geleden begon als een creatieve hobby is nu uitgegroeid tot een echte passie en vertaalt zich sinds enkele jaren in het Wijndomein Hagegoud dat goed is voor 2500 druivelaars. In de Glabbeekstraat in Geetbets verbouwen we drie resistente wijnen die in het Hageland niet alleen goed gedijen maar ook erkend zijn als Hagelandse wijn: Regent (blauwe druif) samen met Sirius en Johanniter (witte druiven). In 2011 kwam daar ook nog het traditionele ras Auxerrois bij, een witte druif uit de familie van de Pinot Blanc. Daarnaast passen we de klassieke vinificatiemethode voor druiven-wijn ook met succes toe op aardbeien en onze aardbeienwijn valt dan ook erg in de smaak als aperitief of dessertwijn. Onze missie is kwaliteitswijn te maken: een gecorseerde rode wijn en frisse, aromatische witte wijnen. Het microklimaat van Geetbets, afgeschermd door de Ransberg van overmatige regen, leent zich hier uitstekend voor. We houden het ook bewust kleinschalig om de kwaliteit te kunnen blijven garanderen. De wijnen die we produceren moeten gezond zijn en met respect voor de natuur geproduceerd worden: de methode van de bio-dynamica ligt ons na aan het hart en tot op heden slagen we erin om de planten en de druiven gezond te houden zonder gebruik van fun-giciden of systemische middelen. Sinds kort verkopen we onze wijnen ook in ons winkeltje samen met een reeks andere lekkere streekproducten zoals koffie, speculaas, honing, confituur, fruitsappen, mosterd, bier, likeur, jenever etc.... Neem gerust contact op voor een bezoekje met rondleiding en degustatie. We nemen u dan mee naar de productieruimte voor een beknopte uitleg en een korte wandeling naar de wijngaard. Daarna kan u de wijnen proeven in onze gezellige degustatieruimte of op het terras bij mooi weer.",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02273.jpg?itok=n81UBkoS",
     "schema:name" : "Wijndomein Hagegoud",
     "url" : "http://www.hagegoud.be",
     "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : "ft:alcoholic_beverages"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -223,11 +223,15 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "downstreamRel" : {
@@ -240,24 +244,8 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -267,6 +255,24 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -281,17 +287,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

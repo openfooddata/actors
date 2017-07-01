@@ -1,38 +1,38 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/gallinero-1",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.hoevevlees.be",
+    "email" : "info@hoevevlees.be",
+    "url" : "http://www.hoevevlees.be"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-de-zon-1",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/martenshoeve",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b4",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.847233",
-    "longitude" : "4.908375"
-  }, {
-    "@id" : "_:b4",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Vissenaken (Tienen)",
     "postalCode" : "3300",
     "streetAddress" : "Aarschotsesteenweg 737"
   }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/gallinero-1",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.847233",
+    "longitude" : "4.908375"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-de-zon-1",
+    "relatedContext" : "at:pointOfSale"
+  }, {
     "@id" : "_:b5",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.hoevevlees.be",
-    "email" : "info@hoevevlees.be",
-    "url" : "http://www.hoevevlees.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/martenshoeve",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -176,14 +176,14 @@
     "homepage" : "http://www.hoevevlees.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hhv-0", "http://www.rechtvanbijdeboer.be/node/2518", "http://www.rechtvanbijdeboer.be/node/1132", "http://www.rechtvanbijdeboer.be/hhv" ],
     "foaf:name" : "HHV",
-    "contactPoint" : "_:b5",
+    "contactPoint" : "_:b0",
     "description" : "We zijn een unieke combinatie van 3 milieu-bewuste boeren die er fier op zijn hun eigen, met grote zorg geproduceerd en verwerkt vleesproduct rechtstreeks aan de man te kunnen brengen. Ook het verpakken, het per klant \"uitwinkelen\" , de admistratie, kortom het hele productieproces tot bij de bewuste klant is in eigen handen. Een kortere keten is haast ondenkbaar. Bestellingen gebeuren online via onze uitgebreide webshop ofwel kunnen ze op de betreffende boerderijen mondeling of schriftelijk doorgegeven worden aan de boer.",
     "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p4131116.jpg?itok=4MSAU1Yu",
     "name" : "HHV",
     "url" : "http://www.hoevevlees.be",
     "actorType" : [ "at:cooperative", "at:producer", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b2", "_:b1", "_:b0" ],
+    "downstreamRel" : [ "_:b4", "_:b2", "_:b5" ],
     "offersFoodType" : [ "ft:beef", "ft:lamb_meat", "ft:fruit_juices", "ft:pork" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -225,6 +225,24 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -244,21 +262,8 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -270,34 +275,29 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

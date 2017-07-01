@@ -1,25 +1,25 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "van_gorp@hotmail.com",
-    "telephone" : [ "0496/049088", "014/580690" ]
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveproducten-van-gorp",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b1",
     "addressCountry" : "Belgium"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Geel",
     "postalCode" : "2440",
     "streetAddress" : "Herentalseweg 19 A"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeveproducten-van-gorp",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:ContactPoint",
+    "email" : "van_gorp@hotmail.com",
+    "telephone" : [ "0496/049088", "014/580690" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,13 +158,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0014.jpg?itok=xEXIEg84", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0061.jpg?itok=4HS4Q1_9", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0052.jpg?itok=vgOGxpU5" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1173", "http://www.rechtvanbijdeboer.be/patrick-van-gorp" ],
     "name" : "Patrick Van Gorp",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b3",
     "description" : "De hoofdtak van ons bedrijf ligt bij het kweken van braadkippen. Daarnaast telen wij aardappelen, enkel voor thuisverkoop. Wij nemen alles in eigen handen \"van poten tot rooien \", om zo'n hoog mogelijke kwaliteit aan onze klanten te bieden. Vanaf eind juni/begin juli (afhankelijk van de weersomstandigheden) kan u bij ons terecht voor vroege aardappelen: Frieslander; eind augustus zijn er de bewaaraardappelen: Bintje en Desirée. Al de aardappelen worden aangeboden in verpakkingen van 5kg - 10kg - 25kg. Open alle dagen vanaf 8u30 tot 18u, zaterdag gesloten vanaf 13u, zon- en feestdagen gesloten.",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0014.jpg?itok=xEXIEg84", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0052.jpg?itok=vgOGxpU5", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0061.jpg?itok=4HS4Q1_9" ],
     "schema:name" : "Patrick Van Gorp",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : [ "ft:potatoes", "ft:fruit_juices" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -187,6 +187,19 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -195,6 +208,14 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -205,33 +226,12 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -242,11 +242,11 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

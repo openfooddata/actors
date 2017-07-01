@@ -1,32 +1,32 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Kruibeke",
-    "postalCode" : "9150",
-    "streetAddress" : "Hondenstraat 24"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-vinkenhof-antwerpen-zuid",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hollebeekhoeve",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hollebeekhoeve.be",
     "email" : "info@hollebeekhoeve.be",
     "telephone" : "03/7741333",
     "url" : "http://www.hollebeekhoeve.be"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hollebeekhoeve",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-vinkenhof-antwerpen-zuid",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b4",
     "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Kruibeke",
+    "postalCode" : "9150",
+    "streetAddress" : "Hondenstraat 24"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -102,7 +102,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -166,14 +166,14 @@
     "homepage" : "http://www.hollebeekhoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1107", "http://www.rechtvanbijdeboer.be/hollebeekhoeve-nv" ],
     "name" : "Hollebeekhoeve nv",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b0",
     "description" : "De Hollebeekhoeve is begonnen als hobby van Dr. Gerard De Paep in 1946. Zijn zoon Raf De Paep heeft in 1954 de boerderij overgenomen en heeft er samen met zijn echtgenote Trees Verkercke een bloeiend bedrijf van gemaakt. Hun zoon Dirk De Paep en zijn echtgenote hebben op hun beurt in 1995 de touwtjes in handen genomen. Inmiddels is de boerderij helemaal vernieuwd en uitgebreid en is nu zowat het grootste zelfverwerkend melkveebedrijf van het land. Bij elke stap die de Hollebeekhoeve heeft gezet, heeft de familie De Paep steeds milieu- en diervriendelijk gehandeld. De Hollebeekhoeve is een melkveebedrijf met 150 melkkoeien van het ras Holstein Frisian. In de zomer grazen de koeien op malse, groene weiden. Overwinteren doen ze in de ruime en",
-    "geo" : "_:b4",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/043-hollebeekhoeve_aanwijzingsbord.jpg?itok=Gs8U47Le",
     "schema:name" : "Hollebeekhoeve nv",
     "url" : "http://www.hollebeekhoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b1" ],
+    "downstreamRel" : [ "_:b1", "_:b2" ],
     "offersFoodType" : [ "ft:icecream", "ft:milk_products", "ft:poultry_meat", "ft:fruit_juices", "ft:eggs" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -196,37 +196,31 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -234,21 +228,24 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -257,11 +254,14 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

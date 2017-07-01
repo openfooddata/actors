@@ -1,11 +1,10 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.853546",
-    "longitude" : "5.346380"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Wellen",
+    "postalCode" : "3830",
+    "streetAddress" : "Houtstraat 18"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
@@ -15,10 +14,11 @@
     "url" : "http://www.hoeveslagerijdemot.be"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Wellen",
-    "postalCode" : "3830",
-    "streetAddress" : "Houtstraat 18"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.853546",
+    "longitude" : "5.346380"
   }, {
     "@id" : "http://hoeveslagerijdemot",
     "@type" : "foaf:OnlineAccount",
@@ -97,7 +97,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -171,7 +171,7 @@
     "name" : "Hoeveslagerij De Mot",
     "contactPoint" : "_:b1",
     "description" : [ "In het begin van de week kan je bij ons ook terecht voor het versnijden van 1/2 of ganse varken of het versnijden van runderen", "In het zuiden van Limburg tussen Hasselt, Sint-Truiden en Tongeren bevindt zich de gemeente Wellen. Hier hebben wij, de familie Marckelbach, een gesloten varkensbedrijf met 200 zeugen. Al onze biggen mesten we zelf af. Onze varkens lopen los in open natuurstallen die gericht zijn op het zuiden. Onze varkensvoeder bereiden wij dagelijks zelf met onze eigen geteelde mais en graan" ],
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/alles%20009.jpg?itok=YDSSeVJg", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/kinderen%20042.jpg?itok=w6MXWjCh", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/alles%20007.jpg?itok=G9nn00Qi", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoeveslagerij_de_mot_assortiment_vlees_koeltoog_lr.jpg?itok=s6nH4DWH" ],
     "schema:name" : "Hoeveslagerij De Mot",
     "url" : "http://www.hoeveslagerijdemot.be",
@@ -202,6 +202,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -213,14 +222,6 @@
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -237,8 +238,16 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "telephone" : {
@@ -246,15 +255,6 @@
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
