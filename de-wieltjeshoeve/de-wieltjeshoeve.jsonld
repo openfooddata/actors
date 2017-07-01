@@ -1,9 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-veldekens",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -20,17 +20,17 @@
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-warande",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/wieltjeshoeve",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-veldekens",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/wieltjeshoeve",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-turnhout-warande",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -103,7 +103,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,12 +177,12 @@
     "name" : "De Wieltjeshoeve",
     "contactPoint" : "_:b2",
     "description" : "In maart 2000 startte de Wieltjeshoeve met biologische tuinbouw. Hun doelstelling is zeer verse seizoensgebonden groenten van eigen akkers in de verswinkel aanbieden, aangevuld met oogst van collega-bio-telers. Daarnaast bieden ze verschillende groetenpakketten, verpakkingen met \"vergeten groenten\" en \"vergeten recepten\" aan waarmee ze de consument willen voorzien van een gezond evenwichtig en een zeer gevarieerde en voedingsrijke maaltijd. Winkelen wordt voor u makkelijker. U moet niet meer nadenken over welke groenten je deze week op tafel zal brengen",
-    "geo" : "_:b4",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_3580-300x200.jpg?itok=M8vHbi9v", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_5201-300x200.jpg?itok=VuPdQLSp", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/181857_207111832743894_1026797904_n-300x200.jpg?itok=H2nW2Ewa", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/knipsel.jpg?itok=bvCv4vRx" ],
     "schema:name" : "De Wieltjeshoeve",
     "url" : "http://www.wieltjeshoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b3", "_:b0", "_:b5" ],
+    "downstreamRel" : [ "_:b4", "_:b3", "_:b5" ],
     "offersFoodType" : [ "ft:fruits", "ft:vegetables" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -212,20 +212,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -239,6 +231,15 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -251,12 +252,11 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -270,10 +270,6 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
@@ -281,18 +277,22 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

@@ -17,7 +17,8 @@
            {"foaf:account":[{"@type":"foaf:OnlineAccount","@id":"http://www.facebook.be/aardbeienophetveld","skos:prefLabel":"Facebook","foaf:accountServiceHomepage":"https://www.facebook.com","foaf:accountName":"http:","dct:identifier":""}],"foaf:name":"Op Het Veld","schema:url":["http://www.ophetveld.be"],"foaf:homepage":["http://www.ophetveld.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/op-het-veld","http://www.rechtvanbijdeboer.be/node/1276"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ipod172.jpg?itok=aOiNwqFK"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Steynehofweg 7 A","schema:postalCode":"2560","schema:addressLocality":"Nijlen"}},"ofd:offersFoodType":["ft:fruits"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ipod172.jpg?itok=aOiNwqFK"],"schema:description":"Hallo, wij zijn Johan en Griet Vermeiren - Van Olmen. Sinds 1997 telen wij samen aardbeien op ons veld in de Steynehofweg in Bevel. Voor ons deden de ouders van Johan dit al vele jaren. Velen in de streek kenden wel 'die zoete aardbeien' van de Vermeiren. De laatste jaren is er echter veel veranderd. Ons bedrijfje is geëvolueerd naar een volwaardig tuinbouwbedrijf met een grootte van ongeveer 8,5 ha. Naast de klassieke openluchtteelt van aardbeien worden ook vervroegde en verlate teelten in de volle grond uitgevoerd, waardoor de oogstperiode zich uitstrekt van begin mei tot eind september. Tijdens deze maanden worden onze dagvers geplukte aardbeien rechtstreeks 'op het veld' verkocht. In 2000 werden ook braambessen opgeplant. Deze lekkernij wordt geplukt en verkocht van begin juli tot eind september. Sinds 2010 werd een ruim gamma aan houtig kleinfruit opgeplant: rode bessen, witte bessen, zwarte bessen, blauwbessen, stekelbessen, kiwibessen en frambozen. We kijken, samen met onze kindjes Mieke, Jef, Jan en Saar, elk jaar opnieuw uit naar de oogst van al dit lekkers!","schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["0477/902111"],"schema:email":["griet.vanolmen@skynet.be"],"foaf:homepage":["http://www.ophetveld.be"],"schema:url":["http://www.ophetveld.be"]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/buurderij-lier"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/op-het-veld-0"}],"@id":"https://w3id.org/openfooddata/actors/op-het-veld","schema:name":"Op Het Veld","ofd:actorType":"at:producer"}
       </script>
         <title>Op Het Veld</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/op-het-veld"/>
     </head>
     <body>
 
@@ -125,155 +126,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

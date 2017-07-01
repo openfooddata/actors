@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"Agra Claessens","schema:url":[],"foaf:homepage":[],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/agra-claessens","http://www.rechtvanbijdeboer.be/node/1257"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/moesepatat.jpg?itok=akDF_g0p","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/primeuraardappeleninserre.jpg?itok=Xjl2w_ZP","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/vermeerderingsveldaardbeiplanten.jpg?itok=VnEj6Q8P"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Bootdijkstraat 23 A","schema:postalCode":"9220","schema:addressLocality":"Moerzeke"}},"ofd:offersFoodType":["ft:potatoes","ft:fruits","ft:vegetables"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/moesepatat.jpg?itok=akDF_g0p","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/primeuraardappeleninserre.jpg?itok=Xjl2w_ZP","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/vermeerderingsveldaardbeiplanten.jpg?itok=VnEj6Q8P"],"schema:description":"Ons jonge bedrijf is actief sinds 2008 en heeft zich gespecialiseerd in primeurartikelen. In deze geest werden in 2011 de primeuraardappelen \"Moese Patatten\" door de VLAM erkend als Vlaams Streekproduct.","schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["052/380421","0472/475138"],"schema:email":["agra.claessens@telenet.be"],"foaf:homepage":[],"schema:url":[]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/buurderij-zele"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/agra-claessens-0"}],"@id":"https://w3id.org/openfooddata/actors/agra-claessens","schema:name":"Agra Claessens","ofd:actorType":"at:producer"}
       </script>
         <title>Agra Claessens</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/agra-claessens"/>
     </head>
     <body>
 
@@ -126,155 +127,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

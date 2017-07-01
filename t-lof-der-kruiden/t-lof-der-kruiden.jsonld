@@ -13,21 +13,21 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zedelgem",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-de-open-poort-sint-michiels",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b4",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b5",
     "addressCountry" : "Belgium",
     "latitude" : "51.109178",
     "longitude" : "3.164756"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zedelgem",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-de-open-poort-sint-michiels",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:PostalAddress",
@@ -60,7 +60,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -179,12 +179,12 @@
     "name" : "'t Lof der kruiden",
     "contactPoint" : "_:b0",
     "description" : "Naast de uitbating van onze B&B 't LOF der kruiden zijn wij op 1 januari 2015 ook gestart met een webshop waar u terecht kunt voor allerhande gedroogde kruiden, huisbereide verzorgingsproducten op basis van kruiden en vanaf het voorjaar 2015 ook voor kruidenplantjes in pot. We streven er naar om zoveel als mogelijk onze producten aan te bieden onder BIO-garantielabel .",
-    "geo" : "_:b4",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/untitled-1.jpg?itok=GFZbCd21", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/recht-van-bij-de-boer.gif?itok=3H5I7ipO", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/tc-pepermunt.gif?itok=e3YHKZho", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/herb_box.gif?itok=ZAl8UItf" ],
     "schema:name" : "'t Lof der kruiden",
     "url" : "http://www.lofderkruiden.be/webshop",
     "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
-    "downstreamRel" : [ "_:b1", "_:b2", "_:b3" ],
+    "downstreamRel" : [ "_:b3", "_:b4", "_:b1" ],
     "offersFoodType" : "ft:spices"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -226,15 +226,25 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -242,6 +252,10 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -252,16 +266,20 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -275,24 +293,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"

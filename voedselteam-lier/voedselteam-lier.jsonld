@@ -1,14 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-groene-boerderij",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.130423",
+    "longitude" : "4.566859"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/bioboer-busschots",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Lier",
+    "postalCode" : "2500",
+    "streetAddress" : "Kapucijnenvest 16"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -17,7 +20,7 @@
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hageling-wijnbouw",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/bioboer-busschots",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b4",
@@ -26,17 +29,14 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b6",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.130423",
-    "longitude" : "4.566859"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-groene-boerderij",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b6",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Lier",
-    "postalCode" : "2500",
-    "streetAddress" : "Kapucijnenvest 16"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hageling-wijnbouw",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -63,7 +63,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,12 +173,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/voedselteam-lier", "http://www.rechtvanbijdeboer.be/node/2173" ],
     "name" : "Voedselteam Lier",
     "description" : "",
-    "geo" : "_:b5",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/40c25724f17bcae1a710c550fb091562.jpg?itok=DZZ83o0e",
     "schema:name" : "Voedselteam Lier",
     "actorType" : [ "at:foodTeams", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:icecream", "ft:bakery_products", "ft:fruit_juices", "ft:lamb_meat", "ft:alcoholic_beverages", "ft:spices", "ft:milk_products", "ft:vegetables", "ft:fruits", "ft:poultry_meat", "ft:potatoes", "ft:pork", "ft:eggs", "ft:beef" ],
-    "upstreamRel" : [ "_:b1", "_:b2", "_:b3", "_:b0", "_:b4" ]
+    "upstreamRel" : [ "_:b5", "_:b6", "_:b3", "_:b2", "_:b4" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -200,6 +200,19 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -209,12 +222,12 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -234,19 +247,6 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"

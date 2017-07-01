@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"Boerderij De Smedt - Vasseur","schema:url":[],"foaf:homepage":[],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/boerderij-de-smedt-vasseur","http://www.rechtvanbijdeboer.be/node/1818"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Pastoor Christiaensstraat 30","schema:postalCode":"9290","schema:addressLocality":"Berlare"}},"ofd:offersFoodType":["ft:beef"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv"],"schema:description":"In 2015 zijn wij gestart met de verkoop van ons eigen gekweekt, (h)eerlijk wit-blauw rundsvlees in pakketten van 10kg. Deze pakketten worden verkocht op bestelling. Als de koe volledig verkocht is, wordt er een datum van verkoop afgesproken. Momenteel is dit ongeveer twee-maandelijks. Ben je geïnteresseerd, laat het dan zo vlug mogelijk weten!","schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["0486/72.22.51","0486/72.22.51"],"schema:email":["wendy.vasseur@telenet.be"],"foaf:homepage":[],"schema:url":[]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/de-smedt-luc-vasseur-wendy"}],"@id":"https://w3id.org/openfooddata/actors/boerderij-de-smedt-vasseur","schema:name":"Boerderij De Smedt - Vasseur","ofd:actorType":"at:producer"}
       </script>
         <title>Boerderij De Smedt - Vasseur</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/boerderij-de-smedt-vasseur"/>
     </head>
     <body>
 
@@ -120,155 +121,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

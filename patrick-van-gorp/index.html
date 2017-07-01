@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"Patrick Van Gorp","schema:url":[],"foaf:homepage":[],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/patrick-van-gorp","http://www.rechtvanbijdeboer.be/node/1173"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0014.jpg?itok=xEXIEg84","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0052.jpg?itok=vgOGxpU5","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0061.jpg?itok=4HS4Q1_9"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Herentalseweg 19 A","schema:postalCode":"2440","schema:addressLocality":"Geel"}},"ofd:offersFoodType":["ft:potatoes","ft:fruit_juices"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0014.jpg?itok=xEXIEg84","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0052.jpg?itok=vgOGxpU5","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsci0061.jpg?itok=4HS4Q1_9"],"schema:description":"De hoofdtak van ons bedrijf ligt bij het kweken van braadkippen. Daarnaast telen wij aardappelen, enkel voor thuisverkoop. Wij nemen alles in eigen handen \"van poten tot rooien \", om zo'n hoog mogelijke kwaliteit aan onze klanten te bieden. Vanaf eind juni/begin juli (afhankelijk van de weersomstandigheden) kan u bij ons terecht voor vroege aardappelen: Frieslander; eind augustus zijn er de bewaaraardappelen: Bintje en Desirée. Al de aardappelen worden aangeboden in verpakkingen van 5kg - 10kg - 25kg. Open alle dagen vanaf 8u30 tot 18u, zaterdag gesloten vanaf 13u, zon- en feestdagen gesloten.","schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["014/580690","0496/049088"],"schema:email":["van_gorp@hotmail.com"],"foaf:homepage":[],"schema:url":[]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/hoeveproducten-van-gorp"}],"@id":"https://w3id.org/openfooddata/actors/patrick-van-gorp","schema:name":"Patrick Van Gorp","ofd:actorType":"at:producer"}
       </script>
         <title>Patrick Van Gorp</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/patrick-van-gorp"/>
     </head>
     <body>
 
@@ -121,155 +122,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

@@ -1,9 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.hoeveslagerijgabriels.be",
+    "email" : "gabriels.lv@telenet.be",
+    "telephone" : [ "0473/806011", "+31473806011" ],
+    "url" : "http://www.hoeveslagerijgabriels.be"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -11,11 +13,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.hoeveslagerijgabriels.be",
-    "email" : "gabriels.lv@telenet.be",
-    "telephone" : [ "0473/806011", "+31473806011" ],
-    "url" : "http://www.hoeveslagerijgabriels.be"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -161,9 +161,9 @@
     "homepage" : "http://www.hoeveslagerijgabriels.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/gabriels-lv", "http://www.rechtvanbijdeboer.be/node/1283" ],
     "foaf:name" : "Gabriels LV",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "In onze hoeveslagerij bieden wij rundvlees en kalfsvlees van eigen kweek aan. Het vlees is afkomstig van het Belgisch witblauwe ras. Het vlees van het Belgisch Wit-Blauw rund onderscheidt zich door een zeer fijne musculaire structuur waardoor het zeer mals is. Bovendien is het vlees zeer sappig en mager. De dieren zijn geboren en vetgemest op het eigen bedrijf. Ze krijgen vooral ruwvoeders die geteeld zijn op het eigen bedrijf: mais, voederbieten, stro, spelt, tarwe, gerst, luzerne en hooi. De dieren worden geslacht in het slachthuis en de karkassen worden in eigen atelier uitgebeend en verwerkt. Wij verwerken ons vlees tot panklare producten, gehaktbereidingen en lekkere stukjes vers vlees.",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1.JPG?itok=EpZFFAaS", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_20160729_092404.jpg?itok=FdFYILlb" ],
     "name" : "Gabriels LV",
     "url" : "http://www.hoeveslagerijgabriels.be",
@@ -203,6 +203,10 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -212,29 +216,34 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -248,15 +257,6 @@
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

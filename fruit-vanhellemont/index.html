@@ -17,7 +17,8 @@
            {"foaf:account":[{"@type":"foaf:OnlineAccount","@id":"https://www.facebook.com/FruitVanhellemont?fref=ts","skos:prefLabel":"Facebook","foaf:accountServiceHomepage":"https://www.facebook.com","foaf:accountName":"https:","dct:identifier":""}],"foaf:name":"Fruit Vanhellemont","schema:url":["http://www.fruitvanhellemont.be"],"foaf:homepage":["http://www.fruitvanhellemont.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/fruit-vanhellemont-0","http://www.rechtvanbijdeboer.be/node/2403","http://www.rechtvanbijdeboer.be/fruit-vanhellemont","http://www.rechtvanbijdeboer.be/node/1121","http://www.rechtvanbijdeboer.be/fruit-vanhellemont-1","http://www.rechtvanbijdeboer.be/node/2404"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding041.jpg?itok=1wt3lKg8"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"schema:latitude":"50.892977","schema:longitude":"4.926320","@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Heibosstraat 17","schema:postalCode":"3391","schema:addressLocality":"Meensel-Kiezegem (Tielt-Winge)"}},"ofd:offersFoodType":["ft:poultry_meat","ft:alcoholic_beverages","ft:fruits"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding041.jpg?itok=1wt3lKg8"],"schema:description":["Fruit Vanhellemont is gelegen te Meensel-Kiezegem, hartje Hageland. Het bedrijf is opgericht door André Vanhellemont en Jeannine Nijs. Ondertussen zijn 2 van de 3 zonen, Mario en Gert, in de zaak gestapt. Met een arsenaal van 47 ha. aan bomen, hebben wij een grote verscheidenheid van appels en peren. Buiten het fruit, hebben wij ook nog tal van andere hoeve- en streekproducten op basis van onze eigen geteelde appels en peren. Daarnaast bieden wij ook nog andere hoeve- en streekproducten aan van collega's en streekproducenten.",""],"ofd:upstreamRel":[],"schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["016/633235"],"schema:email":["info@fruitvanhellemont.be"],"foaf:homepage":["http://www.fruitvanhellemont.be"],"schema:url":["http://www.fruitvanhellemont.be"]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/voedselteam-diest"}],"@id":"https://w3id.org/openfooddata/actors/fruit-vanhellemont","schema:name":"Fruit Vanhellemont","ofd:actorType":["at:pointOfSale","at:producer","at:farmShop","at:vendingMachine"]}
       </script>
         <title>Fruit Vanhellemont</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/fruit-vanhellemont"/>
     </head>
     <body>
 
@@ -138,155 +139,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

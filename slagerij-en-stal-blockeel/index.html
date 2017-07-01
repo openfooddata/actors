@@ -17,7 +17,8 @@
            {"foaf:account":[{"@type":"foaf:OnlineAccount","@id":"https://www.facebook.com/SlagerijBlockeel","skos:prefLabel":"Facebook","foaf:accountServiceHomepage":"https://www.facebook.com","foaf:accountName":"https:","dct:identifier":""}],"foaf:name":"Slagerij en Stal Blockeel","schema:url":["http://www.slagerijblockeel.be"],"foaf:homepage":["http://www.slagerijblockeel.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/slagerij-en-stal-blockeel","http://www.rechtvanbijdeboer.be/node/1271"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Prins Leopoldstraat 65","schema:postalCode":"9700","schema:addressLocality":"Oudenaarde"}},"ofd:offersFoodType":["ft:bakery_products","ft:fruit_juices","ft:lamb_meat","ft:beef","ft:pork","ft:milk_products"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv"],"schema:description":"Kort na de Tweede Wereldoorlog startten Maurice en Annaïce, onze grootouders met het verwerken van vlees van eigen veestapel. In 1977 wordt de winkel heropend door onze ouders Marc en Gerda, maar de filosofie blijft dezelfde: zelf gekweekte runderen, 100% natuurlijk, geven het beste en het gezondste vlees. En dat heeft de klant al die jaren weten te waarderen. In 1996 vernieuwden Marc, Gerda, Tom en Nathalie de winkel. Hierbij wordt het vleesassortiment uitgebreid met een volwaardige traiteurdienst, niet beperkt tot alleen maar enkele koude schotels. In 2006 openden Tom en Nathalie de gerenoveerde zaak, met als uitbreiding een volledig brood- en kaasassortiment. In 2009 wordt de nieuwe rundveestal in de Pruimelstraat in gebruik genomen. In 2010 kunnen wij tevens kalfsvlees van eigen veestapel aanbieden! Hiermee is de productiecirkel rond: van zelf gekweekt veevoeder op 'Stal Blockeel' tot smakelijke eindproduct bij Slagerij Blockeel.","schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["055/311568"],"schema:email":["info@slagerijblockeel.be"],"foaf:homepage":["http://www.slagerijblockeel.be"],"schema:url":["http://www.slagerijblockeel.be"]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/slagerij-blockeel-oudenaarde"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/slagerij-blockeel-kruishoutem"}],"@id":"https://w3id.org/openfooddata/actors/slagerij-en-stal-blockeel","schema:name":"Slagerij en Stal Blockeel","ofd:actorType":"at:producer"}
       </script>
         <title>Slagerij en Stal Blockeel</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/slagerij-en-stal-blockeel"/>
     </head>
     <body>
 
@@ -130,155 +131,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

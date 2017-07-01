@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"De Dobbelhoeve","schema:url":["http://www.dobbelhoeve.be"],"foaf:homepage":["http://www.dobbelhoeve.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/de-dobbelhoeve-0","http://www.rechtvanbijdeboer.be/node/2393","http://www.rechtvanbijdeboer.be/de-dobbelhoeve","http://www.rechtvanbijdeboer.be/node/1113","http://www.rechtvanbijdeboer.be/de-dobbelhoeve-1","http://www.rechtvanbijdeboer.be/node/3181"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_dobbelhoeve_winkel.jpg?itok=LnSnsXEj"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"schema:latitude":"51.228868","schema:longitude":"4.607268","@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Goorstraat 43","schema:postalCode":"2970","schema:addressLocality":"Schilde"}},"ofd:offersFoodType":["ft:fruits","ft:bakery_products","ft:poultry_meat","ft:fruit_juices","ft:milk_products","ft:eggs","ft:pork","ft:alcoholic_beverages","ft:lamb_meat","ft:beef","ft:vegetables","ft:potatoes","ft:spices"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_dobbelhoeve_winkel.jpg?itok=LnSnsXEj"],"schema:description":["Bovenaan het dakraam van onze hoeve staat het jaartal 1341 te lezen. (Historici en bouwkundigen achten het gebouw eigenlijk twee eeuwen jonger). In een ver verleden zou de hoeve gefungeerd hebben als turfopslagplaats. De boerderij vormde later samen met een andere hoeve de “Bredeveldse Hoeven”. Tijdens de Franse revolutie werd het goed verkocht aan baron van de Werve de Schilde, die van de hoeve aan de Goorstraat op haar beurt een “Dobbelhoeve” maakte. Deze herbergde dan twee boerenfamilies. Bij de openbare verkoop in 1952 verwierf de familie De Winter het oudste, westelijke deel, en het “nieuwere” oostelijke deel werd verkocht aan de familie De Meutter. Karel De Meutter bouwde dit uit tot een modern landbouwbedrijf vanaf 1955. Bij diens kinderen groeide dertig jaar later de idee om biologisch te gaan werken en op 1 april 1987 werd die grote stap gezet. De Dobbelhoeve werd sindsdien een der eerste gemengde biologische bedrijven in Vlaanderen en ook een der bekendste. In 2001 kregen we dan de kans om ook het westelijke deel van de “Dubbelhoeve” te kopen. Zo lijkt de cirkel weer rond en kan het oude historische gebouw weer één geheel vormen …",""],"ofd:upstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/de-groene-boerderij"}],"schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["03/3830782"],"schema:email":["info@dobbelhoeve.be"],"foaf:homepage":["http://www.dobbelhoeve.be"],"schema:url":["http://www.dobbelhoeve.be"]},"ofd:downstreamRel":[],"@id":"https://w3id.org/openfooddata/actors/de-dobbelhoeve","schema:name":"De Dobbelhoeve","ofd:actorType":["at:pointOfSale","at:collectionPoint","at:producer","at:farmShop"]}
       </script>
         <title>De Dobbelhoeve</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/de-dobbelhoeve"/>
     </head>
     <body>
 
@@ -148,155 +149,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

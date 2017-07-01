@@ -1,27 +1,27 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:ContactPoint",
+    "email" : "vangeelraf@telenet.be",
+    "telephone" : "0477/719202"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-raf-patat",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Geel",
     "postalCode" : "2440",
     "streetAddress" : "Hondstraat 5"
   }, {
-    "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "email" : "vangeelraf@telenet.be",
-    "telephone" : "0477/719202"
-  }, {
-    "@id" : "_:b2",
+    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.150601",
     "longitude" : "5.003435"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-raf-patat",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,13 +160,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20150920_121857.jpg?itok=Pjdd9tRP", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0075.jpg?itok=55UyzNct" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1248", "http://www.rechtvanbijdeboer.be/raf-patat-0", "http://www.rechtvanbijdeboer.be/node/2671", "http://www.rechtvanbijdeboer.be/raf-patat" ],
     "name" : "Raf Patat",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "Wij baten een gesloten varkensbedrijf uit met 150 zeugen. Daarnaast vermarkten wij 3 ha aardappelen op de hoeve en via een aardappelautomaat. Op de hoeve wordt ook stijldansen aangeleerd in een mooie landelijke setting.",
-    "geo" : "_:b2",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0075.jpg?itok=55UyzNct", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20150920_121857.jpg?itok=Pjdd9tRP" ],
     "schema:name" : "Raf Patat",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : "ft:potatoes"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -189,6 +189,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -197,12 +209,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -217,14 +223,12 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -235,8 +239,8 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "description" : {
@@ -245,16 +249,12 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

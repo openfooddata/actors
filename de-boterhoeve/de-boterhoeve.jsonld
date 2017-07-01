@@ -6,19 +6,19 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "email" : "deboterhoeve@gmail.com",
-    "telephone" : [ "0474/501065", "051/401781 GSM 0479/137381" ]
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Pittem",
     "postalCode" : "8740",
     "streetAddress" : "Peerboommolenstraat 1"
   }, {
+    "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "email" : "deboterhoeve@gmail.com",
+    "telephone" : [ "0474/501065", "051/401781 GSM 0479/137381" ]
+  }, {
     "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
+    "address" : "_:b1",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -95,7 +95,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,7 +158,7 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_1318.JPG?itok=c3bGYrVN", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/sam_1309.jpg?itok=qWsln5vD", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_1319_0.JPG?itok=RriUEyIg" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1287", "http://www.rechtvanbijdeboer.be/de-boterhoeve" ],
     "name" : "De Boterhoeve",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "DE BOTERHOEVE De hoeve is mooi en landelijk gelegen en goed bereikbaar en zeer goeie parking op de hoeve Mijn ouders zijn het bedrijf gestart in 1972 en in 1978 zijn ze begonnen met de verwerking en verkoop van zuivelproducten en aardappelen. Ik heb het bedrijf overgenomen van mijn ouders in 2006. Gehuwd den 01/04/2006 met Ann Neus , Ik, mijn vrouw en mijn ouders werken elke dag goed samen met veel liefde en plezier voor al onze klanten goed te bedienen. Al onze producten zijn recht van bij de boer.",
     "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_1319_0.JPG?itok=RriUEyIg", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/sam_1309.jpg?itok=qWsln5vD", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_1318.JPG?itok=c3bGYrVN" ],
@@ -193,12 +193,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -207,6 +201,12 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -221,6 +221,10 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
@@ -230,12 +234,8 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -244,8 +244,8 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

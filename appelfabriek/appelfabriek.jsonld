@@ -1,29 +1,29 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Neerijse",
-    "postalCode" : "3040",
-    "streetAddress" : "Wolfshaegen 130"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.legumenhofke.be",
     "email" : "info@legumenhofke.be",
     "telephone" : "0486/05.74.34",
     "url" : "http://www.legumenhofke.be"
   }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-legumenhofke",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b3",
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.800390",
     "longitude" : "4.629367"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Neerijse",
+    "postalCode" : "3040",
+    "streetAddress" : "Wolfshaegen 130"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-legumenhofke",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.facebook.com/legumenhofke",
     "@type" : "foaf:OnlineAccount",
@@ -57,7 +57,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,14 +173,14 @@
     "homepage" : "http://www.legumenhofke.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3276", "http://www.rechtvanbijdeboer.be/appelfabriek" ],
     "foaf:name" : "Appelfabriek",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "name" : "Appelfabriek",
     "url" : "http://www.legumenhofke.be",
     "actorType" : [ "at:collectionPoint", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:spices", "ft:vegetables", "ft:fruits" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b3"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -214,15 +214,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -235,22 +226,44 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -264,19 +277,6 @@
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "relatedContext" : {

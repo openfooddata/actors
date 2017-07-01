@@ -1,37 +1,37 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-2",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Lede",
     "postalCode" : "9340",
     "streetAddress" : "Heiplasstraat 26 - 28"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-1",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b4",
+    "@id" : "_:b5",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hoevedenheiplas.be",
     "email" : "dominique.brondeel@gmail.com",
     "telephone" : [ "0476/240786", "0476 24 07 86" ],
     "url" : "http://www.hoevedenheiplas.be"
-  }, {
-    "@id" : "_:b5",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardappelautomaat-2",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://Www.facebook.com/pages/hoeve-den-Heiplasstraat/1456493127964550",
     "@type" : "foaf:OnlineAccount",
@@ -65,7 +65,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -182,14 +182,14 @@
     "homepage" : "http://www.hoevedenheiplas.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1279", "http://www.rechtvanbijdeboer.be/hoeve-den-heiplas" ],
     "foaf:name" : "Hoeve den Heiplas",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b5",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img-20160616-wa0001.jpg?itok=n-hX2Lzm",
     "name" : "Hoeve den Heiplas",
     "url" : "http://www.hoevedenheiplas.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b5", "_:b2", "_:b3" ],
+    "downstreamRel" : [ "_:b1", "_:b0", "_:b4" ],
     "offersFoodType" : "ft:potatoes"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -212,13 +212,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -234,17 +227,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -258,16 +246,8 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -275,8 +255,15 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "https://schema.org/name"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -284,16 +271,29 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -17,7 +17,8 @@
            {"foaf:account":[{"@type":"foaf:OnlineAccount","@id":"https://www.facebook.com/heuninghof","skos:prefLabel":"Facebook","foaf:accountServiceHomepage":"https://www.facebook.com","foaf:accountName":"https:","dct:identifier":""}],"foaf:name":"Heuninghof","schema:url":["http://www.heuninghof.be"],"foaf:homepage":["http://www.heuninghof.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/heuninghof-0","http://www.rechtvanbijdeboer.be/node/2604","http://www.rechtvanbijdeboer.be/heuninghof","http://www.rechtvanbijdeboer.be/node/1201"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/001.jpg?itok=4w163dg6"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"schema:latitude":"51.152250","schema:longitude":"4.865135","@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Honingstraat 14","schema:postalCode":"2250","schema:addressLocality":"Olen"}},"ofd:offersFoodType":["ft:milk_products","ft:alcoholic_beverages","ft:icecream"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/001.jpg?itok=4w163dg6"],"schema:description":"Kris heeft in '94 het melkveebedrijf overgenomen van zijn ouders Sinds 1996, wilde ik, Chantal mijn eigen droom waarmaken en zijn we gestart met het maken van hoeve-ijs, we gebruiken zoveel mogelijk Belgische produkten, volledig artisanaal zonder bewaarmiddelen of kleurstoffen. Ondertussen hebben we hier reeds meer produkten van andere producenten, zoals kaas, geitenkaas, advokaat, honing, wijn, ODLO bier, en zijn we zelf ook gestart met rijstpap en chocolademousse. Sinds een paar jaar zijn we ook Pure Kempen ondernemer.","ofd:upstreamRel":[],"schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["014/214506","0495/670854"],"schema:email":["info@heuninghof.be"],"foaf:homepage":["http://www.heuninghof.be"],"schema:url":["http://www.heuninghof.be"]},"ofd:downstreamRel":[],"@id":"https://w3id.org/openfooddata/actors/heuninghof","schema:name":"Heuninghof","ofd:actorType":["at:pointOfSale","at:farmShop","at:producer"]}
       </script>
         <title>Heuninghof</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/heuninghof"/>
     </head>
     <body>
 
@@ -127,155 +128,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

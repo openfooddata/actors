@@ -1,9 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:ContactPoint",
+    "email" : "jensvanmeervenne@hotmail.com",
+    "telephone" : "0473 18 29 50"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -12,9 +12,9 @@
     "streetAddress" : "Sweigers- Zuid 9"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-bazel",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -22,9 +22,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:ContactPoint",
-    "email" : "jensvanmeervenne@hotmail.com",
-    "telephone" : "0473 18 29 50"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-bazel",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -96,7 +96,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,13 +167,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/totaal%20rand%20zonder%20achtergrond%20%282%29.png?itok=VMNxDqRw", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20140129_92990133652e8f90577441.png?itok=GN9Bu7wb" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-sweigershoeve-van-meervenne", "http://www.rechtvanbijdeboer.be/node/1217" ],
     "name" : "De Sweigershoeve - Van Meervenne",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b0",
     "description" : "De Sweigershoeve is een gemengd landbouwbedrijf met melkvee en mestvarkens. Verder worden er aardappelen geteeld die allemaal rechtstreeks worden verkocht aan de consument. Van collega- landbouwers worden er wortelen, ajuin, rode ajuin, sjalot en look verkocht. Sinds enkele jaren is er een neventak bijgekomen, dit is verkoop van brandhout, en het vellen en snoeien van bomen.",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/totaal%20rand%20zonder%20achtergrond%20%282%29.png?itok=VMNxDqRw", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20140129_92990133652e8f90577441.png?itok=GN9Bu7wb" ],
     "schema:name" : "De Sweigershoeve - Van Meervenne",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b3" ],
+    "downstreamRel" : [ "_:b3", "_:b4" ],
     "offersFoodType" : [ "ft:potatoes", "ft:vegetables", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -203,6 +203,21 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -228,21 +243,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
@@ -260,6 +260,10 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
@@ -271,10 +275,6 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",

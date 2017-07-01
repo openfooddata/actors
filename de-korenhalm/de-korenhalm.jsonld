@@ -7,28 +7,28 @@
     "streetAddress" : "Bampoelstraat 4"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.dekorenhalm.be",
-    "email" : "info@dekorenhalm.be",
-    "telephone" : "0495/036223",
-    "url" : "http://www.dekorenhalm.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/dorpspunt-beveren",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-korenhalm-0",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "50.993012",
     "longitude" : "2.680192"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/dorpspunt-beveren",
-    "relatedContext" : "at:pointOfSale"
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-korenhalm-0",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.dekorenhalm.be",
+    "email" : "info@dekorenhalm.be",
+    "telephone" : "0495/036223",
+    "url" : "http://www.dekorenhalm.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -168,16 +168,16 @@
     "homepage" : "http://www.dekorenhalm.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-korenhalm", "http://www.rechtvanbijdeboer.be/node/1954", "http://www.rechtvanbijdeboer.be/de-korenhalm-1", "http://www.rechtvanbijdeboer.be/node/3593", "http://www.rechtvanbijdeboer.be/de-korenhalm-0", "http://www.rechtvanbijdeboer.be/node/2912" ],
     "name" : "De Korenhalm",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b4",
     "description" : "",
-    "geo" : "_:b3",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto_winkel.jpg?itok=bPqXcPjG",
     "schema:name" : "De Korenhalm",
     "url" : "http://www.dekorenhalm.be",
     "actorType" : [ "at:farmShop", "at:pointOfSale", "at:producer" ],
-    "downstreamRel" : "_:b4",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:icecream", "ft:milk_products", "ft:potatoes" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b3"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -208,18 +208,6 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -239,15 +227,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -256,15 +240,22 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -275,6 +266,15 @@
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

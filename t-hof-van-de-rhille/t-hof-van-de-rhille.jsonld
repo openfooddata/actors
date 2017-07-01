@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelautomaat-t-hof-van-de-rhille",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Woumen (Diksmuide)",
     "postalCode" : "8600",
     "streetAddress" : "Pollaertstraat 29"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "50.996493",
     "longitude" : "2.862277"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelautomaat-t-hof-van-de-rhille",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
@@ -169,12 +169,12 @@
     "name" : "'t Hof van de Rhille",
     "contactPoint" : "_:b3",
     "description" : "Onze boerderij is een gespecialiseerd melkveebedrijf dat momenteel wordt uitgebaat door 2 families. In 1979 hebben André en Marleen het bedrijf overgenomen van de ouders van André. In 1995 is er een nieuwe melkveestal gebouwd, en in 2005 kwamen Lieven en Ans erbij om mee te helpen op het bedrijf. Momenteel is dit de 3e generatie die dit bedrijf uitbaat. André en Lieven houden zich hoofdzakelijk bezig met het melkvee en de bijhorende akkerbouw zoals: maïs, tarwe, gerst en gras. Momenteel worden er 90 zwartbonte melkkoeien op het bedrijf gemolken waarvan een gedeelte van de melk verwerkt wordt tot hoeveboter, karnemelk, yoghurt,.... Deze verwerking en de klasbezoeken worden verzorgt door Marleen en Ans.",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "'t Hof van de Rhille",
     "url" : "http://zoeken.onthaalopdeboerderij.be/t-hof-v",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : [ "ft:eggs", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -204,12 +204,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -232,9 +226,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -248,6 +244,14 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
@@ -256,10 +260,6 @@
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "account" : {
@@ -275,12 +275,6 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -292,6 +286,12 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

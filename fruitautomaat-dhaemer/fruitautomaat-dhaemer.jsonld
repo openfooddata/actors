@@ -14,13 +14,13 @@
     "streetAddress" : "Vroembos 13"
   }, {
     "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "telephone" : "0495/649673 (Nadine)"
+  }, {
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/fruit-dhaemer",
     "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "telephone" : "0495/649673 (Nadine)"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -47,7 +47,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -96,7 +96,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -159,14 +159,14 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/Fruit_dhaemer_producent_gezin_automaat.jpg",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/fruitautomaat-dhaemer", "http://www.rechtvanbijdeboer.be/node/3114" ],
     "name" : "Fruitautomaat D'Haemer",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b2",
     "description" : "",
     "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/Fruit_dhaemer_producent_gezin_automaat.jpg",
     "schema:name" : "Fruitautomaat D'Haemer",
     "actorType" : [ "at:vendingMachine", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:fruits", "ft:fruit_juices" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b3"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -210,6 +210,9 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -222,22 +225,18 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -249,8 +248,9 @@
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

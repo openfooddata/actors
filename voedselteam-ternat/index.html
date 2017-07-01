@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"Voedselteam Ternat","foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/voedselteam-ternat","http://www.rechtvanbijdeboer.be/node/2151"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ijsbar.jpg?itok=f602Pvw-"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"schema:latitude":"50.871751","schema:longitude":"4.158267","@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Kerkstraat 4","schema:postalCode":"1740","schema:addressLocality":"Ternat"}},"ofd:offersFoodType":["ft:potatoes","ft:bakery_products","ft:fruits","ft:fruit_juices","ft:vegetables","ft:spices","ft:alcoholic_beverages","ft:milk_products","ft:beef","ft:pork","ft:lamb_meat","ft:icecream","ft:poultry_meat"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ijsbar.jpg?itok=f602Pvw-"],"schema:description":"","ofd:upstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/boerderij-de-loods"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/bioboerderij-dubbeldoel"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/hoevebakkerij-de-haseleer"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/hof-van-piemont"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/zuivelhoeve-keymeulen"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/cleyn-hof-ten-bautebrugge"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/bioslagerij-de-boom"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/de-schapenmelkerij"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:producer","ofd:relatedActor":"https://w3id.org/openfooddata/actors/kruidenkwekerij-duizendblad"}],"@id":"https://w3id.org/openfooddata/actors/voedselteam-ternat","schema:name":"Voedselteam Ternat","ofd:actorType":["at:pointOfSale","at:foodTeams"]}
       </script>
         <title>Voedselteam Ternat</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/voedselteam-ternat"/>
     </head>
     <body>
 
@@ -165,155 +166,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

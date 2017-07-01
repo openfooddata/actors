@@ -17,7 +17,8 @@
            {"foaf:account":[{"@type":"foaf:OnlineAccount","@id":"https://www.facebook.com/DeWieltjeshoeve","skos:prefLabel":"Facebook","foaf:accountServiceHomepage":"https://www.facebook.com","foaf:accountName":"https:","dct:identifier":""}],"foaf:name":"De Wieltjeshoeve","schema:url":["http://www.wieltjeshoeve.be"],"foaf:homepage":["http://www.wieltjeshoeve.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/de-wieltjeshoeve","http://www.rechtvanbijdeboer.be/node/1192"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/181857_207111832743894_1026797904_n-300x200.jpg?itok=H2nW2Ewa","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_3580-300x200.jpg?itok=M8vHbi9v","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_5201-300x200.jpg?itok=VuPdQLSp","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/knipsel.jpg?itok=bvCv4vRx"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Steenweg op Merksplas 65 B","schema:postalCode":"2300","schema:addressLocality":"Turnhout"}},"ofd:offersFoodType":["ft:fruits","ft:vegetables"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/181857_207111832743894_1026797904_n-300x200.jpg?itok=H2nW2Ewa","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_3580-300x200.jpg?itok=M8vHbi9v","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_5201-300x200.jpg?itok=VuPdQLSp","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/knipsel.jpg?itok=bvCv4vRx"],"schema:description":"In maart 2000 startte de Wieltjeshoeve met biologische tuinbouw. Hun doelstelling is zeer verse seizoensgebonden groenten van eigen akkers in de verswinkel aanbieden, aangevuld met oogst van collega-bio-telers. Daarnaast bieden ze verschillende groetenpakketten, verpakkingen met \"vergeten groenten\" en \"vergeten recepten\" aan waarmee ze de consument willen voorzien van een gezond evenwichtig en een zeer gevarieerde en voedingsrijke maaltijd. Winkelen wordt voor u makkelijker. U moet niet meer nadenken over welke groenten je deze week op tafel zal brengen","schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["0476/633745"],"schema:email":["wieltjeshoeve@telenet.be"],"foaf:homepage":["http://www.wieltjeshoeve.be"],"schema:url":["http://www.wieltjeshoeve.be"]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/voedselteam-turnhout-warande"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/voedselteam-turnhout-veldekens"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/wieltjeshoeve"}],"@id":"https://w3id.org/openfooddata/actors/de-wieltjeshoeve","schema:name":"De Wieltjeshoeve","ofd:actorType":"at:producer"}
       </script>
         <title>De Wieltjeshoeve</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/de-wieltjeshoeve"/>
     </head>
     <body>
 
@@ -130,155 +131,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

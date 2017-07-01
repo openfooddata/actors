@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"Ons Dagelijks Groen","schema:url":["http://www.odgroen.be"],"foaf:homepage":["http://www.odgroen.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/ons-dagelijks-groen-0","http://www.rechtvanbijdeboer.be/node/3248","http://www.rechtvanbijdeboer.be/ons-dagelijks-groen","http://www.rechtvanbijdeboer.be/node/1712"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preipralinemetgedroogdpreigroen.jpg?itok=HQxQg957","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/rondleidingagragroepinwinkelinfo.jpg?itok=xuimL1FH","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ons_dagelijks_groen_producent_hr.jpg?itok=Klrx64d-","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preikaasmetgedroogdpreigroen.jpg?itok=Xu-EgFc7"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"schema:latitude":"50.950228","schema:longitude":"4.124020","@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Kammenkouterstraat 80","schema:postalCode":"9310","schema:addressLocality":"Meldert"}},"ofd:offersFoodType":["ft:bakery_products","ft:poultry_meat","ft:milk_products","ft:alcoholic_beverages","ft:fruits","ft:vegetables","ft:potatoes","ft:spices"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preipralinemetgedroogdpreigroen.jpg?itok=HQxQg957","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/rondleidingagragroepinwinkelinfo.jpg?itok=xuimL1FH","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ons_dagelijks_groen_producent_hr.jpg?itok=Klrx64d-","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/preikaasmetgedroogdpreigroen.jpg?itok=Xu-EgFc7"],"schema:description":"'Ons Dagelijks Groen', is een preibedrijf met zorgboerderij, heeft een hoeve-automatenwinkel en doet aan landbouweducatie, ontvangt klassen, verzorgt (verjaardag)workshops, bedrijfsbezoeken, seminaries, teambuilding…in een land- en tuinbouwgebeuren. Ons dagelijks groen is ontstaan vanuit een preibedrijf . De naam ‘Ons Dagelijks Groen' wijst erop dat groenten, fruit, de akker en de tuin essentieel zijn in ons dagelijks leven om een gezonde en duurzame levensstijl te behouden. Op basis van het gedroogde preigroen, dat volgens recente studies rijk is aan antioxidanten en kankerwerend is, brengt dit bedrijf preikaas, preilikeur, preipralines, preibrood… op de markt. In de automatenwinkel worden eigen producten en producten van collega’s verkocht. Tijdens een rondleiding krijg je uitleg over de productie van prei, de zorgboerderij, de automatenwinkel, het landbouweducatief project... Op aanvraag kan een rondleiding ook gecombineerd worden met een tweekamp, volksspelen of een quiz. Plezier gegarandeerd! Een hapje en een drankje of zelfs een volledige maaltijd “van de grond in de mond” is mogelijk in de polyvalente zaal .","ofd:upstreamRel":[],"schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["053 70 64 73","0499 18 99 25"],"schema:email":["info@odgroen.be"],"foaf:homepage":["http://www.odgroen.be"],"schema:url":["http://www.odgroen.be"]},"ofd:downstreamRel":[],"@id":"https://w3id.org/openfooddata/actors/ons-dagelijks-groen","schema:name":"Ons Dagelijks Groen","ofd:actorType":["at:pointOfSale","at:farmShop","at:producer"]}
       </script>
         <title>Ons Dagelijks Groen</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/ons-dagelijks-groen"/>
     </head>
     <body>
 
@@ -132,155 +133,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

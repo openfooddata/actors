@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"Boerderij De Lekkerbek","schema:url":["http://www.boerderijdelekkerbek.be"],"foaf:homepage":["http://www.boerderijdelekkerbek.be"],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/boerderij-de-lekkerbek","http://www.rechtvanbijdeboer.be/node/1187"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc04949.jpg?itok=uLP4HU2D","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotometcarla.jpg?itok=OcoSWlWw","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_20160828_151436676.jpg?itok=m2VUeT4V"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Wafelstraat 58 -","schema:postalCode":"9630","schema:addressLocality":"Sint-Denijs-Boekel"}},"ofd:offersFoodType":["ft:beef"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc04949.jpg?itok=uLP4HU2D","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotometcarla.jpg?itok=OcoSWlWw","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_20160828_151436676.jpg?itok=m2VUeT4V"],"schema:description":"Op onze boerderij wordt kleinschalig en met grote zorg voor dierenwelzijn en eindproduct runds- en kalfsvlees geproduceerd. Wij kweken dieren van het ras “belgisch wit-blauw”. Dit ras is gekend om smakelijk en mager vlees. Wij willen onze klanten een hoogwaardig stuk vlees bezorgen. Zo versnijden wij enkel vrouwelijke dieren, die verfijnder vlees leveren dan stieren. Onze dieren worden gevoederd met hoogwaardige grondstoffen, zonder antibiotica en genetisch gemanipuleerde organismen en op basis van puur plantaardige voeding. Zij worden afgemest in goed ingestrooide stallingen. Wij gebruiken zo min mogelijk kunstmest, maar geloven in het principe van de gesloten voedselkringloop dat we zo maximaal mogelijk toepassen.","schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["0473320741","0473/320.741"],"schema:email":["huyghe-verheye@skynet.be"],"foaf:homepage":["http://www.boerderijdelekkerbek.be"],"schema:url":["http://www.boerderijdelekkerbek.be"]},"ofd:downstreamRel":[{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/wwwboerderijdelekkerbekbe"},{"@type":"ofd:ActorRelationship","ofd:relatedContext":"at:pointOfSale","ofd:relatedActor":"https://w3id.org/openfooddata/actors/boerderij-de-lekkerbek-0"}],"@id":"https://w3id.org/openfooddata/actors/boerderij-de-lekkerbek","schema:name":"Boerderij De Lekkerbek","ofd:actorType":"at:producer"}
       </script>
         <title>Boerderij De Lekkerbek</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/boerderij-de-lekkerbek"/>
     </head>
     <body>
 
@@ -125,155 +126,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

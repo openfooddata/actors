@@ -17,7 +17,8 @@
            {"foaf:account":[],"foaf:name":"'t Engebroeckhof","schema:url":[],"foaf:homepage":[],"foaf:isPrimaryTopicOf":["http://www.rechtvanbijdeboer.be/t-engebroeckhof-0","http://www.rechtvanbijdeboer.be/node/2629","http://www.rechtvanbijdeboer.be/t-engebroeckhof","http://www.rechtvanbijdeboer.be/node/1224"],"@type":"foaf:Agent","schema:image":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aardappeltelerjohangeleynswilsele-fotolukcollet-7177.jpg?itok=WbSxILlW","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aardappeltelerjohangeleynswilsele-fotolukcollet-7340.jpg?itok=TW8Te8bq"],"@context":"https://openfooddata.github.io/actors/_common/context.jsonld","schema:geo":{"schema:latitude":"50.890470","schema:longitude":"4.694510","@type":"schema:GeoCoordinates","schema:addressCountry":"Belgium","schema:address":{"@type":"schema:PostalAddress","schema:streetAddress":"Eendebroekstraat 93","schema:postalCode":"3012","schema:addressLocality":"Wilsele"}},"ofd:offersFoodType":["ft:potatoes"],"foaf:depiction":["http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aardappeltelerjohangeleynswilsele-fotolukcollet-7177.jpg?itok=WbSxILlW","http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aardappeltelerjohangeleynswilsele-fotolukcollet-7340.jpg?itok=TW8Te8bq"],"schema:description":"Als je de doodlopende straat Eendebroekstraat inrijdt, voel je je al snel 'op den buiten'. Open velden met bieten, aardappelen, graan en maïs omringen het akkerbouwbedrijf van de familie Geleyns. En wanneer je het even stil maakt, hoor je ongetwijfeld de eenden die sinds jaar en dag dit voormalige broedgebied bevolken. In het Leuvens dialect is 'eend' trouwens 'eng' vandaar de bedrijfsnaam 't Engebroeckhof. Ons landbouwbedrijf is sinds 1976 gevestigd op de huidige locatie in de Eendebroekstraat. Maar sinds 1781 liep er iets verderop, ter hoogte van 'de vier huizen', ene Hendricus Geleyns op zijn akkers rond. Jazeker, de landbouwtraditie houdt hier intussen al 6 generaties stand. En vol enthousiasme! Op het bedrijf verkoopt moeder Irene verschillende soorten aardappelen, van zachtkokende tot hardkokende. Met de hulp van de automatische weeg- en verpakmachine biedt ze jou graag een pakket op maat aan. Samen met mijn vader Josse zijn we in Leuven en omstreken gekend als pioniers op het vlak van niet-kerende bodembewerking - een techniek die op onze laag gelegen percelen al maar dan 10 jaar zijn nut bewijst. De grond wordt - zoals de naam het zegt - niet meer gekeerd, dit in tegenstelling tot het klassieke ploegen. Deze techniek wordt vaak toegepast bij het bestrijden van erosieproblemen op hellende percelen. En met succes! Water en modder blijven op die manier veel meer op het veld en geven minder overlast benedenstrooms. Wij trekken ook de kaart van agrarisch natuurbeheer. Zo leggen we bijvoorbeeld grasstroken aan die een buffer vormen tussen onze akkers en de aanpalende beken.","ofd:upstreamRel":[],"schema:contactPoint":{"@type":"schema:ContactPoint","schema:telephone":["0479408774","0479/408774"],"schema:email":["johan.geleyns@telenet.be"],"foaf:homepage":[],"schema:url":[]},"ofd:downstreamRel":[],"@id":"https://w3id.org/openfooddata/actors/t-engebroeckhof","schema:name":"'t Engebroeckhof","ofd:actorType":["at:pointOfSale","at:farmShop","at:producer"]}
       </script>
         <title>&#39;t Engebroeckhof</title>
-        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://openfooddata.github.io/actors/css/foundation.min.css"/>
+        <link rel="canonical" href="https://w3id.org/openfooddata/actors/t-engebroeckhof"/>
     </head>
     <body>
 
@@ -124,155 +125,15 @@
 
     <hr>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://openfooddata.github.io/actors/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript">
-        var fts = null;
-        var ats = null;
-
-        $(document).ready(function () {
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/foodtype/foodtype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    fts = response;
-                    dofoodtype();
-                }
-            });
-
-            $.ajax({
-                url: 'https://openfooddata.github.io/vocab/actortype/actortype.jsonld',
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    ats = response;
-                    doactortype();
-                    dorelatedContext();
-                }
-            });
-
-            dorelatedActor();
-        });
-
-        function doactortype() {
-            document.querySelectorAll('.actortype').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                el.href = uri;
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dofoodtype() {
-            document.querySelectorAll('.foodtype').forEach(function (el) {
-                var uri = getOFDftUri(el.innerText);
-                el.href = uri;
-                if(fts == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(fts, el, uri);
-                }
-            });
-        }
-
-        function dorelatedContext() {
-            document.querySelectorAll('.relatedContext').forEach(function (el) {
-                var uri = getOFDatUri(el.innerText);
-                if(ats == null) {
-                    setNameUri(uri, el)
-                } else {
-                    setName(ats, el, uri);
-                }
-            });
-        }
-
-        function dorelatedActor() {
-            document.querySelectorAll('.relatedActor').forEach(function (el) {
-                var uri = el.innerText;
-                if(ats == null) {
-                    setActorName(el, uri)
-                }
-            });
-        }
-
-        function setActorName(el, uri) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    response['@graph'].filter(function (obj) {
-                                return obj['@id'] == el.innerText || obj['@id'] == uri;
-                            }
-                    ).forEach(function (obj) {
-                        if(obj.name) {
-                            el.innerText = obj.name;
-                        } else {
-                            el.innerText = uri.replace("https://w3id.org/openfooddata/actors/","");
-                        }
-                    });
-                }
-            });
-        }
-
-        function setNameUri(uri, el) {
-            $.ajax({
-                url: uri,
-                cache: true,
-                headers: {
-                    Accept: "application/ld+json"
-                },
-                success: function (response) {
-                    setName(response, el, uri);
-                }
-            });
-        }
-
-        function setName(response, el, uri) {
-            response['@graph'].filter(function (obj) {
-                        return obj['@id'] == el.innerText || obj['@id'] == uri;
-                    }
-            ).forEach(function (obj) {
-                el.innerText = getLabel(obj);
-            });
-
-        }
-
-        function getLabel(obj) {
-            var result = null;
-            if (Object.prototype.toString.call(obj.prefLabel) === '[object Array]') {
-                obj.prefLabel.forEach(function (lbl) {
-                    if (lbl['@language'] == 'en') {
-                        result = lbl['@value'];
-                        return;
-                    }
-                    ;
-                });
-            } else {
-                result = obj.prefLabel['@value'];
-            }
-            return result;
-        }
-        function getOFDatUri(curie) {
-            return curie.replace('at:', 'https://w3id.org/openfooddata/vocab/actortype#');
-        }
-        function getOFDftUri(curie) {
-            return curie.replace('ft:', 'https://w3id.org/openfooddata/vocab/foodtype#');
-        }
-    </script>
+    <script src="https://openfooddata.github.io/actors/js/adr.js"></script>
     </body>
     </html>
 

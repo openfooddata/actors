@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.dewittebeek.be/",
+    "url" : "http://www.dewittebeek.be/"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.831000",
     "longitude" : "4.750666"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "bierbeek",
     "postalCode" : "3360",
     "streetAddress" : "Hoogstraat 38 – 46"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.dewittebeek.be/",
-    "url" : "http://www.dewittebeek.be/"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -160,9 +160,9 @@
     "homepage" : "http://www.dewittebeek.be/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-witte-beek-1", "http://www.rechtvanbijdeboer.be/node/3638" ],
     "name" : "De Witte Beek",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "schema:name" : "De Witte Beek",
     "url" : "http://www.dewittebeek.be/",
     "actorType" : [ "at:pointOfSale", "at:collectionPoint" ],
@@ -188,6 +188,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -210,14 +216,21 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
@@ -227,24 +240,11 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
