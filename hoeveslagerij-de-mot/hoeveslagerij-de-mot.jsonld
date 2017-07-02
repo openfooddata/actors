@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Wellen",
-    "postalCode" : "3830",
-    "streetAddress" : "Houtstraat 18"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.853546",
-    "longitude" : "5.346380"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hoeveslagerijdemot.be",
     "email" : "hoeveslagerijdemot@gmail.com",
     "telephone" : "011/37.65.35",
     "url" : "http://www.hoeveslagerijdemot.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.853546",
+    "longitude" : "5.346380"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Wellen",
+    "postalCode" : "3830",
+    "streetAddress" : "Houtstraat 18"
   }, {
     "@id" : "http://hoeveslagerijdemot",
     "@type" : "foaf:OnlineAccount",
@@ -101,7 +101,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -169,7 +169,7 @@
     "homepage" : "http://www.hoeveslagerijdemot.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hoeveslagerij-de-mot", "http://www.rechtvanbijdeboer.be/hoeveslagerij-de-mot-0", "http://www.rechtvanbijdeboer.be/node/1831", "http://www.rechtvanbijdeboer.be/node/3399" ],
     "name" : "Hoeveslagerij De Mot",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : [ "In het begin van de week kan je bij ons ook terecht voor het versnijden van 1/2 of ganse varken of het versnijden van runderen", "In het zuiden van Limburg tussen Hasselt, Sint-Truiden en Tongeren bevindt zich de gemeente Wellen. Hier hebben wij, de familie Marckelbach, een gesloten varkensbedrijf met 200 zeugen. Al onze biggen mesten we zelf af. Onze varkens lopen los in open natuurstallen die gericht zijn op het zuiden. Onze varkensvoeder bereiden wij dagelijks zelf met onze eigen geteelde mais en graan" ],
     "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/alles%20009.jpg?itok=YDSSeVJg", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/kinderen%20042.jpg?itok=w6MXWjCh", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/alles%20007.jpg?itok=G9nn00Qi", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hoeveslagerij_de_mot_assortiment_vlees_koeltoog_lr.jpg?itok=s6nH4DWH" ],
@@ -202,14 +202,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -229,18 +232,12 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -249,12 +246,6 @@
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -280,6 +271,15 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

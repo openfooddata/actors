@@ -52,8 +52,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag">
@@ -73,8 +73,8 @@
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Datatype">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdfs:Class>
   <rdfs:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -165,8 +165,12 @@
   <foaf:Agent rdf:about="https://w3id.org/openfooddata/actors/voedselteam-zoutleeuw-tinteltuin">
     <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/node/2233</foaf:isPrimaryTopicOf>
     <foaf:name>Voedselteam Zoutleeuw Tinteltuin</foaf:name>
-    <ofd:offersFoodType>ft:lamb_meat</ofd:offersFoodType>
-    <ofd:offersFoodType>ft:icecream</ofd:offersFoodType>
+    <ofd:upstreamRel>
+      <ofd:ActorRelationship>
+        <ofd:relatedContext>at:producer</ofd:relatedContext>
+        <ofd:relatedActor>https://w3id.org/openfooddata/actors/hof-ter-vrijlegem</ofd:relatedActor>
+      </ofd:ActorRelationship>
+    </ofd:upstreamRel>
     <ofd:upstreamRel>
       <ofd:ActorRelationship>
         <ofd:relatedContext>at:producer</ofd:relatedContext>
@@ -176,16 +180,21 @@
     <ofd:upstreamRel>
       <ofd:ActorRelationship>
         <ofd:relatedContext>at:producer</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/vzw-de-winning-maatwerk</ofd:relatedActor>
+        <ofd:relatedActor>https://w3id.org/openfooddata/actors/fv-van-haesendonck</ofd:relatedActor>
       </ofd:ActorRelationship>
     </ofd:upstreamRel>
-    <ofd:offersFoodType>ft:spices</ofd:offersFoodType>
-    <ofd:offersFoodType>ft:poultry_meat</ofd:offersFoodType>
-    <schema:image>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2014-04-1013.38.47.jpg?itok=YWppXUpt</schema:image>
+    <ofd:offersFoodType>ft:lamb_meat</ofd:offersFoodType>
+    <ofd:offersFoodType>ft:icecream</ofd:offersFoodType>
     <ofd:upstreamRel>
       <ofd:ActorRelationship>
         <ofd:relatedContext>at:producer</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/de-levende-aarde-cvba</ofd:relatedActor>
+        <ofd:relatedActor>https://w3id.org/openfooddata/actors/de-fruittuin</ofd:relatedActor>
+      </ofd:ActorRelationship>
+    </ofd:upstreamRel>
+    <ofd:upstreamRel>
+      <ofd:ActorRelationship>
+        <ofd:relatedContext>at:producer</ofd:relatedContext>
+        <ofd:relatedActor>https://w3id.org/openfooddata/actors/vzw-de-winning-maatwerk</ofd:relatedActor>
       </ofd:ActorRelationship>
     </ofd:upstreamRel>
     <ofd:upstreamRel>
@@ -194,18 +203,6 @@
         <ofd:relatedActor>https://w3id.org/openfooddata/actors/regalys</ofd:relatedActor>
       </ofd:ActorRelationship>
     </ofd:upstreamRel>
-    <ofd:offersFoodType>ft:milk_products</ofd:offersFoodType>
-    <foaf:depiction>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2014-04-1013.38.47.jpg?itok=YWppXUpt</foaf:depiction>
-    <ofd:actorType>at:pointOfSale</ofd:actorType>
-    <ofd:actorType>at:foodTeams</ofd:actorType>
-    <ofd:upstreamRel>
-      <ofd:ActorRelationship>
-        <ofd:relatedContext>at:producer</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/hageling-wijnbouw</ofd:relatedActor>
-      </ofd:ActorRelationship>
-    </ofd:upstreamRel>
-    <ofd:offersFoodType>ft:pork</ofd:offersFoodType>
-    <schema:description></schema:description>
     <schema:geo>
       <schema:GeoCoordinates>
         <schema:longitude>5.098110</schema:longitude>
@@ -220,44 +217,47 @@
         </schema:address>
       </schema:GeoCoordinates>
     </schema:geo>
+    <ofd:offersFoodType>ft:spices</ofd:offersFoodType>
+    <ofd:offersFoodType>ft:poultry_meat</ofd:offersFoodType>
     <ofd:upstreamRel>
       <ofd:ActorRelationship>
         <ofd:relatedContext>at:producer</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/de-fruittuin</ofd:relatedActor>
+        <ofd:relatedActor>https://w3id.org/openfooddata/actors/de-levende-aarde-cvba</ofd:relatedActor>
       </ofd:ActorRelationship>
     </ofd:upstreamRel>
-    <ofd:offersFoodType>ft:alcoholic_beverages</ofd:offersFoodType>
-    <ofd:offersFoodType>ft:fruits</ofd:offersFoodType>
+    <schema:image>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2014-04-1013.38.47.jpg?itok=YWppXUpt</schema:image>
+    <ofd:offersFoodType>ft:milk_products</ofd:offersFoodType>
+    <foaf:depiction>http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2014-04-1013.38.47.jpg?itok=YWppXUpt</foaf:depiction>
+    <ofd:actorType>at:pointOfSale</ofd:actorType>
+    <ofd:actorType>at:foodTeams</ofd:actorType>
+    <ofd:upstreamRel>
+      <ofd:ActorRelationship>
+        <ofd:relatedContext>at:producer</ofd:relatedContext>
+        <ofd:relatedActor>https://w3id.org/openfooddata/actors/hageling-wijnbouw</ofd:relatedActor>
+      </ofd:ActorRelationship>
+    </ofd:upstreamRel>
+    <ofd:offersFoodType>ft:pork</ofd:offersFoodType>
+    <schema:description></schema:description>
     <ofd:upstreamRel>
       <ofd:ActorRelationship>
         <ofd:relatedContext>at:producer</ofd:relatedContext>
         <ofd:relatedActor>https://w3id.org/openfooddata/actors/gallinero</ofd:relatedActor>
       </ofd:ActorRelationship>
     </ofd:upstreamRel>
+    <ofd:offersFoodType>ft:alcoholic_beverages</ofd:offersFoodType>
+    <ofd:offersFoodType>ft:fruits</ofd:offersFoodType>
     <ofd:offersFoodType>ft:bakery_products</ofd:offersFoodType>
+    <ofd:offersFoodType>ft:fruit_juices</ofd:offersFoodType>
     <ofd:upstreamRel>
       <ofd:ActorRelationship>
         <ofd:relatedContext>at:producer</ofd:relatedContext>
         <ofd:relatedActor>https://w3id.org/openfooddata/actors/de-ploeg</ofd:relatedActor>
       </ofd:ActorRelationship>
     </ofd:upstreamRel>
-    <ofd:offersFoodType>ft:fruit_juices</ofd:offersFoodType>
     <schema:name>Voedselteam Zoutleeuw Tinteltuin</schema:name>
     <foaf:isPrimaryTopicOf>http://www.rechtvanbijdeboer.be/voedselteam-zoutleeuw-tinteltuin</foaf:isPrimaryTopicOf>
-    <ofd:upstreamRel>
-      <ofd:ActorRelationship>
-        <ofd:relatedContext>at:producer</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/hof-ter-vrijlegem</ofd:relatedActor>
-      </ofd:ActorRelationship>
-    </ofd:upstreamRel>
     <ofd:offersFoodType>ft:eggs</ofd:offersFoodType>
     <ofd:offersFoodType>ft:vegetables</ofd:offersFoodType>
-    <ofd:upstreamRel>
-      <ofd:ActorRelationship>
-        <ofd:relatedContext>at:producer</ofd:relatedContext>
-        <ofd:relatedActor>https://w3id.org/openfooddata/actors/fv-van-haesendonck</ofd:relatedActor>
-      </ofd:ActorRelationship>
-    </ofd:upstreamRel>
     <ofd:offersFoodType>ft:potatoes</ofd:offersFoodType>
     <ofd:offersFoodType>ft:beef</ofd:offersFoodType>
   </foaf:Agent>

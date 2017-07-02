@@ -26,9 +26,22 @@ $(document).ready(function () {
             dorelatedContext();
         }
     });
-
+    addImgInNoLogo();
     dorelatedActor();
 });
+
+function addImgInNoLogo() {
+    var el = document.querySelector('.thumbnail');
+    if(el.getAttribute('src') == '') {
+        var jsonld = JSON.parse(
+            document.querySelector(
+                'script[type="application/ld+json"]').innerText);
+        if(jsonld["schema:image"][0])
+        {
+            el.src = jsonld["schema:image"][0];
+        }
+    }
+}
 
 function doactortype() {
     document.querySelectorAll('.actortype').forEach(function (el) {

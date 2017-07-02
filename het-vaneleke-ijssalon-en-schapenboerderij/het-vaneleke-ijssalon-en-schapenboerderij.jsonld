@@ -8,10 +8,9 @@
     "url" : "http://www.vaneleke.be"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Merksplas",
-    "postalCode" : "2330",
-    "streetAddress" : "Witte Keiweg 1"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/het-vaneleke",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -19,14 +18,15 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Merksplas",
+    "postalCode" : "2330",
+    "streetAddress" : "Witte Keiweg 1"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/het-vaneleke",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://vaneleke",
     "@type" : "foaf:OnlineAccount",
@@ -105,7 +105,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -179,12 +179,12 @@
     "name" : "Het Vaneleke - ijssalon en schapenboerderij",
     "contactPoint" : "_:b0",
     "description" : "In 2013 zijn wij gestart met het maken van ijs van koemelk die we aankochten bij de boeren in de buurt maar al gauw vroeg iemand ons waarom we geen ijs maakten van schapenmelk aangezien we toch zelf schapen hebben. We hebben dit direct geprobeerd en het was wel zo'n heerlijk ijs dat we van dat heerlijk schapenmelkijs steeds meer smaken maakten op de duur zelfs ook yoghurt en verse kaas. De schapenmelk is beter verteerbaar, minder cholesterol en veel zachter dan koemelk dus geen enkele reden om deze productie niet uit te breiden. we blijven echter ook werken met koemelk dus onze trouwe klanten die toch graag bij hun vertrouwde ijsjes blijven zullen we zeker niet in de steek laten. Omdat er uiteraard niet enkel ooitjes geboren worden, kan je bij ons ook terecht voor heel lekker lams- en schapenvlees",
-    "geo" : "_:b3",
+    "geo" : "_:b4",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/knuffellammetjes%20%28Large%29.jpg?itok=9kb0hk_R", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IJSLAMMETJE%20%284%29%20%28Large%29.JPG?itok=THSh1u9l" ],
     "schema:name" : "Het Vaneleke - ijssalon en schapenboerderij",
     "url" : "http://www.vaneleke.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b4" ],
+    "downstreamRel" : [ "_:b1", "_:b2" ],
     "offersFoodType" : [ "ft:icecream", "ft:fruit_juices", "ft:lamb_meat", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -219,6 +219,12 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -227,12 +233,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -249,16 +249,12 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -269,8 +265,16 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "name" : {
@@ -278,10 +282,6 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
