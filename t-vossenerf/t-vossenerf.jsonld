@@ -1,14 +1,14 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/ijswinkel-t-vossenerf",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -167,12 +167,12 @@
     "foaf:name" : "'t Vossenerf",
     "contactPoint" : "_:b2",
     "description" : "‘t Vossenerf is een akkerbouw- en melkveebedrijf. In 2004 namen Kris en Charlotte het bedrijf over en begonnen meteen met melk te verwerken tot ambachtelijke producten. Bij de bereiding blijven alle stoffen en natuurlijke smaken in het ijs bewaard (geen toevoeging van bewaar-, kleur- of smaakstoffen). Je kan kiezen uit tal van verschillende smaken. Het ijs is te verkrijgen in literverpakkingen. Daarnaast kan je ook genieten van een ijsje, drankje of pannenkoek op de hoeve zelf, met een prachtig zicht op de streek.",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/532389_240341689401483_190938906_n.jpg?itok=EzjTrDPh", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/555990_240342119401440_1734607784_n.jpg?itok=ykJnFKQE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1939906_436231369812513_852117107_n.jpg?itok=G5bQOrv_", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/575749_321408734628111_1420758871_n.jpg?itok=27WH7nFu" ],
     "name" : "'t Vossenerf",
     "url" : "http://vossenerf.be/",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : "ft:icecream"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -202,24 +202,34 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "account" : {
-      "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
     "name" : {
@@ -227,10 +237,6 @@
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "homepage" : {
@@ -245,6 +251,13 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -253,25 +266,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -284,6 +278,12 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:ContactPoint",
+    "email" : "ilka_guffens@hotmail.com",
+    "telephone" : "0478826456"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.754122",
     "longitude" : "5.405818"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "email" : "ilka_guffens@hotmail.com",
-    "telephone" : "0478826456"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -92,7 +92,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -155,9 +155,9 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20160612_181255.jpg?itok=EBERdKmV", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20160612_181432.jpg?itok=osu-Sk26" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/familie-picard", "http://www.rechtvanbijdeboer.be/node/3423", "http://www.rechtvanbijdeboer.be/node/1870", "http://www.rechtvanbijdeboer.be/familie-picard-0" ],
     "name" : "Familie Picard",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "Geopend 24/24 en 7/7!",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20160612_181255.jpg?itok=EBERdKmV", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/20160612_181432.jpg?itok=osu-Sk26" ],
     "schema:name" : "Familie Picard",
     "actorType" : [ "at:producer", "at:vendingMachine", "at:pointOfSale" ],
@@ -201,13 +201,22 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -227,15 +236,6 @@
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,25 +1,25 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/boerderij-de-lekkerbek-0",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/wwwboerderijdelekkerbekbe",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Sint-Denijs-Boekel",
     "postalCode" : "9630",
     "streetAddress" : "Wafelstraat 58 -"
   }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/boerderij-de-lekkerbek-0",
+    "relatedContext" : "at:pointOfSale"
+  }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/wwwboerderijdelekkerbekbe",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
     "@type" : "schema:ContactPoint",
@@ -98,11 +98,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -168,12 +168,12 @@
     "foaf:name" : "Boerderij De Lekkerbek",
     "contactPoint" : "_:b4",
     "description" : "Op onze boerderij wordt kleinschalig en met grote zorg voor dierenwelzijn en eindproduct runds- en kalfsvlees geproduceerd. Wij kweken dieren van het ras “belgisch wit-blauw”. Dit ras is gekend om smakelijk en mager vlees. Wij willen onze klanten een hoogwaardig stuk vlees bezorgen. Zo versnijden wij enkel vrouwelijke dieren, die verfijnder vlees leveren dan stieren. Onze dieren worden gevoederd met hoogwaardige grondstoffen, zonder antibiotica en genetisch gemanipuleerde organismen en op basis van puur plantaardige voeding. Zij worden afgemest in goed ingestrooide stallingen. Wij gebruiken zo min mogelijk kunstmest, maar geloven in het principe van de gesloten voedselkringloop dat we zo maximaal mogelijk toepassen.",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotometcarla.jpg?itok=OcoSWlWw", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc04949.jpg?itok=uLP4HU2D", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_20160828_151436676.jpg?itok=m2VUeT4V" ],
     "name" : "Boerderij De Lekkerbek",
     "url" : "http://www.boerderijdelekkerbek.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b1", "_:b0" ],
+    "downstreamRel" : [ "_:b3", "_:b2" ],
     "offersFoodType" : "ft:beef"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -196,6 +196,13 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -211,13 +218,6 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -230,8 +230,8 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "offersFoodType" : {
@@ -240,11 +240,15 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "image" : {
@@ -258,10 +262,6 @@
     },
     "name" : {
       "@id" : "https://schema.org/name"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

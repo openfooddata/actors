@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Damme",
+    "postalCode" : "8340",
+    "streetAddress" : "Moerkerkesteenweg 3 A"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.slagerijbonne.be",
     "email" : "info@slagerijbonne.be",
     "telephone" : "050/373912",
     "url" : "http://www.slagerijbonne.be"
   }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
-  }, {
     "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Damme",
-    "postalCode" : "8340",
-    "streetAddress" : "Moerkerkesteenweg 3 A"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -165,9 +165,9 @@
     "homepage" : "http://www.slagerijbonne.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1511", "http://www.rechtvanbijdeboer.be/bonne-veekweker-beenhouwer" ],
     "foaf:name" : "Bonne Veekweker-Beenhouwer",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "Wij zijn een waar Familiebedrijf Marc en Annick en de 3 zonen zijn actief op en rond de Hoeveslagerij Ondertussen is reeds 50 % van onze Rundsveestapel ons kweekprgramma van Rood West-Vlaams. Ons Rood West Vlaams, samen met onze Edelherten sieren niet alleen onze weides rondom onze Hoeveslagerij maar ook onze etalage binnenin.",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscn0883.jpg?itok=TOQBar1S", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/image006.jpg?itok=yVdAOu8C", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dscn1724kopie.jpg?itok=zk0MeZvM", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/060.jpg?itok=wahK0m6Q", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/herten.jpg?itok=WChGUjFe" ],
     "name" : "Bonne Veekweker-Beenhouwer",
     "url" : "http://www.slagerijbonne.be",
@@ -201,6 +201,24 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -213,30 +231,12 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -250,6 +250,10 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
@@ -257,8 +261,12 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "offersFoodType" : {
@@ -272,14 +280,6 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

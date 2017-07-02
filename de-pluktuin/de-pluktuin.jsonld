@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Nazareth",
+    "postalCode" : "9810",
+    "streetAddress" : "Steenweg Deinze 116"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.depluktuin.be",
     "email" : "depluktuin@fulladsl.be",
     "telephone" : "09/384.64.54",
     "url" : "http://www.depluktuin.be"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
+    "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "50.945254",
     "longitude" : "3.586383"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Nazareth",
-    "postalCode" : "9810",
-    "streetAddress" : "Steenweg Deinze 116"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -94,7 +94,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -162,9 +162,9 @@
     "homepage" : "http://www.depluktuin.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3646", "http://www.rechtvanbijdeboer.be/de-pluktuin-0", "http://www.rechtvanbijdeboer.be/de-pluktuin", "http://www.rechtvanbijdeboer.be/node/3647" ],
     "name" : "De Pluktuin",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : [ "", "Wij zijn niet bio gecertificeerd maar hebben teelten die geen insecticiden en fungiciden vereisen. Ook in de bloemenpluktuin wordt geschoffeld tegen onkruid." ],
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "De Pluktuin",
     "url" : "http://www.depluktuin.be",
@@ -207,6 +207,15 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -222,6 +231,10 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -235,22 +248,18 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -264,15 +273,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

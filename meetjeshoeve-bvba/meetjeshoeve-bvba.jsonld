@@ -1,11 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.meetjeshoeve.be",
-    "email" : "Elke@meetjeshoeve.be",
-    "telephone" : "0476/87 56 08",
-    "url" : "http://www.meetjeshoeve.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/meetjeshoeve",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -14,14 +12,16 @@
     "streetAddress" : "Molenstraat 30 9180"
   }, {
     "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.meetjeshoeve.be",
+    "email" : "Elke@meetjeshoeve.be",
+    "telephone" : "0476/87 56 08",
+    "url" : "http://www.meetjeshoeve.be"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b1",
     "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/meetjeshoeve",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -97,7 +97,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,14 +165,14 @@
     "homepage" : "http://www.meetjeshoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/meetjeshoeve-bvba", "http://www.rechtvanbijdeboer.be/node/1418" ],
     "name" : "Meetjeshoeve BVBA",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "Onze escargot – en saffraankwekerij is gelegen te Moerbeke-Waas aan de rand van het Heidebos. Omgeven door de prachtige natuur worden onze escargots en saffraan met de grootste zorg verzorgd. Niets gaat boven uitstekende kwaliteit vandaar dat onze escargots biologisch voeder krijgen en onze saffraanbedden slechts uitzonderlijk gesproeid worden met een biologisch product. Daarnaast worden onze bereidingen klaargemaakt in onze eigen keuken die voldoet aan alle Europese HACCP normen. Producten uit de streek met de nodige zorg gekweekt en bereidt, resulteren in topproducten in úw keuken!",
-    "geo" : "_:b2",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/sam_1040.jpg?itok=_QtlomwP", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02569.jpg?itok=dVBRKYlM" ],
     "schema:name" : "Meetjeshoeve BVBA",
     "url" : "http://www.meetjeshoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b3"
+    "downstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -201,17 +201,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -225,11 +219,19 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
@@ -238,22 +240,27 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "accountServiceHomepage" : {
@@ -268,18 +275,11 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

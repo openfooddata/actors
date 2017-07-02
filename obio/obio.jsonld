@@ -2,33 +2,33 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-obio",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/obio-christ-en-veerle-thuisverkoop",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/obio-christ-en-veerle-thuisverkoop",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-obio",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "info@o-bio.be",
-    "telephone" : "056 61 61 61"
-  }, {
-    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/zelfpluktuin-obio-bezegaard",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/zelfpluktuin-obio-baliekouter",
-    "relatedContext" : "at:pointOfSale"
+    "@id" : "_:b3",
+    "@type" : "schema:ContactPoint",
+    "email" : "info@o-bio.be",
+    "telephone" : "056 61 61 61"
   }, {
-    "@id" : "_:b5",
+    "@id" : "_:b4",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b6",
     "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/zelfpluktuin-obio-baliekouter",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b6",
     "@type" : "schema:PostalAddress",
@@ -61,7 +61,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -110,7 +110,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,13 +173,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/obio", "http://www.rechtvanbijdeboer.be/node/1791" ],
     "foaf:name" : "O'Bio",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b3",
     "description" : "",
-    "geo" : "_:b5",
+    "geo" : "_:b4",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "O'Bio",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b1", "_:b3", "_:b4", "_:b0" ],
+    "downstreamRel" : [ "_:b1", "_:b2", "_:b0", "_:b5" ],
     "offersFoodType" : [ "ft:fruits", "ft:icecream", "ft:alcoholic_beverages", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -208,25 +208,15 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -234,12 +224,16 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -262,6 +256,12 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

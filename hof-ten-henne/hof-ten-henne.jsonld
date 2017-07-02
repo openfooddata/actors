@@ -1,18 +1,18 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.hoftenhenne.be",
-    "email" : "stefanbuydens@hotmail.com",
-    "telephone" : "0473/34 18 49",
-    "url" : "http://www.hoftenhenne.be"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.875813",
     "longitude" : "4.046663"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.hoftenhenne.be",
+    "email" : "stefanbuydens@hotmail.com",
+    "telephone" : "0473/34 18 49",
+    "url" : "http://www.hoftenhenne.be"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -45,7 +45,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -162,9 +162,9 @@
     "homepage" : "http://www.hoftenhenne.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hof-ten-henne-0", "http://www.rechtvanbijdeboer.be/hof-ten-henne", "http://www.rechtvanbijdeboer.be/node/2381", "http://www.rechtvanbijdeboer.be/node/1102" ],
     "name" : "Hof Ten Henne",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "Hof Ten Henne is een gemengd bedrijf in Iddergem met melkvee, vleesvee, akkerbouw, hoevewinkel en kinderboerderij. Wij ontvangen ook scholen en verenigingen. U vindt ons ook op facebook (via een link op onze website)",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hof_ten_henne_buitenkant.jpg?itok=gh7XNKY2",
     "schema:name" : "Hof Ten Henne",
     "url" : "http://www.hoftenhenne.be",
@@ -201,10 +201,6 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
@@ -217,6 +213,10 @@
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -243,6 +243,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -255,12 +261,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"

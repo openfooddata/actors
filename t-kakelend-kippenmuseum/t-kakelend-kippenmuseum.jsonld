@@ -1,20 +1,20 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/t-kakelend-kippenmuseum-0",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.kakelendkippenmuseum.be/",
     "email" : "info@kakelendkippenmuseum.be",
     "url" : "http://www.kakelendkippenmuseum.be/"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -47,7 +47,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -92,7 +92,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,14 +160,14 @@
     "homepage" : "http://www.kakelendkippenmuseum.be/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-kakelend-kippenmuseum", "http://www.rechtvanbijdeboer.be/node/1195" ],
     "foaf:name" : "'t Kakelend Kippenmuseum",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "Wij, Hendrik en Regine David-Laverge, verwelkomen u graag op onze alternatieve kinder-boerderij. In 't Kakelend Kippenmuseum kweken wij talloze neerhofdieren. Op de eerste plaats zijn dat grote - en soms heel kleine - hoendersoorten in alle vormen en kleuren. Sommige rassen zijn nagenoeg \"uitgestorven\" en worden bij ons in stand gehouden. Naast kippen houden we fazanten, duiven, kwartels, patrijzen, ... Er zijn ook konijnen, cavia's, geiten, schapen, varkens, pony's, ezels en nog zoveel meer... Kortom een hele beestenboel, samengebracht in een educatief wandelpark. Vooral kinderen vinden het plezant om onze dieren en hun kroost te bezoeken. Daarna kunnen ze lekker stoeien in onze speeltuin en speelschuur in echte boerderijsfeer. Verder beschikt 't Kakelend Kippenmuseum over een cafetaria met self-service waar u ijs van verse hoevemelk en ambachtelijke pannenkoeken kan proeven. Op het terras met uitzicht op het erf is het tevens ook heerlijk vertoeven.",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "'t Kakelend Kippenmuseum",
     "url" : "http://www.kakelendkippenmuseum.be/",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:icecream", "ft:fruit_juices" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -196,8 +196,8 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "offersFoodType" : {
@@ -205,6 +205,10 @@
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
@@ -219,10 +223,6 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
@@ -236,12 +236,6 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -250,6 +244,12 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "email" : {
       "@id" : "https://schema.org/email"

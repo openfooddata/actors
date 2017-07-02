@@ -7,16 +7,16 @@
     "streetAddress" : "Gemeenteplein 7"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "lenaerts.raf@skynet.be",
+    "telephone" : [ "0476/863598", "03/5750327" ]
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "51.252531",
     "longitude" : "4.278840"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "lenaerts.raf@skynet.be",
-    "telephone" : [ "0476/863598", "03/5750327" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,7 +88,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -155,9 +155,9 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02572.jpg?itok=zmH80R5i", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/lenaerts002.jpg?itok=SV8o3FgQ" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/vleeshoeve-t-kasteeltje", "http://www.rechtvanbijdeboer.be/node/2535", "http://www.rechtvanbijdeboer.be/node/1145", "http://www.rechtvanbijdeboer.be/vleeshoeve-t-kasteeltje-0" ],
     "foaf:name" : "Vleeshoeve 't Kasteeltje",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Wij zijn een familiaal landbouwbedrijf en sedert drie generaties gespecialiseerd in het produceren van vlees van topkwaliteit. Onze dieren zijn van het Belgisch Wit-Blauw ras: mager, sappig en mals vlees. We verkopen het vlees rechtstreeks aan particulieren, in pakketten van 5 of 15 kg. De rund- en kalfspakketten zijn hygiënisch verpakt en klaar om in te vriezen.",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02572.jpg?itok=zmH80R5i", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/lenaerts002.jpg?itok=SV8o3FgQ" ],
     "name" : "Vleeshoeve 't Kasteeltje",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
@@ -189,6 +189,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -202,12 +208,6 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
@@ -217,11 +217,15 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "depiction" : {
@@ -229,10 +233,6 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"

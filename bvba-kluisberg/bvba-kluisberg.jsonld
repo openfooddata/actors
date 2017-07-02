@@ -1,27 +1,27 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Assent",
-    "postalCode" : "3460",
-    "streetAddress" : "Rijnrode 5"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/kluisberg-bvba",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.kluisberg.be",
     "email" : "info@kluisberg.be",
     "telephone" : "013/337869",
     "url" : "http://www.kluisberg.be"
   }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
+  }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/kluisberg-bvba",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Assent",
+    "postalCode" : "3460",
+    "streetAddress" : "Rijnrode 5"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -93,11 +93,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,14 +161,14 @@
     "homepage" : "http://www.kluisberg.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1106", "http://www.rechtvanbijdeboer.be/bvba-kluisberg" ],
     "foaf:name" : "BVBA Kluisberg",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Kwaliteitswijn voor particulier, horeca, groot- en kleinhandel. Als men praat over wijn, denkt men in de eerste plaats aan Frankrijk of Duitsland…niet nauw aan België. Nochtans is België ook in het bezit van een rijke historiek van wijn en wijn maken. Al vanaf de jaren 1450 is er over wijnen van Belgische bodem informatie terug te vinden en dan specifiek vanuit de streek die men nu het Hageland noemt. De Belgische wijnbouw kende een nieuwe start sinds 1970. Een geslaagde start want het Hageland was het eerste officieel erkende wijngebied in België en heeft sinds 1997 ook zijn eigen Beschermde Oorsprongsbenaming: voor de gebruiker ook een zekerheid dat het Hagelandse wijn is die voldoet aan de Europese normen van kwaliteitswijn.",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wijnkelderkluisbergjosvanlaer2010bekkevoort-fotolukcollet-0324.jpg?itok=rnYJmBij", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wijnkluisberg2011groepsfoto-fotoklein.jpg?itok=z-0VvMRW", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wijnkelderkluisbergjosvanlaer2010bekkevoortpano-fotolukcollet-0299.jpg?itok=Oj0S_NcL", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/josendaniella.jpg?itok=25WGNYZ2" ],
     "name" : "BVBA Kluisberg",
     "url" : "http://www.kluisberg.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : "ft:alcoholic_beverages"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -191,21 +191,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -219,18 +209,24 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
@@ -257,6 +253,10 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

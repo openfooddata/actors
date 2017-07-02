@@ -1,9 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelautomaat-t-hof-van-de-rhille",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.996493",
+    "longitude" : "2.862277"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -19,11 +21,9 @@
     "url" : "http://zoeken.onthaalopdeboerderij.be/t-hof-v"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.996493",
-    "longitude" : "2.862277"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelautomaat-t-hof-van-de-rhille",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -169,12 +169,12 @@
     "name" : "'t Hof van de Rhille",
     "contactPoint" : "_:b2",
     "description" : "Onze boerderij is een gespecialiseerd melkveebedrijf dat momenteel wordt uitgebaat door 2 families. In 1979 hebben André en Marleen het bedrijf overgenomen van de ouders van André. In 1995 is er een nieuwe melkveestal gebouwd, en in 2005 kwamen Lieven en Ans erbij om mee te helpen op het bedrijf. Momenteel is dit de 3e generatie die dit bedrijf uitbaat. André en Lieven houden zich hoofdzakelijk bezig met het melkvee en de bijhorende akkerbouw zoals: maïs, tarwe, gerst en gras. Momenteel worden er 90 zwartbonte melkkoeien op het bedrijf gemolken waarvan een gedeelte van de melk verwerkt wordt tot hoeveboter, karnemelk, yoghurt,.... Deze verwerking en de klasbezoeken worden verzorgt door Marleen en Ans.",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "'t Hof van de Rhille",
     "url" : "http://zoeken.onthaalopdeboerderij.be/t-hof-v",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:eggs", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -204,20 +204,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -230,6 +228,21 @@
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -246,16 +259,12 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "description" : {
@@ -266,6 +275,10 @@
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "accountServiceHomepage" : {
@@ -279,19 +292,6 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,15 +1,15 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-dilbeek-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.boerenmarktdilbeek.be",
     "email" : "info@boerenmarktdilbeek.be",
     "url" : "http://www.boerenmarktdilbeek.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -18,9 +18,9 @@
     "streetAddress" : "Kamerijklaan (parking CC Westrand) 1"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-dilbeek-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,14 +160,14 @@
     "homepage" : "http://www.boerenmarktdilbeek.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1250", "http://www.rechtvanbijdeboer.be/boerenmarkt-dilbeek" ],
     "foaf:name" : "Boerenmarkt Dilbeek",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "Alle info op www.boerenmarktdilbeek.be Een dertigtal producenten staan op de markt, zowel gangbaar als biologisch",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Boerenmarkt Dilbeek",
     "url" : "http://www.boerenmarktdilbeek.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:beef", "ft:vegetables", "ft:milk_products", "ft:lamb_meat", "ft:icecream", "ft:fruit_juices", "ft:bakery_products", "ft:spices", "ft:fruits", "ft:eggs", "ft:pork", "ft:potatoes", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -190,12 +190,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -204,6 +198,13 @@
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -223,16 +224,8 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -240,19 +233,26 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
