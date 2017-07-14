@@ -1,14 +1,15 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-gitschotelhof-deurne",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-merksem",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Duffel",
+    "postalCode" : "2570",
+    "streetAddress" : "Naalstraat 37D"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -16,25 +17,24 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Duffel",
-    "postalCode" : "2570",
-    "streetAddress" : "Naalstraat 37D"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-gitschotelhof-deurne",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-merksem",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
-    "@type" : "schema:ContactPoint",
-    "email" : "storms_vd@skynet.be",
-    "telephone" : [ "0478510383", "0478/510383" ]
-  }, {
-    "@id" : "_:b6",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-de-roma-borgerhout",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b6",
+    "@type" : "schema:ContactPoint",
+    "email" : "storms_vd@skynet.be",
+    "telephone" : [ "0478510383", "0478/510383" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,13 +177,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/recht_van_het_veld_bloemkool_lr.jpg?itok=p5PD40I9",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1375", "http://www.rechtvanbijdeboer.be/recht-van-t-veld" ],
     "foaf:name" : "Recht van 't veld",
-    "contactPoint" : "_:b5",
+    "contactPoint" : "_:b6",
     "description" : "Ons tuinbouwbedrijf is opgestart in 1985 door een gedeeltelijke overname van het ouderlijk bedrijf. De hoofdteelt was toen Mechelse vroege bloemkool, prei, sla, vollegrond tomaat en chrysanten. Door de jaren heen zijn we ons gaan specialiseren in bloemkolen en chrysanten. Wegens het te groot aantal concurrentie met tomaten zijn we daar mee gestopt. Linda neemt de taak op zich van de chrysanten die rechtstreeks worden geleverd aan de groothandel en winkels en Raf zorgt dan voor de groenteteelt. Omdat in de zomer de serre voornamelijk leeg stond, zijn we ons assortiment groenten gaan uitbreiden om rechtstreeks aan de consument te verkopen. Waardoor we op het idee zijn gekomen om een thuisverkoop te starten.",
-    "geo" : "_:b4",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/recht_van_het_veld_bloemkool_lr.jpg?itok=p5PD40I9",
     "name" : "Recht van 't veld",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b1", "_:b2", "_:b6" ],
+    "downstreamRel" : [ "_:b3", "_:b4", "_:b2", "_:b5" ],
     "offersFoodType" : [ "ft:potatoes", "ft:spices", "ft:vegetables", "ft:poultry_meat", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -213,6 +213,13 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -231,37 +238,17 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "name" : {
@@ -270,12 +257,12 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -287,8 +274,21 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

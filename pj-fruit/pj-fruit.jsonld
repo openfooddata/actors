@@ -1,11 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.918300",
-    "longitude" : "5.253160"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.pjfruit.be",
+    "email" : "pjfruit@gmail.com",
+    "telephone" : "0497/64.30.12",
+    "url" : "http://www.pjfruit.be"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -14,11 +14,11 @@
     "streetAddress" : "Kozenstraat 77"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.pjfruit.be",
-    "email" : "pjfruit@gmail.com",
-    "telephone" : "0497/64.30.12",
-    "url" : "http://www.pjfruit.be"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.918300",
+    "longitude" : "5.253160"
   }, {
     "@id" : "http://www.facebook.com/pjfruit",
     "@type" : "foaf:OnlineAccount",
@@ -52,7 +52,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -169,9 +169,9 @@
     "homepage" : "http://www.pjfruit.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/pj-fruit", "http://www.rechtvanbijdeboer.be/node/1740", "http://www.rechtvanbijdeboer.be/pj-fruit-0", "http://www.rechtvanbijdeboer.be/node/3285" ],
     "foaf:name" : "PJ Fruit",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "Onze hoevewinkel is elke zaterdag van 9.00 uur tot 12.30 uur geopend. Lukt het niet om tijdens deze uren langs te komen? Contacteer ons dan eventjes om een afspraak op een ander tijdstip vast te leggen. Ons fruitbedrijf werd opgestart in 1982 door de broers Paul en Josse Schreurs. Sinds enkele jaren werken ook de zonen Pieter Jan en Daan mee in de firma. De toekomst van ons fruitteeltbedrijf is dus verzekerd! PJ Fruit bestaat momenteel uit 75 % appelteelt. Bij ons vind je onder meer Jonagold, Jonagored, Elstar, Belgica, Golden Delicious, Boskoop, Granny Smith en Delbar Estival. De overige 25% van onze teelt zijn peren. Conférènce, Doyenné du Comice en Triomphe de Vienne. Sinds dit jaar kunnen we ook onze eigen kersen en rode bessen aanbieden. In 2000 ontwikkelden we een eigen appelras, de Early Jonagold. De sterkte van deze mutant is dat hij gemiddeld 1 maand vroeger rijp is dan de gewone Jonagold appel. Door de optimale opvolging van de teelten, bewaring en sortering zorgen we ervoor dat we u steeds een kwalitatief product kunnen aanbieden.",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/papainspecteerdhetblad.jpg?itok=kTdvzeHa",
     "name" : "PJ Fruit",
     "url" : "http://www.pjfruit.be",
@@ -195,18 +195,26 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -220,20 +228,21 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "https://schema.org/name"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -254,25 +263,16 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

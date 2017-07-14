@@ -6,16 +6,16 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.deijshoeve.be",
     "email" : "info@deijshoeve.be",
     "telephone" : "050/373987",
     "url" : "http://www.deijshoeve.be"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -93,7 +93,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,9 +165,9 @@
     "homepage" : "http://www.deijshoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-ijshoeve", "http://www.rechtvanbijdeboer.be/node/1226" ],
     "foaf:name" : "De IJshoeve",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "De Ijshoeve is 2 km gelegen van het rustige, historische dorpje Damme. Waar je heerlijk kunt fietsen en wandelen langs de landelijke wegen van het Brugse Ommeland. Je kan er halt houden op de Ijshoeve waar je iets lekkers kunt consumeren uit ons uitgebreid gamma. Wij bedienen je graag met een brede glimlach. Wij zijn dan ook fier op onze hoeveproducten, allemaal geproduceerd uit kwaliteitsvolle grondstoffen afkomstig van onze hoeve en bereid met een volledig eigen recept. Je kan er tevens vertoeven op ons verzorgd tuinterras, en voor de allerkleinsten is er een leuke speeltuin. Wij heten jullie alvast van harte welkom!",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/nk9a2134.jpg?itok=O1f7X83m", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_2594.jpg?itok=UsKj6vr2", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/vespa6.jpg?itok=fOJu1W5v", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/8340dammedeijshoeve998-www.ralph.be-0076r.jpg?itok=ENHd9EUW" ],
     "name" : "De IJshoeve",
     "url" : "http://www.deijshoeve.be",
@@ -208,18 +208,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
@@ -235,8 +223,18 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
@@ -248,10 +246,6 @@
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "actorType" : {
@@ -269,6 +263,13 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -278,12 +279,11 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

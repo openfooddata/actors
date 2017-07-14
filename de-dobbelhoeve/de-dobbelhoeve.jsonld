@@ -8,11 +8,9 @@
     "url" : "http://www.dobbelhoeve.be"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.228868",
-    "longitude" : "4.607268"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-groene-boerderij",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -21,9 +19,11 @@
     "streetAddress" : "Goorstraat 43"
   }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-groene-boerderij",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.228868",
+    "longitude" : "4.607268"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -99,7 +99,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,13 +165,13 @@
     "name" : "De Dobbelhoeve",
     "contactPoint" : "_:b0",
     "description" : [ "Bovenaan het dakraam van onze hoeve staat het jaartal 1341 te lezen. (Historici en bouwkundigen achten het gebouw eigenlijk twee eeuwen jonger). In een ver verleden zou de hoeve gefungeerd hebben als turfopslagplaats. De boerderij vormde later samen met een andere hoeve de “Bredeveldse Hoeven”. Tijdens de Franse revolutie werd het goed verkocht aan baron van de Werve de Schilde, die van de hoeve aan de Goorstraat op haar beurt een “Dobbelhoeve” maakte. Deze herbergde dan twee boerenfamilies. Bij de openbare verkoop in 1952 verwierf de familie De Winter het oudste, westelijke deel, en het “nieuwere” oostelijke deel werd verkocht aan de familie De Meutter. Karel De Meutter bouwde dit uit tot een modern landbouwbedrijf vanaf 1955. Bij diens kinderen groeide dertig jaar later de idee om biologisch te gaan werken en op 1 april 1987 werd die grote stap gezet. De Dobbelhoeve werd sindsdien een der eerste gemengde biologische bedrijven in Vlaanderen en ook een der bekendste. In 2001 kregen we dan de kans om ook het westelijke deel van de “Dubbelhoeve” te kopen. Zo lijkt de cirkel weer rond en kan het oude historische gebouw weer één geheel vormen …", "" ],
-    "geo" : "_:b1",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_dobbelhoeve_winkel.jpg?itok=LnSnsXEj",
     "schema:name" : "De Dobbelhoeve",
     "url" : "http://www.dobbelhoeve.be",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer", "at:collectionPoint" ],
     "offersFoodType" : [ "ft:milk_products", "ft:potatoes", "ft:pork", "ft:alcoholic_beverages", "ft:fruits", "ft:lamb_meat", "ft:beef", "ft:bakery_products", "ft:vegetables", "ft:poultry_meat", "ft:eggs", "ft:fruit_juices", "ft:spices" ],
-    "upstreamRel" : "_:b3"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -205,18 +205,11 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -233,18 +226,14 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "depiction" : {
@@ -253,18 +242,29 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
