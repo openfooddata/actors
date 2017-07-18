@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Woumen (Diksmuide)",
-    "postalCode" : "8600",
-    "streetAddress" : "Pollaertstraat 29"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://zoeken.onthaalopdeboerderij.be/t-hof-v",
     "email" : "thofvanderhille@telenet.be",
     "telephone" : "0498/422441",
     "url" : "http://zoeken.onthaalopdeboerderij.be/t-hof-v"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "50.996493",
     "longitude" : "2.862277"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Woumen (Diksmuide)",
+    "postalCode" : "8600",
+    "streetAddress" : "Pollaertstraat 29"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -95,7 +95,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,9 +167,9 @@
     "homepage" : "http://zoeken.onthaalopdeboerderij.be/t-hof-v",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-hof-van-de-rhille-0", "http://www.rechtvanbijdeboer.be/t-hof-van-de-rhille", "http://www.rechtvanbijdeboer.be/node/1281", "http://www.rechtvanbijdeboer.be/node/2711" ],
     "name" : "'t Hof van de Rhille",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "Onze boerderij is een gespecialiseerd melkveebedrijf dat momenteel wordt uitgebaat door 2 families. In 1979 hebben André en Marleen het bedrijf overgenomen van de ouders van André. In 1995 is er een nieuwe melkveestal gebouwd, en in 2005 kwamen Lieven en Ans erbij om mee te helpen op het bedrijf. Momenteel is dit de 3e generatie die dit bedrijf uitbaat. André en Lieven houden zich hoofdzakelijk bezig met het melkvee en de bijhorende akkerbouw zoals: maïs, tarwe, gerst en gras. Momenteel worden er 90 zwartbonte melkkoeien op het bedrijf gemolken waarvan een gedeelte van de melk verwerkt wordt tot hoeveboter, karnemelk, yoghurt,.... Deze verwerking en de klasbezoeken worden verzorgt door Marleen en Ans.",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "'t Hof van de Rhille",
     "url" : "http://zoeken.onthaalopdeboerderij.be/t-hof-v",
@@ -203,15 +203,6 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -250,6 +241,10 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -262,10 +257,6 @@
     },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -292,6 +283,15 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

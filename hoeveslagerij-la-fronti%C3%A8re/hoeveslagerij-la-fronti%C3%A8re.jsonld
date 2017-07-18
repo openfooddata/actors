@@ -1,20 +1,20 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:ContactPoint",
+    "email" : "veerle.stefan@skynet.be",
+    "telephone" : "068/447438"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Ghoy",
     "postalCode" : "7863",
     "streetAddress" : "Kloosterstraat 11"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "veerle.stefan@skynet.be",
-    "telephone" : "068/447438"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -158,9 +158,9 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1207", "http://www.rechtvanbijdeboer.be/hoeveslagerij-la-fronti%C3%A8re" ],
     "foaf:name" : "Hoeveslagerij \"A la frontière\"",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "In de uithoek van de Vlaamse Ardennen, op de grens met Wallonië, vind je de hoeve ‘A la Frontière’. Opgestart in 1987, is dit bedrijf uitgegroeid tot een gemengd familiebedrijf met ongeveer 70 ha akker- en weiland én 200 runderen van het Belgisch witblauw ras (waarvan een 25-tal melkkoeien). Op de akkers worden voornamelijk ruwvoedergewassen (maïs en raaigras) en granen geteeld. Daarnaast zijn er ook brasvarkens, vleeskippen en konijnen die speciaal gekweekt worden voor de hoeveslagerij. Verder wonen er op de boerderij ook nog vrolijke dwerggeitjes en kakelende kippen. Vader Marc en dochter Veerle, van opleiding licentiaat-vertaler, volgden een slagersopleiding en in 2002 openden ze hun hoeveslagerij. Het vlees wordt ieder weekend in de hoeveslagerij versneden en verder verwerkt tot ambachtelijke charcuterie, klaargemaakte gerechten en schotels. Ondertussen hebben moeder en dochter een opleiding als traiteur en banketaannemer achter de rug. Indien u dat wenst, verzorgen ze graag voor u buffetten allerhande: een uitgebreid breughelmaal op de hoeve, verzorgde broodjesmaaltijden, een lekkere barbecue op eikenhout met uitgebreid groentenassortiment, ribbetjesmaaltijden, overheerlijke dessertbufetten,...",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Hoeveslagerij \"A la frontière\"",
     "actorType" : "at:producer",
@@ -187,6 +187,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -203,18 +209,14 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -225,28 +227,26 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -2,24 +2,23 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-vindevoghel-0",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortrijk",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortrijk",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-vichte",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-vindevoghel-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "ANZEGEM",
-    "postalCode" : "8570",
-    "streetAddress" : "TEMPELIERSSTRAAT, 20"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b5",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b4",
     "@type" : "schema:ContactPoint",
@@ -27,9 +26,10 @@
     "telephone" : "0472551614"
   }, {
     "@id" : "_:b5",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-vichte",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "ANZEGEM",
+    "postalCode" : "8570",
+    "streetAddress" : "TEMPELIERSSTRAAT, 20"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -105,7 +105,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -174,11 +174,11 @@
     "name" : "Hoeve Vindevoghel",
     "contactPoint" : "_:b4",
     "description" : "Hoeve Vindevoghel is een familiaal gemengd landbouwbedrijf met melkkoeien, vleesvee, akkerbouw en een hoevewinkel. Alle koeienmelk vertrekt naar de melkerij. Op het land worden tarwe, voederbieten, gras, maïs, verschillende soorten aardappelen geteeld en enkele grove groenten. In onze serre tomaten en enkele seizoensgroenten in de moestuin. De troef van Hoeve Vindevoghel is het planten, telen, sorteren, verpakken en verkopen van aardappelen : de voedselketen in eigen handen, van het veld tot op uw bord. De aardappelen zijn geteeld met oog voor duurzaamheid, kwaliteit en smaak. Ze worden het ganse jaar door in de hoevewinkel verkocht ( in 5 - 10 - 25 kg) te samen met scharreleieren en seizoensgebonden groenten met respect en met een hart voor de boerderij, de natuur en de mensen. Als je eet wat het seizoen te bieden heeft en je kiest voor lokale producten, dan verklein je de ecologische voetafdruk. Je kiest voor plaatselijke productie, de producten zijn vrij van chemische bewaarmiddelen en milieuvriendelijk geteeld. De seizoengroenten zijn verser, hebben meer smaak en hebben een grotere voedingswaarde ! Kom gerust even een kijkje nemen in onze hoevewinkel !",
-    "geo" : "_:b2",
+    "geo" : "_:b3",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/P4120068_0.JPG?itok=tyAcm-Zd",
     "schema:name" : "Hoeve Vindevoghel",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b1", "_:b0", "_:b5" ],
+    "downstreamRel" : [ "_:b0", "_:b1", "_:b2" ],
     "offersFoodType" : [ "ft:vegetables", "ft:fruit_juices", "ft:potatoes", "ft:eggs" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -214,13 +214,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
@@ -234,20 +227,16 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -258,20 +247,9 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -284,6 +262,28 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

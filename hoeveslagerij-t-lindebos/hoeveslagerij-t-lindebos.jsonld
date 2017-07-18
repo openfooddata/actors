@@ -1,21 +1,21 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:ContactPoint",
+    "email" : "info@lindebos.be"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Wijtschate",
     "postalCode" : "8953",
     "streetAddress" : "Hollebekestraat 21"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "50.798380",
     "longitude" : "2.914935"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:ContactPoint",
-    "email" : "info@lindebos.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -87,7 +87,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -154,9 +154,9 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/IMG_0558.JPG",
     "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/node/1550", "https://www.rechtvanbijdeboer.be/hoeveslagerij-t-lindebos", "http://www.rechtvanbijdeboer.be/hoeveslagerij-t-lindebos-0", "http://www.rechtvanbijdeboer.be/node/3039" ],
     "name" : "Hoeveslagerij 't Lindebos",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : [ "De hoevewinkel is elke week open op vrijdag en zaterdag. Klanten zijn welkom voor kleine en grote hoeveelheden. Bestellen op voorhand is niet nodig, maar indien het over grote hoeveelheden gaat is dit wel aangewezen. Meer info over de boerderij en de hoevewinkel op www.lindebos.be.", "" ],
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/IMG_0558.JPG",
     "schema:name" : "Hoeveslagerij 't Lindebos",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
@@ -178,6 +178,9 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -201,9 +204,6 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
@@ -219,16 +219,16 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"

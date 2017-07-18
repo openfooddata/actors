@@ -1,23 +1,23 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.991503",
+    "longitude" : "3.295987"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.verseeieren.be",
     "email" : "desmet.nick@telenet.be",
     "telephone" : [ "0494061419", "0478529103 - 0494061419" ],
     "url" : "http://www.verseeieren.be"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-izegem",
     "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.991503",
-    "longitude" : "3.295987"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -95,7 +95,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,14 +167,14 @@
     "homepage" : "http://www.verseeieren.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/heidi-popelier-0", "http://www.rechtvanbijdeboer.be/node/3351", "http://www.rechtvanbijdeboer.be/node/1795", "http://www.rechtvanbijdeboer.be/heidi-popelier" ],
     "foaf:name" : "Heidi Popelier",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "Kwaliteitsvolle eieren rechtstreeks van de bron !! Het pluimveebedrijf van Nick en Heidi De Smet – Popelier is een familiaal bedrijf, gesitueerd op het hoogste punt van Pittem. Wij zijn gespecialiseerd in het produceren, sorteren en verpakken van DAGVERSE SCHARRELEIEREN. Wij garanderen u een kakelvers ei voor al uw gerechtjes of puur op uw bord ! WIJ LEVEREN ELKE WEEK AAN HUIS bij bakkers, slagers, traiteurs, cateringbedrijven, horeca, warenhuizen, kruidenierszaken, etc.",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/eitjes.jpg?itok=Ee1smGBR", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/11991329_901870156573777_318383248_o.jpg?itok=P-KLTTMa", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc08411.jpg?itok=35Q--9bm" ],
     "name" : "Heidi Popelier",
     "url" : "http://www.verseeieren.be",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:collectionPoint" ],
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : "ft:eggs"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -215,8 +215,16 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -225,32 +233,18 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
@@ -267,15 +261,6 @@
     "prefLabel" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -288,6 +273,21 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,26 +1,26 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Temse",
-    "postalCode" : "9140",
-    "streetAddress" : "Hollebeek 61 B"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-vleeshoeve",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.devleeshoeve.be/",
     "email" : "info@devleeshoeve.be",
     "telephone" : "03/7716173",
     "url" : "http://www.devleeshoeve.be/"
   }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Temse",
+    "postalCode" : "9140",
+    "streetAddress" : "Hollebeek 61 B"
+  }, {
     "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b2",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -161,14 +161,14 @@
     "homepage" : "http://www.devleeshoeve.be/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-vleeshoeve-bij-rudy-gerda", "http://www.rechtvanbijdeboer.be/node/1210" ],
     "name" : "De Vleeshoeve - Bij Rudy & Gerda",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Alle varkens- en rundvlees is uitsluitend afkomstig van eigen gefokte dieren die met alle beroepsliefde en ernst worden gefokt op de eigen hoeve op de meest diervriendelijke wijze. Dankzij de positieve samenwerking met Meritus, Sanitel en de overheid wordt er dagelijks nauwlettend op toegezien dat onze klanten alleen het meest kwalitatieve, het smaakvolste en het best gecontroleerde vlees aangeboden krijgen. Woont u niet in de buurt? U bent niet de enige: veel klanten komen van ver, speciaal voor ons vlees. Wij hebben immers een volwaardig assortiment, zodat u precies vindt wat u wenst. U kunt ons bijvoorbeeld eenmaal in de zes weken een bezoek brengen, zodat de diepvries weer voldoende voorraad bevat. Het gebeurt ook vaak dat er wordt ingekocht voor meerdere gezinnen. De Vleeshoeve houdt daar rekening mee. U kunt uw bestelling vooraf faxen of e-mailen, zodat u bij uw komst de bestelling onmiddellijk kunt meenemen. Die kan dan op uw verzoek gewoon of vacuüm verpakt of ingevroren zijn. Op uw aankopen wordt ook steeds een etiket gekleefd.",
     "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto%20koeien.jpg?itok=nUcwktve", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/4_0.jpg?itok=5557rO-O" ],
     "schema:name" : "De Vleeshoeve - Bij Rudy & Gerda",
     "url" : "http://www.devleeshoeve.be/",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : [ "ft:lamb_meat", "ft:fruit_juices", "ft:pork", "ft:beef" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -191,15 +191,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -218,6 +209,15 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -227,10 +227,6 @@
     },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -247,6 +243,13 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
@@ -254,9 +257,6 @@
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

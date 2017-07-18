@@ -1,21 +1,21 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-lier",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.ophetveld.be",
     "email" : "griet.vanolmen@skynet.be",
     "telephone" : "0477/902111",
     "url" : "http://www.ophetveld.be"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/op-het-veld-0",
     "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -24,9 +24,9 @@
     "streetAddress" : "Steynehofweg 7 A"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-lier",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.facebook.be/aardbeienophetveld",
     "@type" : "foaf:OnlineAccount",
@@ -177,14 +177,14 @@
     "homepage" : "http://www.ophetveld.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/op-het-veld", "http://www.rechtvanbijdeboer.be/node/1276" ],
     "name" : "Op Het Veld",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "Hallo, wij zijn Johan en Griet Vermeiren - Van Olmen. Sinds 1997 telen wij samen aardbeien op ons veld in de Steynehofweg in Bevel. Voor ons deden de ouders van Johan dit al vele jaren. Velen in de streek kenden wel 'die zoete aardbeien' van de Vermeiren. De laatste jaren is er echter veel veranderd. Ons bedrijfje is geëvolueerd naar een volwaardig tuinbouwbedrijf met een grootte van ongeveer 8,5 ha. Naast de klassieke openluchtteelt van aardbeien worden ook vervroegde en verlate teelten in de volle grond uitgevoerd, waardoor de oogstperiode zich uitstrekt van begin mei tot eind september. Tijdens deze maanden worden onze dagvers geplukte aardbeien rechtstreeks 'op het veld' verkocht. In 2000 werden ook braambessen opgeplant. Deze lekkernij wordt geplukt en verkocht van begin juli tot eind september. Sinds 2010 werd een ruim gamma aan houtig kleinfruit opgeplant: rode bessen, witte bessen, zwarte bessen, blauwbessen, stekelbessen, kiwibessen en frambozen. We kijken, samen met onze kindjes Mieke, Jef, Jan en Saar, elk jaar opnieuw uit naar de oogst van al dit lekkers!",
-    "geo" : "_:b4",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/ipod172.jpg?itok=aOiNwqFK",
     "schema:name" : "Op Het Veld",
     "url" : "http://www.ophetveld.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b0" ],
+    "downstreamRel" : [ "_:b4", "_:b1" ],
     "offersFoodType" : "ft:fruits"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -206,12 +206,6 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -237,24 +231,17 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
       "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "name" : {
@@ -264,16 +251,20 @@
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -289,6 +280,15 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

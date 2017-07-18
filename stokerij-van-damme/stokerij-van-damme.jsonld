@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.929303",
-    "longitude" : "3.805784"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Balegem (Oosterzele)",
-    "postalCode" : "9860",
-    "streetAddress" : "Issegem 2"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.stokerijvandamme.be",
     "email" : "info@stokerijvandamme.be",
     "telephone" : "09/3625025",
     "url" : "http://www.stokerijvandamme.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.929303",
+    "longitude" : "3.805784"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Balegem (Oosterzele)",
+    "postalCode" : "9860",
+    "streetAddress" : "Issegem 2"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -45,7 +45,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -162,9 +162,9 @@
     "homepage" : "http://www.stokerijvandamme.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/stokerij-van-damme", "http://www.rechtvanbijdeboer.be/stokerij-van-damme-0", "http://www.rechtvanbijdeboer.be/node/2612", "http://www.rechtvanbijdeboer.be/node/1208" ],
     "foaf:name" : "Stokerij Van Damme",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "Stokerij Van Damme is een bedrijvige vierkantshoeve aan de poort van de Zwalmstreek, in het landelijke Balegem. De productie van Balegemse jenever is sinds 1862 de centrale activiteit van de boerderij maar het landbouwersechtpaar Ludo en Dominique Lampaert is evenzeer bezorgd om hun 230 runderen en hun vele hectaren vruchtbare landbouwgrond. Sinds 2002 kan je ook verblijven op de hoeve. Begin 2011 zijn alle kamers vernieuwd. Er zijn zes comfortabele gastenkamers en een kleine, gezellige slaapzolder (tot 12 pers).",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/h.jpg?itok=L8QYRl3X", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/y.jpg?itok=yfE7HSn_", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/d.jpg?itok=FAdFhA3K", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/t.jpg?itok=hj--g0gB" ],
     "name" : "Stokerij Van Damme",
     "url" : "http://www.stokerijvandamme.be",
@@ -195,6 +195,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -220,15 +232,6 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
@@ -238,21 +241,19 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -264,15 +265,14 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
