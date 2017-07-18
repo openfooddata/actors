@@ -1,31 +1,31 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-wommelgem",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Broechem",
+    "postalCode" : "2520",
+    "streetAddress" : "Moorstraat 9"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/pomme-damoor-t-stalleke",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.notelteirs.be/",
     "email" : "greet.dewilde@telenet.be",
     "telephone" : "0474/52.64.59",
     "url" : "http://www.notelteirs.be/"
   }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Broechem",
-    "postalCode" : "2520",
-    "streetAddress" : "Moorstraat 9"
-  }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/pomme-damoor-t-stalleke",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-wommelgem",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -53,7 +53,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -170,14 +170,14 @@
     "homepage" : "http://www.notelteirs.be/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1641", "http://www.rechtvanbijdeboer.be/pomdamoor" ],
     "name" : "Pomdamoor",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "'t Stalleke, zo doopten onze eerste klanten ons zelfbedieningszaakje in de Moorstraat nr 9, te Broechem. Dat is dan ook de naam die we gehouden hebben. We bieden er alles aan wat we telen, zolang het oogstbaar of beschikbaar is. We zijn alle dagen van de week open, van 9u 's morgens tot ongeveer 22u30 's avonds. Het is een zaakje in zelfbediening, niet omdat we niet willen bedienen, wel om ook mensen te kunnen beleveren als we bv in de boomgaard zitten. U mag echter gerust aanbellen als u een vraag of opmerking heeft of graag wisselgeld wil. Sinds de storm die ons bedrijf teisterde in 2013, maken we ook allerlei sappen: puur appelsap zonder toevoeging van suikers of bewaarmiddelen! We hebben al 18 soorten: appel-munt, appel-vlierbloesem, redlove, appel-gember, appel-mojito...Ook stropen zitten ondertussen in ons assortiment!",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "schema:name" : "Pomdamoor",
     "url" : "http://www.notelteirs.be/",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b4" ],
+    "downstreamRel" : [ "_:b2", "_:b4" ],
     "offersFoodType" : [ "ft:vegetables", "ft:fruits", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -205,24 +205,6 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -257,6 +239,9 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
@@ -277,6 +262,15 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -285,6 +279,12 @@
     },
     "prefLabel" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

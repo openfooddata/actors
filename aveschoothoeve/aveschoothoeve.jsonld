@@ -2,30 +2,30 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hamerlinck-lv",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/aveschootshoeve",
     "relatedContext" : "at:pointOfSale"
   }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b5",
+    "addressCountry" : "Belgium"
+  }, {
     "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aveschootshoeve-0",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.aveschootshoeve.be",
     "email" : "info@aveschootshoeve.be",
     "telephone" : "0485475794",
     "url" : "http://www.aveschootshoeve.be"
   }, {
-    "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aveschootshoeve-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
     "@id" : "_:b4",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b5",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hamerlinck-lv",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:PostalAddress",
@@ -175,14 +175,14 @@
     "homepage" : "http://www.aveschootshoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1410", "http://www.rechtvanbijdeboer.be/aveschoothoeve" ],
     "foaf:name" : "Aveschoothoeve",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b3",
     "description" : "Wilt u een leuke uitstap plannen? Eén vol beleving? In het hartje van Lembeke, vlakbij de Lembeekse bossen, kunt u op de Aveschootshoeve uw eigen fruit en groenten plukken terwijl u geniet van de rustige omgeving. Lig languit op het gras in onze nieuwe hoogstamboomgaard of geniet van een ijsje of sapje. De kinderen kunnen naar hartenlust ravotten in de weide, in de zandbak, op de trampoline of in de knuffelhoek.",
-    "geo" : "_:b4",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/05082012223.jpg?itok=CHjZcO9Y", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/kleutersframbozen.jpg?itok=lRH-MJBf", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/bolderkargevuldmetmeisje.jpg?itok=btsbABEd" ],
     "name" : "Aveschoothoeve",
     "url" : "http://www.aveschootshoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b3", "_:b1" ],
+    "downstreamRel" : [ "_:b2", "_:b0", "_:b4" ],
     "offersFoodType" : [ "ft:poultry_meat", "ft:vegetables", "ft:fruits", "ft:spices" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -217,6 +217,10 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
@@ -230,19 +234,15 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -253,8 +253,8 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "actorType" : {
@@ -267,15 +267,6 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -284,6 +275,15 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"

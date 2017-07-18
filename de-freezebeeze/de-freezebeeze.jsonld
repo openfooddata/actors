@@ -1,34 +1,34 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Zwevegem",
-    "postalCode" : "8550",
-    "streetAddress" : "Sint-Denijsstraat 23"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortrijk",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b4",
     "addressCountry" : "Belgium",
     "latitude" : "50.793756",
     "longitude" : "3.341580"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/voedselteam-kortrijk",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.defreezebeeze.be",
     "email" : "lieven.verhaeghe@telenet.be",
     "telephone" : [ "0478/459533", "056/755936" ],
     "url" : "http://www.defreezebeeze.be"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Zwevegem",
+    "postalCode" : "8550",
+    "streetAddress" : "Sint-Denijsstraat 23"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -168,14 +168,14 @@
     "homepage" : "http://www.defreezebeeze.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2524", "http://www.rechtvanbijdeboer.be/de-freezebeeze", "http://www.rechtvanbijdeboer.be/node/1136", "http://www.rechtvanbijdeboer.be/de-freezebeeze-0" ],
     "foaf:name" : "De Freezebeeze",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b3",
     "description" : "We zijn een bedrijf dat gespecialiseerd is in het telen van kleinfruit : aardbeien, frambozen, rode bessen, bramen en kersen. Vanaf mei tot eind oktober kun je deze producten bij ons aankopen. Daarnaast verwerken we onze producten tot confituur, coulis, fruitsap. U kunt dit alles ook ter plaatse bezoeken. Meer info hierover vind je op onze website",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "De Freezebeeze",
     "url" : "http://www.defreezebeeze.be",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
-    "downstreamRel" : [ "_:b3", "_:b1" ],
+    "downstreamRel" : [ "_:b0", "_:b2" ],
     "offersFoodType" : [ "ft:poultry_meat", "ft:fruits", "ft:eggs", "ft:potatoes" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -198,26 +198,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -227,10 +216,6 @@
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "depiction" : {
@@ -245,18 +230,33 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

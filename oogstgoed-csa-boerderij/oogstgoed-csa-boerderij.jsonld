@@ -1,15 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Gentbrugge",
     "postalCode" : "9050",
     "streetAddress" : "ingang via de Jan Van Aelbroeckdreef z/n"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.oogstgoed.be",
+    "email" : "rony@oogstgoed.be",
+    "telephone" : "0478 56 65 90",
+    "url" : "http://www.oogstgoed.be"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -17,11 +19,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.oogstgoed.be",
-    "email" : "rony@oogstgoed.be",
-    "telephone" : "0478 56 65 90",
-    "url" : "http://www.oogstgoed.be"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,9 +165,9 @@
     "homepage" : "http://www.oogstgoed.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1266", "http://www.rechtvanbijdeboer.be/oogstgoed-csa-boerderij" ],
     "name" : "Oogstgoed CSA-boerderij",
-    "contactPoint" : "_:b3",
+    "contactPoint" : "_:b1",
     "description" : "Van Rony Nekkebroeck kan je niet zeggen dat hij snel de moed laat zakken. In 2013 kwam een trein op zijn zelfoogstveld in Wetteren terecht en gooide die letterlijk gif in het eten. Maar Rony rechtte zijn rug, zocht en vond een veld en een extra boer, en schrijft met hernieuwde energie een nieuw hoofdstuk aan zijn Oogstgoed. Dit keer zonder spoorwegen in de buurt. Benny Van de Velde is gepassioneerd door landbouw en voeding, daar kan zijn omgeving over meespreken. Door boer te worden wordt die passie eindelijk omgezet in de praktijk. Na twee jaar stage lopen in de biologische landbouw kriebelen zijn vingers heel hard om er samen met Rony zelf in te vliegen. Rony en Benny vonden in juni een geschikt veld voor hun zelfoogstboerderij: achter Kasteel Coninxdonck in Gentbrugge, aan de rand van de prachtige Gentbrugse Meersen. Een toplocatie! Oogstgoed 2.0 gaat van start in de lente van 2015.",
-    "geo" : "_:b0",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/veld2.jpg?itok=42RZR3zU", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/rony-benny.jpg?itok=DbQBVkw5" ],
     "schema:name" : "Oogstgoed CSA-boerderij",
     "url" : "http://www.oogstgoed.be",
@@ -202,30 +202,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -239,14 +223,30 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -256,6 +256,14 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -270,20 +278,12 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

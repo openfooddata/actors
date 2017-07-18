@@ -6,16 +6,16 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://dhoestfarm.be",
     "email" : "filip.dhoest@gmail.com",
     "telephone" : [ "0476/587579", "050/395698" ],
     "url" : "http://dhoestfarm.be"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -93,7 +93,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,9 +161,9 @@
     "homepage" : "http://dhoestfarm.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/filip-dhoest", "http://www.rechtvanbijdeboer.be/node/1244" ],
     "name" : "Filip Dhoest",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b2",
     "description" : "Alle gewassen worden in vollegrond geteeld.",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc00604.jpg?itok=R8JrpSis", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc00599.jpg?itok=35pspOZc", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/vooraanzicht.jpg?itok=e7sEQrzE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc00487_640x480.jpg?itok=fX9SttUZ" ],
     "schema:name" : "Filip Dhoest",
     "url" : "http://dhoestfarm.be",
@@ -200,10 +200,6 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
@@ -226,6 +222,10 @@
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
@@ -235,6 +235,12 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -251,12 +257,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

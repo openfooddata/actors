@@ -13,14 +13,14 @@
     "url" : "http://www.wolfcariusfruit.be"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/wolfcarius-fruit-harelbeke",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b5",
     "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/wolfcarius-fruit-harelbeke",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
@@ -65,7 +65,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -110,7 +110,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -184,12 +184,12 @@
     "name" : "Fruitbedrijf Wolfcarius",
     "contactPoint" : "_:b1",
     "description" : "Wij zijn een familiebedrijf dat appelen en peren produceert en verhandelt. Door een optimale opvolging van onze boomgaarden, bewaring en sortering zorgen wij ervoor dat we reeds 3 generaties lang kwalitatief fruit leveren aan al onze klanten. Het fruitteeltbedrijf, gerund door de broers Stephan en Yves, heeft twee vestigingen: Markegem en Gottem. Beide locaties beschikken over moderne frigoruimtes, om de 4000 ton eigen productie onder de beste omstandigheden te bewaren. De sortering, handel en administratie gebeurt van op de bedrijfszetel te Markegem. Momenteel telt ons bedrijf 80 ha boomgaard. 40% appelen en 60% peren. De boomgaarden liggen verspreid over West- en Oost-Vlaanderen. Onze 2 hoofdrassen zijn Conference en Jonagold. Daarnaast zijn er nog twee winkels, te Markegem en Harelbeke, waar naast onze eigen appelen en peren, het volledige gamma aan verse groenten en fruit wordt aangeboden aan particulieren. Wij bieden ons fruit ook 24/24u aan in onze fruitautomaat. U vindt hem op ons bedrijf langs de Varingstraat 6 te 9800 Gottem (Deinze).",
-    "geo" : "_:b3",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_4904.jpg?itok=RgGrVshv", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/Beaulieu%20Deinze-4.jpg?itok=86XVinDL", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC02297.JPG?itok=BCpZ8csD" ],
     "schema:name" : "Fruitbedrijf Wolfcarius",
     "url" : "http://www.wolfcariusfruit.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b0", "_:b2", "_:b4" ],
+    "downstreamRel" : [ "_:b0", "_:b3", "_:b4" ],
     "offersFoodType" : [ "ft:eggs", "ft:vegetables", "ft:potatoes", "ft:fruits", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -221,16 +221,12 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -238,15 +234,19 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -260,6 +260,18 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -282,18 +294,6 @@
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,9 +1,10 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/exelmans-luc",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Kortenbos (Sint-Truiden)",
+    "postalCode" : "3800",
+    "streetAddress" : "Heide 97"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
@@ -19,14 +20,13 @@
   }, {
     "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b4",
+    "address" : "_:b0",
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Kortenbos (Sint-Truiden)",
-    "postalCode" : "3800",
-    "streetAddress" : "Heide 97"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/exelmans-luc",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -168,7 +168,7 @@
     "account" : "https://www.facebook.com/FancyFruit.Gezondvanbijons",
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/10403058_1541417152779214_7144745620104733876_n.png?itok=zK4Ct3dp", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1374744_1541417862779143_6437261967149780567_n.png?itok=h7FOBOqm", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/663-gezondvanbijons.jpg?itok=-zYIYI9T" ],
     "homepage" : "http://gezondvanbijons.simplesite.com/421152032",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/gezond-van-bij-ons", "http://www.rechtvanbijdeboer.be/node/1679" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1679", "http://www.rechtvanbijdeboer.be/gezond-van-bij-ons" ],
     "name" : "Gezond van bij ons",
     "contactPoint" : "_:b1",
     "description" : "Gezond van bij Ons is een familiaal fruitbedrijf dat een deel van zijn geïntegreerde productie verwerkt tot ambachtelijke streekproducten.",
@@ -177,7 +177,7 @@
     "schema:name" : "Gezond van bij ons",
     "url" : "http://gezondvanbijons.simplesite.com/421152032",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b0" ],
+    "downstreamRel" : [ "_:b2", "_:b4" ],
     "offersFoodType" : "ft:fruits"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,34 +207,43 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -248,13 +257,19 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -274,21 +289,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

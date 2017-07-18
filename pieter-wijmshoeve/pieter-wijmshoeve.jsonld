@@ -1,11 +1,10 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.194473",
-    "longitude" : "4.269738"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Melsele",
+    "postalCode" : "9120",
+    "streetAddress" : "Melselestraat 67a"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
@@ -13,10 +12,11 @@
     "telephone" : [ "0471 11 26 64", "03 755 23 04" ]
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Melsele",
-    "postalCode" : "9120",
-    "streetAddress" : "Melselestraat 67a"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.194473",
+    "longitude" : "4.269738"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,7 +88,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -153,11 +153,11 @@
     "@id" : "https://w3id.org/openfooddata/actors/pieter-wijmshoeve",
     "@type" : "foaf:Agent",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC_0090_0.JPG?itok=_bmAzz0R",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3105", "http://www.rechtvanbijdeboer.be/node/1615", "http://www.rechtvanbijdeboer.be/pieter-wijmshoeve-0", "http://www.rechtvanbijdeboer.be/pieter-wijmshoeve" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3105", "http://www.rechtvanbijdeboer.be/node/1615", "http://www.rechtvanbijdeboer.be/pieter-wijmshoeve", "http://www.rechtvanbijdeboer.be/pieter-wijmshoeve-0" ],
     "foaf:name" : "Pieter-wijmshoeve",
     "contactPoint" : "_:b1",
     "description" : "Herman en Marleen hebben een rundveebedrijf en een hoevewinkel in Melsele. Waar Herman samen met zijn zoon Mattias de boerderij runt. Natuurlijk kunnen ze ook rekenen op de helpende handen van Marleen maar haar zie je vooral in de winkel. In het weekend kan je ook dochter Jolien daar eens zien passeren, zij steekt een handje toe waar nodig. Een echt familiebedrijf, waar de opvolging is gegarandeerd! Hun hoofdactiviteit blijft de boerderij maar ze nemen graag de hoevewinkel erbij. Waar ze vooral aardappelen verkopen die sinds enkele jaren optimaal worden bewaard in de gloednieuwe loods. In de zomer kan je ook op de Pieter-wijmshoeve terecht voor verse Melseelse aardbeien die Marleen en Herman elke dag vers gaan plukken.",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC_0090_0.JPG?itok=_bmAzz0R",
     "name" : "Pieter-wijmshoeve",
     "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
@@ -180,6 +180,19 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -198,25 +211,12 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

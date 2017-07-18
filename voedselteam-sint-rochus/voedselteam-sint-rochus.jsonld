@@ -7,46 +7,46 @@
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/bioslagerij-de-boom",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/vanysacker",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-groentelaar",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/bioboerderij-dubbeldoel",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Halle",
-    "postalCode" : "1500",
-    "streetAddress" : "Poststraat 3"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-groentelaar",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/bioboerderij-dubbeldoel",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/bioslagerij-de-boom",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-bioschuurke",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-schapenmelkerij",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b6",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
+    "address" : "_:b8",
     "addressCountry" : "Belgium",
     "latitude" : "50.731009",
     "longitude" : "4.240056"
   }, {
     "@id" : "_:b7",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-schapenmelkerij",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-bioschuurke",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b8",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/vanysacker",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Halle",
+    "postalCode" : "1500",
+    "streetAddress" : "Poststraat 3"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -122,7 +122,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -188,7 +188,7 @@
     "name" : "Voedselteam Sint-Rochus",
     "actorType" : [ "at:foodTeams", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:pork", "ft:bakery_products", "ft:fruit_juices", "ft:icecream", "ft:beef", "ft:poultry_meat", "ft:vegetables", "ft:lamb_meat", "ft:spices", "ft:fruits", "ft:milk_products", "ft:potatoes" ],
-    "upstreamRel" : [ "_:b4", "_:b5", "_:b7", "_:b8", "_:b0", "_:b2", "_:b1" ]
+    "upstreamRel" : [ "_:b0", "_:b2", "_:b3", "_:b4", "_:b5", "_:b1", "_:b7" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -216,30 +216,21 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -253,6 +244,15 @@
     },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

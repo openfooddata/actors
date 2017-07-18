@@ -2,19 +2,18 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-mechelen",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-ukkel",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-ukkel",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zele",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Hamme",
-    "postalCode" : "9220",
-    "streetAddress" : "Moerheide 177"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-mechelen",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -22,13 +21,14 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/regio-hamme",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Hamme",
+    "postalCode" : "9220",
+    "streetAddress" : "Moerheide 177"
   }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zele",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-dieweg-ukkel",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b6",
@@ -40,14 +40,14 @@
   }, {
     "@id" : "_:b7",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
+    "address" : "_:b4",
     "addressCountry" : "Belgium",
     "latitude" : "51.091530",
     "longitude" : "4.106254"
   }, {
     "@id" : "_:b8",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-dieweg-ukkel",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/regio-hamme",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -75,7 +75,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -195,7 +195,7 @@
     "schema:name" : "Hammes Hoevevlees",
     "url" : "http://hammes-hoevevlees.be",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
-    "downstreamRel" : [ "_:b5", "_:b1", "_:b0", "_:b3", "_:b4", "_:b8" ],
+    "downstreamRel" : [ "_:b0", "_:b1", "_:b5", "_:b8", "_:b2", "_:b3" ],
     "offersFoodType" : [ "ft:eggs", "ft:alcoholic_beverages", "ft:pork", "ft:poultry_meat", "ft:potatoes", "ft:fruit_juices", "ft:milk_products", "ft:beef" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -233,14 +233,23 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
@@ -248,10 +257,6 @@
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
@@ -269,8 +274,9 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -284,12 +290,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
