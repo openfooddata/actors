@@ -1,11 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.demoerenaar.be/",
-    "email" : "demoerenaar@hotmail.com",
-    "telephone" : [ "0478/951731", "058/299149" ],
-    "url" : "http://www.demoerenaar.be/"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.031669",
+    "longitude" : "2.584334"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -13,11 +13,11 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.031669",
-    "longitude" : "2.584334"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.demoerenaar.be/",
+    "email" : "demoerenaar@hotmail.com",
+    "telephone" : [ "0478/951731", "058/299149" ],
+    "url" : "http://www.demoerenaar.be/"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -50,7 +50,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,9 +163,9 @@
     "homepage" : "http://www.demoerenaar.be/",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2568", "http://www.rechtvanbijdeboer.be/kaasmakerij-de-moerenaar-0", "http://www.rechtvanbijdeboer.be/kaasmakerij-de-moerenaar", "http://www.rechtvanbijdeboer.be/node/1171" ],
     "name" : "Kaasmakerij De Moerenaar",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "Kaasboerderij De Moerenaar is een artisanale kaasboerderij in de vlakke polderstreek tegen de Vlaamse Westhoek gelegen. 15 jaar geleden begonnen we met het maken van kaas. Al doende leerden we de kneepjes van het vak. Eerst van emmer tot emmer, maar ondertussen verwerken we meer dan 3000 liter melk tot overheerlijke hoevekaas. Al onze zuivelproducten maken we dagelijks vers en artisanaal. U kunt bij ons kiezen uit een uitgebreid gamma kazen met elk een specifieke smaak, zoals de Cobergher, de Cobergher Light, de Cabour, kruidenkaas, Pikantje en De Jonge Moerenaar. Daarnaast bieden we allerlei zelfgemaakte desserts aan, zoals rijstpap, yoghurt, … . Eveneens hechten we veel belang aan de versheid van onze producten. Daarom melken we onze koeien zelf en gebruiken de rauwe melk voor de bereiding. Onze dieren krijgen enkel natuurlijke voeding, aangevuld met mineralen. Extra aandacht gaat naar het beste stremsel, het persen, het zoutproces en een stockageperiode van minstens zes weken op speciale houten planken. Kaas maken is voor ons een passie, een levenswerk. Eigenlijk bestempelen we het nog liever als ambachtelijk. Breng ons gerust een bezoekje. We geven u dan een rondleiding op onze kaasboerderij. U kunt natuurlijk ook van onze producten komen proeven.",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_zuivel_winkel_kaas_lr.jpg?itok=VSc-59e7", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_kaas_maken_rijpen_lr.jpg?itok=4ssjt_Tt", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_kaasplank_lr.jpg?itok=tZAZlj6N", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_moerenaar_zuivel_koeien_lr.jpg?itok=wrGz2CN_" ],
     "schema:name" : "Kaasmakerij De Moerenaar",
     "url" : "http://www.demoerenaar.be/",
@@ -193,6 +193,10 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -202,8 +206,16 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -214,29 +226,17 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -260,11 +260,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,15 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "info@paardenmelkerijdebeck.be",
-    "telephone" : "015/41.28.53"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Mechelen (Leest)",
     "postalCode" : "2811",
     "streetAddress" : "Kleinestraat 5"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.011102",
+    "longitude" : "4.396520"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -17,11 +19,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.011102",
-    "longitude" : "4.396520"
+    "@type" : "schema:ContactPoint",
+    "email" : "info@paardenmelkerijdebeck.be",
+    "telephone" : "015/41.28.53"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,9 +160,9 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/willymelken.jpg?itok=O_VG02Wg", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/melkstal.jpg?itok=Q8_SpF-T", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_7772a.jpg?itok=HNokKCjo", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_0057a.jpg?itok=PcMavvBs", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_1822.jpg?itok=rLUY191R" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/paardenmelkerij-de-beck", "http://www.rechtvanbijdeboer.be/node/1150", "http://www.rechtvanbijdeboer.be/node/2541", "http://www.rechtvanbijdeboer.be/paardenmelkerij-de-beck-0" ],
     "foaf:name" : "Paardenmelkerij De Beck",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b3",
     "description" : "",
-    "geo" : "_:b3",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/melkstal.jpg?itok=Q8_SpF-T", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_1822.jpg?itok=rLUY191R", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_7772a.jpg?itok=HNokKCjo", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/willymelken.jpg?itok=O_VG02Wg", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc_0057a.jpg?itok=PcMavvBs" ],
     "name" : "Paardenmelkerij De Beck",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
@@ -189,12 +189,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -204,18 +198,8 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -233,15 +217,31 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"

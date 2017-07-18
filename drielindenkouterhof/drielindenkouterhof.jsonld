@@ -1,36 +1,36 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "drielindenkouterhof@telenet.be",
-    "telephone" : [ "0477/568675", "052/373144" ]
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.950613",
-    "longitude" : "4.219442"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Merchtem",
     "postalCode" : "1785",
     "streetAddress" : "Drielindenbaan 106"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.950613",
+    "longitude" : "4.219442"
+  }, {
+    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/drielindenkouterhof-1",
     "relatedContext" : "at:pointOfSale"
   }, {
+    "@id" : "_:b3",
+    "@type" : "schema:ContactPoint",
+    "email" : "drielindenkouterhof@telenet.be",
+    "telephone" : [ "0477/568675", "052/373144" ]
+  }, {
     "@id" : "_:b4",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-merchtem",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/linkedfarm",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/linkedfarm",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-merchtem",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://Drielindenkouterhof",
@@ -181,13 +181,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2015automaat.jpg?itok=sKlL9Ss2", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2011-10-1rooien.jpg?itok=XGxfPPsl", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/drielindekouterhof5.jpg?itok=4f0tdVJs", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC02412.JPG?itok=bzrmGs5l" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/drielindenkouterhof-0", "http://www.rechtvanbijdeboer.be/node/2554", "http://www.rechtvanbijdeboer.be/drielindenkouterhof", "http://www.rechtvanbijdeboer.be/node/1160" ],
     "foaf:name" : "Drielindenkouterhof",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b3",
     "description" : "",
     "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2015automaat.jpg?itok=sKlL9Ss2", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/drielindekouterhof5.jpg?itok=4f0tdVJs", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC02412.JPG?itok=bzrmGs5l", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2011-10-1rooien.jpg?itok=XGxfPPsl" ],
     "name" : "Drielindenkouterhof",
     "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
-    "downstreamRel" : [ "_:b3", "_:b4", "_:b5" ],
+    "downstreamRel" : [ "_:b2", "_:b4", "_:b5" ],
     "offersFoodType" : [ "ft:potatoes", "ft:vegetables" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -210,11 +210,14 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -247,14 +250,15 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -272,8 +276,8 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "actorType" : {
@@ -282,16 +286,12 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

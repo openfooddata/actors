@@ -1,19 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-wommelgem",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "email" : "marc-en-ingrid@hotmail.com",
     "telephone" : "014265908"
   }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.100126",
+    "longitude" : "4.774289"
+  }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-cultuurcentrum-berchem",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Wiekevorst",
+    "postalCode" : "2222",
+    "streetAddress" : "Itegemseweg 98"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -21,17 +24,14 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b5",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.100126",
-    "longitude" : "4.774289"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-cultuurcentrum-berchem",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Wiekevorst",
-    "postalCode" : "2222",
-    "streetAddress" : "Itegemseweg 98"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-wommelgem",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -103,7 +103,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -174,13 +174,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/koe.jpg?itok=Bv_QD_6B", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pia2.jpg?itok=YfYMHthE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/10805846_814260991964598_3711691333705069181_n.jpg?itok=-rK8E0Mb" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1426", "http://www.rechtvanbijdeboer.be/de-witte-lelie-0", "http://www.rechtvanbijdeboer.be/de-witte-lelie", "http://www.rechtvanbijdeboer.be/node/2908" ],
     "foaf:name" : "De Witte Lelie",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "Reeds meer dan 20 jaar verwerken wij op ons melkveebedrijf onze melk tot allerlei lekkers. Gaande van boter en boerenchoco voor tussen de boterham, zachte plattekaas en yoghurt als tussendoortje tot lekkere dessertjes en hoeveijs.",
-    "geo" : "_:b4",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/koe.jpg?itok=Bv_QD_6B", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pia2.jpg?itok=YfYMHthE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/10805846_814260991964598_3711691333705069181_n.jpg?itok=-rK8E0Mb" ],
     "name" : "De Witte Lelie",
     "actorType" : [ "at:farmShop", "at:pointOfSale", "at:producer" ],
-    "downstreamRel" : [ "_:b2", "_:b3", "_:b0" ],
+    "downstreamRel" : [ "_:b4", "_:b3", "_:b5" ],
     "offersFoodType" : [ "ft:icecream", "ft:eggs", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -210,12 +210,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
@@ -234,43 +228,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "account" : {
-      "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -284,6 +241,12 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -292,6 +255,43 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -14,16 +14,16 @@
     "streetAddress" : "Gullegemsestraat 202"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortrijk",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "50.860247",
     "longitude" : "3.183714"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortrijk",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -169,13 +169,13 @@
     "foaf:name" : "Fruithoeve 't Beurtegoed",
     "contactPoint" : "_:b0",
     "description" : "In 1992 nam de huidige zaakvoerder Peter D'hondt het bedrijf van zijn vader André over. Het aanvankelijk klassiek landbouwbedrijf bestaande uit akkerbouw en veeteelt werd omgebouwd tot een gespecialiseerd fruitteeltbedrijf. Een weloverwogen keuze met de bedoeling rechtstreeks te verkopen aan de consument. Er werd onmiddellijk gekozen voor de geïntegreerde methode, een milieuvriendelijk teelt die garant staat om een product van topklasse op de markt te brengen. Het vakmanschap van de kweker en de kracht van de natuur vormen immers een sterk team. In 1998 besliste zijn echtgenote, Suzy mee te werken op het bedrijf en de hoevewinkel uit te baten. De winkel biedt een totaal aanbod van appels en peren alsook een ruim gamma aan groenten en fruit",
-    "geo" : "_:b3",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/boomgaard%20april%202015-Rita.jpg?itok=h_tkki37", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_8050.jpg?itok=NOzlOP1Z", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_7091.jpg?itok=luRvbmdH", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC_4957.JPG?itok=OwFOXWeA" ],
     "name" : "Fruithoeve 't Beurtegoed",
     "url" : "http://www.fruithoevebeurtegoed.be",
     "actorType" : [ "at:farmShop", "at:pointOfSale", "at:producer" ],
-    "downstreamRel" : "_:b2",
-    "offersFoodType" : [ "ft:potatoes", "ft:fruits", "ft:vegetables" ]
+    "downstreamRel" : "_:b3",
+    "offersFoodType" : [ "ft:vegetables", "ft:potatoes", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -222,15 +222,6 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -240,11 +231,14 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -262,9 +256,8 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -278,13 +271,6 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
@@ -292,9 +278,23 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"

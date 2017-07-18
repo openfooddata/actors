@@ -6,15 +6,15 @@
     "telephone" : "068/447438"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Ghoy",
     "postalCode" : "7863",
     "streetAddress" : "Kloosterstraat 11"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -46,7 +46,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -95,7 +95,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -160,7 +160,7 @@
     "foaf:name" : "Hoeveslagerij \"A la frontière\"",
     "contactPoint" : "_:b0",
     "description" : "In de uithoek van de Vlaamse Ardennen, op de grens met Wallonië, vind je de hoeve ‘A la Frontière’. Opgestart in 1987, is dit bedrijf uitgegroeid tot een gemengd familiebedrijf met ongeveer 70 ha akker- en weiland én 200 runderen van het Belgisch witblauw ras (waarvan een 25-tal melkkoeien). Op de akkers worden voornamelijk ruwvoedergewassen (maïs en raaigras) en granen geteeld. Daarnaast zijn er ook brasvarkens, vleeskippen en konijnen die speciaal gekweekt worden voor de hoeveslagerij. Verder wonen er op de boerderij ook nog vrolijke dwerggeitjes en kakelende kippen. Vader Marc en dochter Veerle, van opleiding licentiaat-vertaler, volgden een slagersopleiding en in 2002 openden ze hun hoeveslagerij. Het vlees wordt ieder weekend in de hoeveslagerij versneden en verder verwerkt tot ambachtelijke charcuterie, klaargemaakte gerechten en schotels. Ondertussen hebben moeder en dochter een opleiding als traiteur en banketaannemer achter de rug. Indien u dat wenst, verzorgen ze graag voor u buffetten allerhande: een uitgebreid breughelmaal op de hoeve, verzorgde broodjesmaaltijden, een lekkere barbecue op eikenhout met uitgebreid groentenassortiment, ribbetjesmaaltijden, overheerlijke dessertbufetten,...",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Hoeveslagerij \"A la frontière\"",
     "actorType" : "at:producer",
@@ -193,13 +193,6 @@
     "email" : {
       "@id" : "https://schema.org/email"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -208,6 +201,13 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -221,15 +221,15 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -241,12 +241,12 @@
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

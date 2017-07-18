@@ -1,32 +1,32 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Oudenaarde",
-    "postalCode" : "9700",
-    "streetAddress" : "Prins Leopoldstraat 65"
-  }, {
-    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/slagerij-blockeel-kruishoutem",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/slagerij-blockeel-oudenaarde",
     "relatedContext" : "at:pointOfSale"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.slagerijblockeel.be",
     "email" : "info@slagerijblockeel.be",
     "telephone" : "055/311568",
     "url" : "http://www.slagerijblockeel.be"
   }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Oudenaarde",
+    "postalCode" : "9700",
+    "streetAddress" : "Prins Leopoldstraat 65"
+  }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/slagerij-blockeel-kruishoutem",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/slagerij-blockeel-oudenaarde",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -98,7 +98,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -170,14 +170,14 @@
     "homepage" : "http://www.slagerijblockeel.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/slagerij-en-stal-blockeel", "http://www.rechtvanbijdeboer.be/node/1271" ],
     "foaf:name" : "Slagerij en Stal Blockeel",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Kort na de Tweede Wereldoorlog startten Maurice en Annaïce, onze grootouders met het verwerken van vlees van eigen veestapel. In 1977 wordt de winkel heropend door onze ouders Marc en Gerda, maar de filosofie blijft dezelfde: zelf gekweekte runderen, 100% natuurlijk, geven het beste en het gezondste vlees. En dat heeft de klant al die jaren weten te waarderen. In 1996 vernieuwden Marc, Gerda, Tom en Nathalie de winkel. Hierbij wordt het vleesassortiment uitgebreid met een volwaardige traiteurdienst, niet beperkt tot alleen maar enkele koude schotels. In 2006 openden Tom en Nathalie de gerenoveerde zaak, met als uitbreiding een volledig brood- en kaasassortiment. In 2009 wordt de nieuwe rundveestal in de Pruimelstraat in gebruik genomen. In 2010 kunnen wij tevens kalfsvlees van eigen veestapel aanbieden! Hiermee is de productiecirkel rond: van zelf gekweekt veevoeder op 'Stal Blockeel' tot smakelijke eindproduct bij Slagerij Blockeel.",
-    "geo" : "_:b3",
+    "geo" : "_:b4",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "Slagerij en Stal Blockeel",
     "url" : "http://www.slagerijblockeel.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b4", "_:b1" ],
+    "downstreamRel" : [ "_:b3", "_:b0" ],
     "offersFoodType" : [ "ft:beef", "ft:fruit_juices", "ft:bakery_products", "ft:pork", "ft:lamb_meat", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,6 +207,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -218,21 +224,6 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -246,12 +237,24 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -273,6 +276,10 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
@@ -281,13 +288,6 @@
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
-      "@type" : "@id"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

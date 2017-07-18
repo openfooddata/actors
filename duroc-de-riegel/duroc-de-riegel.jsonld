@@ -1,19 +1,19 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:ContactPoint",
+    "email" : "schurmans.yvan@telenet.be",
+    "telephone" : "0497281524"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Kortenaken",
     "postalCode" : "3470",
     "streetAddress" : "Diestsestraat 53"
   }, {
-    "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "email" : "schurmans.yvan@telenet.be",
-    "telephone" : "0497281524"
-  }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "50.915325",
     "longitude" : "5.063612"
@@ -155,7 +155,7 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/durocd3.jpg?itok=aanHPrh-", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/durocd4.jpg?itok=lnznR0pA", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/durocd2.jpg?itok=y6TPXfVs", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/duroc5.jpg?itok=KbzVBCs1" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3416", "http://www.rechtvanbijdeboer.be/duroc-de-riegel", "http://www.rechtvanbijdeboer.be/duroc-de-riegel-0", "http://www.rechtvanbijdeboer.be/node/1855" ],
     "name" : "Duroc De Riegel",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "",
     "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/durocd3.jpg?itok=aanHPrh-", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/durocd2.jpg?itok=y6TPXfVs", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/duroc5.jpg?itok=KbzVBCs1", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/durocd4.jpg?itok=lnznR0pA" ],
@@ -180,6 +180,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -188,12 +194,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -211,14 +211,6 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
@@ -231,8 +223,16 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
