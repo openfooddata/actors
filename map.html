@@ -67,9 +67,7 @@
         }).addTo(map);
 
 
-
-        L.geoJSON(geojsonFeature).addTo(map);
-////
+        ////
 
 
         var url = 'https://openfooddata.github.io/actors/_all.geojson';
@@ -77,15 +75,15 @@
         var actors = new L.GeoJSON();
 
         $.ajax({
-            jsonp: false,
+           // jsonp: true,
             url : url,
             type: 'GET',
-            dataType : 'jsonp',
-            jsonpCallback: 'getJson',
+           // dataType : 'jsonp',
+           // jsonpCallback: 'getJson',
             success: function(data) {
                 console.log(data);
-                geoJson.addData(data);
-                map.fitBounds(geoJson.getBounds());
+                actors.addData(data);
+                map.fitBounds(actors.getBounds());
             }
         });
 

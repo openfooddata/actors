@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.918300",
-    "longitude" : "5.253160"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Stevoort",
     "postalCode" : "3512",
     "streetAddress" : "Kozenstraat 77"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.918300",
+    "longitude" : "5.253160"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -101,7 +101,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -171,7 +171,7 @@
     "foaf:name" : "PJ Fruit",
     "contactPoint" : "_:b2",
     "description" : "Onze hoevewinkel is elke zaterdag van 9.00 uur tot 12.30 uur geopend. Lukt het niet om tijdens deze uren langs te komen? Contacteer ons dan eventjes om een afspraak op een ander tijdstip vast te leggen. Ons fruitbedrijf werd opgestart in 1982 door de broers Paul en Josse Schreurs. Sinds enkele jaren werken ook de zonen Pieter Jan en Daan mee in de firma. De toekomst van ons fruitteeltbedrijf is dus verzekerd! PJ Fruit bestaat momenteel uit 75 % appelteelt. Bij ons vind je onder meer Jonagold, Jonagored, Elstar, Belgica, Golden Delicious, Boskoop, Granny Smith en Delbar Estival. De overige 25% van onze teelt zijn peren. Conférènce, Doyenné du Comice en Triomphe de Vienne. Sinds dit jaar kunnen we ook onze eigen kersen en rode bessen aanbieden. In 2000 ontwikkelden we een eigen appelras, de Early Jonagold. De sterkte van deze mutant is dat hij gemiddeld 1 maand vroeger rijp is dan de gewone Jonagold appel. Door de optimale opvolging van de teelten, bewaring en sortering zorgen we ervoor dat we u steeds een kwalitatief product kunnen aanbieden.",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/papainspecteerdhetblad.jpg?itok=kTdvzeHa",
     "name" : "PJ Fruit",
     "url" : "http://www.pjfruit.be",
@@ -194,6 +194,15 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -232,15 +241,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
@@ -249,10 +249,6 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -267,12 +263,16 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

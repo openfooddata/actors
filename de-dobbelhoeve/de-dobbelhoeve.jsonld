@@ -1,29 +1,29 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Schilde",
-    "postalCode" : "2970",
-    "streetAddress" : "Goorstraat 43"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.228868",
-    "longitude" : "4.607268"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.dobbelhoeve.be",
     "email" : "info@dobbelhoeve.be",
     "telephone" : "03/3830782",
     "url" : "http://www.dobbelhoeve.be"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/de-groene-boerderij",
     "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.228868",
+    "longitude" : "4.607268"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Schilde",
+    "postalCode" : "2970",
+    "streetAddress" : "Goorstraat 43"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -95,7 +95,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -163,15 +163,15 @@
     "homepage" : "http://www.dobbelhoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-dobbelhoeve-1", "http://www.rechtvanbijdeboer.be/node/2393", "http://www.rechtvanbijdeboer.be/node/1113", "http://www.rechtvanbijdeboer.be/node/3181", "http://www.rechtvanbijdeboer.be/de-dobbelhoeve-0", "http://www.rechtvanbijdeboer.be/de-dobbelhoeve" ],
     "name" : "De Dobbelhoeve",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : [ "Bovenaan het dakraam van onze hoeve staat het jaartal 1341 te lezen. (Historici en bouwkundigen achten het gebouw eigenlijk twee eeuwen jonger). In een ver verleden zou de hoeve gefungeerd hebben als turfopslagplaats. De boerderij vormde later samen met een andere hoeve de “Bredeveldse Hoeven”. Tijdens de Franse revolutie werd het goed verkocht aan baron van de Werve de Schilde, die van de hoeve aan de Goorstraat op haar beurt een “Dobbelhoeve” maakte. Deze herbergde dan twee boerenfamilies. Bij de openbare verkoop in 1952 verwierf de familie De Winter het oudste, westelijke deel, en het “nieuwere” oostelijke deel werd verkocht aan de familie De Meutter. Karel De Meutter bouwde dit uit tot een modern landbouwbedrijf vanaf 1955. Bij diens kinderen groeide dertig jaar later de idee om biologisch te gaan werken en op 1 april 1987 werd die grote stap gezet. De Dobbelhoeve werd sindsdien een der eerste gemengde biologische bedrijven in Vlaanderen en ook een der bekendste. In 2001 kregen we dan de kans om ook het westelijke deel van de “Dubbelhoeve” te kopen. Zo lijkt de cirkel weer rond en kan het oude historische gebouw weer één geheel vormen …", "" ],
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_dobbelhoeve_winkel.jpg?itok=LnSnsXEj",
     "schema:name" : "De Dobbelhoeve",
     "url" : "http://www.dobbelhoeve.be",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer", "at:collectionPoint" ],
     "offersFoodType" : [ "ft:milk_products", "ft:potatoes", "ft:pork", "ft:alcoholic_beverages", "ft:fruits", "ft:lamb_meat", "ft:beef", "ft:bakery_products", "ft:vegetables", "ft:poultry_meat", "ft:eggs", "ft:fruit_juices", "ft:spices" ],
-    "upstreamRel" : "_:b3"
+    "upstreamRel" : "_:b1"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -192,6 +192,57 @@
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -214,57 +265,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "depiction" : {
-      "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

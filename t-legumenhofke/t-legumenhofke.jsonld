@@ -1,11 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.legumenhofke.be",
-    "email" : "info@legumenhofke.be",
-    "telephone" : "0486/05.74.34",
-    "url" : "http://www.legumenhofke.be"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.860148",
+    "longitude" : "4.694417"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -14,11 +14,11 @@
     "streetAddress" : "Mezenlaan 21"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.860148",
-    "longitude" : "4.694417"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.legumenhofke.be",
+    "email" : "info@legumenhofke.be",
+    "telephone" : "0486/05.74.34",
+    "url" : "http://www.legumenhofke.be"
   }, {
     "@id" : "http://www.facebook.com/legumenhofke",
     "@type" : "foaf:OnlineAccount",
@@ -168,9 +168,9 @@
     "homepage" : "http://www.legumenhofke.be",
     "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/node/1734", "https://www.rechtvanbijdeboer.be/t-legumenhofke", "http://www.rechtvanbijdeboer.be/t-legumenhofke-0", "http://www.rechtvanbijdeboer.be/node/3275" ],
     "name" : "'t Legumenhofke",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : [ "", "Biologische groenten en kruiden van ons eigen veld in Neerijse (een gigantische moestuin op 1 hectare) - ook aardbeitjes en rabarber - lokaal - kraakvers .Je koopt een aandeel in de oogst en zo weet de boerin hoeveel er gezaaid en geplant moet worden .Je krijgt de oogst zoals de natuur het toelaat - bij overschot krijg je meer mee naar huis- mislukt er al eens iets dan heb je daar minder van . Je deelt het risico met de boerin en geniet van seizoensgroenten die op hun eigen tempo hebben mogen groeien, en dat proef je .Op het afhaalpunt stel je zelf je pakket samen uit de groenten die in kisten klaar staan (met infobord ivm de maximale hoeveelheden)." ],
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "schema:name" : "'t Legumenhofke",
     "url" : "http://www.legumenhofke.be",
     "actorType" : [ "at:producer", "at:pointOfSale", "at:csaFarm" ],
@@ -193,17 +193,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
     },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
     },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -229,10 +230,6 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
@@ -253,18 +250,21 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,19 +1,19 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "lenaerts.raf@skynet.be",
-    "telephone" : [ "0476/863598", "03/5750327" ]
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Kallo",
     "postalCode" : "9120",
     "streetAddress" : "Gemeenteplein 7"
   }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "lenaerts.raf@skynet.be",
+    "telephone" : [ "0476/863598", "03/5750327" ]
+  }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "51.252531",
     "longitude" : "4.278840"
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -155,7 +155,7 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02572.jpg?itok=zmH80R5i", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/lenaerts002.jpg?itok=SV8o3FgQ" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/vleeshoeve-t-kasteeltje", "http://www.rechtvanbijdeboer.be/node/2535", "http://www.rechtvanbijdeboer.be/node/1145", "http://www.rechtvanbijdeboer.be/vleeshoeve-t-kasteeltje-0" ],
     "foaf:name" : "Vleeshoeve 't Kasteeltje",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "Wij zijn een familiaal landbouwbedrijf en sedert drie generaties gespecialiseerd in het produceren van vlees van topkwaliteit. Onze dieren zijn van het Belgisch Wit-Blauw ras: mager, sappig en mals vlees. We verkopen het vlees rechtstreeks aan particulieren, in pakketten van 5 of 15 kg. De rund- en kalfspakketten zijn hygiënisch verpakt en klaar om in te vriezen.",
     "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/dsc02572.jpg?itok=zmH80R5i", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/lenaerts002.jpg?itok=SV8o3FgQ" ],
@@ -180,12 +180,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -194,6 +188,12 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -220,16 +220,16 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
