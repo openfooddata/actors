@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.869895",
-    "longitude" : "2.684570"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Poperinge",
     "postalCode" : "8970",
     "streetAddress" : "Loviestraat 5"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.hoeveslagerij.be",
     "email" : "hoeveslagerij@skynet.be",
     "telephone" : [ "0475/774462", "057/333540 gsm 0475 774462" ],
     "url" : "http://www.hoeveslagerij.be"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.869895",
+    "longitude" : "2.684570"
   }, {
     "@id" : "http://ja",
     "@type" : "foaf:OnlineAccount",
@@ -169,13 +169,13 @@
     "homepage" : "http://www.hoeveslagerij.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hoeveslagerij-patrick-0", "http://www.rechtvanbijdeboer.be/node/2648", "http://www.rechtvanbijdeboer.be/node/1241", "http://www.rechtvanbijdeboer.be/hoeveslagerij-patrick" ],
     "name" : "Hoeveslagerij Patrick",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Wij leveren u rund- en varkensvlees rechtstreeks van de landbouwer. Ons smakelijk en betrouwbaar rundvlees van zelfgefokte runderen is enkel op bestelling te verkrijgen. Het betreft rundvlees van kwaliteitsras: wit-blauw, geboren, opgegroeid en slachtrijp gemaakt op onze hoeve. Dit wordt versneden en klaargemaakt op maat van uw gezin",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/home_05.jpg?itok=rMyElkoB", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/3.jpg?itok=-1JWwQh7" ],
     "schema:name" : "Hoeveslagerij Patrick",
     "url" : "http://www.hoeveslagerij.be",
-    "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
+    "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
     "offersFoodType" : [ "ft:beef", "ft:pork" ]
   } ],
   "@context" : {
@@ -195,17 +195,26 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -220,6 +229,18 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
@@ -227,11 +248,19 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -239,40 +268,11 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

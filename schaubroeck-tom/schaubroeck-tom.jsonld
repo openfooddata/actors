@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "schaubroeck.tom@skynet.be",
-    "telephone" : "0474/467152"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Meigem",
+    "postalCode" : "9800",
+    "streetAddress" : "Heerdweg 93 a"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
+    "address" : "_:b0",
     "addressCountry" : "Belgium",
     "latitude" : "51.018375",
     "longitude" : "3.515290"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Meigem",
-    "postalCode" : "9800",
-    "streetAddress" : "Heerdweg 93 a"
+    "@type" : "schema:ContactPoint",
+    "email" : "schaubroeck.tom@skynet.be",
+    "telephone" : "0474/467152"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -155,7 +155,7 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/schaubroeck-tom-0", "http://www.rechtvanbijdeboer.be/node/3388", "http://www.rechtvanbijdeboer.be/schaubroeck-tom", "http://www.rechtvanbijdeboer.be/node/1821" ],
     "name" : "Schaubroeck tom",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "",
     "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
@@ -180,6 +180,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -192,8 +201,8 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -205,8 +214,8 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "longitude" : {
@@ -227,15 +236,6 @@
     },
     "email" : {
       "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "appelboerminderhout@gmail.com",
-    "telephone" : "03/3157337"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.434595",
     "longitude" : "4.768429"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "appelboerminderhout@gmail.com",
+    "telephone" : "03/3157337"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -92,7 +92,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -155,9 +155,9 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_3968.jpg?itok=Acp_9sms",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/fruitbedrijf-stoffels-van-baelen-0", "http://www.rechtvanbijdeboer.be/node/1258", "http://www.rechtvanbijdeboer.be/node/2680", "http://www.rechtvanbijdeboer.be/fruitbedrijf-stoffels-van-baelen" ],
     "name" : "Fruitbedrijf Stoffels - Van Baelen",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_3968.jpg?itok=Acp_9sms",
     "schema:name" : "Fruitbedrijf Stoffels - Van Baelen",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
@@ -189,6 +189,10 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -204,16 +208,6 @@
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -236,6 +230,12 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

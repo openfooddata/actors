@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/lietaer-vangenechten",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.155199",
     "longitude" : "4.960889"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/lietaer-vangenechten",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -152,11 +152,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/melkveebedrijf-lietaer-vangenechten", "http://www.rechtvanbijdeboer.be/node/3616" ],
     "name" : "Melkveebedrijf Lietaer-Vangenechten",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "schema:name" : "Melkveebedrijf Lietaer-Vangenechten",
     "actorType" : [ "at:pointOfSale", "at:vendingMachine" ],
     "offersFoodType" : [ "ft:potatoes", "ft:milk_products" ],
-    "upstreamRel" : "_:b1"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -184,6 +184,10 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
@@ -197,8 +201,17 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
     "streetAddress" : {
@@ -215,19 +228,6 @@
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.003213",
-    "longitude" : "3.162594"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Lichtervelde",
     "postalCode" : "8810",
     "streetAddress" : "Kortrijkstraat 16"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.003213",
+    "longitude" : "3.162594"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
@@ -90,7 +90,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -164,7 +164,7 @@
     "name" : "De Bossneppe",
     "contactPoint" : "_:b2",
     "description" : "Zuivelhoeve De Bossneppe is een melkveebedrijf. Een deel van de melk van onze koeien wordt verwerkt in zuivelproducten: boter, karnemelk, yoghurt, verse kaas, desserten en ijs.",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/imag0148.jpg?itok=YA6XLMVG", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/snv32812.jpg?itok=JdjUUcZV", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/prut4455.jpg?itok=-5dhwZNa" ],
     "schema:name" : "De Bossneppe",
     "url" : "http://www.debossneppe.be",
@@ -207,19 +207,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
     },
@@ -248,12 +235,12 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -261,8 +248,8 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "description" : {
@@ -273,6 +260,19 @@
     },
     "email" : {
       "@id" : "https://schema.org/email"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

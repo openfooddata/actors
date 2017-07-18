@@ -2,31 +2,31 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-t-lijsternest",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-pascal-en-sandra",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Ichtegem",
-    "postalCode" : "8480",
-    "streetAddress" : "Korenstraat 35"
-  }, {
-    "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/steffi-fruit",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-t-lijsternest",
     "relatedContext" : "at:producer"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
+    "address" : "_:b4",
     "addressCountry" : "Belgium",
     "latitude" : "51.102047",
     "longitude" : "3.054003"
   }, {
-    "@id" : "_:b4",
+    "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoeve-pascal-en-sandra",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/steffi-fruit",
     "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Ichtegem",
+    "postalCode" : "8480",
+    "streetAddress" : "Korenstraat 35"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -53,7 +53,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -162,11 +162,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2024", "http://www.rechtvanbijdeboer.be/buurderij-ichtegem" ],
     "foaf:name" : "Buurderij Ichtegem",
     "description" : "",
-    "geo" : "_:b3",
+    "geo" : "_:b2",
     "name" : "Buurderij Ichtegem",
     "actorType" : [ "at:pointOfSale", "at:foodAssembly" ],
     "offersFoodType" : [ "ft:beef", "ft:fruits", "ft:eggs", "ft:icecream", "ft:pork", "ft:poultry_meat", "ft:milk_products" ],
-    "upstreamRel" : [ "_:b2", "_:b0", "_:b4" ]
+    "upstreamRel" : [ "_:b1", "_:b3", "_:b0" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -194,17 +194,12 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
@@ -218,10 +213,6 @@
     },
     "name" : {
       "@id" : "https://schema.org/name"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -238,6 +229,15 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

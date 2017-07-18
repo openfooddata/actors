@@ -1,16 +1,18 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-lier",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b6",
     "addressCountry" : "Belgium",
     "latitude" : "51.277014",
     "longitude" : "4.674929"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.zwarthof.be",
+    "email" : "info@zwarthof.be",
+    "telephone" : "0495/228803",
+    "url" : "http://www.zwarthof.be"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -28,11 +30,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.zwarthof.be",
-    "email" : "info@zwarthof.be",
-    "telephone" : "0495/228803",
-    "url" : "http://www.zwarthof.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-lier",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b6",
     "@type" : "schema:PostalAddress",
@@ -114,7 +114,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -182,14 +182,14 @@
     "homepage" : "http://www.zwarthof.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-zwarthof", "http://www.rechtvanbijdeboer.be/t-zwarthof-0", "http://www.rechtvanbijdeboer.be/node/1256", "http://www.rechtvanbijdeboer.be/node/2678" ],
     "foaf:name" : "'t Zwarthof",
-    "contactPoint" : "_:b5",
+    "contactPoint" : "_:b1",
     "description" : "'t Zwarthof is een familiaal zoogkoeien en schapenbedrijf. De productie vertrekt vanaf een gezonde bodem. Alle voedergewassen gras, maïs, triticale, bieten worden zelf geteeld. Indien nodig wordt er aangevuld met krachtvoer. Jaarlijks worden er een 50-tal kalfjes en minstens evenveel lammetjes geboren. De vrouwelijke dieren worden aangehouden voor de fokkerij. De stiertjes en rammetjes worden afgemest. Het rundsvlees dat verkocht wordt in de hoeveslagerij is uitsluitend van vrouwelijke dieren afkomstig. Dit garandeert smaakvol vlees, de dieren stonden immers meerdere zomers op de weide en de laatste maanden kregen ze op stal een zeer rijk rantsoen met veel granen. Ook de lammeren hebben allemaal samen met hun moeder minstens 6 m",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/P1400580.JPG?itok=uue-HsX0", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/IMG_4693_0.jpg?itok=bx-zSBT6", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/droge%20worst%20op%20plankje%203.jpg?itok=UduLc1PZ" ],
     "name" : "'t Zwarthof",
     "url" : "http://www.zwarthof.be",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b0", "_:b2", "_:b3", "_:b4" ],
+    "downstreamRel" : [ "_:b2", "_:b3", "_:b4", "_:b5" ],
     "offersFoodType" : [ "ft:beef", "ft:lamb_meat", "ft:pork" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -219,12 +219,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -232,6 +232,14 @@
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -241,10 +249,6 @@
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -257,10 +261,6 @@
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -280,6 +280,21 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -292,21 +307,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Sint-Niklaas",
+    "postalCode" : "9100",
+    "streetAddress" : "Kuildamstraat 12 A"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.shondshof.be",
     "email" : "shondshof@hotmail.com",
     "telephone" : "03/7765276",
     "url" : "http://www.shondshof.be"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Sint-Niklaas",
-    "postalCode" : "9100",
-    "streetAddress" : "Kuildamstraat 12 A"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -53,7 +53,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -98,7 +98,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -166,14 +166,14 @@
     "homepage" : "http://www.shondshof.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/s-hondshof", "http://www.rechtvanbijdeboer.be/node/1246" ],
     "foaf:name" : "'s Hondshof",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/sHondshof_zuivel_winkel_toog.jpg?itok=wR2ht4yn",
     "name" : "'s Hondshof",
     "url" : "http://www.shondshof.be",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b3", "_:b4" ],
+    "downstreamRel" : [ "_:b4", "_:b3" ],
     "offersFoodType" : [ "ft:potatoes", "ft:poultry_meat", "ft:icecream", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -196,18 +196,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
@@ -224,11 +212,27 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -245,19 +249,15 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "actorType" : {

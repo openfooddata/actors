@@ -1,26 +1,23 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.031950",
-    "longitude" : "4.094221"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelhoeve-keymeulen",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Dendermonde",
-    "postalCode" : "9200",
-    "streetAddress" : "Kerkstraat 90"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/t-uilenbos",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-seizoenschuur",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/schapenmelkerij-bosschelle",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/vanysacker",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/huis-van-de-tomaat",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b4",
@@ -29,23 +26,26 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b5",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/huis-van-de-tomaat",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b6",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.031950",
+    "longitude" : "4.094221"
   }, {
     "@id" : "_:b6",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/t-uilenbos",
-    "relatedContext" : "at:producer"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Dendermonde",
+    "postalCode" : "9200",
+    "streetAddress" : "Kerkstraat 90"
   }, {
     "@id" : "_:b7",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/schapenmelkerij-bosschelle",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-seizoenschuur",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b8",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/zuivelhoeve-keymeulen",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/vanysacker",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
@@ -118,7 +118,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -183,12 +183,12 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2321", "http://www.rechtvanbijdeboer.be/voedselteam-dendermonde" ],
     "name" : "Voedselteam Dendermonde",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b5",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aardbeien2.jpg?itok=496FTkkI",
     "schema:name" : "Voedselteam Dendermonde",
     "actorType" : [ "at:pointOfSale", "at:foodTeams" ],
     "offersFoodType" : [ "ft:fruit_juices", "ft:milk_products", "ft:vegetables", "ft:icecream", "ft:eggs", "ft:lamb_meat", "ft:potatoes", "ft:poultry_meat", "ft:fruits" ],
-    "upstreamRel" : [ "_:b2", "_:b7", "_:b4", "_:b8", "_:b3", "_:b6", "_:b5" ]
+    "upstreamRel" : [ "_:b0", "_:b3", "_:b2", "_:b7", "_:b1", "_:b8", "_:b4" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -210,6 +210,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -222,21 +228,6 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -266,6 +257,15 @@
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

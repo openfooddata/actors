@@ -1,9 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/ijswinkel-t-vossenerf",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
@@ -13,9 +13,9 @@
     "url" : "http://vossenerf.be/"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/ijswinkel-t-vossenerf",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,12 +167,12 @@
     "foaf:name" : "'t Vossenerf",
     "contactPoint" : "_:b1",
     "description" : "‘t Vossenerf is een akkerbouw- en melkveebedrijf. In 2004 namen Kris en Charlotte het bedrijf over en begonnen meteen met melk te verwerken tot ambachtelijke producten. Bij de bereiding blijven alle stoffen en natuurlijke smaken in het ijs bewaard (geen toevoeging van bewaar-, kleur- of smaakstoffen). Je kan kiezen uit tal van verschillende smaken. Het ijs is te verkrijgen in literverpakkingen. Daarnaast kan je ook genieten van een ijsje, drankje of pannenkoek op de hoeve zelf, met een prachtig zicht op de streek.",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/532389_240341689401483_190938906_n.jpg?itok=EzjTrDPh", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/555990_240342119401440_1734607784_n.jpg?itok=ykJnFKQE", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1939906_436231369812513_852117107_n.jpg?itok=G5bQOrv_", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/575749_321408734628111_1420758871_n.jpg?itok=27WH7nFu" ],
     "name" : "'t Vossenerf",
     "url" : "http://vossenerf.be/",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : "ft:icecream"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -205,6 +205,10 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -218,15 +222,19 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "https://schema.org/name"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -234,23 +242,14 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
@@ -258,20 +257,12 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -284,6 +275,15 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

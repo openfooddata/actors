@@ -1,21 +1,21 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-dilbeek-0",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.volckaerts.net",
     "email" : "info@volckaerts.net",
     "telephone" : "0477412631",
     "url" : "http://www.volckaerts.net"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b4",
     "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/boerenmarkt-dilbeek-0",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "ofd:ActorRelationship",
@@ -109,7 +109,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,14 +177,14 @@
     "homepage" : "http://www.volckaerts.net",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1854", "http://www.rechtvanbijdeboer.be/volckaerts" ],
     "name" : "Volckaerts",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "Het tuinieren zit bij ons in het bloed. Al drie generaties lang zorgt ons familiebedrijf voor een ruim aanbod aan kwalitatieve tuinbouwproducten. Wat vroeger begon met prei en selder, is in de loop der jaren uitgebouwd tot een ruime waaier aan vergeten wintergroenten en hebben we ons gespecialiseerd in de verkoop en opkweek van een uitgebreid assortiment kruiden- en aardbeiplanten.",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wp_20150609_20_29_24_pro.jpg?itok=E3pRWGQU",
     "schema:name" : "Volckaerts",
     "url" : "http://www.volckaerts.net",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b3" ],
+    "downstreamRel" : [ "_:b0", "_:b3" ],
     "offersFoodType" : [ "ft:spices", "ft:vegetables" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -207,38 +207,50 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -250,24 +262,14 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -281,14 +283,12 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

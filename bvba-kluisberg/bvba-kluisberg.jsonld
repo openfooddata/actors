@@ -1,9 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/kluisberg-bvba",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -12,16 +12,16 @@
     "streetAddress" : "Rijnrode 5"
   }, {
     "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/kluisberg-bvba",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.kluisberg.be",
     "email" : "info@kluisberg.be",
     "telephone" : "013/337869",
     "url" : "http://www.kluisberg.be"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -93,7 +93,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -161,14 +161,14 @@
     "homepage" : "http://www.kluisberg.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1106", "http://www.rechtvanbijdeboer.be/bvba-kluisberg" ],
     "foaf:name" : "BVBA Kluisberg",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b3",
     "description" : "Kwaliteitswijn voor particulier, horeca, groot- en kleinhandel. Als men praat over wijn, denkt men in de eerste plaats aan Frankrijk of Duitsland…niet nauw aan België. Nochtans is België ook in het bezit van een rijke historiek van wijn en wijn maken. Al vanaf de jaren 1450 is er over wijnen van Belgische bodem informatie terug te vinden en dan specifiek vanuit de streek die men nu het Hageland noemt. De Belgische wijnbouw kende een nieuwe start sinds 1970. Een geslaagde start want het Hageland was het eerste officieel erkende wijngebied in België en heeft sinds 1997 ook zijn eigen Beschermde Oorsprongsbenaming: voor de gebruiker ook een zekerheid dat het Hagelandse wijn is die voldoet aan de Europese normen van kwaliteitswijn.",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wijnkelderkluisbergjosvanlaer2010bekkevoort-fotolukcollet-0324.jpg?itok=rnYJmBij", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wijnkluisberg2011groepsfoto-fotoklein.jpg?itok=z-0VvMRW", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/wijnkelderkluisbergjosvanlaer2010bekkevoortpano-fotolukcollet-0299.jpg?itok=Oj0S_NcL", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/josendaniella.jpg?itok=25WGNYZ2" ],
     "name" : "BVBA Kluisberg",
     "url" : "http://www.kluisberg.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : "ft:alcoholic_beverages"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -191,11 +191,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -205,6 +206,12 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -224,8 +231,20 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -233,30 +252,11 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "name" : {
       "@id" : "https://schema.org/name"
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

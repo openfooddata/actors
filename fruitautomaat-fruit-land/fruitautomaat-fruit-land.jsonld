@@ -1,17 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.121081",
-    "longitude" : "3.587210"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Zomergem",
     "postalCode" : "9930",
     "streetAddress" : "Korteboeken 78"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.121081",
+    "longitude" : "3.587210"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -152,7 +152,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3091", "http://www.rechtvanbijdeboer.be/fruitautomaat-fruit-land" ],
     "name" : "Fruitautomaat Fruit-Land",
     "description" : "",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "schema:name" : "Fruitautomaat Fruit-Land",
     "actorType" : [ "at:pointOfSale", "at:vendingMachine" ],
     "offersFoodType" : [ "ft:fruits", "ft:potatoes", "ft:vegetables", "ft:milk_products", "ft:eggs", "ft:alcoholic_beverages", "ft:fruit_juices" ],
@@ -178,6 +178,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -191,21 +200,6 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
@@ -216,18 +210,24 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

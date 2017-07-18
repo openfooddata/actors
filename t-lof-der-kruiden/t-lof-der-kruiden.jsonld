@@ -6,11 +6,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.lofderkruiden.be/webshop",
-    "email" : "info@lofderkruiden.be",
-    "telephone" : [ "0479 52 81 06", "050/27 58 19" ],
-    "url" : "http://www.lofderkruiden.be/webshop"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zedelgem",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -18,16 +16,18 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.lofderkruiden.be/webshop",
+    "email" : "info@lofderkruiden.be",
+    "telephone" : [ "0479 52 81 06", "050/27 58 19" ],
+    "url" : "http://www.lofderkruiden.be/webshop"
+  }, {
+    "@id" : "_:b4",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b5",
     "addressCountry" : "Belgium",
     "latitude" : "51.109178",
     "longitude" : "3.164756"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-zedelgem",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b5",
     "@type" : "schema:PostalAddress",
@@ -109,7 +109,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -177,14 +177,14 @@
     "homepage" : "http://www.lofderkruiden.be/webshop",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/t-lof-der-kruiden", "http://www.rechtvanbijdeboer.be/node/3272", "http://www.rechtvanbijdeboer.be/t-lof-der-kruiden-0", "http://www.rechtvanbijdeboer.be/node/1732" ],
     "name" : "'t Lof der kruiden",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "Naast de uitbating van onze B&B 't LOF der kruiden zijn wij op 1 januari 2015 ook gestart met een webshop waar u terecht kunt voor allerhande gedroogde kruiden, huisbereide verzorgingsproducten op basis van kruiden en vanaf het voorjaar 2015 ook voor kruidenplantjes in pot. We streven er naar om zoveel als mogelijk onze producten aan te bieden onder BIO-garantielabel .",
-    "geo" : "_:b3",
+    "geo" : "_:b4",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/untitled-1.jpg?itok=GFZbCd21", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/recht-van-bij-de-boer.gif?itok=3H5I7ipO", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/tc-pepermunt.gif?itok=e3YHKZho", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/herb_box.gif?itok=ZAl8UItf" ],
     "schema:name" : "'t Lof der kruiden",
     "url" : "http://www.lofderkruiden.be/webshop",
     "actorType" : [ "at:producer", "at:pointOfSale", "at:farmShop" ],
-    "downstreamRel" : [ "_:b2", "_:b4", "_:b0" ],
+    "downstreamRel" : [ "_:b0", "_:b1", "_:b2" ],
     "offersFoodType" : "ft:spices"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -214,26 +214,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "downstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -251,11 +237,19 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -263,17 +257,14 @@
     "url" : {
       "@id" : "https://schema.org/url"
     },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -288,14 +279,23 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
+    },
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "telephone" : {
       "@id" : "https://schema.org/telephone"

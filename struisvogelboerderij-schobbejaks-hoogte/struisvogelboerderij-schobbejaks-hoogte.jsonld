@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.992801",
-    "longitude" : "3.407822"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Aarsele (Tielt)",
     "postalCode" : "8700",
     "streetAddress" : "Deinsesteenweg 182"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.schobbejakshoogte.be",
     "email" : "info@schobbejakshoogte.be",
     "telephone" : "0473/982719",
     "url" : "http://www.schobbejakshoogte.be"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.992801",
+    "longitude" : "3.407822"
   }, {
     "@id" : "http://www.facebook.com/struisvogelboerderij",
     "@type" : "foaf:OnlineAccount",
@@ -52,7 +52,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -173,9 +173,9 @@
     "homepage" : "http://www.schobbejakshoogte.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2674", "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte", "http://www.rechtvanbijdeboer.be/node/1252", "http://www.rechtvanbijdeboer.be/struisvogelboerderij-schobbejaks-hoogte-0" ],
     "foaf:name" : "Struisvogelboerderij Schobbejaks Hoogte",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b1",
     "description" : "Op struisvogelboerderij Schobbejaks Hoogte lopen enkele honderden struisvogels rond. Iedere zaterdag is onze hoevewinkel open van 10 tot 18 u en u kunt ons bedrijf ook op afspraak komen bezoeken. Vragen? Kom gerust eens langs, of geef een seintje via info@schobbejakshoogte.be of 0473/98 27 19",
-    "geo" : "_:b0",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/imgp1040.jpg?itok=pjgs2CA1", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding050.jpg?itok=qRwUhr3a", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/1045191_443184712455546_1316553811_n.jpg?itok=1t7R5_3i", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/afbeelding024.jpg?itok=O1LywCIW" ],
     "name" : "Struisvogelboerderij Schobbejaks Hoogte",
     "url" : "http://www.schobbejakshoogte.be",
@@ -202,6 +202,27 @@
     "prefLabel" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -224,29 +245,12 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -257,16 +261,12 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
-    },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",

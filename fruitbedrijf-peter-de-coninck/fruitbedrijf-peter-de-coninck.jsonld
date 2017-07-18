@@ -1,25 +1,25 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/peter-de-coninck",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "email" : "peterdeconinck@telenet.be",
     "telephone" : "0477/69.22.35"
   }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b3",
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Mazenzele",
     "postalCode" : "1745",
     "streetAddress" : "Vossestraat 129"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/peter-de-coninck",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,13 +158,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/004_1.jpg?itok=gi6bvptl", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2015001.jpg?itok=-S_bekZe" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/fruitbedrijf-peter-de-coninck", "http://www.rechtvanbijdeboer.be/node/1876" ],
     "foaf:name" : "Fruitbedrijf Peter De Coninck",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "",
     "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/004_1.jpg?itok=gi6bvptl", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2015001.jpg?itok=-S_bekZe" ],
     "name" : "Fruitbedrijf Peter De Coninck",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b3",
     "offersFoodType" : [ "ft:potatoes", "ft:fruits", "ft:poultry_meat" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -187,17 +187,20 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
     "email" : {
       "@id" : "https://schema.org/email"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -206,12 +209,14 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -225,10 +230,6 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -236,17 +237,16 @@
       "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

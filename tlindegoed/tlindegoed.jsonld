@@ -7,9 +7,9 @@
     "streetAddress" : "Lindegoedstraat 2"
   }, {
     "@id" : "_:b1",
-    "@type" : "schema:ContactPoint",
-    "email" : "dries.beelprez@telenet.be",
-    "telephone" : "0472/23.50.36"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/dries-beelprez",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
@@ -17,9 +17,9 @@
     "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/dries-beelprez",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "email" : "dries.beelprez@telenet.be",
+    "telephone" : "0472/23.50.36"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -91,11 +91,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -158,13 +158,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1768", "http://www.rechtvanbijdeboer.be/tlindegoed" ],
     "foaf:name" : "T'Lindegoed",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b3",
     "description" : "",
     "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/default_images/emptyImg.jpg?itok=6POw8xTv",
     "name" : "T'Lindegoed",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b3",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:potatoes", "ft:vegetables", "ft:fruits" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -196,11 +196,11 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
@@ -209,11 +209,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -221,8 +221,8 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "actorType" : {
@@ -237,12 +237,12 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "image" : {

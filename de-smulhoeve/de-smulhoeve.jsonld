@@ -1,21 +1,21 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/terras-smulhoeve",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.smulhoeve.be",
     "email" : "info@smulhoeve.be",
     "telephone" : [ "0478/621269", "053/664700" ],
     "url" : "http://www.smulhoeve.be"
   }, {
-    "@id" : "_:b1",
+    "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b3",
     "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/terras-smulhoeve",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
@@ -48,7 +48,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -97,7 +97,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,14 +165,14 @@
     "homepage" : "http://www.smulhoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1236", "http://www.rechtvanbijdeboer.be/de-smulhoeve" ],
     "name" : "De Smulhoeve",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/terras.jpg?itok=6Rogqc5H", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/verjaardag5.jpg?itok=jZ5yV4CA", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/img_0805.jpg?itok=ozjnBDir", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/pict2474.jpg?itok=ghTZZTaV" ],
     "schema:name" : "De Smulhoeve",
     "url" : "http://www.smulhoeve.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : [ "ft:potatoes", "ft:icecream", "ft:milk_products" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -202,17 +202,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -223,6 +217,13 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
@@ -230,20 +231,19 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -251,12 +251,11 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -267,11 +266,12 @@
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"

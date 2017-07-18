@@ -1,18 +1,18 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.888259",
-    "longitude" : "3.585345"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.valleihoeve.be",
     "email" : "valleihoeve@edpnet.be",
     "telephone" : [ "0472/741404", "09/3836343" ],
     "url" : "http://www.valleihoeve.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.888259",
+    "longitude" : "3.585345"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -45,7 +45,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -94,7 +94,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -162,9 +162,9 @@
     "homepage" : "http://www.valleihoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-valleihoeve", "http://www.rechtvanbijdeboer.be/de-valleihoeve-0", "http://www.rechtvanbijdeboer.be/node/1117", "http://www.rechtvanbijdeboer.be/node/2397" ],
     "name" : "De Valleihoeve",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "De hoeve is gelegen aan de voet van de Vlaamse Ardennen, midden in een oase van groen. De hoeve dateert van het jaar 1732 en wordt uitgebaat door de familie Devaere-Van Caester. Sedert 2002 werd van start gegaan met de verwerking van de melk tot hoeve-roomijs, samen met het telen van aardbeien bleek dit algauw de geslaagde combinatie. U kunt eveneens op de hoeve terecht voor de aankoop van hoeveproducten of u kan genieten van een heerlijk terrasje midden in het valleigebied. Eveneens kan je op de speelweide met familie of vrienden reserveren voor een spelletje boerengolf.",
-    "geo" : "_:b0",
+    "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/de_valleihoeve_verkoopster.jpg?itok=CQW3Ds8R",
     "schema:name" : "De Valleihoeve",
     "url" : "http://www.valleihoeve.be",
@@ -195,6 +195,18 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "url" : {
+      "@id" : "https://schema.org/url"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -220,28 +232,13 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -255,12 +252,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -273,6 +264,15 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

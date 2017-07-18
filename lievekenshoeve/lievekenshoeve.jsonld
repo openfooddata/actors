@@ -1,22 +1,22 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "l.ruytjens@skynet.be",
-    "telephone" : "03/8883805"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
-    "address" : "_:b2",
+    "address" : "_:b1",
     "addressCountry" : "Belgium",
     "latitude" : "51.114417",
     "longitude" : "4.379664"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Aartselaar",
     "postalCode" : "2630",
     "streetAddress" : "Halfstraat 84"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:ContactPoint",
+    "email" : "l.ruytjens@skynet.be",
+    "telephone" : "03/8883805"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -154,9 +154,9 @@
     "@type" : "foaf:Agent",
     "isPrimaryTopicOf" : [ "https://www.rechtvanbijdeboer.be/node/1462", "https://www.rechtvanbijdeboer.be/lievekenshoeve", "http://www.rechtvanbijdeboer.be/node/2951", "http://www.rechtvanbijdeboer.be/lievekenshoeve-0" ],
     "foaf:name" : "Lievekenshoeve",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b2",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "name" : "Lievekenshoeve",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
     "offersFoodType" : [ "ft:eggs", "ft:vegetables", "ft:potatoes", "ft:icecream" ]
@@ -178,6 +178,19 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "telephone" : {
       "@id" : "https://schema.org/telephone"
     },
@@ -193,18 +206,18 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "streetAddress" : {
@@ -215,19 +228,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

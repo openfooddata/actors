@@ -1,20 +1,20 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/het-lindeveld-csa",
-    "relatedContext" : "at:producer"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b3",
     "addressCountry" : "Belgium",
     "latitude" : "50.929553",
     "longitude" : "4.669257"
   }, {
-    "@id" : "_:b2",
+    "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
     "relatedActor" : "https://w3id.org/openfooddata/actors/csa-de-wakkere-akker---zelfoogst",
+    "relatedContext" : "at:producer"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/het-lindeveld-csa",
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
@@ -157,11 +157,11 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/2392", "http://www.rechtvanbijdeboer.be/node/3233", "http://www.rechtvanbijdeboer.be/de-wakkere-akker", "http://www.rechtvanbijdeboer.be/de-wakkere-akker-0" ],
     "foaf:name" : "De Wakkere Akker",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "name" : "De Wakkere Akker",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:collectionPoint" ],
     "offersFoodType" : [ "ft:potatoes", "ft:vegetables" ],
-    "upstreamRel" : [ "_:b0", "_:b2" ]
+    "upstreamRel" : [ "_:b1", "_:b2" ]
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -186,16 +186,16 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "upstreamRel" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
       "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -212,15 +212,6 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -233,6 +224,15 @@
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

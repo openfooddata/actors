@@ -1,22 +1,20 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.847233",
-    "longitude" : "4.908375"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hhv",
+    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-de-zon",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Vissenaken (Tienen)",
     "postalCode" : "3300",
     "streetAddress" : "Aarschotsesteenweg 737"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hhv",
-    "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
@@ -26,9 +24,11 @@
     "url" : "http://www.hoeve-indezon.be"
   }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/hoevewinkel-de-zon",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.847233",
+    "longitude" : "4.908375"
   }, {
     "@id" : "http://www.facebook.com/HoevewinkelInDeZon",
     "@type" : "foaf:OnlineAccount",
@@ -111,7 +111,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -181,14 +181,14 @@
     "name" : "Hoeve In de Zon",
     "contactPoint" : "_:b3",
     "description" : [ "Hoeve\"In de zon\" is een boerderij die werkt met dubbeldoelkoeien. Vroeger werden deze dieren gehouden om het werk op het land te verrichten en om de boer en zijn gezin van melk en vlees te voorzien. Door de jaren heen zijn de boeren zich meer en meer gaan specialiseren en verdween dit traditionele ras bijna van de kaart. Maar 5 jaar geleden besliste Europa om dit ras te erkennen als “met uitsterven bedreigd”. Vandaag de dag kweken nog een twintigtal boeren dit ras. Een belangrijk verschil met het witblauwe vleesras is dat deze koeien normaal kunnen kalven en er slechts uitzonderlijk een keizersnede nodig is. Meer informatie over het ras, vindt u op www.sle.be. Hoeve \"In de zon\" is een gemengd bedrijf \"melkvee en akkerbouw.", "" ],
-    "geo" : "_:b0",
+    "geo" : "_:b4",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p4131116.jpg?itok=4MSAU1Yu", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/indezoncdreportage001.jpg?itok=531jAxcW" ],
     "schema:name" : "Hoeve In de Zon",
     "url" : "http://www.hoeve-indezon.be",
     "actorType" : [ "at:vendingMachine", "at:collectionPoint", "at:pointOfSale", "at:producer" ],
-    "downstreamRel" : "_:b4",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:icecream", "ft:fruit_juices", "ft:lamb_meat", "ft:milk_products", "ft:poultry_meat", "ft:alcoholic_beverages", "ft:beef", "ft:pork", "ft:bakery_products" ],
-    "upstreamRel" : "_:b2"
+    "upstreamRel" : "_:b0"
   }, {
     "@id" : "ofd:ActorRelationship",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
@@ -210,18 +210,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "streetAddress" : {
       "@id" : "https://schema.org/streetAddress"
@@ -231,12 +224,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -262,6 +249,19 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
@@ -275,10 +275,6 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
@@ -286,18 +282,22 @@
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
     },
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",

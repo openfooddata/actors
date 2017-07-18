@@ -1,16 +1,17 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Geel",
+    "postalCode" : "2440",
+    "streetAddress" : "Doornboomstraat 55"
+  }, {
+    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.aspergehoeve.be",
     "email" : "aspergehoeve@gmail.com",
     "telephone" : "014/582634",
     "url" : "http://www.aspergehoeve.be"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -18,10 +19,9 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Geel",
-    "postalCode" : "2440",
-    "streetAddress" : "Doornboomstraat 55"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b0",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -165,9 +165,9 @@
     "homepage" : "http://www.aspergehoeve.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1454", "http://www.rechtvanbijdeboer.be/aspergehoeve-geel" ],
     "name" : "Aspergehoeve Geel",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "",
-    "geo" : "_:b1",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/aspergehoevevoorben.jpg?itok=edCvopyz", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/2014-04-2510.23.57.jpg?itok=I39hERdY" ],
     "schema:name" : "Aspergehoeve Geel",
     "url" : "http://www.aspergehoeve.be",
@@ -202,6 +202,15 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "url" : {
       "@id" : "https://schema.org/url"
     },
@@ -214,8 +223,8 @@
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "actorType" : {
@@ -223,6 +232,10 @@
     },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
@@ -247,19 +260,6 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -272,18 +272,18 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "addressCountry" : {
       "@id" : "https://schema.org/addressCountry"
     },
     "address" : {
       "@id" : "https://schema.org/address",
       "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

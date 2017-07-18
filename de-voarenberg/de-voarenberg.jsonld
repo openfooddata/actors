@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/de-voarenberg-0",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.proevenvandestreek.be",
     "email" : "info@devoarenberg.be",
     "telephone" : "0486108106",
     "url" : "http://www.proevenvandestreek.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/de-voarenberg-0",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
     "@type" : "schema:GeoCoordinates",
@@ -104,7 +104,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -176,14 +176,14 @@
     "homepage" : "http://www.proevenvandestreek.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1670", "http://www.rechtvanbijdeboer.be/de-voarenberg" ],
     "name" : "De Voarenberg",
-    "contactPoint" : "_:b1",
+    "contactPoint" : "_:b0",
     "description" : "De Voarenberg is een jong dynamisch bedrijfje dat heel graag oude tradities wil combineren met jonge ideeën. Bij de Voarenberg kom je terecht in een stukje Duisburgse en Tervuurse geschiedenis; de rustieke serres van weleer worden er nog dagelijks intensief gebruikt om de druiven en groenten klaar te stomen voor het kleine winkeltje naast de werkplaats. Kom gerust eens langs!",
     "geo" : "_:b2",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/_dsf8630.jpg?itok=b8aUS-1Q",
     "schema:name" : "De Voarenberg",
     "url" : "http://www.proevenvandestreek.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b0",
+    "downstreamRel" : "_:b1",
     "offersFoodType" : [ "ft:fruits", "ft:vegetables" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -210,10 +210,6 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
@@ -223,18 +219,18 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
+    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
       "@type" : "@id"
     },
     "url" : {
@@ -246,27 +242,24 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "image" : {
-      "@id" : "https://schema.org/image"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "image" : {
+      "@id" : "https://schema.org/image"
     },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -288,6 +281,13 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

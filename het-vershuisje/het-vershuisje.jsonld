@@ -6,17 +6,17 @@
     "relatedContext" : "at:producer"
   }, {
     "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.918581",
+    "longitude" : "4.941001"
+  }, {
+    "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Bekkevoort",
     "postalCode" : "3461",
     "streetAddress" : "Halensebaan 68"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.918581",
-    "longitude" : "4.941001"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -43,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -152,7 +152,7 @@
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/3358", "http://www.rechtvanbijdeboer.be/het-vershuisje" ],
     "foaf:name" : "Het Vershuisje",
     "description" : "",
-    "geo" : "_:b2",
+    "geo" : "_:b1",
     "name" : "Het Vershuisje",
     "actorType" : [ "at:vendingMachine", "at:pointOfSale" ],
     "offersFoodType" : [ "ft:vegetables", "ft:fruits", "ft:poultry_meat" ],
@@ -184,14 +184,28 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "actorType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "upstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
+      "@type" : "@id"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "offersFoodType" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -206,28 +220,14 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "actorType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "offersFoodType" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "upstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#upstreamRel",
-      "@type" : "@id"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "https://schema.org/description"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

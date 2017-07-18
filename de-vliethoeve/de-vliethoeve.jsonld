@@ -1,16 +1,16 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "depauwels@telenet.be",
-    "telephone" : "09/344.31.97."
-  }, {
-    "@id" : "_:b1",
     "@type" : "schema:GeoCoordinates",
     "address" : "_:b2",
     "addressCountry" : "Belgium",
     "latitude" : "51.245425",
     "longitude" : "3.762876"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:ContactPoint",
+    "email" : "depauwels@telenet.be",
+    "telephone" : "09/344.31.97."
   }, {
     "@id" : "_:b2",
     "@type" : "schema:PostalAddress",
@@ -43,7 +43,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -88,11 +88,11 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -157,11 +157,11 @@
     "@type" : "foaf:Agent",
     "account" : "https://www.facebook.com/Hoeveterras-De-Vliethoeve-160152200703113",
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/023_21.jpg?itok=S2Mi5AnZ",
-    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-vliethoeve", "http://www.rechtvanbijdeboer.be/de-vliethoeve-0", "http://www.rechtvanbijdeboer.be/node/3093", "http://www.rechtvanbijdeboer.be/node/1600" ],
+    "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/de-vliethoeve-0", "http://www.rechtvanbijdeboer.be/de-vliethoeve", "http://www.rechtvanbijdeboer.be/node/3093", "http://www.rechtvanbijdeboer.be/node/1600" ],
     "name" : "De Vliethoeve",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b1",
     "description" : "Wij hebben een melkvee- & akkerbouwbedrijf, met daarbij een hoeveterras. Op ons hoeveterras kan je genieten van huisbereide lekkernijen, maar ook van streekproducten. Ondertussen kan je, alleen of samen met je gezin genieten van het landschap - de speeltuin - een kalving van één van de koeien naast het terras....",
-    "geo" : "_:b1",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/023_21.jpg?itok=S2Mi5AnZ",
     "schema:name" : "De Vliethoeve",
     "actorType" : [ "at:pointOfSale", "at:farmShop", "at:producer" ],
@@ -202,8 +202,8 @@
     "description" : {
       "@id" : "https://schema.org/description"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
@@ -215,22 +215,19 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
+      "@type" : "@id"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -245,6 +242,15 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
@@ -253,12 +259,6 @@
     },
     "prefLabel" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
