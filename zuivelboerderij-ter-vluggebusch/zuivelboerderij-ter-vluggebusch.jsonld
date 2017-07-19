@@ -1,14 +1,15 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "email" : "rik.roelens@belgacom.net",
-    "telephone" : [ "0471/204655", "051/302733" ]
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-izegem",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Lendelede",
+    "postalCode" : "8860",
+    "streetAddress" : "Sterrekensstraat 4"
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
@@ -16,15 +17,14 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b4",
-    "addressCountry" : "Belgium"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-izegem",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Lendelede",
-    "postalCode" : "8860",
-    "streetAddress" : "Sterrekensstraat 4"
+    "@type" : "schema:ContactPoint",
+    "email" : "rik.roelens@belgacom.net",
+    "telephone" : [ "0471/204655", "051/302733" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,13 +167,13 @@
     "depiction" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012001.jpg?itok=d1qm6Brm", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012028.jpg?itok=2BrVhq9-" ],
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1254", "http://www.rechtvanbijdeboer.be/zuivelboerderij-ter-vluggebusch" ],
     "foaf:name" : "Zuivelboerderij Ter Vluggebusch",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b4",
     "description" : "In 1990 hebben wij het bedrijf van Rik's ouders overgenomen. Toen was het enkel verkoop van karnemelk en boter , ondertussen is het assortiment uitgebreid met magere yoghourt, desserten, hoeveijs..Wij verkopen ook diverse soorten hoevekazen van een collega.",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012001.jpg?itok=d1qm6Brm", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/oktober2012028.jpg?itok=2BrVhq9-" ],
     "name" : "Zuivelboerderij Ter Vluggebusch",
     "actorType" : "at:producer",
-    "downstreamRel" : [ "_:b2", "_:b1" ],
+    "downstreamRel" : [ "_:b2", "_:b3" ],
     "offersFoodType" : [ "ft:potatoes", "ft:eggs", "ft:milk_products", "ft:icecream" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -203,11 +203,27 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -221,34 +237,25 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "description" : {
       "@id" : "https://schema.org/description"
@@ -259,26 +266,19 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
-    },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

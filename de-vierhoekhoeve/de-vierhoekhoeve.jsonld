@@ -13,15 +13,15 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Gijzenzele",
     "postalCode" : "9860",
     "streetAddress" : "Brielstraat 71"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -93,7 +93,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,7 +167,7 @@
     "foaf:name" : "De Vierhoekhoeve",
     "contactPoint" : "_:b0",
     "description" : "Om van te snoepen De hemel voor dreumesen, vlakbij Gent. Koetjes melken, geitjes knuffelen, hartjes ophalen op de speeltuin. Ruiken, voelen, gek doen, in een 'niets moet, alles ma'-sfeertjes. Het leven zoals het is ... op de kinderboerderij, bij de familie De Sutter. Geloof ons : dat leven is om van te snoepen. Het hoeveterras, een absolute aantrekkingspool in summertime, trakteert op artisanaal lekkers. Zelfgemaakte kazen, versgedraaide ijsjes, biertjes voor de goesting, huisbereide zoete zondes, allemaal met veel liefde voor de natuur en voor jou bereid, vers van de koe, recht uit de boomgaard. Wie thuis wil verder proeven passeert gewoon langs Bella Boe, ons nostalgisch hoevewinkeltje waar je al die pure producten kunt scoren. Beestige feestjes, ook daar hebben we een patent op. Communies, verjaardagen of babyborrels zij steeds origineel en supercool, altijd eerlijk en heerlijk, het devies van De Vierhoekhoeve. O ja, ook bedrijven kunnen op deze unieke locatie probleemloos terecht voor seminaries, opleidingen, events ... . Wedden dat 'den buiten' opnieuw het kind in je naar boven haalt? Van onze verse melk maken wij tal van artisanaal lekkers om van te genieten : kaas, ijs, desserten, ijstaarten op maat voor elke gelegenheid .... . U voelt er de liefde voor handwerk, u proeft er de zorg om onze eerste kwaliteit grondstoffen.",
-    "geo" : "_:b2",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotoshoot-95-.jpg?itok=52Tn4n0w", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/photo-fromages-carrefour-2.jpg?itok=14d7u2AK", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotoshoot-173-.jpg?itok=U_TBwmmL", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/fotoshoot-135-.jpg?itok=ekQylGxK" ],
     "name" : "De Vierhoekhoeve",
     "url" : "http://www.devierhoekhoeve.be",
@@ -232,19 +232,27 @@
     "relatedActor" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
@@ -265,24 +273,16 @@
     "actorType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#actorType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
+    "geo" : {
+      "@id" : "https://schema.org/geo",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

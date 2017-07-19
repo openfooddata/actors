@@ -1,29 +1,29 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.885598",
+    "longitude" : "3.454638"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Waregem",
+    "postalCode" : "8790",
+    "streetAddress" : "Bessemstraat 65"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/aardbeienautomaat-2424",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b3",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.aardbeienvanoverbeke.be",
     "email" : "philip.vanoverbeke@telenet.be",
     "telephone" : "056/614388",
     "url" : "http://www.aardbeienvanoverbeke.be"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/aardbeienautomaat-2424",
-    "relatedContext" : "at:pointOfSale"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.885598",
-    "longitude" : "3.454638"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Waregem",
-    "postalCode" : "8790",
-    "streetAddress" : "Bessemstraat 65"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -167,14 +167,14 @@
     "homepage" : "http://www.aardbeienvanoverbeke.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/aardbeien-van-overbeke-vandemaele-0", "http://www.rechtvanbijdeboer.be/node/2633", "http://www.rechtvanbijdeboer.be/node/1228", "http://www.rechtvanbijdeboer.be/aardbeien-van-overbeke-vandemaele" ],
     "name" : "Aardbeien Van Overbeke-Vandemaele",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b3",
     "description" : "Ons bedrijf is opgestart op 10 oktober 1992 met de teelt van aardbeien en van witloof. In 2004 zijn we gestopt met het telen van witloof en werd er een nieuwe serre bijgeplaatst waardoor we reeds van begin april tot eind december aardbeien kunnen telen. Vanaf 2004 zijn we volledig overgeschakeld op substraatteelt (stellingen op hoogte) en werd de teelt in de grond volledig verlaten. Door deze aanpassing konden we hogere producties en betere kwaliteit bekomen. Voor meer informatie ga naar www.aardbeienvanoverbeke.be !",
-    "geo" : "_:b2",
+    "geo" : "_:b0",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p10001762.jpg?itok=eZCCwbOx", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/hpim1804.jpg?itok=9rumsMaX", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/p1000840.jpg?itok=0MpJhBlh", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/14.png?itok=dDgA6tjD" ],
     "schema:name" : "Aardbeien Van Overbeke-Vandemaele",
     "url" : "http://www.aardbeienvanoverbeke.be",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : "_:b1",
+    "downstreamRel" : "_:b2",
     "offersFoodType" : "ft:fruits"
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -204,24 +204,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
-    },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
-    },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
-    },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
     },
@@ -235,9 +217,11 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -246,12 +230,11 @@
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
     "image" : {
       "@id" : "https://schema.org/image"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
     },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
@@ -265,21 +248,29 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -292,6 +283,15 @@
     },
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

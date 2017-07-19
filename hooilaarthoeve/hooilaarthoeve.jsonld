@@ -1,9 +1,11 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-strombeek-bever",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b1",
+    "addressCountry" : "Belgium",
+    "latitude" : "51.018069",
+    "longitude" : "4.176704"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:PostalAddress",
@@ -13,25 +15,23 @@
   }, {
     "@id" : "_:b2",
     "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-mechelen",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortenberg",
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b1",
-    "addressCountry" : "Belgium",
-    "latitude" : "51.018069",
-    "longitude" : "4.176704"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-strombeek-bever",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b4",
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-mechelen",
+    "relatedContext" : "at:pointOfSale"
+  }, {
+    "@id" : "_:b5",
     "@type" : "schema:ContactPoint",
     "email" : "martinevanmalderen@hotmail.com",
     "telephone" : "052/330876"
-  }, {
-    "@id" : "_:b5",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-kortenberg",
-    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -103,7 +103,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -174,13 +174,13 @@
     "depiction" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/012-hooilaarthoeve.jpg?itok=PK9kdOh2",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/hooilaarthoeve-0", "http://www.rechtvanbijdeboer.be/hooilaarthoeve", "http://www.rechtvanbijdeboer.be/node/1088", "http://www.rechtvanbijdeboer.be/node/2359" ],
     "foaf:name" : "Hooilaarthoeve",
-    "contactPoint" : "_:b4",
+    "contactPoint" : "_:b5",
     "description" : "De Hooilaarthoeve is een gespecialiseerd melkveebedrijf gelegen in het middelpunt van Vlaanderen. Alle producten worden bereid met dagverse melk van onze eigen koeien en dit zonder toevoeging van smaak- of kleurstoffen. Dit zorgt voor de authentieke smaak van deze ambachtelijke producten.",
-    "geo" : "_:b3",
+    "geo" : "_:b0",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/012-hooilaarthoeve.jpg?itok=PK9kdOh2",
     "name" : "Hooilaarthoeve",
     "actorType" : [ "at:pointOfSale", "at:producer", "at:farmShop" ],
-    "downstreamRel" : [ "_:b2", "_:b0", "_:b5" ],
+    "downstreamRel" : [ "_:b4", "_:b2", "_:b3" ],
     "offersFoodType" : [ "ft:milk_products", "ft:eggs", "ft:icecream" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -210,6 +210,19 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
     "relatedContext" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
@@ -224,19 +237,6 @@
     },
     "addressLocality" : {
       "@id" : "https://schema.org/addressLocality"
-    },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -266,12 +266,12 @@
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
-    "description" : {
-      "@id" : "https://schema.org/description"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "https://schema.org/description"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",

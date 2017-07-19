@@ -1,10 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "wondelgem gent",
-    "postalCode" : "9032",
-    "streetAddress" : "molenstraat 123"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/slagerij-raemdonck-van-hulle",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:ContactPoint",
@@ -14,14 +13,15 @@
     "url" : "http://www.slagerijraemdonck.be"
   }, {
     "@id" : "_:b2",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/slagerij-raemdonck-van-hulle",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b3",
+    "addressCountry" : "Belgium"
   }, {
     "@id" : "_:b3",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium"
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "wondelgem gent",
+    "postalCode" : "9032",
+    "streetAddress" : "molenstraat 123"
   }, {
     "@id" : "http://slagerijraemdonck",
     "@type" : "foaf:OnlineAccount",
@@ -55,7 +55,7 @@
     "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
-    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
+    "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "@type" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -104,7 +104,7 @@
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Datatype",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
-    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ]
+    "subClassOf" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype", "http://www.w3.org/2000/01/rdf-schema#Resource", "http://www.w3.org/2000/01/rdf-schema#Class" ]
   }, {
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -174,12 +174,12 @@
     "foaf:name" : "Slagerij Raemdonck",
     "contactPoint" : "_:b1",
     "description" : "Al 45 jaar staat in de hoeve \"van den langendam\" kwaliteit hoog in het vaandel. Hier worden runderen gekweekt met respect voor de traditie, maar met de efficiëntie van een modern bedrijf. De hoogwaardige runderen van het witblauw ras groeien op in de groene weide en worden gevoederd enkel met natuurlijke grondstoffen. Deze werkwijze mondt uit in vlees van hoge kwaliteit en dat proef je. De runderen worden geslacht in Zele en worden in de slagerij te Wondelgem vakkundig versneden. Elke week is er een weekpromotie, en deze kan geraadpleegd worden op onze website. Vleescolli's voor de diepvries zijn te verkrijgen op bestelling. Voor meer informatie over onze diensten kan u uiteraard steeds telefonisch contact opnemen.",
-    "geo" : "_:b3",
+    "geo" : "_:b2",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/profiel.jpg?itok=TmnoXwXR", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0033.jpg?itok=lYisXwTC", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/foto0054.jpg?itok=mu42llB0" ],
     "name" : "Slagerij Raemdonck",
     "url" : "http://www.slagerijraemdonck.be",
     "actorType" : "at:producer",
-    "downstreamRel" : "_:b2",
+    "downstreamRel" : "_:b0",
     "offersFoodType" : [ "ft:beef", "ft:pork" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -202,15 +202,6 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
-    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
@@ -223,20 +214,20 @@
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "isPrimaryTopicOf" : {
-      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
     },
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
-      "@type" : "@id"
-    },
     "geo" : {
       "@id" : "https://schema.org/geo",
       "@type" : "@id"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -254,11 +245,18 @@
     "name" : {
       "@id" : "https://schema.org/name"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -272,18 +270,20 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
-    "email" : {
-      "@id" : "https://schema.org/email"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    },
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

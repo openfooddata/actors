@@ -1,11 +1,9 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:ContactPoint",
-    "homepage" : "http://www.hoeveslagerijterhees.be",
-    "email" : "info@hoeveslagerijterhees.be",
-    "telephone" : [ "0479/705551", "013/333289" ],
-    "url" : "http://www.hoeveslagerijterhees.be"
+    "@type" : "ofd:ActorRelationship",
+    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-diest",
+    "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b1",
     "@type" : "ofd:ActorRelationship",
@@ -13,22 +11,24 @@
     "relatedContext" : "at:pointOfSale"
   }, {
     "@id" : "_:b2",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b3",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.997772",
-    "longitude" : "5.116196"
-  }, {
-    "@id" : "_:b3",
     "@type" : "schema:PostalAddress",
     "addressLocality" : "Halen",
     "postalCode" : "3545",
     "streetAddress" : "Heesstraat 40"
   }, {
+    "@id" : "_:b3",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.997772",
+    "longitude" : "5.116196"
+  }, {
     "@id" : "_:b4",
-    "@type" : "ofd:ActorRelationship",
-    "relatedActor" : "https://w3id.org/openfooddata/actors/buurderij-diest",
-    "relatedContext" : "at:pointOfSale"
+    "@type" : "schema:ContactPoint",
+    "homepage" : "http://www.hoeveslagerijterhees.be",
+    "email" : "info@hoeveslagerijterhees.be",
+    "telephone" : [ "0479/705551", "013/333289" ],
+    "url" : "http://www.hoeveslagerijterhees.be"
   }, {
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
     "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2000/01/rdf-schema#Resource" ],
@@ -172,14 +172,14 @@
     "homepage" : "http://www.hoeveslagerijterhees.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/node/1188", "http://www.rechtvanbijdeboer.be/hoeveslagerij-ter-hees", "http://www.rechtvanbijdeboer.be/node/2589", "http://www.rechtvanbijdeboer.be/hoeveslagerij-ter-hees-0" ],
     "name" : "Hoeveslagerij Ter Hees",
-    "contactPoint" : "_:b0",
+    "contactPoint" : "_:b4",
     "description" : "Hoeveslagerij Ter Hees is een gesloten vleesveebedrijf. Wij werken met dieren van het Belgisch witblauw ras. De verkoop van het vlees gebeurt op bestelling. Voor meer info kan u terecht op onze website www.hoeveslagerijterhees.be .",
-    "geo" : "_:b2",
+    "geo" : "_:b3",
     "image" : [ "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_0019.JPG?itok=ydQ_FTrI", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/SAM_kalf1.JPG?itok=fUgLgUgA", "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/DSC02850.JPG?itok=mBzGxl7w" ],
     "schema:name" : "Hoeveslagerij Ter Hees",
     "url" : "http://www.hoeveslagerijterhees.be",
     "actorType" : [ "at:producer", "at:farmShop", "at:pointOfSale" ],
-    "downstreamRel" : [ "_:b1", "_:b4" ],
+    "downstreamRel" : [ "_:b1", "_:b0" ],
     "offersFoodType" : [ "ft:beef", "ft:potatoes" ]
   }, {
     "@id" : "ofd:ActorRelationship",
@@ -209,17 +209,11 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "url" : {
-      "@id" : "https://schema.org/url"
+    "relatedContext" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
     },
-    "telephone" : {
-      "@id" : "https://schema.org/telephone"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email"
-    },
-    "homepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    "relatedActor" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
     },
     "accountServiceHomepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
@@ -233,11 +227,14 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "relatedContext" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedContext"
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
-    "relatedActor" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#relatedActor"
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "longitude" : {
       "@id" : "https://schema.org/longitude"
@@ -252,17 +249,15 @@
       "@id" : "https://schema.org/address",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
-    },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
-    },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
     },
     "isPrimaryTopicOf" : {
       "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf"
+    },
+    "url" : {
+      "@id" : "https://schema.org/url"
     },
     "account" : {
       "@id" : "http://xmlns.com/foaf/0.1/account",
@@ -280,23 +275,28 @@
     "image" : {
       "@id" : "https://schema.org/image"
     },
+    "downstreamRel" : {
+      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+      "@type" : "@id"
+    },
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
-    },
-    "downstreamRel" : {
-      "@id" : "https://w3id.org/openfooddata/onto/core#downstreamRel",
+    "contactPoint" : {
+      "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
     },
     "offersFoodType" : {
       "@id" : "https://w3id.org/openfooddata/onto/core#offersFoodType"
     },
-    "contactPoint" : {
-      "@id" : "https://schema.org/contactPoint",
-      "@type" : "@id"
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",

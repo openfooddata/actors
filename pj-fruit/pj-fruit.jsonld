@@ -1,24 +1,24 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "schema:PostalAddress",
-    "addressLocality" : "Stevoort",
-    "postalCode" : "3512",
-    "streetAddress" : "Kozenstraat 77"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:GeoCoordinates",
-    "address" : "_:b0",
-    "addressCountry" : "Belgium",
-    "latitude" : "50.918300",
-    "longitude" : "5.253160"
-  }, {
-    "@id" : "_:b2",
     "@type" : "schema:ContactPoint",
     "homepage" : "http://www.pjfruit.be",
     "email" : "pjfruit@gmail.com",
     "telephone" : "0497/64.30.12",
     "url" : "http://www.pjfruit.be"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:GeoCoordinates",
+    "address" : "_:b2",
+    "addressCountry" : "Belgium",
+    "latitude" : "50.918300",
+    "longitude" : "5.253160"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:PostalAddress",
+    "addressLocality" : "Stevoort",
+    "postalCode" : "3512",
+    "streetAddress" : "Kozenstraat 77"
   }, {
     "@id" : "http://www.facebook.com/pjfruit",
     "@type" : "foaf:OnlineAccount",
@@ -169,7 +169,7 @@
     "homepage" : "http://www.pjfruit.be",
     "isPrimaryTopicOf" : [ "http://www.rechtvanbijdeboer.be/pj-fruit", "http://www.rechtvanbijdeboer.be/node/1740", "http://www.rechtvanbijdeboer.be/pj-fruit-0", "http://www.rechtvanbijdeboer.be/node/3285" ],
     "foaf:name" : "PJ Fruit",
-    "contactPoint" : "_:b2",
+    "contactPoint" : "_:b0",
     "description" : "Onze hoevewinkel is elke zaterdag van 9.00 uur tot 12.30 uur geopend. Lukt het niet om tijdens deze uren langs te komen? Contacteer ons dan eventjes om een afspraak op een ander tijdstip vast te leggen. Ons fruitbedrijf werd opgestart in 1982 door de broers Paul en Josse Schreurs. Sinds enkele jaren werken ook de zonen Pieter Jan en Daan mee in de firma. De toekomst van ons fruitteeltbedrijf is dus verzekerd! PJ Fruit bestaat momenteel uit 75 % appelteelt. Bij ons vind je onder meer Jonagold, Jonagored, Elstar, Belgica, Golden Delicious, Boskoop, Granny Smith en Delbar Estival. De overige 25% van onze teelt zijn peren. Conférènce, Doyenné du Comice en Triomphe de Vienne. Sinds dit jaar kunnen we ook onze eigen kersen en rode bessen aanbieden. In 2000 ontwikkelden we een eigen appelras, de Early Jonagold. De sterkte van deze mutant is dat hij gemiddeld 1 maand vroeger rijp is dan de gewone Jonagold appel. Door de optimale opvolging van de teelten, bewaring en sortering zorgen we ervoor dat we u steeds een kwalitatief product kunnen aanbieden.",
     "geo" : "_:b1",
     "image" : "http://www.rechtvanbijdeboer.be/sites/default/files/styles/producer_teaser/public/papainspecteerdhetblad.jpg?itok=kTdvzeHa",
@@ -195,27 +195,17 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "streetAddress" : {
-      "@id" : "https://schema.org/streetAddress"
+    "accountServiceHomepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
     },
-    "postalCode" : {
-      "@id" : "https://schema.org/postalCode"
+    "accountName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/accountName"
     },
-    "addressLocality" : {
-      "@id" : "https://schema.org/addressLocality"
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
-    "longitude" : {
-      "@id" : "https://schema.org/longitude"
-    },
-    "latitude" : {
-      "@id" : "https://schema.org/latitude"
-    },
-    "addressCountry" : {
-      "@id" : "https://schema.org/addressCountry"
-    },
-    "address" : {
-      "@id" : "https://schema.org/address",
-      "@type" : "@id"
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "url" : {
       "@id" : "https://schema.org/url"
@@ -228,18 +218,6 @@
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
-    },
-    "accountServiceHomepage" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountServiceHomepage"
-    },
-    "accountName" : {
-      "@id" : "http://xmlns.com/foaf/0.1/accountName"
-    },
-    "prefLabel" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
-    },
-    "identifier" : {
-      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -257,15 +235,15 @@
       "@id" : "http://xmlns.com/foaf/0.1/account",
       "@type" : "@id"
     },
+    "geo" : {
+      "@id" : "https://schema.org/geo",
+      "@type" : "@id"
+    },
     "depiction" : {
       "@id" : "http://xmlns.com/foaf/0.1/depiction"
     },
     "description" : {
       "@id" : "https://schema.org/description"
-    },
-    "geo" : {
-      "@id" : "https://schema.org/geo",
-      "@type" : "@id"
     },
     "image" : {
       "@id" : "https://schema.org/image"
@@ -273,6 +251,28 @@
     "contactPoint" : {
       "@id" : "https://schema.org/contactPoint",
       "@type" : "@id"
+    },
+    "longitude" : {
+      "@id" : "https://schema.org/longitude"
+    },
+    "latitude" : {
+      "@id" : "https://schema.org/latitude"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "address" : {
+      "@id" : "https://schema.org/address",
+      "@type" : "@id"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
+    },
+    "postalCode" : {
+      "@id" : "https://schema.org/postalCode"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "schema" : "https://schema.org/",
     "at" : "https://w3id.org/openfooddata/vocab/actortype#",
